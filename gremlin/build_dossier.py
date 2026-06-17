@@ -1039,15 +1039,19 @@ make_table(
 # EN-TÊTE ET PIED DE PAGE
 # =====================================================================
 def add_field(paragraph, field):
-    run = paragraph.add_run()
+    # Run 1 : begin + code + separate
+    r1 = paragraph.add_run()
     b = OxmlElement("w:fldChar"); b.set(qn("w:fldCharType"), "begin")
     i = OxmlElement("w:instrText"); i.set(qn("xml:space"), "preserve"); i.text = field
     s = OxmlElement("w:fldChar"); s.set(qn("w:fldCharType"), "separate")
-    t = OxmlElement("w:t"); t.text = "1"
+    r1._r.append(b); r1._r.append(i); r1._r.append(s)
+    # Run 2 : valeur de cache, ENTRE separate et end (sinon le "1" reste collé)
+    rc = paragraph.add_run("1")
+    rc.font.size = Pt(8.5); rc.font.color.rgb = LGREY
+    # Run 3 : end
+    r3 = paragraph.add_run()
     e = OxmlElement("w:fldChar"); e.set(qn("w:fldCharType"), "end")
-    run._r.append(b); run._r.append(i); run._r.append(s)
-    r2 = paragraph.add_run(); r2._r.append(t)
-    run._r.append(e)
+    r3._r.append(e)
 
 section = doc.sections[0]
 section.different_first_page_header_footer = True
