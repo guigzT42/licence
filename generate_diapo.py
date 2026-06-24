@@ -388,8 +388,8 @@ bullets(s, Inches(8.55), Inches(3.8), Inches(3.6), Inches(2.1), [
 box(s, Inches(0.9), Inches(6.05), Inches(11.5), Inches(0.95), fill=RGBColor(0xFF,0xF3,0xE0), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, Inches(1.15), Inches(6.12), Inches(11.0), Inches(0.8),
      [[("Mise en perspective : ", 12.5, True, ORANGE),
-       ("rigueur climatique integree (Savoie, 498 m, zone H1) ; coherence factures / DPE verifiee ; "
-        "535 vs ~250 kWhEP/m2.an en moyenne nationale -> plus du double.", 12.5, False, GRIS_TXT)]],
+       ("rigueur climatique integree (Savoie, 498 m, zone H1) ; facture reelle ~3 800 €/an (chauffage partiel + appoint bois), "
+        "sous l'estimation conventionnelle du DPE ; 535 vs ~250 kWhEP/m2.an en moyenne nationale.", 12.5, False, GRIS_TXT)]],
      anchor=MSO_ANCHOR.MIDDLE)
 notes(s, "J'ai analyse les factures sur 5 ans, au-dela des 3 ans minimum attendus. Chauffage : chaudiere fioul de 1991 + poele bois. "
          "Moyennes : 1 560 L de fioul, 6 steres, 5 447 kWh d'electricite dont l'ECS. Le chauffage pese environ 80 % de la depense. "
@@ -726,24 +726,24 @@ s = add_slide(); header(s, "6", "Plan de financement", "Foyer modeste : aides, a
 make_table(s, Inches(0.9), Inches(1.85), [
     ["Element financier","Scenario 1","Scenario 2"],
     ["Cout total des travaux TTC","42 500 €","63 000 €"],
-    ["MaPrimeRenov' (parcours accompagne)","- 26 000 €","- 42 000 €"],
-    ["Certificats d'economies d'energie (CEE)","- 2 500 €","- 3 500 €"],
-    ["Reste a charge","14 000 €","17 500 €"],
+    ["MaPrimeRenov' (estimation prudente)","- 15 000 €","- 24 000 €"],
+    ["Certificats d'economies d'energie (CEE)","- 2 500 €","- 4 000 €"],
+    ["Aides locales eventuelles","- 2 500 €","- 2 000 €"],
+    ["Reste a charge","22 500 €","33 000 €"],
     ["- Apport personnel","- 10 000 €","- 10 000 €"],
-    ["A financer (eco-PTZ a 0 %)","4 000 €","7 500 €"],
-], [Inches(5.3), Inches(3.1), Inches(3.1)], row_h=Inches(0.52), header_size=13, body_size=12,
-   first_col_bold=True, highlight_rows=[4,6], highlight_fill=RGBColor(0xD7,0xE9,0xD0))
-box(s, Inches(0.9), Inches(5.85), Inches(11.5), Inches(1.0), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(1.15), Inches(5.93), Inches(11.0), Inches(0.85),
-     [[("Famille modeste (4 pers., ~40 000 €/an) : taux MaPrimeRenov' eleves (65 % a 70 %) pour un gain de 3 a 5 classes. "
-        "Avec l'apport, le solde (4 000 a 7 500 €) est couvert par un eco-PTZ a 0 % -> projet dans le budget.", 12.5, False, GRIS_TXT)]],
+    ["A financer (eco-PTZ a 0 %)","12 500 €","23 000 €"],
+], [Inches(5.3), Inches(3.1), Inches(3.1)], row_h=Inches(0.46), header_size=13, body_size=12,
+   first_col_bold=True, highlight_rows=[5,7], highlight_fill=RGBColor(0xD7,0xE9,0xD0))
+box(s, Inches(0.9), Inches(5.95), Inches(11.5), Inches(0.95), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(6.02), Inches(11.0), Inches(0.8),
+     [[("Estimation prudente des aides (~20 000 € et ~30 000 €). Apres apport, le solde (12 500 a 23 000 €) est finance par un "
+        "eco-PTZ a 0 % -> projet dans le budget de la famille.", 12.5, False, GRIS_TXT)]],
      anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Le financement, calcule pour ce foyer modeste de 4 personnes a 40 000 euros par an. Les travaux sont une renovation d'ampleur, "
-         "eligible a MaPrimeRenov' parcours accompagne, avec des taux eleves pour les revenus modestes : 65 % pour un gain de 3 classes au scenario 1, "
-         "70 % pour 5 classes au scenario 2. Avec les CEE, le reste a charge tombe a 14 000 euros pour le scenario 1 et 17 500 pour le scenario 2. "
-         "On deduit l'apport de 10 000 euros : il ne reste que 4 000 a 7 500 euros, finances par un eco-PTZ a taux zero. "
-         "Le projet reste donc tout a fait dans le budget de la famille - et l'eco-PTZ se rembourse pour environ 40 euros par mois, "
-         "tres inferieurs aux economies d'energie.")
+notes(s, "Le financement, avec une estimation PRUDENTE des aides - plus realiste que les taux maximaux. Pour ce foyer de 4 personnes, "
+         "MaPrimeRenov' et les CEE couvrent environ 20 000 euros au scenario 1 et 30 000 euros au scenario 2. Le reste a charge s'eleve donc a "
+         "22 500 euros pour le scenario 1 et 33 000 euros pour le scenario 2 - des montants coherents avec ce qu'observent des projets comparables. "
+         "On deduit l'apport de 10 000 euros, et le solde - 12 500 a 23 000 euros - est finance par un eco-PTZ a taux zero. "
+         "Le projet reste dans le budget : la mensualite de l'eco-PTZ est largement couverte par les economies d'energie.")
 
 # ===========================================================================
 # 20 - COUT GLOBAL & ROI
@@ -751,33 +751,34 @@ notes(s, "Le financement, calcule pour ce foyer modeste de 4 personnes a 40 000 
 s = add_slide(); header(s, "6", "Analyse en cout global & rentabilite")
 cd = CategoryChartData()
 cd.categories = ["Etat initial","Scenario 1","Scenario 2"]
-cd.add_series("Cout global sur 30 ans (€)", (250650, 177500, 153000))
+cd.add_series("Cout global sur 30 ans (€)", (252000, 188500, 169000))
 gf = s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED, Inches(0.9), Inches(1.75), Inches(6.6), Inches(3.4), cd)
-ch = gf.chart; ch.has_title = True; ch.chart_title.text_frame.text = "Cout global sur 30 ans (travaux + energie)"
+ch = gf.chart; ch.has_title = True; ch.chart_title.text_frame.text = "Cout global 30 ans (travaux + energie, +5 %/an)"
 ch.chart_title.text_frame.paragraphs[0].font.size = Pt(12); ch.has_legend = False
 pl = ch.plots[0]; pl.has_data_labels = True
 pl.data_labels.number_format = '# ##0 "€"'; pl.data_labels.number_format_is_linked = False
 pl.data_labels.font.size = Pt(10); pl.data_labels.font.bold = True
 for i, c in enumerate([ROUGE, BLEU, VERT]):
     pl.series[0].points[i].format.fill.solid(); pl.series[0].points[i].format.fill.fore_color.rgb = c
-text(s, Inches(7.9), Inches(1.7), Inches(4.5), Inches(0.4), [[("Couts mensuels & ROI", 13, True, VERT)]])
+text(s, Inches(7.9), Inches(1.7), Inches(4.5), Inches(0.4), [[("Factures reelles & ROI", 13, True, VERT)]])
 make_table(s, Inches(7.9), Inches(2.2), [
     ["Situation","€/an","€/mois"],
-    ["Avant travaux","8 355","696"],
-    ["Scenario 1","4 500","375"],
-    ["Scenario 2","3 000","250"],
+    ["Avant travaux","3 800","317"],
+    ["Scenario 1","2 200","183"],
+    ["Scenario 2","1 600","133"],
 ], [Inches(1.9), Inches(1.3), Inches(1.3)], row_h=Inches(0.47), header_size=11.5, body_size=11)
 make_table(s, Inches(7.9), Inches(4.55), [
     ["ROI (sur reste a charge)","Sc. 1","Sc. 2"],
-    ["Reste a charge","14 000 €","17 500 €"],
-    ["Economies/an","3 855 €","5 355 €"],
-    ["Amortissement","~3,6 ans","~3,3 ans"],
+    ["Reste a charge","22 500 €","33 000 €"],
+    ["Economies/an","1 600 €","2 200 €"],
+    ["Amortissement","~14 ans","~15 ans"],
 ], [Inches(2.3), Inches(1.1), Inches(1.1)], row_h=Inches(0.47), header_size=11, body_size=11)
-notes(s, "L'analyse en cout global tranche. Sur 30 ans, sans rien faire on depense 250 000 euros ; le scenario 1 ramene a 177 500, "
-         "le scenario 2 a 153 000 - travaux compris. Malgre un investissement initial plus eleve, le scenario 2 reste le moins cher au final. "
-         "Les couts mensuels d'energie passent de 696 a 250 euros. Et grace aux aides elevees, l'amortissement sur le reste a charge est tres rapide : "
-         "environ 3,6 ans pour le scenario 1 et 3,3 ans pour le scenario 2. Si le jury m'interroge : j'ai retenu 30 ans ; en integrant la hausse du prix de "
-         "l'energie, l'ecart se creuserait encore en faveur du scenario 2.")
+notes(s, "L'analyse economique se base sur la facture REELLE du foyer - environ 3 800 euros par an - et non sur le cout conventionnel du DPE, "
+         "qui le surestime. Apres travaux, la facture tombe a 2 200 euros au scenario 1 et 1 600 euros au scenario 2, soit des economies de "
+         "1 600 a 2 200 euros par an. Sur le reste a charge, le retour sur investissement est d'environ 14 ans pour le scenario 1 et 15 ans pour le scenario 2 - "
+         "coherent avec des projets comparables. Pour le cout global, j'integre une hausse du prix de l'energie de 5 % par an, comme attendu : "
+         "sur 30 ans, ne rien faire coute 252 000 euros, le scenario 1 188 500, et le scenario 2 169 000. Malgre un investissement plus eleve, "
+         "le scenario 2 reste le plus avantageux sur la duree.")
 
 # ===========================================================================
 # 21 - SYNTHESE
@@ -789,11 +790,11 @@ make_table(s, Inches(0.9), Inches(1.8), [
     ["Energie / Climat","G / G","C / D","B / A"],
     ["Chauffage","Fioul (1991)","Fioul conserve","Granules (sans silo)"],
     ["Travaux TTC","-","42 500 €","63 000 €"],
-    ["Aides estimees","-","~28 500 €","~45 500 €"],
-    ["Reste a charge","-","14 000 €","17 500 €"],
-    ["Cout energie / an","8 355 €","4 500 €","3 000 €"],
-    ["Cout global 30 ans","250 650 €","177 500 €","153 000 €"],
-    ["Amortissement","-","~3,6 ans","~3,3 ans"],
+    ["Aides estimees","-","~20 000 €","~30 000 €"],
+    ["Reste a charge","-","22 500 €","33 000 €"],
+    ["Cout energie / an (reel)","3 800 €","2 200 €","1 600 €"],
+    ["Cout global 30 ans","252 000 €","188 500 €","169 000 €"],
+    ["Amortissement","-","~14 ans","~15 ans"],
 ], [Inches(2.9), Inches(2.4), Inches(3.1), Inches(3.1)], row_h=Inches(0.44), header_size=12.5, body_size=11.5,
    first_col_bold=True, highlight_rows=[1], highlight_fill=RGBColor(0xD7,0xE9,0xD0))
 notes(s, "Cette synthese recapitule tout. On lit la progression du DPE : de G a D avec le scenario par etapes, jusqu'a B avec le scenario global. "
@@ -812,9 +813,9 @@ text(s, Inches(1.15), Inches(1.75), Inches(7.0), Inches(0.5), [[("-> Je recomman
 bullets(s, Inches(1.15), Inches(2.45), Inches(7.0), Inches(3.0), [
     ("Performance maximale : ","DPE de G a B (energie B / climat A)"),
     ("Sortie du fioul : ","energie renouvelable et locale (granules)"),
-    ("Meilleure rentabilite : ","cout global le plus bas, ROI ~3,3 ans"),
+    ("Meilleure rentabilite : ","cout global le plus bas, ROI ~15 ans"),
     ("Compatible avec le bati : ","ITE biosourcee + radiateurs fonte conserves"),
-    ("Dans le budget : ","reste a charge 17 500 €, soutenu par aides + apport"),
+    ("Dans le budget : ","reste a charge ~33 000 €, aides ~30 000 € + apport"),
 ], size=13, gap=Pt(8))
 # sobriete
 box(s, Inches(8.5), Inches(1.6), Inches(3.9), Inches(4.0), fill=ANTHRA, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
@@ -830,7 +831,7 @@ text(s, Inches(0.9), Inches(5.85), Inches(11.5), Inches(0.5),
 text(s, Inches(0.9), Inches(6.5), Inches(11.5), Inches(0.7),
      [[("Merci de votre attention - je suis a votre disposition pour vos questions.", 18, True, BLANC)]])
 notes(s, "Pour conclure : au regard de la performance, de la sortie du fioul, de la rentabilite et du respect du bati, je recommande le scenario 2, "
-         "qui fait passer le logement de G a B et reste le moins cher sur 30 ans, tout en restant dans le budget grace aux aides et a l'apport. "
+         "qui fait passer le logement de G a B et reste le moins cher sur 30 ans (avec hausse de l'energie), tout en restant dans le budget grace aux aides et a l'apport. "
          "Si le budget initial est un frein, le scenario 1 par etapes est une excellente premiere etape, completee plus tard par le chauffage. "
          "J'ai aussi remis au maitre d'ouvrage des conseils de sobriete simples qui amplifient les economies. Je vous remercie et je suis pret pour vos questions.")
 
