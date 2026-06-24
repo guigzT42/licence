@@ -95,10 +95,10 @@ def header(slide, num, titre, sous=None):
              [[(num, 26, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
         tl = Inches(1.45)
     else: tl = Inches(0.6)
-    text(slide, tl, Inches(0.40), Inches(11.3), Inches(0.8), [[(titre, 28, True, VERT)]], anchor=MSO_ANCHOR.MIDDLE)
+    text(slide, tl, Inches(0.34), Inches(11.3), Inches(0.62), [[(titre, 28, True, VERT)]], anchor=MSO_ANCHOR.MIDDLE)
     if sous:
-        text(slide, tl, Inches(1.14), Inches(11.3), Inches(0.4), [[(sous, 14, False, GRIS_CLR, True)]])
-    box(slide, tl, Inches(1.26), Inches(11.0), Pt(2.2), fill=VERT_CLR)
+        text(slide, tl, Inches(0.99), Inches(11.3), Inches(0.32), [[(sous, 13.5, False, GRIS_TXT, True)]])
+    box(slide, tl, Inches(1.34), Inches(11.0), Pt(2.2), fill=VERT_CLR)
     text(slide, Inches(0.55), Inches(7.08), Inches(9), Inches(0.32),
          [[("Renovation energetique - Saint-Jean-de-Chevelu (73) - Bloc 1", 9, False, GRIS_CLR)]])
     text(slide, Inches(10.3), Inches(7.08), Inches(2.5), Inches(0.32),
