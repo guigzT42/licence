@@ -388,13 +388,46 @@ bullets(s, Inches(8.55), Inches(3.8), Inches(3.6), Inches(2.1), [
 box(s, Inches(0.9), Inches(6.05), Inches(11.5), Inches(0.95), fill=RGBColor(0xFF,0xF3,0xE0), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, Inches(1.15), Inches(6.12), Inches(11.0), Inches(0.8),
      [[("Mise en perspective : ", 12.5, True, ORANGE),
-       ("rigueur climatique integree (Savoie, 498 m, zone H1) ; facture reelle ~3 800 €/an (chauffage partiel + appoint bois), "
-        "sous l'estimation conventionnelle du DPE ; 535 vs ~250 kWhEP/m2.an en moyenne nationale.", 12.5, False, GRIS_TXT)]],
+       ("rigueur climatique integree (Savoie, 498 m, zone H1) ; facture reelle ~3 800 €/an "
+        "(chauffage partiel + appoint bois), inferieure a l'estimation conventionnelle du DPE.", 12.5, False, GRIS_TXT)]],
      anchor=MSO_ANCHOR.MIDDLE)
 notes(s, "J'ai analyse les factures sur 5 ans, au-dela des 3 ans minimum attendus. Chauffage : chaudiere fioul de 1991 + poele bois. "
          "Moyennes : 1 560 L de fioul, 6 steres, 5 447 kWh d'electricite dont l'ECS. Le chauffage pese environ 80 % de la depense. "
          "J'ai integre la rigueur climatique - zone H1, 498 m, donc des besoins eleves - verifie la coherence entre factures et DPE, "
          "et compare a la moyenne nationale : 535 contre environ 250 kWh primaire au m2, soit plus du double. Une vraie passoire thermique.")
+
+# ===========================================================================
+# 8b - POSTES DE DEPENSE & MOYENNE NATIONALE
+# ===========================================================================
+s = add_slide(); header(s, "2", "Postes de depense & comparaison", "Repartition des usages et moyenne nationale")
+cd = CategoryChartData()
+cd.categories = ["Chauffage (fioul + bois)","ECS (ballon elec.)","Electricite specifique"]
+cd.add_series("Postes", (78, 9, 13))
+gf = s.shapes.add_chart(XL_CHART_TYPE.PIE, Inches(0.6), Inches(1.8), Inches(5.6), Inches(4.5), cd)
+ch = gf.chart; ch.has_title = True; ch.chart_title.text_frame.text = "Repartition des depenses energetiques"
+ch.chart_title.text_frame.paragraphs[0].font.size = Pt(12)
+ch.has_legend = True; ch.legend.position = XL_LEGEND_POSITION.BOTTOM; ch.legend.include_in_layout = False; ch.legend.font.size = Pt(10)
+pl = ch.plots[0]; pl.has_data_labels = True
+pl.data_labels.show_value = True; pl.data_labels.number_format = '0"%"'; pl.data_labels.number_format_is_linked = False
+pl.data_labels.font.size = Pt(12); pl.data_labels.font.bold = True; pl.data_labels.font.color.rgb = BLANC
+pl.data_labels.position = XL_LABEL_POSITION.INSIDE_END
+for i, c in enumerate([ORANGE, BLEU, GRIS_CLR]):
+    pl.series[0].points[i].format.fill.solid(); pl.series[0].points[i].format.fill.fore_color.rgb = c
+text(s, Inches(6.7), Inches(1.8), Inches(5.8), Inches(0.4), [[("Mise en perspective", 16, True, VERT)]])
+bullets(s, Inches(6.7), Inches(2.3), Inches(5.9), Inches(2.4), [
+    ("Chauffage = poste dominant : ","pres de 80 % de la depense energetique"),
+    ("Rigueur climatique integree : ","Savoie, 498 m, zone H1 (climat froid)"),
+    ("Coherence facture / DPE ","verifiee (theorique vs reel)"),
+], size=13.5, gap=Pt(11))
+box(s, Inches(6.7), Inches(4.75), Inches(5.9), Inches(1.55), fill=RGBColor(0xFF,0xF3,0xE0), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(6.95), Inches(4.9), Inches(5.4), Inches(1.35),
+     [[("Comparaison a la moyenne nationale", 13, True, ORANGE)],
+      [("535 kWhEP/m2.an   vs   ~250 kWhEP/m2.an", 16, True, GRIS_TXT)],
+      [("-> consommation plus du double d'une habitation moyenne", 12, False, GRIS_TXT)]], line_spacing=1.15)
+notes(s, "Je detaille la repartition des depenses par poste, comme l'attend la grille : le chauffage represente pres de 80 % de la depense, "
+         "l'ECS electrique environ 10 %, et l'electricite specifique le reste. J'ai integre la rigueur climatique - zone H1, 498 m - et verifie la coherence "
+         "entre les factures et l'estimation du DPE. Point important que je tiens a souligner : compare a la moyenne nationale, ce logement consomme "
+         "535 kWh primaire au metre carre contre environ 250 en moyenne, soit plus du double. Cela confirme objectivement le caractere energivore du batiment.")
 
 # ===========================================================================
 # 9 - ENVELOPPE
