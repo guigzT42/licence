@@ -835,6 +835,58 @@ notes(s, "Pour conclure : au regard de la performance, de la sortie du fioul, de
          "Si le budget initial est un frein, le scenario 1 par etapes est une excellente premiere etape, completee plus tard par le chauffage. "
          "J'ai aussi remis au maitre d'ouvrage des conseils de sobriete simples qui amplifient les economies. Je vous remercie et je suis pret pour vos questions.")
 
+# ===========================================================================
+# 23 - REFERENCES & SOURCES (annexe)
+# ===========================================================================
+s = add_slide(); header(s, None, "References & sources", "Annexe - aides, fournisseurs et donnees techniques")
+
+def ref_card(s, l, t, w, h, titre, accent, items):
+    box(s, l, t, w, h, fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    box(s, l, t, w, Inches(0.55), fill=accent, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    text(s, l, t, w, Inches(0.55), [[(titre, 14, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    tb = s.shapes.add_textbox(l + Inches(0.18), t + Inches(0.7), w - Inches(0.34), h - Inches(0.85))
+    tf = tb.text_frame; tf.word_wrap = True
+    first = True
+    for label, url in items:
+        p = tf.paragraphs[0] if first else tf.add_paragraph(); first = False
+        p.space_after = Pt(6); p.line_spacing = 1.0
+        r0 = p.add_run(); r0.text = label + " "
+        r0.font.size = Pt(11); r0.font.bold = True; r0.font.color.rgb = GRIS_TXT; r0.font.name = "Calibri"
+        p2 = tf.add_paragraph(); p2.space_after = Pt(6); p2.line_spacing = 1.0
+        r1 = p2.add_run(); r1.text = url
+        r1.font.size = Pt(10.5); r1.font.color.rgb = BLEU; r1.font.name = "Calibri"
+        r1.hyperlink.address = "https://" + url
+
+ref_card(s, Inches(0.6), Inches(1.65), Inches(3.95), Inches(5.15), "Aides & financement", VERT, [
+    ("France Renov' (service public)", "france-renov.gouv.fr"),
+    ("MaPrimeRenov'", "maprimerenov.gouv.fr"),
+    ("Simulateur d'aides", "mesaidesreno.gouv.fr"),
+    ("Anah", "anah.gouv.fr"),
+    ("Eco-PTZ & CEE", "service-public.fr"),
+    ("ASDER - espace conseil (Savoie)", "asder.asso.fr"),
+])
+ref_card(s, Inches(4.7), Inches(1.65), Inches(3.95), Inches(5.15), "Materiaux & equipements", BLEU, [
+    ("Laine de bois (ITE)", "steico.com  -  soprema.fr"),
+    ("Ouate de cellulose", "ouateco.com  -  isocell.com"),
+    ("VMC hygro B", "aldes.fr  -  atlantic.fr"),
+    ("Chauffe-eau thermodynamique", "atlantic.fr  -  thermor.fr"),
+    ("Chaudiere a granules", "oekofen.com  -  hargassner.com"),
+    ("Enduit / finition ITE", "fr.weber  -  parexlanko.com"),
+])
+ref_card(s, Inches(8.8), Inches(1.65), Inches(3.95), Inches(5.15), "Donnees & reglementation", ORANGE, [
+    ("ADEME (energie / climat)", "ademe.fr"),
+    ("DPE - methode 3CL & observatoire", "observatoire-dpe-audit.ademe.fr"),
+    ("Reglementation (CCH, arretes DPE)", "legifrance.gouv.fr"),
+    ("Urbanisme / PLU (declaration prealable)", "geoportail-urbanisme.gouv.fr"),
+    ("Prix de l'energie (statistiques)", "statistiques.developpement-durable.gouv.fr"),
+    ("Donnees climatiques (DJU, zone H1)", "meteofrance.com"),
+])
+notes(s, "En annexe, j'ai regroupe toutes mes sources : a gauche les aides et le financement - France Renov', MaPrimeRenov', "
+         "le simulateur officiel, l'Anah, l'eco-PTZ et l'ASDER qui est l'agence locale de l'energie en Savoie. Au centre, les fournisseurs "
+         "et marques des materiaux et equipements que j'ai retenus. A droite, les sources techniques et reglementaires : l'ADEME, "
+         "la methode 3CL du DPE, Legifrance pour la reglementation, le geoportail de l'urbanisme, les statistiques de prix de l'energie "
+         "et Meteo-France pour les donnees climatiques. Je me tiens a votre disposition si vous souhaitez des precisions sur l'une de ces sources.")
+
 out = "/home/user/licence/Soutenance_Renovation_Saint-Jean-de-Chevelu.pptx"
 prs.save(out)
 print("OK - slides:", len(prs.slides._sldIdLst))
