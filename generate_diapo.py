@@ -836,56 +836,41 @@ notes(s, "Pour conclure : au regard de la performance, de la sortie du fioul, de
          "J'ai aussi remis au maitre d'ouvrage des conseils de sobriete simples qui amplifient les economies. Je vous remercie et je suis pret pour vos questions.")
 
 # ===========================================================================
-# 23 - REFERENCES & SOURCES (annexe)
+# 23 - OUTILS & SOURCES (annexe)
 # ===========================================================================
-s = add_slide(); header(s, None, "References & sources", "Annexe - aides, fournisseurs et donnees techniques")
-
-def ref_card(s, l, t, w, h, titre, accent, items):
-    box(s, l, t, w, h, fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    box(s, l, t, w, Inches(0.55), fill=accent, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    text(s, l, t, w, Inches(0.55), [[(titre, 14, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    tb = s.shapes.add_textbox(l + Inches(0.18), t + Inches(0.7), w - Inches(0.34), h - Inches(0.85))
-    tf = tb.text_frame; tf.word_wrap = True
-    first = True
-    for label, url in items:
-        p = tf.paragraphs[0] if first else tf.add_paragraph(); first = False
-        p.space_after = Pt(6); p.line_spacing = 1.0
-        r0 = p.add_run(); r0.text = label + " "
-        r0.font.size = Pt(11); r0.font.bold = True; r0.font.color.rgb = GRIS_TXT; r0.font.name = "Calibri"
-        p2 = tf.add_paragraph(); p2.space_after = Pt(6); p2.line_spacing = 1.0
-        r1 = p2.add_run(); r1.text = url
-        r1.font.size = Pt(10.5); r1.font.color.rgb = BLEU; r1.font.name = "Calibri"
-        r1.hyperlink.address = "https://" + url
-
-ref_card(s, Inches(0.6), Inches(1.65), Inches(3.95), Inches(5.15), "Aides & financement", VERT, [
-    ("France Renov' (service public)", "france-renov.gouv.fr"),
-    ("MaPrimeRenov'", "maprimerenov.gouv.fr"),
-    ("Simulateur d'aides", "mesaidesreno.gouv.fr"),
-    ("Anah", "anah.gouv.fr"),
-    ("Eco-PTZ & CEE", "service-public.fr"),
-    ("ASDER - espace conseil (Savoie)", "asder.asso.fr"),
-])
-ref_card(s, Inches(4.7), Inches(1.65), Inches(3.95), Inches(5.15), "Materiaux & equipements", BLEU, [
-    ("Laine de bois (ITE)", "steico.com  -  soprema.fr"),
-    ("Ouate de cellulose", "ouateco.com  -  isocell.com"),
-    ("VMC hygro B", "aldes.fr  -  atlantic.fr"),
-    ("Chauffe-eau thermodynamique", "atlantic.fr  -  thermor.fr"),
-    ("Chaudiere a granules", "oekofen.com  -  hargassner.com"),
-    ("Enduit / finition ITE", "fr.weber  -  parexlanko.com"),
-])
-ref_card(s, Inches(8.8), Inches(1.65), Inches(3.95), Inches(5.15), "Donnees & reglementation", ORANGE, [
-    ("ADEME (energie / climat)", "ademe.fr"),
-    ("DPE - methode 3CL & observatoire", "observatoire-dpe-audit.ademe.fr"),
-    ("Reglementation (CCH, arretes DPE)", "legifrance.gouv.fr"),
-    ("Urbanisme / PLU (declaration prealable)", "geoportail-urbanisme.gouv.fr"),
-    ("Prix de l'energie (statistiques)", "statistiques.developpement-durable.gouv.fr"),
-    ("Donnees climatiques (DJU, zone H1)", "meteofrance.com"),
-])
-notes(s, "En annexe, j'ai regroupe toutes mes sources : a gauche les aides et le financement - France Renov', MaPrimeRenov', "
-         "le simulateur officiel, l'Anah, l'eco-PTZ et l'ASDER qui est l'agence locale de l'energie en Savoie. Au centre, les fournisseurs "
-         "et marques des materiaux et equipements que j'ai retenus. A droite, les sources techniques et reglementaires : l'ADEME, "
-         "la methode 3CL du DPE, Legifrance pour la reglementation, le geoportail de l'urbanisme, les statistiques de prix de l'energie "
-         "et Meteo-France pour les donnees climatiques. Je me tiens a votre disposition si vous souhaitez des precisions sur l'une de ces sources.")
+s = add_slide(); header(s, None, "Outils & sources", "Etude realisee principalement avec le logiciel Pleiades")
+# carte Pleiades (principale)
+box(s, Inches(0.7), Inches(1.7), Inches(6.6), Inches(4.9), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+box(s, Inches(0.7), Inches(1.7), Inches(6.6), Inches(0.95), fill=VERT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(0.95), Inches(1.78), Inches(6.1), Inches(0.85),
+     [[("Pleiades", 22, True, BLANC)], [("Logiciel de simulation thermique du batiment - IZUBA energies", 12, False, RGBColor(0xC8,0xE6,0xC9))]], line_spacing=1.05)
+text(s, Inches(1.0), Inches(2.85), Inches(6.0), Inches(0.4), [[("Tout le travail technique et chiffre repose sur Pleiades :", 13, True, GRIS_TXT)]])
+bullets(s, Inches(1.0), Inches(3.35), Inches(6.1), Inches(3.1), [
+    "Modelisation du batiment et de son enveloppe",
+    "Bilan des deperditions & coefficient Ubat",
+    "Calcul du DPE (energie primaire, CO2, etiquettes)",
+    "Simulation des gains energetiques apres travaux",
+    "Dimensionnement des equipements (chauffage, VMC)",
+    "Estimation des couts de travaux et analyse economique",
+], size=13.5, gap=Pt(10))
+# carte sources complementaires
+box(s, Inches(7.5), Inches(1.7), Inches(5.1), Inches(4.9), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(7.75), Inches(1.85), Inches(4.7), Inches(0.4), [[("Sources complementaires", 15, True, VERT)]])
+def src(s, t, label, url):
+    text(s, Inches(7.75), t, Inches(4.7), Inches(0.32), [[(label, 12.5, True, GRIS_TXT)]])
+    tb = s.shapes.add_textbox(Inches(7.75), t + Inches(0.28), Inches(4.7), Inches(0.3))
+    p = tb.text_frame.paragraphs[0]; r = p.add_run(); r.text = url
+    r.font.size = Pt(11.5); r.font.color.rgb = BLEU; r.font.name = "Calibri"; r.hyperlink.address = "https://" + url
+src(s, Inches(2.45), "Aides & simulateur (France Renov')", "france-renov.gouv.fr")
+src(s, Inches(3.2), "Conseil local energie (Savoie)", "asder.asso.fr")
+src(s, Inches(3.95), "Reglementation (CCH, arretes DPE)", "legifrance.gouv.fr")
+src(s, Inches(4.7), "Donnees produits", "documentations techniques fabricants")
+src(s, Inches(5.45), "Reference energie / climat", "ademe.fr")
+notes(s, "Pour la transparence : l'essentiel de l'etude - la modelisation, le bilan des deperditions, le calcul du DPE, la simulation des gains "
+         "et le dimensionnement - a ete realise avec le logiciel Pleiades, d'IZUBA energies, qui fournit aussi les estimations de couts. "
+         "En complement, je me suis appuye sur France Renov' et son simulateur pour les aides, l'ASDER comme conseil local en Savoie, "
+         "Legifrance pour la reglementation, les documentations des fabricants pour les produits, et l'ADEME comme reference energie-climat. "
+         "Je peux detailler n'importe lequel de ces points si vous le souhaitez.")
 
 out = "/home/user/licence/Soutenance_Renovation_Saint-Jean-de-Chevelu.pptx"
 prs.save(out)
