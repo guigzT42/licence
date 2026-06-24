@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Diaporama oral - Étude de rénovation énergétique (Bloc 1 - Sujet A)
-Maison individuelle à Saint-Jean-de-Chevelu (Savoie)
-Guillaume Tardy - Chargé de projet énergie et bâtiment durables
-Adapté au sujet d'école et à la grille d'évaluation officielle.
+Diaporama oral - Etude de renovation energetique (Bloc 1 - Sujet A)
+Maison individuelle a Saint-Jean-de-Chevelu (Savoie) - Guillaume Tardy
+v3 : DPE calcules (G->D->B), prix realistes avec marques, foyer modeste, 22 diapos.
 """
-import os, re
+import re
 from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
@@ -18,7 +17,6 @@ ASSETS = "/home/user/licence/assets"
 IMG = {
     "facade":     ASSETS + "/p05_x55_658x390.png",
     "facade2":    ASSETS + "/p05_x56_630x388.png",
-    "facade3":    ASSETS + "/p05_x57_660x390.png",
     "poele":      ASSETS + "/p06_x61_450x596.png",
     "menuiserie": ASSETS + "/p06_x62_460x392.png",
     "ballon":     ASSETS + "/p06_x63_366x506.png",
@@ -30,7 +28,6 @@ IMG = {
     "coupe":      ASSETS + "/p08_x73_1188x641.png",
 }
 
-# ---------------- CHARTE ----------------
 VERT      = RGBColor(0x1B, 0x5E, 0x20)
 VERT_CLR  = RGBColor(0x2E, 0x7D, 0x32)
 VERT_LIGHT= RGBColor(0xE8, 0xF5, 0xE9)
@@ -42,13 +39,13 @@ ORANGE    = RGBColor(0xE6, 0x51, 0x00)
 BLEU      = RGBColor(0x15, 0x65, 0xC0)
 ROUGE     = RGBColor(0xC6, 0x28, 0x28)
 DPE_COLORS = {"A":RGBColor(0x00,0x83,0x36),"B":RGBColor(0x57,0xAA,0x27),
-              "C":RGBColor(0xC3,0xD0,0x00),"D":RGBColor(0xFC,0xEA,0x10),
+              "C":RGBColor(0xC3,0xD0,0x00),"D":RGBColor(0xF7,0xCB,0x00),
               "E":RGBColor(0xF7,0xB1,0x00),"F":RGBColor(0xEA,0x6C,0x16),
               "G":RGBColor(0xE2,0x00,0x1A)}
+DPE_TXT = {"A":BLANC,"B":BLANC,"C":ANTHRA,"D":ANTHRA,"E":BLANC,"F":BLANC,"G":BLANC}
 
 prs = Presentation()
-prs.slide_width  = Inches(13.333)
-prs.slide_height = Inches(7.5)
+prs.slide_width  = Inches(13.333); prs.slide_height = Inches(7.5)
 SW, SH = prs.slide_width, prs.slide_height
 BLANK = prs.slide_layouts[6]
 
@@ -58,8 +55,7 @@ def set_bg(slide, color):
     rect = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, SW, SH)
     rect.fill.solid(); rect.fill.fore_color.rgb = color
     rect.line.fill.background(); rect.shadow.inherit = False
-    slide.shapes._spTree.remove(rect._element)
-    slide.shapes._spTree.insert(2, rect._element)
+    slide.shapes._spTree.remove(rect._element); slide.shapes._spTree.insert(2, rect._element)
     return rect
 
 def box(slide, l, t, w, h, fill=None, line=None, line_w=None, shape=MSO_SHAPE.RECTANGLE):
@@ -99,38 +95,43 @@ def header(slide, num, titre, sous=None):
              [[(num, 26, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
         tl = Inches(1.45)
     else: tl = Inches(0.6)
-    text(slide, tl, Inches(0.40), Inches(11.3), Inches(0.8),
-         [[(titre, 29, True, VERT)]], anchor=MSO_ANCHOR.MIDDLE)
+    text(slide, tl, Inches(0.40), Inches(11.3), Inches(0.8), [[(titre, 28, True, VERT)]], anchor=MSO_ANCHOR.MIDDLE)
     if sous:
-        text(slide, tl, Inches(1.16), Inches(11.3), Inches(0.4), [[(sous, 14, False, GRIS_CLR, True)]])
-    box(slide, tl, Inches(1.28), Inches(11.0), Pt(2.2), fill=VERT_CLR)
+        text(slide, tl, Inches(1.14), Inches(11.3), Inches(0.4), [[(sous, 14, False, GRIS_CLR, True)]])
+    box(slide, tl, Inches(1.26), Inches(11.0), Pt(2.2), fill=VERT_CLR)
     text(slide, Inches(0.55), Inches(7.08), Inches(9), Inches(0.32),
-         [[("Rénovation énergétique – Saint-Jean-de-Chevelu (73) – Bloc 1", 9, False, GRIS_CLR)]])
+         [[("Renovation energetique - Saint-Jean-de-Chevelu (73) - Bloc 1", 9, False, GRIS_CLR)]])
     text(slide, Inches(10.3), Inches(7.08), Inches(2.5), Inches(0.32),
          [[("Guillaume Tardy", 9, False, GRIS_CLR)]], align=PP_ALIGN.RIGHT)
 
-def make_table(slide, l, t, w, rows, col_widths, row_h=Inches(0.4),
-               header_fill=VERT, header_size=13, body_size=12, first_col_bold=False):
-    total = sum(col_widths, Emu(0)); nrows = len(rows)
-    gtbl = slide.shapes.add_table(nrows, len(col_widths), l, t, total, row_h*nrows).table
+def make_table(slide, l, t, rows, col_widths, row_h=Inches(0.4),
+               header_fill=VERT, header_size=13, body_size=12, first_col_bold=False,
+               highlight_rows=None, highlight_fill=None):
+    highlight_rows = highlight_rows or []
+    nrows = len(rows)
+    gtbl = slide.shapes.add_table(nrows, len(col_widths), l, t, sum(col_widths, Emu(0)), row_h*nrows).table
     gtbl.first_row = False; gtbl.horz_banding = False
     for ci, cw in enumerate(col_widths): gtbl.columns[ci].width = cw
     for ri in range(nrows): gtbl.rows[ri].height = row_h
     for ri, row in enumerate(rows):
         for ci, val in enumerate(row):
             cell = gtbl.cell(ri, ci)
-            cell.margin_left = Pt(7); cell.margin_right = Pt(7)
+            cell.margin_left = Pt(6); cell.margin_right = Pt(6)
             cell.margin_top = Pt(1); cell.margin_bottom = Pt(1)
             cell.vertical_anchor = MSO_ANCHOR.MIDDLE
             cell.fill.solid()
-            cell.fill.fore_color.rgb = header_fill if ri == 0 else (VERT_LIGHT if ri % 2 == 0 else BLANC)
+            if ri == 0: cell.fill.fore_color.rgb = header_fill
+            elif ri in highlight_rows: cell.fill.fore_color.rgb = highlight_fill or VERT_LIGHT
+            else: cell.fill.fore_color.rgb = VERT_LIGHT if ri % 2 == 0 else BLANC
             tf = cell.text_frame; tf.word_wrap = True
             p = tf.paragraphs[0]; p.alignment = PP_ALIGN.LEFT if ci == 0 else PP_ALIGN.CENTER
             r = p.add_run(); r.text = val; r.font.name = "Calibri"
             if ri == 0:
                 r.font.size = Pt(header_size); r.font.bold = True; r.font.color.rgb = BLANC
             else:
-                r.font.size = Pt(body_size); r.font.bold = (ci == 0 and first_col_bold); r.font.color.rgb = GRIS_TXT
+                r.font.size = Pt(body_size)
+                r.font.bold = (ci == 0 and first_col_bold) or (ri in highlight_rows)
+                r.font.color.rgb = GRIS_TXT
     return gtbl
 
 def bullets(slide, l, t, w, h, items, size=15, color=GRIS_TXT, gap=Pt(8),
@@ -154,83 +155,81 @@ def bullets(slide, l, t, w, h, items, size=15, color=GRIS_TXT, gap=Pt(8),
 def kpi(slide, l, t, w, h, value, label, accent=VERT, val_size=26):
     box(slide, l, t, w, h, fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
     box(slide, l, t, w, Inches(0.12), fill=accent, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    text(slide, l, t + Inches(0.16), w, h - Inches(0.6),
-         [[(value, val_size, True, accent)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    text(slide, l, t + h - Inches(0.52), w, Inches(0.48),
-         [[(label, 11, False, GRIS_TXT)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    text(slide, l, t + Inches(0.16), w, h - Inches(0.6), [[(value, val_size, True, accent)]],
+         align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    text(slide, l, t + h - Inches(0.52), w, Inches(0.48), [[(label, 11, False, GRIS_TXT)]],
+         align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 
 def picture(slide, path, bl, bt, bw, bh, caption=None, frame=True, cap_size=11):
-    m = re.search(r'_(\d+)x(\d+)\.png$', path)
-    iw, ih = int(m.group(1)), int(m.group(2))
+    m = re.search(r'_(\d+)x(\d+)\.png$', path); iw, ih = int(m.group(1)), int(m.group(2))
     cap_h = Inches(0.34) if caption else Emu(0)
     avail_h = bh - cap_h
     scale = min(bw / iw, avail_h / ih)
     w = int(iw * scale); h = int(ih * scale)
     l = bl + (bw - w) // 2; t = bt + (avail_h - h) // 2
     if frame:
-        box(slide, l - Emu(20000), t - Emu(20000), w + Emu(40000), h + Emu(40000),
-            fill=BLANC, line=GRIS_CLR, line_w=Pt(1.2))
+        box(slide, l - Emu(20000), t - Emu(20000), w + Emu(40000), h + Emu(40000), fill=BLANC, line=GRIS_CLR, line_w=Pt(1.2))
     slide.shapes.add_picture(path, l, t, width=w, height=h)
     if caption:
-        text(slide, bl, bt + avail_h + Emu(20000), bw, cap_h,
-             [[(caption, cap_size, False, GRIS_CLR, True)]], align=PP_ALIGN.CENTER)
+        text(slide, bl, bt + avail_h + Emu(20000), bw, cap_h, [[(caption, cap_size, False, GRIS_CLR, True)]], align=PP_ALIGN.CENTER)
     return l, t, w, h
 
-def dpe_label(slide, cx, top, current, label_txt="Classe énergie", scale_h=Inches(0.42),
+def dpe_label(slide, cx, top, current, label_txt="Classe energie", scale_h=Inches(0.42),
               base_w=Inches(1.0), step=Inches(0.34), letter_size=16, label_size=12):
     letters = ["A","B","C","D","E","F","G"]
-    text(slide, cx, top, base_w + step*6, Inches(0.3),
-         [[(label_txt, label_size, True, GRIS_TXT)]], align=PP_ALIGN.LEFT)
+    text(slide, cx, top, base_w + step*6, Inches(0.3), [[(label_txt, label_size, True, GRIS_TXT)]], align=PP_ALIGN.LEFT)
     y = top + Inches(0.36)
     for i, ltr in enumerate(letters):
         w = base_w + step*i; is_cur = (ltr == current)
         box(slide, cx, y, w, scale_h, fill=DPE_COLORS[ltr], shape=MSO_SHAPE.ROUNDED_RECTANGLE,
             line=(ANTHRA if is_cur else None), line_w=Pt(2.5))
-        text(slide, cx + Inches(0.06), y, w - Inches(0.08), scale_h,
-             [[(ltr, letter_size, True, BLANC)]], anchor=MSO_ANCHOR.MIDDLE)
+        text(slide, cx + Inches(0.06), y, w - Inches(0.08), scale_h, [[(ltr, letter_size, True, DPE_TXT[ltr])]], anchor=MSO_ANCHOR.MIDDLE)
         if is_cur:
             box(slide, cx - Inches(0.34), y, Inches(0.30), scale_h, fill=ANTHRA, shape=MSO_SHAPE.PENTAGON)
         y += scale_h + Inches(0.06)
     return y
 
+def dpe_badge(slide, l, t, letter, w=Inches(0.95), h=Inches(0.95), sub=None):
+    box(slide, l, t, w, h, fill=DPE_COLORS[letter], shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    text(slide, l, t, w, h, [[(letter, 34, True, DPE_TXT[letter])]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    if sub:
+        text(slide, l - Inches(0.4), t + h + Inches(0.02), w + Inches(0.8), Inches(0.3),
+             [[(sub, 11, True, GRIS_TXT)]], align=PP_ALIGN.CENTER)
+
 # ===========================================================================
-# 1 — TITRE
+# 1 - TITRE
 # ===========================================================================
 s = add_slide(); set_bg(s, VERT)
 box(s, 0, 0, Inches(6.4), SH, fill=VERT_CLR)
 picture(s, IMG["facade"], Inches(0.0), Inches(0.0), Inches(6.4), SH, frame=False)
 box(s, Inches(6.4), 0, Pt(6), SH, fill=RGBColor(0xA5,0xD6,0xA7))
 text(s, Inches(6.85), Inches(0.7), Inches(6.2), Inches(0.5),
-     [[("BLOC 1 — CHARGÉ DE PROJET ÉNERGIE ET BÂTIMENT DURABLES", 12, True, RGBColor(0xC8,0xE6,0xC9))]])
+     [[("BLOC 1 - CHARGE DE PROJET ENERGIE ET BATIMENT DURABLES", 12, True, RGBColor(0xC8,0xE6,0xC9))]])
 text(s, Inches(6.85), Inches(1.5), Inches(6.2), Inches(2.6),
-     [[("Rénovation", 38, True, BLANC)],
-      [("énergétique d’une", 38, True, BLANC)],
-      [("ancienne ferme", 38, True, RGBColor(0xC8,0xE6,0xC9))],
-      [("savoyarde", 38, True, RGBColor(0xC8,0xE6,0xC9))]], line_spacing=1.0)
+     [[("Renovation", 38, True, BLANC)], [("energetique d'une", 38, True, BLANC)],
+      [("ancienne ferme", 38, True, RGBColor(0xC8,0xE6,0xC9))], [("savoyarde", 38, True, RGBColor(0xC8,0xE6,0xC9))]], line_spacing=1.0)
 text(s, Inches(6.85), Inches(4.7), Inches(6.2), Inches(0.6),
-     [[("Étude pour un maître d’ouvrage — Saint-Jean-de-Chevelu (73)", 15, False, BLANC)]])
+     [[("Etude pour un maitre d'ouvrage - Saint-Jean-de-Chevelu (73)", 15, False, BLANC)]])
 box(s, Inches(6.85), Inches(5.5), Inches(5.9), Pt(2), fill=RGBColor(0xA5,0xD6,0xA7))
 text(s, Inches(6.85), Inches(5.75), Inches(6.2), Inches(1.0),
-     [[("Présenté par Guillaume Tardy", 17, True, BLANC)],
-      [("Soutenance orale — Sujet A", 13, False, RGBColor(0xC8,0xE6,0xC9))]], line_spacing=1.15)
-notes(s, "Bonjour, je suis Guillaume Tardy. Je vous présente mon étude de rénovation énergétique réalisée "
-         "pour le compte d'un maître d'ouvrage occupant. Il s'agit d'une ancienne ferme savoyarde de la fin du "
-         "XIXe siècle, à Saint-Jean-de-Chevelu. Ma démarche : diagnostiquer l'existant, le comparer aux références, "
-         "puis proposer deux scénarios de rénovation performante — un par étapes et un global — chiffrés et argumentés. "
-         "Rappel du cadre : le photovoltaïque et la climatisation ne sont pas étudiés.")
+     [[("Presente par Guillaume Tardy", 17, True, BLANC)], [("Soutenance orale - Sujet A", 13, False, RGBColor(0xC8,0xE6,0xC9))]], line_spacing=1.15)
+notes(s, "Bonjour, je suis Guillaume Tardy. Je vous presente mon etude de renovation energetique realisee pour un maitre "
+         "d'ouvrage occupant : une ancienne ferme savoyarde de la fin du XIXe siecle a Saint-Jean-de-Chevelu. Ma demarche : "
+         "diagnostiquer l'existant, le comparer aux references, puis proposer deux scenarios de renovation performante - "
+         "un par etapes et un global - chiffres et argumentes. Le photovoltaique et la climatisation sont hors etude.")
 
 # ===========================================================================
-# 2 — SOMMAIRE
+# 2 - SOMMAIRE
 # ===========================================================================
 s = add_slide(); header(s, None, "Sommaire")
 items = [
-    ("1","Analyse de la situation & objectifs","Contexte, maître d’ouvrage, confort visé"),
-    ("2","Diagnostic technique de l’existant","Consommations, enveloppe, systèmes, éclairage"),
-    ("3","Bilan des déperditions & DPE","Calculs thermiques, étiquette actuelle"),
-    ("4","Deux scénarios de rénovation","Par étapes (B/B) et global (A/B)"),
-    ("5","Dimensionnement & matériaux","Régulation, ECS, isolants biosourcés"),
-    ("6","Analyse économique en coût global","Chiffrage, aides, reste à charge, ROI"),
-    ("7","Plan de sobriété & conclusion","Conseils aux occupants, recommandation"),
+    ("1","Situation, foyer & objectifs","Contexte, moyens du MOA, confort vise"),
+    ("2","Diagnostic technique de l'existant","Consommations, enveloppe, systemes, eclairage"),
+    ("3","Deperditions & DPE de l'existant","Calcul thermique, etiquette G"),
+    ("4","Deux scenarios de renovation","Par etapes (D) et global (B)"),
+    ("5","DPE des scenarios & dimensionnement","Calculs DPE, regulation, ECS, materiaux"),
+    ("6","Analyse economique en cout global","Chiffrage, aides, reste a charge, ROI"),
+    ("7","Sobriete & conclusion","Conseils occupants, recommandation"),
 ]
 y = Inches(1.7)
 for num, t1, sub in items:
@@ -239,676 +238,601 @@ for num, t1, sub in items:
     text(s, Inches(1.65), y - Inches(0.03), Inches(8), Inches(0.4), [[(t1,17,True,GRIS_TXT)]], anchor=MSO_ANCHOR.MIDDLE)
     text(s, Inches(1.65), y + Inches(0.30), Inches(10.5), Inches(0.3), [[(sub,12,False,GRIS_CLR,True)]])
     y += Inches(0.70)
-notes(s, "Voici mon plan. Je pars du contexte et des attentes du maître d'ouvrage, puis le diagnostic technique complet : "
-         "consommations, enveloppe, systèmes, éclairage et ventilation. J'en tire le bilan des déperditions et le DPE. "
-         "Je présente ensuite mes deux scénarios, leur dimensionnement, l'analyse économique en coût global, "
-         "et je termine par le plan de sobriété et ma recommandation.")
+notes(s, "Voici mon plan : contexte et moyens du maitre d'ouvrage, puis le diagnostic technique complet. "
+         "J'en tire les deperditions et le DPE actuel. Je presente ensuite mes deux scenarios, le calcul de leur DPE, "
+         "leur dimensionnement, l'analyse economique en cout global, et je termine par la sobriete et ma recommandation.")
 
 # ===========================================================================
-# 3 — CONTEXTE
+# 3 - CONTEXTE + PROFIL FOYER
 # ===========================================================================
-s = add_slide(); header(s, "1", "Analyse de la situation", "Nature du projet et contexte")
-bullets(s, Inches(0.9), Inches(1.7), Inches(6.0), Inches(4.5), [
-    ("Ancienne ferme ","fin XIXᵉ s., réhabilitée dans les années 1990"),
-    ("Maison individuelle ","occupée par une famille (résidence principale)"),
-    ("99 m² habitables chauffés ","sur 2 niveaux, sous combles perdus"),
-    ("Partie non chauffée ","à l’Est : garage / débarras"),
-    ("Murs en pierre calcaire 50 cm ","→ forte inertie, patrimoine local"),
-    ("Étude pour le MOA : ","diagnostic + scénarios adaptés au bâti ancien"),
-], size=14.5, gap=Pt(10))
-picture(s, IMG["facade2"], Inches(7.3), Inches(1.7), Inches(5.1), Inches(2.9),
-        caption="Façade de la maison — vue depuis l’accès")
-box(s, Inches(7.3), Inches(4.85), Inches(5.1), Inches(1.5), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(7.55), Inches(4.95), Inches(4.6), Inches(1.3),
-     [[("Saint-Jean-de-Chevelu (73170)", 13, True, VERT)],
-      [("Altitude 498 m · versant Sud-Est · contexte rural", 12, False, GRIS_TXT)],
-      [("Hors étude : photovoltaïque & climatisation", 11, False, GRIS_CLR, True)]], line_spacing=1.2)
-notes(s, "Le bâtiment est une ancienne ferme savoyarde de la fin du XIXe, réhabilitée dans les années 90. "
-         "99 m² chauffés sur deux niveaux, sous des combles perdus accessibles par une échelle. À l'Est, une partie non chauffée "
-         "sert de garage. La signature du bâti : des murs en pierre calcaire de 50 cm — forte inertie mais aucune isolation. "
-         "Tout l'enjeu sera d'isoler sans dénaturer la ferme et en respectant la perspirance des murs. "
-         "Le sujet exclut le photovoltaïque et la climatisation.")
+s = add_slide(); header(s, "1", "Analyse de la situation", "Le batiment et le foyer")
+bullets(s, Inches(0.9), Inches(1.7), Inches(6.0), Inches(3.0), [
+    ("Ancienne ferme ","fin XIXe s., rehabilitee dans les annees 1990"),
+    ("99 m2 habitables chauffes ","sur 2 niveaux, sous combles perdus"),
+    ("Partie non chauffee ","a l'Est : garage / debarras"),
+    ("Murs en pierre calcaire 50 cm ","-> forte inertie, patrimoine local"),
+    ("Versant Sud-Est, 498 m, rural ","-> apports solaires d'hiver favorables"),
+], size=14, gap=Pt(9))
+picture(s, IMG["facade2"], Inches(7.3), Inches(1.7), Inches(5.1), Inches(2.6),
+        caption="Facade de la maison")
+# profil foyer (moyens du MOA - grille coef 1)
+box(s, Inches(0.9), Inches(4.95), Inches(11.5), Inches(1.5), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(5.05), Inches(11), Inches(0.4), [[("Profil et moyens du maitre d'ouvrage", 14, True, VERT)]])
+text(s, Inches(1.15), Inches(5.5), Inches(11), Inches(0.9),
+     [[("Famille de 4 personnes  -  revenu ~40 000 €/an (categorie « revenus modestes »)  -  "
+        "apport personnel de 10 000 €.", 13.5, False, GRIS_TXT)],
+      [("Budget pour des travaux importants, a condition qu'ils soient justifies par les economies et soutenus par les aides.", 12.5, False, GRIS_CLR, True)]],
+     line_spacing=1.15)
+notes(s, "Le batiment est une ancienne ferme savoyarde de la fin du XIXe, 99 m2 chauffes sur deux niveaux sous combles perdus, "
+         "avec des murs en pierre de 50 cm - forte inertie mais aucune isolation. Cote foyer, element essentiel pour les aides : "
+         "une famille de 4 personnes, un revenu d'environ 40 000 euros par an - ce qui les place en categorie 'revenus modestes' "
+         "au sens de l'Anah - et un apport personnel de 10 000 euros. Ils ont un budget pour des travaux importants, "
+         "mais veulent qu'ils soient justifies par les economies et bien aides. Orientation Sud-Est : un atout pour les apports solaires d'hiver.")
 
 # ===========================================================================
-# 4 — PLANS & COUPE (descriptif coef 3)
+# 4 - PLANS & COUPE
 # ===========================================================================
-s = add_slide(); header(s, "1", "Le bâtiment en plans", "Organisation des espaces et coupe")
-picture(s, IMG["plan_rdc"], Inches(0.7), Inches(1.65), Inches(4.1), Inches(3.4), caption="Plan RDC — pièces de vie")
-picture(s, IMG["plan_etage"], Inches(4.9), Inches(1.65), Inches(4.0), Inches(3.4), caption="Plan R+1 — espaces de nuit")
-picture(s, IMG["coupe"], Inches(9.0), Inches(1.65), Inches(3.6), Inches(3.4), caption="Coupe sur la zone chauffée")
+s = add_slide(); header(s, "1", "Le batiment en plans", "Organisation des espaces et coupe")
+picture(s, IMG["plan_rdc"], Inches(0.7), Inches(1.65), Inches(4.1), Inches(3.4), caption="Plan RDC - pieces de vie")
+picture(s, IMG["plan_etage"], Inches(4.9), Inches(1.65), Inches(4.0), Inches(3.4), caption="Plan R+1 - espaces de nuit")
+picture(s, IMG["coupe"], Inches(9.0), Inches(1.65), Inches(3.6), Inches(3.4), caption="Coupe sur la zone chauffee")
 box(s, Inches(0.7), Inches(5.55), Inches(11.9), Inches(1.05), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, Inches(0.95), Inches(5.65), Inches(11.4), Inches(0.85),
      [[("Lecture : ", 13, True, VERT),
-       ("RDC = pièces de vie, R+1 = chambres. Les combles perdus non chauffés surplombent l’étage : "
-        "cette interface favorise les déperditions par la toiture, confirmées plus loin.", 13, False, GRIS_TXT)]],
+       ("RDC = pieces de vie, R+1 = chambres. Les combles perdus non chauffes surplombent l'etage : "
+        "cette interface favorise les deperditions par la toiture, confirmees plus loin.", 13, False, GRIS_TXT)]],
      anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Je m'appuie sur les plans et la coupe fournis. Le rez-de-chaussée regroupe les pièces de vie — cuisine, salon, "
-         "salle de bain — et l'étage les chambres. La coupe montre bien les combles perdus non chauffés au-dessus de l'étage, "
-         "ce qui crée une interface déperditive importante. À noter : les plans portent encore les anciennes menuiseries de 1990, "
-         "mais elles ont été remplacées en 2019 par du double vitrage bois posé en tunnel.")
+notes(s, "Je m'appuie sur les plans et la coupe fournis. Le RDC regroupe les pieces de vie, l'etage les chambres. "
+         "La coupe montre les combles perdus non chauffes au-dessus de l'etage, une interface tres deperditive. "
+         "A noter : les plans portent encore les anciennes menuiseries de 1990, mais elles ont ete remplacees en 2019 "
+         "par du double vitrage bois pose en tunnel.")
 
 # ===========================================================================
-# 5 — OBJECTIFS & ATTENTES MOA
+# 5 - BIOCLIMATIQUE
 # ===========================================================================
-s = add_slide(); header(s, "1", "Objectifs et attentes du maître d’ouvrage")
-text(s, Inches(0.9), Inches(2.15), Inches(5.6), Inches(0.4), [[("Besoins & objectifs", 16, True, VERT)]])
-bullets(s, Inches(0.9), Inches(2.65), Inches(5.6), Inches(4), [
-    "Réduire les dépenses énergétiques",
-    "Confort d’hiver (supprimer parois froides)",
-    "Confort d’été (surchauffe sous toiture)",
-    "Remplacer à terme la chaudière fioul",
-    "Réduire les émissions de gaz à effet de serre",
+s = add_slide(); header(s, "1", "Analyse bioclimatique du site")
+picture(s, IMG["carte"], Inches(0.9), Inches(1.8), Inches(4.6), Inches(3.1), caption="Localisation - versant Sud-Est")
+picture(s, IMG["masque"], Inches(5.8), Inches(1.8), Inches(4.6), Inches(3.1), caption="Diagramme de masque solaire lointain")
+bullets(s, Inches(10.6), Inches(1.9), Inches(2.3), Inches(3.0), [
+    "Altitude 498 m",
+    "Orientation Sud-Est",
+    "Contexte rural",
+    "Masque lointain (relief)",
+    "Solaire d'hiver favorable",
+], size=12, gap=Pt(9))
+box(s, Inches(0.9), Inches(5.3), Inches(11.5), Inches(1.3), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(5.4), Inches(11.1), Inches(1.1),
+     [[("Atout : ", 13, True, VERT), ("l'orientation Sud-Est favorise les apports solaires gratuits en hiver. ", 13, False, GRIS_TXT)],
+      [("Vigilance : ", 13, True, ORANGE), ("ces apports peuvent provoquer des surchauffes l'ete -> isolants dephasants + gestion des volets.", 13, False, GRIS_TXT)]],
+     line_spacing=1.2)
+notes(s, "L'analyse bioclimatique : le batiment est sur un versant Sud-Est a 498 m, en milieu rural. "
+         "Le diagramme de masque montre un masque lointain - le relief - qui limite un peu les apports a certaines heures, "
+         "mais l'exposition reste bonne. L'orientation Sud-Est est un atout : apports solaires gratuits en hiver. "
+         "Le revers : un risque de surchauffe estivale, que je traite par des isolants dephasants et la gestion des volets.")
+
+# ===========================================================================
+# 6 - OBJECTIFS & ATTENTES
+# ===========================================================================
+s = add_slide(); header(s, "1", "Objectifs et attentes du maitre d'ouvrage")
+text(s, Inches(0.9), Inches(2.1), Inches(5.6), Inches(0.4), [[("Besoins & objectifs", 16, True, VERT)]])
+bullets(s, Inches(0.9), Inches(2.6), Inches(5.6), Inches(4), [
+    "Reduire les depenses energetiques",
+    "Confort d'hiver (supprimer parois froides)",
+    "Confort d'ete (surchauffe sous toiture)",
+    "Remplacer a terme la chaudiere fioul",
+    "Reduire les emissions de CO2",
     "Valoriser le patrimoine immobilier",
 ], size=14, gap=Pt(9))
-text(s, Inches(6.9), Inches(2.15), Inches(5.6), Inches(0.4), [[("Moyens & contraintes", 16, True, VERT)]])
-bullets(s, Inches(6.9), Inches(2.65), Inches(5.6), Inches(4), [
-    "Budget pour des travaux importants…",
-    "… investissements justifiés par les économies",
-    "Conserver le caractère de la ferme",
+text(s, Inches(6.9), Inches(2.1), Inches(5.6), Inches(0.4), [[("Moyens & contraintes", 16, True, VERT)]])
+bullets(s, Inches(6.9), Inches(2.6), Inches(5.6), Inches(4), [
+    "Budget + apport 10 000 €, foyer modeste",
+    "Investissements justifies par les economies",
+    "Conserver le caractere de la ferme",
     "Solutions compatibles avec les murs en pierre",
-    "Limiter les risques liés à l’humidité",
-    "Mobiliser les aides financières",
+    "Limiter les risques lies a l'humidite",
+    "Mobiliser un maximum d'aides",
 ], size=14, gap=Pt(9), marker_color=ORANGE)
-text(s, Inches(0.9), Inches(1.65), Inches(11.4), Inches(0.4),
-     [[("Recueil réalisé lors de la rencontre avec le maître d’ouvrage occupant.", 14, False, GRIS_TXT, True)]])
-notes(s, "J'ai recueilli les attentes lors de la rencontre avec le maître d'ouvrage. Ses objectifs : baisser ses factures, "
-         "gagner en confort hiver comme été, sortir du fioul et réduire son empreinte carbone, tout en valorisant son bien. "
-         "Côté moyens : il a un budget pour des travaux conséquents mais veut qu'ils soient justifiés par les économies. "
-         "Ses contraintes orientent fortement le projet : préserver le cachet de la ferme, respecter les murs en pierre "
-         "et gérer l'humidité — ce qui pointe vers une isolation par l'extérieur perspirante.")
+text(s, Inches(0.9), Inches(1.6), Inches(11.4), Inches(0.4),
+     [[("Recueil realise lors de la rencontre avec le maitre d'ouvrage occupant.", 14, False, GRIS_TXT, True)]])
+notes(s, "Lors de la rencontre, j'ai recueilli ses objectifs : baisser ses factures, gagner en confort hiver comme ete, "
+         "sortir du fioul, reduire son empreinte carbone et valoriser son bien. Cote moyens : un budget complete par un apport "
+         "de 10 000 euros, mais un foyer modeste qui veut des investissements justifies par les economies et bien aides. "
+         "Ses contraintes orientent le projet : preserver le cachet de la ferme, respecter les murs en pierre et gerer l'humidite - "
+         "d'ou une isolation par l'exterieur perspirante.")
 
 # ===========================================================================
-# 6 — OBJECTIFS DE CONFORT (tableau)
+# 7 - CONFORT
 # ===========================================================================
-s = add_slide(); header(s, "1", "Objectifs de confort à atteindre")
-make_table(s, Inches(0.9), Inches(1.75), Inches(11.5), [
-    ["Type de confort","Situation actuelle","Amélioration visée"],
-    ["Confort d’hiver","Parois froides, écarts entre pièces","Températures homogènes (isolation + régulation)"],
-    ["Confort d’été","Surchauffe sous toiture","Déphasage des isolants biosourcés"],
-    ["Qualité de l’air","Ventilation naturelle non maîtrisée","Renouvellement d’air contrôlé (VMC hygro B)"],
-    ["Confort visuel","Halogènes énergivores (25 %)","Éclairage 100 % LED, apports de lumière naturelle"],
-    ["Confort acoustique","Isolation phonique limitée","Atténuation des bruits extérieurs (ITE)"],
-    ["Confort / sanitaire","Chauffage peu régulé, condensation","Régulation fine, réduction de l’humidité"],
+s = add_slide(); header(s, "1", "Objectifs de confort a atteindre")
+make_table(s, Inches(0.9), Inches(1.75), [
+    ["Type de confort","Situation actuelle","Amelioration visee"],
+    ["Confort d'hiver","Parois froides, ecarts entre pieces","Temperatures homogenes (isolation + regulation)"],
+    ["Confort d'ete","Surchauffe sous toiture","Dephasage des isolants biosources"],
+    ["Qualite de l'air","Ventilation naturelle non maitrisee","Renouvellement d'air controle (VMC hygro B)"],
+    ["Confort visuel","Halogenes energivores (25 %)","Eclairage 100 % LED + lumiere naturelle"],
+    ["Confort acoustique","Isolation phonique limitee","Attenuation des bruits exterieurs (ITE)"],
+    ["Confort sanitaire","Risque de condensation","Regulation fine, reduction de l'humidite"],
 ], [Inches(2.3), Inches(4.4), Inches(4.8)], row_h=Inches(0.62), header_size=13, body_size=12, first_col_bold=True)
 text(s, Inches(0.9), Inches(6.55), Inches(11.4), Inches(0.5),
-     [[("Aucun besoin d’accessibilité / PMR identifié dans cette étude.", 12, False, GRIS_CLR, True)]])
-notes(s, "Au-delà des économies, j'ai formulé des objectifs de confort sur les quatre dimensions attendues : "
-         "thermique d'hiver, thermique d'été, qualité de l'air et confort visuel. "
-         "Hiver : fin des parois froides grâce à l'isolation et à une meilleure régulation. Été : déphasage des isolants biosourcés. "
-         "Air : VMC hygroréglable. Visuel : passage en tout LED et valorisation de la lumière naturelle. "
-         "J'ajoute l'acoustique, améliorée par l'isolation extérieure. Enfin, aucun besoin d'accessibilité PMR n'a été identifié, "
-         "mais je l'ai bien vérifié comme le demande la méthode.")
+     [[("Aucun besoin d'accessibilite / PMR identifie dans cette etude.", 12, False, GRIS_CLR, True)]])
+notes(s, "J'ai formule des objectifs de confort sur les quatre dimensions attendues : thermique d'hiver, thermique d'ete, "
+         "qualite de l'air et confort visuel. Hiver : fin des parois froides via isolation et regulation. Ete : dephasage des isolants. "
+         "Air : VMC hygro B. Visuel : tout LED et valorisation de la lumiere naturelle. J'ajoute l'acoustique, amelioree par l'ITE. "
+         "Enfin, j'ai verifie qu'aucun besoin d'accessibilite PMR n'etait a prevoir.")
 
 # ===========================================================================
-# 7 — ANALYSE BIOCLIMATIQUE
+# 8 - CONSOMMATIONS
 # ===========================================================================
-s = add_slide(); header(s, "2", "Analyse bioclimatique du site", "Implantation, orientation et masque solaire")
-picture(s, IMG["carte"], Inches(0.8), Inches(1.7), Inches(4.0), Inches(2.7), caption="Localisation — versant Sud-Est")
-picture(s, IMG["masque"], Inches(5.0), Inches(1.7), Inches(4.2), Inches(2.7), caption="Diagramme de masque solaire lointain")
-make_table(s, Inches(9.5), Inches(1.7), Inches(3.0), [
-    ["Caractéristique","Valeur"],
-    ["Altitude","498 m"],
-    ["Orientation","Sud-Est"],
-    ["Environnement","Rural"],
-    ["Masque","Lointain présent"],
-    ["Potentiel solaire","Hivernal favorable"],
-], [Inches(1.7), Inches(1.3)], row_h=Inches(0.45), header_size=11, body_size=11)
-box(s, Inches(0.8), Inches(4.9), Inches(11.7), Inches(1.4), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(1.05), Inches(5.0), Inches(11.2), Inches(1.2),
-     [[("Atout : ", 13, True, VERT),
-       ("l’orientation Sud-Est favorise les apports solaires d’hiver (gains gratuits, confort). ", 13, False, GRIS_TXT)],
-      [("Vigilance : ", 13, True, ORANGE),
-       ("ces mêmes apports peuvent provoquer des surchauffes l’été → d’où le choix d’isolants déphasants et la fermeture des volets.", 13, False, GRIS_TXT)]],
-     line_spacing=1.2)
-notes(s, "L'analyse bioclimatique étudie comment le bâtiment tire parti de son environnement. "
-         "Il est implanté sur un versant orienté Sud-Est à 498 m d'altitude, en contexte rural. "
-         "Le diagramme de masque solaire montre un masque lointain — le relief — qui limite un peu les apports à certaines heures, "
-         "mais l'exposition reste globalement bonne. L'orientation Sud-Est est un vrai atout : apports solaires gratuits en hiver. "
-         "Le revers : un risque de surchauffe estivale, que je traite par des isolants déphasants et la gestion des volets.")
-
-# ===========================================================================
-# 8 — CONSOMMATIONS RELEVÉES
-# ===========================================================================
-s = add_slide(); header(s, "2", "Analyse des consommations", "Relevés des factures sur 5 ans")
-kpi(s, Inches(0.9), Inches(1.7), Inches(3.6), Inches(1.45), "1 560 L/an", "Fioul (moy.) — chauffage principal", accent=ORANGE)
-kpi(s, Inches(4.7), Inches(1.7), Inches(3.6), Inches(1.45), "6 stères/an", "Bois bûche — poêle d’appoint", accent=VERT_CLR)
-kpi(s, Inches(8.5), Inches(1.7), Inches(3.6), Inches(1.45), "5 447 kWh/an", "Électricité — ECS, éclairage, usages", accent=BLEU)
+s = add_slide(); header(s, "2", "Analyse des consommations", "Factures sur 5 ans")
+kpi(s, Inches(0.9), Inches(1.65), Inches(3.6), Inches(1.35), "1 560 L/an", "Fioul (moy.) - chauffage", accent=ORANGE)
+kpi(s, Inches(4.7), Inches(1.65), Inches(3.6), Inches(1.35), "6 steres/an", "Bois - poele d'appoint", accent=VERT_CLR)
+kpi(s, Inches(8.5), Inches(1.65), Inches(3.6), Inches(1.35), "5 447 kWh/an", "Electricite - ECS, usages", accent=BLEU)
 cd = CategoryChartData()
 cd.categories = ["19-20","20-21","21-22","22-23","23-24"]
 cd.add_series("Fioul (L)", (1500,1800,1700,1400,1400))
-cd.add_series("Électricité (kWh)", (5552,5679,5334,5207,5461))
-gf = s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED, Inches(0.9), Inches(3.45), Inches(7.0), Inches(3.15), cd)
-ch = gf.chart; ch.has_title = True; ch.chart_title.text_frame.text = "Évolution des consommations facturées"
+cd.add_series("Electricite (kWh)", (5552,5679,5334,5207,5461))
+gf = s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED, Inches(0.9), Inches(3.25), Inches(7.0), Inches(2.7), cd)
+ch = gf.chart; ch.has_title = True; ch.chart_title.text_frame.text = "Evolution des consommations facturees"
 ch.chart_title.text_frame.paragraphs[0].font.size = Pt(12)
 ch.has_legend = True; ch.legend.position = XL_LEGEND_POSITION.BOTTOM; ch.legend.include_in_layout = False; ch.legend.font.size = Pt(9)
 ch.plots[0].series[0].format.fill.solid(); ch.plots[0].series[0].format.fill.fore_color.rgb = ORANGE
 ch.plots[0].series[1].format.fill.solid(); ch.plots[0].series[1].format.fill.fore_color.rgb = BLEU
-box(s, Inches(8.3), Inches(3.45), Inches(4.0), Inches(3.15), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(8.55), Inches(3.55), Inches(3.5), Inches(0.4), [[("Lecture", 14, True, VERT)]])
-bullets(s, Inches(8.55), Inches(4.0), Inches(3.6), Inches(2.5), [
-    "Forte dépendance au fioul (chaudière 1991)",
-    "Conso stable malgré la météo",
-    "Cause : enveloppe peu performante",
-    "ECS électrique = poste élec majeur",
+box(s, Inches(8.3), Inches(3.25), Inches(4.1), Inches(2.7), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(8.55), Inches(3.35), Inches(3.6), Inches(0.4), [[("Lecture", 13, True, VERT)]])
+bullets(s, Inches(8.55), Inches(3.8), Inches(3.6), Inches(2.1), [
+    "Chauffage ~80 % de la depense",
+    "Forte dependance au fioul (1991)",
+    "ECS electrique = poste elec majeur",
 ], size=12, gap=Pt(7))
-notes(s, "J'ai analysé les factures sur 5 ans, soit bien plus que les 3 ans minimum attendus. "
-         "Chauffage : chaudière fioul de 1991 + poêle à bois en appoint. Moyennes : 1 560 L de fioul, 6 stères de bois, "
-         "5 447 kWh d'électricité dont l'eau chaude par ballon électrique. Les consommations sont stables d'une année sur l'autre, "
-         "signe d'un usage régulier ; le niveau élevé pour 99 m² trahit une enveloppe défaillante. "
-         "C'est ce constat qui m'amène à comparer ces consommations aux références.")
+# bande perspective
+box(s, Inches(0.9), Inches(6.05), Inches(11.5), Inches(0.95), fill=RGBColor(0xFF,0xF3,0xE0), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(6.12), Inches(11.0), Inches(0.8),
+     [[("Mise en perspective : ", 12.5, True, ORANGE),
+       ("rigueur climatique integree (Savoie, 498 m, zone H1) ; coherence factures / DPE verifiee ; "
+        "535 vs ~250 kWhEP/m2.an en moyenne nationale -> plus du double.", 12.5, False, GRIS_TXT)]],
+     anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "J'ai analyse les factures sur 5 ans, au-dela des 3 ans minimum attendus. Chauffage : chaudiere fioul de 1991 + poele bois. "
+         "Moyennes : 1 560 L de fioul, 6 steres, 5 447 kWh d'electricite dont l'ECS. Le chauffage pese environ 80 % de la depense. "
+         "J'ai integre la rigueur climatique - zone H1, 498 m, donc des besoins eleves - verifie la coherence entre factures et DPE, "
+         "et compare a la moyenne nationale : 535 contre environ 250 kWh primaire au m2, soit plus du double. Une vraie passoire thermique.")
 
 # ===========================================================================
-# 9 — COMPARAISON / RIGUEUR CLIMATIQUE / RÉPARTITION (coef 2-3)
+# 9 - ENVELOPPE
 # ===========================================================================
-s = add_slide(); header(s, "2", "Postes de dépense & mise en perspective")
-# camembert répartition des postes (final energy approx)
-cd = CategoryChartData()
-cd.categories = ["Chauffage (fioul+bois)","ECS (ballon élec.)","Électricité spécifique"]
-cd.add_series("Postes", (78, 9, 13))
-gf = s.shapes.add_chart(XL_CHART_TYPE.PIE, Inches(0.6), Inches(1.7), Inches(5.6), Inches(4.6), cd)
-ch = gf.chart; ch.has_title = True; ch.chart_title.text_frame.text = "Répartition des postes de dépense"
-ch.chart_title.text_frame.paragraphs[0].font.size = Pt(12)
-ch.has_legend = True; ch.legend.position = XL_LEGEND_POSITION.BOTTOM; ch.legend.include_in_layout = False; ch.legend.font.size = Pt(10)
-pl = ch.plots[0]; pl.has_data_labels = True
-pl.data_labels.show_value = True; pl.data_labels.number_format = '0"%"'; pl.data_labels.number_format_is_linked = False
-pl.data_labels.font.size = Pt(12); pl.data_labels.font.bold = True; pl.data_labels.font.color.rgb = BLANC
-pl.data_labels.position = XL_LABEL_POSITION.INSIDE_END
-for i, c in enumerate([ORANGE, BLEU, GRIS_CLR]):
-    pl.series[0].points[i].format.fill.solid(); pl.series[0].points[i].format.fill.fore_color.rgb = c
-# right column
-text(s, Inches(6.7), Inches(1.7), Inches(5.8), Inches(0.4), [[("Mise en perspective", 16, True, VERT)]])
-bullets(s, Inches(6.7), Inches(2.2), Inches(5.9), Inches(2.4), [
-    ("Rigueur climatique intégrée : ","Savoie, 498 m, zone H1 (climat froid → besoins élevés)"),
-    ("Cohérence factures / DPE : ","conso facturée en ligne avec l’estimation théorique du DPE"),
-    ("Chauffage = poste dominant : ","près de 80 % de la dépense énergétique"),
-], size=13.5, gap=Pt(11))
-box(s, Inches(6.7), Inches(4.75), Inches(5.9), Inches(1.5), fill=RGBColor(0xFF,0xF3,0xE0), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(6.95), Inches(4.9), Inches(5.4), Inches(1.3),
-     [[("Comparaison à la moyenne nationale", 13, True, ORANGE)],
-      [("535 kWhEP/m².an  vs  ≈ 250 kWhEP/m².an", 16, True, GRIS_TXT)],
-      [("→ plus du double d’une habitation moyenne", 12, False, GRIS_TXT)]], line_spacing=1.15)
-notes(s, "Je mets ces consommations en perspective, comme l'attend la méthode. D'abord la répartition par poste : "
-         "le chauffage pèse près de 80 % de la dépense, l'ECS électrique environ 10 %, le reste en électricité spécifique. "
-         "J'ai intégré la rigueur climatique : nous sommes en Savoie, à 498 m, en zone climatique H1, donc des besoins de chauffage "
-         "structurellement élevés. J'ai vérifié la cohérence entre les factures et l'estimation théorique du DPE. "
-         "Enfin, la comparaison nationale est parlante : 535 contre environ 250 kWh d'énergie primaire au m² en moyenne, "
-         "soit plus du double. Le diagnostic confirme une vraie passoire thermique.")
-
-# ===========================================================================
-# 10 — ENVELOPPE THERMIQUE
-# ===========================================================================
-s = add_slide(); header(s, "2", "Diagnostic de l’enveloppe thermique")
-make_table(s, Inches(0.9), Inches(1.7), Inches(8.0), [
-    ["Élément","Composition","Observation"],
-    ["Murs extérieurs","Pierre calcaire 50 cm","Forte inertie, faible isolation"],
-    ["Toiture / combles","8 cm laine minérale ancienne","Isolation insuffisante"],
-    ["Menuiseries","Double vitrage bois 4/16/4 Argon (2019)","Bon état, performantes"],
-    ["Plancher bas","Dalle béton sur terre-plein","Non isolé → déperditions"],
+s = add_slide(); header(s, "2", "Diagnostic de l'enveloppe thermique")
+make_table(s, Inches(0.9), Inches(1.7), [
+    ["Element","Composition","Observation"],
+    ["Murs exterieurs","Pierre calcaire 50 cm","Forte inertie, faible isolation"],
+    ["Toiture / combles","8 cm laine minerale ancienne","Isolation insuffisante"],
+    ["Menuiseries","Double vitrage bois 4/16/4 Argon (2019)","Bon etat, performantes"],
+    ["Plancher bas","Dalle beton sur terre-plein","Non isole -> deperditions"],
     ["Ponts thermiques","Jonctions des parois","Pertes importantes"],
-    ["Étanchéité à l’air","Non maîtrisée (entrées d’air)","Infiltrations parasites"],
+    ["Etancheite a l'air","Non maitrisee (entrees d'air)","Infiltrations parasites"],
 ], [Inches(2.2), Inches(3.4), Inches(2.4)], row_h=Inches(0.55), header_size=12, body_size=11.5, first_col_bold=True)
-picture(s, IMG["menuiserie"], Inches(9.2), Inches(1.7), Inches(3.2), Inches(2.7),
-        caption="Pose des menuiseries bois en tunnel (2019)")
+picture(s, IMG["menuiserie"], Inches(9.2), Inches(1.7), Inches(3.2), Inches(2.7), caption="Menuiseries bois posees en 2019")
 box(s, Inches(9.2), Inches(4.75), Inches(3.2), Inches(1.55), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, Inches(9.4), Inches(4.85), Inches(2.85), Inches(1.4),
-     [[("À retenir", 13, True, VERT)],
-      [("Fenêtres déjà rénovées →", 12, False, GRIS_TXT)],
-      [("priorité : murs + toiture", 13, True, VERT)]], line_spacing=1.15)
-notes(s, "L'enveloppe maintenant, poste par poste. Murs en pierre 50 cm : forte inertie mais pas d'isolation. "
-         "Combles : seulement 8 cm de laine minérale ancienne, très insuffisant. Menuiseries : double vitrage bois argon posé en 2019, "
-         "donc récentes et performantes, avec des grilles d'entrée d'air. Plancher sur terre-plein non isolé. "
-         "Et une étanchéité à l'air non maîtrisée, source d'infiltrations. Conclusion : comme les fenêtres sont déjà bonnes, "
-         "je concentre l'isolation sur les murs et la toiture.")
+     [[("A retenir", 13, True, VERT)], [("Fenetres deja renovees ->", 12, False, GRIS_TXT)], [("priorite : murs + toiture", 13, True, VERT)]], line_spacing=1.15)
+notes(s, "L'enveloppe poste par poste. Murs pierre 50 cm : inertie mais pas d'isolation. Combles : seulement 8 cm de laine ancienne. "
+         "Menuiseries : double vitrage bois argon de 2019, performantes. Plancher sur terre-plein non isole. Etancheite a l'air non maitrisee. "
+         "Conclusion : comme les fenetres sont deja bonnes, je concentre l'isolation sur les murs et la toiture.")
 
 # ===========================================================================
-# 11 — SYSTÈMES EXISTANTS
+# 10 - SYSTEMES
 # ===========================================================================
-s = add_slide(); header(s, "2", "Diagnostic des systèmes existants", "Chauffage, ECS et ventilation")
-make_table(s, Inches(0.9), Inches(1.7), Inches(8.2), [
-    ["Équipement","Description","Limite principale"],
-    ["Chaudière fioul","Basse température, 1991","Ancienne, fossile, sans sonde extérieure"],
-    ["Radiateurs fonte","Haute T°, sans robinet thermo.","Régulation pièce par pièce absente"],
-    ["Poêle à bois","Bûches 6 kW (2010)","Pas de label Flamme Verte, non étanche"],
-    ["Ballon ECS","Électrique 200 L, hors volume chauffé","Pertes thermiques, conso élec."],
-    ["Ventilation","Naturelle (pas de VMC)","Débits non maîtrisés, pertes"],
+s = add_slide(); header(s, "2", "Diagnostic des systemes existants", "Chauffage, ECS, ventilation")
+make_table(s, Inches(0.9), Inches(1.7), [
+    ["Equipement","Description","Limite principale"],
+    ["Chaudiere fioul","Basse temperature, 1991","Ancienne, fossile, sans sonde exterieure"],
+    ["Radiateurs fonte","Haute T, sans robinet thermo.","Pas de regulation piece par piece"],
+    ["Poele a bois","Buches 6 kW (2010)","Pas de label Flamme Verte, non etanche"],
+    ["Ballon ECS","Electrique 200 L, hors volume chauffe","Pertes thermiques, conso elec."],
+    ["Ventilation","Naturelle (pas de VMC)","Debits non maitrises, pertes"],
 ], [Inches(2.2), Inches(3.5), Inches(2.5)], row_h=Inches(0.58), header_size=12, body_size=11.5, first_col_bold=True)
-picture(s, IMG["chaudiere"], Inches(9.4), Inches(1.7), Inches(1.45), Inches(2.55), caption="Chaudière fioul (1991)")
+picture(s, IMG["chaudiere"], Inches(9.4), Inches(1.7), Inches(1.45), Inches(2.55), caption="Chaudiere fioul (1991)")
 picture(s, IMG["ballon"], Inches(11.0), Inches(1.7), Inches(1.45), Inches(2.55), caption="Ballon ECS")
 box(s, Inches(0.9), Inches(5.45), Inches(11.5), Inches(0.95), fill=RGBColor(0xFF,0xF3,0xE0), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, Inches(1.15), Inches(5.55), Inches(11.0), Inches(0.75),
-     [[("Constat : ", 13, True, ORANGE),
-       ("équipements vieillissants, régulation rudimentaire et absence de VMC → leviers majeurs d’économies.", 13, False, GRIS_TXT)]],
+     [[("Constat : ", 13, True, ORANGE), ("equipements vieillissants, regulation rudimentaire, absence de VMC -> leviers majeurs d'economies.", 13, False, GRIS_TXT)]],
      anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Les systèmes : chaudière fioul de 1991, sans sonde extérieure ni régulation climatique, alimentant des radiateurs fonte "
-         "haute température dépourvus de robinets thermostatiques — donc impossible d'ajuster pièce par pièce. "
-         "Le poêle à bois de 6 kW aide en appoint mais n'est ni labellisé ni étanche. L'eau chaude vient d'un vieux ballon électrique "
-         "de 200 L placé hors volume chauffé, ce qui génère des pertes. Et toujours aucune VMC. "
-         "Ces trois points — chauffage, régulation, ventilation — sont mes principaux leviers d'économies.")
+notes(s, "Les systemes : chaudiere fioul de 1991 sans sonde exterieure, alimentant des radiateurs fonte haute temperature sans robinets "
+         "thermostatiques - donc pas de reglage piece par piece. Poele bois 6 kW non labellise. ECS par vieux ballon electrique hors volume "
+         "chauffe, source de pertes. Aucune VMC. Ces trois points - chauffage, regulation, ventilation - sont mes principaux leviers.")
 
 # ===========================================================================
-# 12 — ÉCLAIRAGE, QAI & ACOUSTIQUE (coef 1+1+1)
+# 11 - ECLAIRAGE / QAI / ACOUSTIQUE
 # ===========================================================================
-s = add_slide(); header(s, "2", "Éclairage, qualité de l’air & acoustique")
-# trois cartes
+s = add_slide(); header(s, "2", "Eclairage, qualite de l'air & acoustique")
 def carte(s, l, t, titre, lignes, accent):
-    box(s, l, t, Inches(3.7), Inches(4.2), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+    box(s, l, t, Inches(3.7), Inches(4.3), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
     box(s, l, t, Inches(3.7), Inches(0.6), fill=accent, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
     text(s, l, t, Inches(3.7), Inches(0.6), [[(titre, 15, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    bullets(s, l + Inches(0.2), t + Inches(0.8), Inches(3.35), Inches(3.3), lignes, size=12.5, gap=Pt(8))
-carte(s, Inches(0.9), Inches(1.75), "Éclairage / confort visuel", [
-    ("Existant : ","25 % halogènes + 75 % LED, 200 W installés"),
-    ("Proposé : ","passage 100 % LED basse conso"),
-    ("Valoriser ","la lumière naturelle (orientation SE)"),
+    bullets(s, l + Inches(0.2), t + Inches(0.8), Inches(3.35), Inches(3.4), lignes, size=12.5, gap=Pt(8))
+carte(s, Inches(0.9), Inches(1.7), "Eclairage / confort visuel", [
+    ("Existant : ","25 % halogenes + 75 % LED, 200 W"),
+    ("Propose : ","passage 100 % LED basse conso"),
+    ("Valoriser ","la lumiere naturelle (Sud-Est)"),
 ], ORANGE)
-carte(s, Inches(4.8), Inches(1.75), "Qualité de l’air (QAI)", [
-    ("Existant : ","ventilation naturelle, débits non maîtrisés"),
-    ("Risques : ","humidité, condensation, polluants"),
-    ("Proposé : ","VMC hygroréglable de type B"),
+carte(s, Inches(4.8), Inches(1.7), "Qualite de l'air (QAI)", [
+    ("Existant : ","ventilation naturelle, debits non maitrises"),
+    ("Risques : ","humidite, condensation, polluants"),
+    ("Propose : ","VMC hygroreglable de type B"),
 ], VERT_CLR)
-carte(s, Inches(8.7), Inches(1.75), "Confort acoustique", [
-    ("Sources : ","bruits extérieurs (route, voisinage)"),
-    ("Existant : ","isolation phonique limitée"),
-    ("Proposé : ","l’ITE améliore aussi l’affaiblissement acoustique"),
+carte(s, Inches(8.7), Inches(1.7), "Confort acoustique", [
+    ("Sources : ","bruits exterieurs (route, voisinage)"),
+    ("Existant : ","isolation phonique limitee"),
+    ("Propose : ","l'ITE ameliore aussi l'acoustique"),
 ], BLEU)
-notes(s, "Trois confforts souvent oubliés mais notés. L'éclairage : aujourd'hui 25 % d'halogènes énergivores et 75 % de LED, "
-         "200 W installés ; je préconise le passage en 100 % LED et la valorisation de la lumière naturelle grâce à l'orientation Sud-Est. "
-         "La qualité de l'air : la ventilation naturelle ne maîtrise pas les débits et favorise l'humidité ; je propose une VMC hygro B. "
-         "L'acoustique : les bruits extérieurs sont mal filtrés ; or l'isolation par l'extérieur améliore aussi l'affaiblissement acoustique — "
-         "un bénéfice complémentaire des travaux d'enveloppe.")
+notes(s, "Trois conforts souvent oublies mais notes. Eclairage : 25 % d'halogenes energivores, 75 % de LED, 200 W ; je preconise le tout LED "
+         "et la lumiere naturelle. QAI : la ventilation naturelle ne maitrise pas les debits et favorise l'humidite ; je propose une VMC hygro B. "
+         "Acoustique : les bruits exterieurs sont mal filtres, or l'isolation par l'exterieur ameliore aussi l'affaiblissement acoustique.")
 
 # ===========================================================================
-# 13 — BILAN DES DÉPERDITIONS
+# 12 - DEPERDITIONS + DPE EXISTANT (merged)
 # ===========================================================================
-s = add_slide(); header(s, "3", "Bilan des déperditions thermiques", "Calcul thermique de l’existant")
+s = add_slide(); header(s, "3", "Deperditions & DPE de l'existant", "Calcul thermique : ou part la chaleur")
 cd = CategoryChartData()
-cd.categories = ["Murs extérieurs","Toiture","Ventilation","Ponts thermiques","Fenêtres","Plancher bas"]
-cd.add_series("Déperditions", (42,20,20,10,4,4))
-gf = s.shapes.add_chart(XL_CHART_TYPE.PIE, Inches(0.7), Inches(1.7), Inches(6.3), Inches(4.85), cd)
+cd.categories = ["Murs","Toiture","Ventilation","Ponts therm.","Fenetres","Plancher"]
+cd.add_series("Deperditions", (42,20,20,10,4,4))
+gf = s.shapes.add_chart(XL_CHART_TYPE.PIE, Inches(0.5), Inches(1.7), Inches(5.6), Inches(4.6), cd)
 ch = gf.chart; ch.has_title = False
-ch.has_legend = True; ch.legend.position = XL_LEGEND_POSITION.RIGHT; ch.legend.include_in_layout = False; ch.legend.font.size = Pt(11)
+ch.has_legend = True; ch.legend.position = XL_LEGEND_POSITION.RIGHT; ch.legend.include_in_layout = False; ch.legend.font.size = Pt(10)
 pl = ch.plots[0]; pl.has_data_labels = True
 pl.data_labels.show_value = True; pl.data_labels.number_format = '0"%"'; pl.data_labels.number_format_is_linked = False
 pl.data_labels.font.size = Pt(11); pl.data_labels.font.bold = True; pl.data_labels.font.color.rgb = BLANC
 pl.data_labels.position = XL_LABEL_POSITION.INSIDE_END
 for i, c in enumerate([ROUGE, ORANGE, BLEU, RGBColor(0x8E,0x24,0xAA), VERT_CLR, GRIS_CLR]):
     pl.series[0].points[i].format.fill.solid(); pl.series[0].points[i].format.fill.fore_color.rgb = c
-text(s, Inches(7.5), Inches(1.7), Inches(5), Inches(0.4), [[("Indicateurs techniques", 15, True, VERT)]])
-make_table(s, Inches(7.5), Inches(2.2), Inches(4.9), [
+# DPE existant a droite
+dpe_label(s, Inches(6.7), Inches(1.7), "G", "Energie", scale_h=Inches(0.32), base_w=Inches(0.55), step=Inches(0.16), letter_size=12, label_size=12)
+dpe_label(s, Inches(8.9), Inches(1.7), "G", "Climat", scale_h=Inches(0.32), base_w=Inches(0.55), step=Inches(0.16), letter_size=12, label_size=12)
+make_table(s, Inches(10.6), Inches(1.95), [
     ["Indicateur","Valeur"],
-    ["Surface déperditive","232,91 m²"],
-    ["Coefficient Ubât","2,03 W/(m².K)"],
-    ["Ubât de référence","0,47 W/(m².K)"],
-    ["Coefficient GV","722 W/K"],
-    ["Puissance de chauffage","21,3 kW"],
-], [Inches(2.9), Inches(2.0)], row_h=Inches(0.47), header_size=12, body_size=12)
-text(s, Inches(7.5), Inches(5.5), Inches(4.9), Inches(1.0),
-     [[("Ubât ≈ 4× la référence : l’enveloppe est le vrai problème.", 13, True, ROUGE)]])
-notes(s, "Voici le cœur du diagnostic : le calcul des déperditions. 42 % partent par les murs, 20 % par la toiture, "
-         "20 % par la ventilation, 10 % par les ponts thermiques, et seulement 4 % chacun pour fenêtres et plancher. "
-         "L'indicateur clé : un Ubât de 2,03 contre une référence de 0,47, soit près de quatre fois trop. "
-         "La puissance de chauffage nécessaire est de 21,3 kW. Ce calcul justifie directement mes priorités : "
-         "murs, toiture et ventilation, qui cumulent plus de 80 % des pertes.")
+    ["Conso","535 kWhEP/m2"],
+    ["CO2","156 kg/m2"],
+    ["Cout/an","7 100-9 610 €"],
+    ["Ubat","2,03 W/m2K"],
+    ["P. chauff.","21,3 kW"],
+], [Inches(1.0), Inches(1.6)], row_h=Inches(0.42), header_size=10.5, body_size=10.5)
+box(s, Inches(6.7), Inches(4.5), Inches(5.9), Inches(1.8), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(6.95), Inches(4.62), Inches(5.5), Inches(1.6),
+     [[("Diagnostic : classe G / G", 15, True, ROUGE)],
+      [("Murs + toiture + ventilation = plus de 80 % des pertes.", 12.5, False, GRIS_TXT)],
+      [("Ubat ~4x la reference (0,47) : l'enveloppe est le 1er probleme.", 12.5, False, GRIS_TXT)],
+      [("-> renovation performante pleinement justifiee.", 12.5, True, VERT)]], line_spacing=1.12)
+notes(s, "Le coeur du diagnostic. A gauche, le calcul des deperditions : 42 % par les murs, 20 % toiture, 20 % ventilation, "
+         "10 % ponts thermiques, 4 % fenetres et plancher. A droite, le DPE : classe G sur les deux axes - 535 kWh primaire au m2, "
+         "156 kg de CO2, facture de 7 100 a 9 610 euros par an. Le Ubat de 2,03 vaut environ quatre fois la reference. "
+         "Murs, toiture et ventilation cumulent plus de 80 % des pertes : c'est ce qui guide mes priorites de travaux.")
 
 # ===========================================================================
-# 14 — DPE EXISTANT
+# 13 - SCENARIO 1 (D)
 # ===========================================================================
-s = add_slide(); header(s, "3", "Étiquette DPE de l’existant", "Un logement très énergivore")
-dpe_label(s, Inches(1.0), Inches(1.7), "G", "Classe énergie")
-dpe_label(s, Inches(4.6), Inches(1.7), "G", "Classe climat (GES)")
-kpi(s, Inches(8.2), Inches(1.85), Inches(4.1), Inches(1.15), "535 kWhEP/m².an", "Consommation énergétique", accent=ROUGE, val_size=21)
-kpi(s, Inches(8.2), Inches(3.12), Inches(4.1), Inches(1.15), "156 kgCO₂/m².an", "Émissions de GES", accent=ROUGE, val_size=21)
-kpi(s, Inches(8.2), Inches(4.39), Inches(4.1), Inches(1.15), "7 100 – 9 610 €/an", "Coût énergétique annuel", accent=ROUGE, val_size=21)
-text(s, Inches(0.9), Inches(6.45), Inches(11.4), Inches(0.6),
-     [[("→ Classe G sur les deux étiquettes : la rénovation performante est pleinement justifiée.", 15, True, VERT)]])
-notes(s, "Tout converge vers le DPE. Le logement est classé G — la pire classe — en énergie comme en climat. "
-         "535 kWh d'énergie primaire par m², 156 kg de CO2 par m², et une facture de 7 100 à 9 610 € par an. "
-         "C'est cohérent avec ce qu'on a vu : murs non isolés et chaudière fioul. Cet état des lieux justifie une rénovation ambitieuse, "
-         "ce qui m'amène à mes scénarios.")
-
-# ===========================================================================
-# 15 — RÉGLEMENTATION
-# ===========================================================================
-s = add_slide(); header(s, "4", "Réglementation et urbanisme")
-text(s, Inches(0.9), Inches(1.65), Inches(11.4), Inches(0.5),
-     [[("Les travaux respectent le cadre réglementaire et préservent le caractère de la ferme.", 15, False, GRIS_TXT, True)]])
-make_table(s, Inches(0.9), Inches(2.25), Inches(11.5), [
-    ["Élément réglementaire","Impact sur le projet"],
-    ["Plan Local d’Urbanisme (PLU)","Vérification des règles applicables"],
-    ["Isolation par l’extérieur (ITE)","Déclaration préalable de travaux"],
-    ["Modification des façades","Respect de l’aspect architectural existant"],
-    ["Rénovation performante (L.111-1 CCH)","Cadre du « bâtiment basse consommation »"],
-    ["Aides à la rénovation","Respect des critères techniques exigés"],
-    ["Normes & DTU","Mise en œuvre conforme"],
-], [Inches(5.0), Inches(6.5)], row_h=Inches(0.55), header_size=14, body_size=13, first_col_bold=True)
-notes(s, "Avant les travaux, le cadre réglementaire. L'ITE modifie l'aspect des façades : déclaration préalable en mairie et respect du PLU. "
-         "Mes scénarios s'inscrivent dans la rénovation performante au sens du code de la construction, c'est-à-dire viser le niveau BBC. "
-         "Les matériaux doivent respecter les critères techniques pour ouvrir droit aux aides, et tout est posé selon les DTU, "
-         "en préservant le caractère de la ferme.")
-
-# ===========================================================================
-# 16 — SCÉNARIO 1 : PAR ÉTAPES (B/B)
-# ===========================================================================
-s = add_slide(); header(s, "4", "Scénario 1 — Rénovation performante par étapes", "Étape 1 : l’enveloppe")
-text(s, Inches(0.9), Inches(1.6), Inches(11.4), Inches(0.4),
-     [[("1ʳᵉ étape ciblée sur l’enveloppe : elle traite 2 postes d’isolation et fait gagner plusieurs classes (G → B).", 13.5, False, GRIS_TXT, True)]])
-make_table(s, Inches(0.9), Inches(2.1), Inches(7.1), [
-    ["Poste","Solution — étape 1"],
+s = add_slide(); header(s, "4", "Scenario 1 - Renovation performante par etapes", "Etape 1 : l'enveloppe (chauffage conserve)")
+text(s, Inches(0.9), Inches(1.55), Inches(11.4), Inches(0.4),
+     [[("1re etape ciblee enveloppe : traite 2 postes d'isolation (murs + toiture) et fait gagner 3 classes (G -> D).", 13, False, GRIS_TXT, True)]])
+make_table(s, Inches(0.9), Inches(2.05), [
+    ["Poste","Solution - etape 1"],
     ["Murs","ITE laine de bois 200 mm"],
     ["Combles","Ouate de cellulose 400 mm"],
-    ["Ventilation","VMC hygroréglable type B"],
-    ["Chauffage","Fioul conservé (étape ultérieure)"],
-    ["ECS","Ballon conservé (étape ultérieure)"],
+    ["Ventilation","VMC hygroreglable type B"],
+    ["ECS","Chauffe-eau thermodynamique"],
+    ["Chauffage","Fioul conserve (etape ulterieure)"],
 ], [Inches(1.9), Inches(5.2)], row_h=Inches(0.5), header_size=13, body_size=12, first_col_bold=True)
-dpe_label(s, Inches(8.7), Inches(1.95), "B", "Énergie", scale_h=Inches(0.30), base_w=Inches(0.55), step=Inches(0.16), letter_size=12, label_size=11)
-dpe_label(s, Inches(10.9), Inches(1.95), "B", "Climat", scale_h=Inches(0.30), base_w=Inches(0.55), step=Inches(0.16), letter_size=12, label_size=11)
-box(s, Inches(0.9), Inches(5.05), Inches(11.5), Inches(1.55), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(1.15), Inches(5.15), Inches(11), Inches(0.4), [[("Avantages & cohérence des étapes", 14, True, VERT)]])
-bullets(s, Inches(1.15), Inches(5.6), Inches(5.5), Inches(1.0), [
-    "Traite les 2 premiers postes de pertes (murs + toiture)",
-    "Ne compromet pas le futur changement de chauffage",
-    "Investissement maîtrisé : ≈ 24 000 €",
-], size=12, gap=Pt(5))
-bullets(s, Inches(6.9), Inches(5.6), Inches(5.3), Inches(1.0), [
-    "Confort d’hiver et d’été améliorés",
-    "Inertie des murs en pierre conservée",
-    "Étiquette DPE : G → B / B",
-], size=12, gap=Pt(5))
-notes(s, "Mon premier scénario est une rénovation performante PAR ÉTAPES. L'étape 1 cible l'enveloppe : "
-         "isolation des murs par l'extérieur en laine de bois 200 mm, isolation des combles en ouate de cellulose 400 mm, et VMC hygro B. "
-         "C'est cohérent avec l'attendu : cette première étape traite les DEUX premiers postes d'isolation — murs et toiture — "
-         "et fait gagner plusieurs classes, de G à B. Point important : en commençant par l'isolation, on réduit les besoins, "
-         "ce qui ne compromet pas mais au contraire prépare le changement de chauffage à l'étape suivante — on pourra alors dimensionner plus petit. "
-         "Le chauffage et l'ECS sont conservés à ce stade. Investissement : environ 24 000 €.")
+dpe_label(s, Inches(8.8), Inches(1.9), "C", "Energie", scale_h=Inches(0.27), base_w=Inches(0.5), step=Inches(0.15), letter_size=11, label_size=11)
+dpe_label(s, Inches(10.8), Inches(1.9), "D", "Climat", scale_h=Inches(0.27), base_w=Inches(0.5), step=Inches(0.15), letter_size=11, label_size=11)
+dpe_badge(s, Inches(11.3), Inches(4.35), "D", w=Inches(0.9), h=Inches(0.9))
+text(s, Inches(10.5), Inches(5.3), Inches(2.5), Inches(0.3), [[("DPE resultant", 11, True, GRIS_TXT)]], align=PP_ALIGN.CENTER)
+box(s, Inches(0.9), Inches(5.0), Inches(9.3), Inches(1.6), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(5.1), Inches(9), Inches(0.4), [[("Avantages & coherence des etapes", 14, True, VERT)]])
+bullets(s, Inches(1.15), Inches(5.55), Inches(4.5), Inches(1.0), [
+    "Traite d'abord les 2 postes de pertes majeurs",
+    "Prepare et facilite le futur changement de chauffage",
+    "Investissement maitrise : ~42 500 €",
+], size=11.5, gap=Pt(4))
+bullets(s, Inches(5.8), Inches(5.55), Inches(4.3), Inches(1.0), [
+    "Confort d'hiver et d'ete ameliores",
+    "Inertie des murs en pierre conservee",
+    "Limite : le fioul plafonne le DPE a D",
+], size=11.5, gap=Pt(4))
+notes(s, "Mon premier scenario est une renovation performante PAR ETAPES. L'etape 1 cible l'enveloppe : ITE laine de bois 200 mm, "
+         "combles ouate 400 mm, VMC hygro B, et je remplace le vieux ballon par un chauffe-eau thermodynamique. La chaudiere fioul est conservee a ce stade. "
+         "C'est coherent avec l'attendu : cette etape traite les DEUX premiers postes d'isolation - murs et toiture - et fait gagner 3 classes, de G a D. "
+         "En reduisant d'abord les besoins, on prepare le changement de chauffage a l'etape suivante, qu'on pourra dimensionner plus petit. "
+         "Sa limite, et c'est important : meme bien isole, le fioul plafonne le DPE a D a cause de ses emissions de CO2. "
+         "Reglementation : l'ITE necessite une declaration prealable en mairie. Investissement : environ 42 500 euros.")
 
 # ===========================================================================
-# 17 — SCÉNARIO 2 : GLOBAL (A/B)
+# 14 - SCENARIO 2 (B)
 # ===========================================================================
-s = add_slide(); header(s, "4", "Scénario 2 — Rénovation performante globale", "Enveloppe + remplacement du chauffage")
-text(s, Inches(0.9), Inches(1.55), Inches(11.4), Inches(0.4),
-     [[("Toute l’isolation du scénario 1 + sortie du fioul. Deux solutions de chauffage comparées :", 13.5, False, GRIS_TXT, True)]])
-make_table(s, Inches(0.9), Inches(2.05), Inches(7.5), [
-    ["Critère","PAC Air/Eau","Chaudière granulés"],
-    ["Rendement","COP > 3","> 90 %"],
-    ["Émissions CO₂","Très faibles","Très faibles"],
-    ["Stockage","Aucun","Silo nécessaire"],
-    ["Radiateurs fonte (haute T°)","Moins adaptée","Très adaptée"],
-    ["Bâti ancien savoyard","Bonne","Très adaptée"],
-], [Inches(2.9), Inches(2.3), Inches(2.3)], row_h=Inches(0.5), header_size=12, body_size=11.5, first_col_bold=True)
-dpe_label(s, Inches(9.0), Inches(1.95), "A", "Énergie", scale_h=Inches(0.28), base_w=Inches(0.55), step=Inches(0.16), letter_size=12, label_size=11)
-dpe_label(s, Inches(11.1), Inches(1.95), "B", "Climat", scale_h=Inches(0.28), base_w=Inches(0.55), step=Inches(0.16), letter_size=12, label_size=11)
-box(s, Inches(0.9), Inches(5.35), Inches(7.5), Inches(1.3), fill=VERT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(1.15), Inches(5.45), Inches(7.0), Inches(1.1),
-     [[("✔ Solution retenue : chaudière à granulés 12 kW + silo", 14, True, BLANC)],
-      [("Conserve les radiateurs fonte existants · énergie renouvelable locale · approvisionnement facile en Savoie.", 11.5, False, RGBColor(0xC8,0xE6,0xC9))]], line_spacing=1.05)
-box(s, Inches(8.7), Inches(5.35), Inches(3.7), Inches(1.3), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(8.9), Inches(5.45), Inches(3.3), Inches(1.1),
-     [[("Étiquette DPE", 12, True, VERT)],
-      [("G → A / B", 22, True, DPE_COLORS["A"])],
-      [("Investissement ≈ 40 000 €", 12, False, GRIS_TXT)]], line_spacing=1.0)
-notes(s, "Mon second scénario est une rénovation performante GLOBALE : toute l'isolation du scénario 1 en une fois, "
-         "plus le remplacement du chauffage. J'ai étudié deux solutions bas carbone : la PAC air/eau et la chaudière à granulés. "
-         "Les deux ont d'excellents rendements et de faibles émissions. Je retiens la chaudière à granulés pour deux raisons décisives : "
-         "elle est compatible avec les radiateurs en fonte HAUTE température déjà en place — la PAC serait moins efficace sur de la haute température — "
-         "et le granulé est une énergie renouvelable locale, facile à approvisionner en Savoie. Résultat : étiquette A/B, pour environ 40 000 €.")
+s = add_slide(); header(s, "4", "Scenario 2 - Renovation performante globale", "Enveloppe + sortie du fioul")
+text(s, Inches(0.9), Inches(1.5), Inches(11.4), Inches(0.4),
+     [[("Toute l'isolation du scenario 1 + remplacement du fioul. Deux solutions bas carbone comparees :", 13, False, GRIS_TXT, True)]])
+make_table(s, Inches(0.9), Inches(2.0), [
+    ["Critere","PAC Air/Eau","Chaudiere granules"],
+    ["Energie primaire","Plus faible (elec/COP)","Coef. 1 (biomasse)"],
+    ["Emissions CO2","Faibles","Tres faibles"],
+    ["Radiateurs fonte haute T","Moins adaptee","Tres adaptee"],
+    ["Bati ancien savoyard","Bonne","Tres adaptee"],
+], [Inches(2.7), Inches(2.4), Inches(2.4)], row_h=Inches(0.5), header_size=12, body_size=11.5, first_col_bold=True)
+dpe_label(s, Inches(8.9), Inches(1.9), "B", "Energie", scale_h=Inches(0.27), base_w=Inches(0.5), step=Inches(0.15), letter_size=11, label_size=11)
+dpe_label(s, Inches(10.9), Inches(1.9), "A", "Climat", scale_h=Inches(0.27), base_w=Inches(0.5), step=Inches(0.15), letter_size=11, label_size=11)
+dpe_badge(s, Inches(11.4), Inches(4.3), "B", w=Inches(0.9), h=Inches(0.9))
+text(s, Inches(10.6), Inches(5.25), Inches(2.5), Inches(0.3), [[("DPE resultant", 11, True, GRIS_TXT)]], align=PP_ALIGN.CENTER)
+box(s, Inches(0.9), Inches(5.0), Inches(7.6), Inches(1.5), fill=VERT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(5.1), Inches(7.1), Inches(1.3),
+     [[("Solution retenue : chaudiere a granules 12 kW (sans silo)", 14, True, BLANC)],
+      [("Tremie integree, conserve les radiateurs fonte, energie renouvelable locale, approvisionnement facile en Savoie.", 11.5, False, RGBColor(0xC8,0xE6,0xC9))]], line_spacing=1.05)
+text(s, Inches(0.9), Inches(6.55), Inches(11), Inches(0.4),
+     [[("Reglementation : declaration prealable (ITE), conformite DTU et criteres d'aides respectes.", 11, False, GRIS_CLR, True)]])
+notes(s, "Mon second scenario est une renovation GLOBALE : toute l'isolation du scenario 1 en une fois, plus le remplacement du chauffage. "
+         "J'ai compare deux solutions bas carbone. La PAC air/eau donne la meilleure energie primaire, mais elle est moins efficace sur les radiateurs "
+         "fonte HAUTE temperature deja en place. La chaudiere a granules, elle, est tres adaptee a ces radiateurs et au bati ancien, avec une energie "
+         "renouvelable locale. Je la retiens, AVEC tremie integree pour eviter le silo. Resultat DPE : energie B, climat A - le granule fait basculer "
+         "l'etiquette en B. C'est tout l'interet de sortir du fioul. Investissement : environ 63 000 euros.")
 
 # ===========================================================================
-# 18 — OPTIMISATION DES SYSTÈMES (régulation + ECS) coef 5
+# 15 - OPTIMISATION SYSTEMES
 # ===========================================================================
-s = add_slide(); header(s, "5", "Optimisation des systèmes", "Régulation du chauffage & production d’ECS")
-box(s, Inches(0.9), Inches(1.75), Inches(5.7), Inches(4.6), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+s = add_slide(); header(s, "5", "Optimisation des systemes", "Regulation du chauffage & production d'ECS")
+box(s, Inches(0.9), Inches(1.75), Inches(5.7), Inches(4.55), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 box(s, Inches(0.9), Inches(1.75), Inches(5.7), Inches(0.6), fill=VERT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(0.9), Inches(1.75), Inches(5.7), Inches(0.6), [[("Régulation du chauffage", 16, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+text(s, Inches(0.9), Inches(1.75), Inches(5.7), Inches(0.6), [[("Regulation du chauffage", 16, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 bullets(s, Inches(1.15), Inches(2.55), Inches(5.25), Inches(3.6), [
-    ("Sonde de température extérieure ","→ pilotage par loi d’eau"),
-    ("Robinets thermostatiques ","sur les radiateurs fonte (régulation pièce par pièce)"),
-    ("Thermostat programmable ","(réduit en absence / nuit)"),
-    ("Rendement global ","amélioré : générateur récent + émetteurs régulés",),
+    ("Sonde de temperature exterieure ","-> pilotage par loi d'eau"),
+    ("Robinets thermostatiques ","sur les radiateurs fonte (regulation piece par piece)"),
+    ("Thermostat programmable ","(reduit en absence / nuit)"),
+    ("Rendement global ","ameliore : generateur recent + emetteurs regules"),
 ], size=13.5, gap=Pt(11))
-box(s, Inches(6.9), Inches(1.75), Inches(5.5), Inches(4.6), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+box(s, Inches(6.9), Inches(1.75), Inches(5.5), Inches(4.55), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 box(s, Inches(6.9), Inches(1.75), Inches(5.5), Inches(0.6), fill=BLEU, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(6.9), Inches(1.75), Inches(5.5), Inches(0.6), [[("Production d’eau chaude (ECS)", 16, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+text(s, Inches(6.9), Inches(1.75), Inches(5.5), Inches(0.6), [[("Production d'eau chaude (ECS)", 16, True, BLANC)]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 bullets(s, Inches(7.15), Inches(2.55), Inches(5.05), Inches(3.6), [
-    ("Existant : ","vieux ballon élec. 200 L hors volume chauffé (pertes)"),
-    ("Sc. 1 : ","chauffe-eau thermodynamique (÷3 sur la conso ECS)"),
-    ("Sc. 2 : ","ECS couplée à la chaudière granulés (ballon tampon)"),
-    ("Ballon repositionné ","dans le volume chauffé",),
+    ("Existant : ","vieux ballon elec. 200 L hors volume chauffe (pertes)"),
+    ("Solution : ","chauffe-eau thermodynamique (COP ~3, conso /3)"),
+    ("Ballon repositionne ","dans le volume chauffe"),
+    ("Resultat : ","poste ECS fortement reduit dans les 2 scenarios"),
 ], size=13.5, gap=Pt(11))
-notes(s, "Cette diapo répond à un attendu fortement coefficienté : l'adaptation et l'optimisation des équipements. "
-         "Côté régulation, le diagnostic a montré l'absence de sonde extérieure et de robinets thermostatiques. Je préconise donc : "
-         "une sonde extérieure pour piloter la chaudière par loi d'eau, des robinets thermostatiques sur les radiateurs fonte pour réguler "
-         "pièce par pièce, et un thermostat programmable. On améliore ainsi le rendement global de l'installation. "
-         "Côté eau chaude : le vieux ballon électrique hors volume chauffé est un gouffre. Dans le scénario 1, je propose un chauffe-eau "
-         "thermodynamique qui divise la conso ECS par trois ; dans le scénario 2, l'ECS est couplée à la chaudière granulés via un ballon tampon. "
-         "Dans les deux cas, on replace le ballon dans le volume chauffé.")
+notes(s, "Cette diapo repond a un attendu fortement coefficiente : adapter et optimiser les equipements. Cote regulation, le diagnostic a montre "
+         "l'absence de sonde exterieure et de robinets thermostatiques. Je preconise : une sonde exterieure pour piloter par loi d'eau, des robinets "
+         "thermostatiques sur les radiateurs fonte, et un thermostat programmable - on ameliore le rendement global. Cote eau chaude : le vieux ballon "
+         "electrique hors volume chauffe est un gouffre ; je propose un chauffe-eau thermodynamique, COP environ 3, qui divise la conso par trois, "
+         "et je le replace dans le volume chauffe. Ce poste ECS optimise est integre dans les deux scenarios.")
 
 # ===========================================================================
-# 19 — MATÉRIAUX BIOSOURCÉS
+# 16 - DPE DES SCENARIOS - LE CALCUL
 # ===========================================================================
-s = add_slide(); header(s, "5", "Solutions à faible impact carbone", "Le choix des matériaux biosourcés")
-make_table(s, Inches(0.9), Inches(1.85), Inches(8.0), [
-    ["Critère","Laine de bois","Ouate de cellulose"],
-    ["Origine","Fibres de bois","Papier recyclé"],
-    ["Type","Biosourcé","Biosourcé"],
-    ["Performance thermique","Très bonne","Très bonne"],
-    ["Impact environnemental","Faible","Très faible"],
-    ["Utilisation retenue","ITE des murs","Isolation des combles"],
-], [Inches(3.0), Inches(2.5), Inches(2.5)], row_h=Inches(0.55), header_size=12, body_size=12, first_col_bold=True)
-box(s, Inches(9.2), Inches(1.85), Inches(3.2), Inches(3.3), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(9.4), Inches(2.0), Inches(2.8), Inches(3.1),
-     [[("Pourquoi le biosourcé ?", 13, True, VERT)],
-      [("",6,False,VERT)],
-      [("• Faible impact carbone", 12, False, GRIS_TXT)],
-      [("• Excellent déphasage", 12, False, GRIS_TXT)],
-      [("  → confort d’été", 11, False, GRIS_CLR, True)],
-      [("• Murs perspirants", 12, False, GRIS_TXT)],
-      [("  → gestion de l’humidité", 11, False, GRIS_CLR, True)]], line_spacing=1.15)
-notes(s, "Comme le demande la grille, j'ai privilégié des solutions bas carbone : des matériaux biosourcés. "
-         "Laine de bois pour l'ITE des murs, ouate de cellulose — du papier recyclé — pour les combles. "
-         "Trois raisons : un faible impact carbone, un excellent déphasage thermique qui apporte le confort d'été recherché, "
-         "et surtout la perspirance, essentielle sur des murs en pierre anciens qui doivent laisser passer la vapeur d'eau pour éviter les pathologies d'humidité.")
-
-# ===========================================================================
-# 20 — DIMENSIONNEMENT
-# ===========================================================================
-s = add_slide(); header(s, "5", "Dimensionnement des installations", "Du calcul au choix des équipements")
-box(s, Inches(0.9), Inches(1.7), Inches(5.7), Inches(2.35), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(1.1), Inches(1.8), Inches(5.3), Inches(2.25),
-     [[("Résistance des isolants  (R = e / λ)", 13, True, VERT)],
-      [("",5,False,VERT)],
-      [("Murs — laine de bois 200 mm (λ=0,038) :", 12, True, GRIS_TXT)],
-      [("R = 0,20 / 0,038 = 5,26 m².K/W", 13, False, BLEU)],
-      [("",4,False,VERT)],
-      [("Combles — ouate 400 mm (λ=0,039) :", 12, True, GRIS_TXT)],
-      [("R = 0,40 / 0,039 = 10,26 m².K/W", 13, False, BLEU)]], line_spacing=1.1)
-box(s, Inches(6.8), Inches(1.7), Inches(5.6), Inches(2.35), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(7.0), Inches(1.8), Inches(5.2), Inches(2.25),
-     [[("Puissance de chauffage après travaux", 13, True, VERT)],
-      [("",5,False,VERT)],
-      [("Réduction des besoins estimée : 55 %", 12, True, GRIS_TXT)],
-      [("P = 21,3 × (1 − 0,55) = 9,6 kW ≈ 10 kW", 13, False, BLEU)],
-      [("",4,False,VERT)],
-      [("Avec marge de sécurité :", 12, True, GRIS_TXT)],
-      [("→ Chaudière à granulés de 12 kW", 14, True, VERT)]], line_spacing=1.1)
-make_table(s, Inches(0.9), Inches(4.4), Inches(5.7), [
-    ["Combustible granulés","Valeur"],
-    ["Besoin après travaux","7 020 kWh/an"],
-    ["PCI granulés","4,8 kWh/kg"],
-    ["Conso annuelle","≈ 1,5 t/an"],
-    ["Silo retenu","2 tonnes"],
-], [Inches(3.2), Inches(2.5)], row_h=Inches(0.42), header_size=12, body_size=11)
-make_table(s, Inches(6.8), Inches(4.4), Inches(5.6), [
-    ["VMC Hygro B — débits","m³/h"],
-    ["Cuisine","45 à 135"],
-    ["Salle de bain","30"],
-    ["WC","15"],
-    ["Total maximal","180"],
-], [Inches(3.3), Inches(2.3)], row_h=Inches(0.42), header_size=12, body_size=11)
-notes(s, "Le dimensionnement. Pour l'isolation, R = épaisseur / lambda : R = 5,26 pour les murs, R = 10,26 pour les combles — "
-         "des valeurs conformes à une rénovation performante. Pour le chauffage : la puissance initiale est de 21,3 kW ; "
-         "avec une réduction des besoins estimée à 55 % grâce à l'isolation et la VMC, on tombe à environ 10 kW. "
-         "Avec une marge de sécurité pour les jours les plus froids, je retiens 12 kW. "
-         "Le besoin annuel revient à environ 1,5 tonne de granulés, d'où un silo de 2 tonnes. La VMC hygro B est dimensionnée à 180 m³/h maxi.")
-
-# ===========================================================================
-# 21 — CHIFFRAGE
-# ===========================================================================
-s = add_slide(); header(s, "6", "Chiffrage des travaux", "Estimation HT par poste")
-text(s, Inches(0.9), Inches(1.7), Inches(5.5), Inches(0.4), [[("Scénario 1 — 24 000 €", 16, True, BLEU)]])
-make_table(s, Inches(0.9), Inches(2.15), Inches(5.5), [
-    ["Poste","Coût HT"],
-    ["ITE laine de bois 200 mm","18 000 €"],
-    ["Isolation combles ouate 400 mm","2 500 €"],
-    ["VMC Hygro B","2 000 €"],
-    ["Divers et raccordements","1 500 €"],
-    ["Total","24 000 €"],
-], [Inches(3.7), Inches(1.8)], row_h=Inches(0.5), header_size=12, body_size=12)
-text(s, Inches(6.8), Inches(1.7), Inches(5.5), Inches(0.4), [[("Scénario 2 — 40 000 €", 16, True, VERT)]])
-make_table(s, Inches(6.8), Inches(2.15), Inches(5.6), [
-    ["Poste","Coût HT"],
-    ["ITE laine de bois 200 mm","18 000 €"],
-    ["Isolation combles ouate 400 mm","2 500 €"],
-    ["VMC Hygro B","2 000 €"],
-    ["Chaudière à granulés 12 kW","13 000 €"],
-    ["Silo de stockage","2 500 €"],
-    ["Divers et raccordements","2 000 €"],
-    ["Total","40 000 €"],
-], [Inches(3.8), Inches(1.8)], row_h=Inches(0.47), header_size=12, body_size=11.5)
-notes(s, "Le chiffrage s'appuie sur les prix moyens du marché par type de travaux. "
-         "Scénario 1 : 24 000 € HT, dont 18 000 € pour l'isolation des murs — logique, c'est le premier poste de pertes. "
-         "Scénario 2 : on ajoute la chaudière à granulés et le silo, soit 40 000 € au total. "
-         "L'écart de 16 000 € correspond donc au remplacement du chauffage.")
-
-# ===========================================================================
-# 22 — FINANCEMENT
-# ===========================================================================
-s = add_slide(); header(s, "6", "Plan de financement", "Aides mobilisables & reste à charge")
-make_table(s, Inches(0.9), Inches(1.9), Inches(5.5), [
-    ["Scénario 1","Montant"],
-    ["Coût total des travaux","24 000 €"],
-    ["MaPrimeRénov’","− 5 000 €"],
-    ["CEE","− 2 000 €"],
-    ["Reste à charge","17 000 €"],
-], [Inches(3.5), Inches(2.0)], row_h=Inches(0.55), header_size=13, body_size=12)
-make_table(s, Inches(6.8), Inches(1.9), Inches(5.5), [
-    ["Scénario 2","Montant"],
-    ["Coût total des travaux","40 000 €"],
-    ["MaPrimeRénov’","− 8 000 €"],
-    ["CEE","− 4 000 €"],
-    ["Aides locales","− 1 000 €"],
-    ["Reste à charge","27 000 €"],
-], [Inches(3.5), Inches(2.0)], row_h=Inches(0.5), header_size=13, body_size=12)
-box(s, Inches(0.9), Inches(5.5), Inches(11.5), Inches(1.0), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(1.15), Inches(5.6), Inches(11.0), Inches(0.8),
-     [[("MaPrimeRénov’, CEE et aides locales réduisent fortement le reste à charge — "
-        "sous réserve du respect des critères techniques des travaux et selon les revenus du ménage.", 14, False, GRIS_TXT)]],
+s = add_slide(); header(s, "5", "DPE des scenarios - le calcul", "Methode 3CL : energie primaire + CO2")
+# hypotheses
+box(s, Inches(0.9), Inches(1.7), Inches(3.5), Inches(4.6), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.1), Inches(1.8), Inches(3.2), Inches(0.4), [[("Hypotheses", 13, True, VERT)]])
+text(s, Inches(1.1), Inches(2.25), Inches(3.2), Inches(4.0),
+     [[("Besoin chauffage apres travaux : 7 020 kWh/an (-55 %)", 10.5, False, GRIS_TXT)],
+      [("", 4, False, VERT)],
+      [("Rendements : fioul 1991 ~72 %, granules ~90 %", 10.5, False, GRIS_TXT)],
+      [("", 4, False, VERT)],
+      [("ECS thermodynamique (COP 3), VMC + LED", 10.5, False, GRIS_TXT)],
+      [("", 4, False, VERT)],
+      [("Energie primaire : elec x2,3 ; fioul/granules x1", 10.5, False, GRIS_TXT)],
+      [("", 4, False, VERT)],
+      [("CO2 (kg/kWh) : fioul 0,324 ; granules 0,030 ; elec 0,064", 10.5, False, GRIS_TXT)]], line_spacing=1.1)
+# table energie
+text(s, Inches(4.7), Inches(1.65), Inches(7.7), Inches(0.35), [[("Energie primaire (kWhEP/m2.an)", 12.5, True, VERT)]])
+make_table(s, Inches(4.7), Inches(2.05), [
+    ["Poste","Existant","Sc. 1","Sc. 2"],
+    ["Chauffage","405","98","79"],
+    ["ECS","95","19","19"],
+    ["Auxiliaires + eclairage","35","11","11"],
+    ["Total","535","128","109"],
+    ["Classe energie","G","C","B"],
+], [Inches(3.1), Inches(1.55), Inches(1.55), Inches(1.55)], row_h=Inches(0.36), header_size=11.5, body_size=11,
+   first_col_bold=True, highlight_rows=[4,5], highlight_fill=RGBColor(0xD7,0xE9,0xD0))
+# table CO2
+text(s, Inches(4.7), Inches(4.45), Inches(7.7), Inches(0.35), [[("Emissions de CO2 (kgCO2/m2.an)", 12.5, True, VERT)]])
+make_table(s, Inches(4.7), Inches(4.85), [
+    ["Poste","Existant","Sc. 1","Sc. 2"],
+    ["Chauffage","150","32","2"],
+    ["ECS + auxiliaires","6","1","1"],
+    ["Total","156","33","3"],
+    ["Classe climat","G","D","A"],
+], [Inches(3.1), Inches(1.55), Inches(1.55), Inches(1.55)], row_h=Inches(0.36), header_size=11.5, body_size=11,
+   first_col_bold=True, highlight_rows=[3,4], highlight_fill=RGBColor(0xD7,0xE9,0xD0))
+# resultat band
+box(s, Inches(0.9), Inches(6.5), Inches(11.5), Inches(0.55), fill=ANTHRA, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(6.5), Inches(11), Inches(0.55),
+     [[("Classe DPE (la moins bonne des 2 axes) :   Existant G   ->   Scenario 1 D   ->   Scenario 2 B", 14, True, BLANC)]],
      anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "Les travaux sont éligibles à plusieurs aides, ce qui permet de calculer le reste à charge — un attendu important. "
-         "Scénario 1 : 5 000 € de MaPrimeRénov' et 2 000 € de CEE, reste à charge 17 000 €. "
-         "Scénario 2, plus ambitieux donc mieux aidé : 8 000 € de MaPrimeRénov', 4 000 € de CEE, 1 000 € d'aides locales, reste à charge 27 000 €. "
-         "Ce sont des estimations : les montants réels dépendent des revenus du ménage et des barèmes en vigueur.")
+notes(s, "C'est la diapo sur laquelle j'insiste. Je calcule le DPE selon la logique 3CL : energie primaire d'un cote, emissions de CO2 de l'autre, "
+         "et la classe finale est la MOINS bonne des deux. J'ancre tout sur mon etude thermique : un besoin de chauffage ramene a 7 020 kWh par an apres isolation. "
+         "En energie primaire, les deux scenarios sont proches : le scenario 1 atteint C (128), le scenario 2 B (109) grace au meilleur rendement de la chaudiere granules. "
+         "Mais c'est le CO2 qui fait la difference : avec le fioul conserve, le scenario 1 reste a 33 kg, soit classe D - le fioul plafonne. "
+         "Avec le granule, le scenario 2 tombe a 3 kg, classe A. Resultat : on passe de G a D avec le scenario par etapes, et a B avec le scenario global. "
+         "Le message cle : a isolation egale, c'est le choix de l'energie de chauffage qui determine l'etiquette finale.")
 
 # ===========================================================================
-# 23 — COÛT GLOBAL & ROI
+# 17 - DIMENSIONNEMENT + MATERIAUX
 # ===========================================================================
-s = add_slide(); header(s, "6", "Analyse en coût global & rentabilité")
+s = add_slide(); header(s, "5", "Dimensionnement & materiaux", "Calculs et choix techniques")
+box(s, Inches(0.9), Inches(1.7), Inches(5.7), Inches(2.3), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.1), Inches(1.8), Inches(5.3), Inches(2.2),
+     [[("Isolants  (R = e / lambda)", 13, True, VERT)], [("",4,False,VERT)],
+      [("Murs - laine de bois 200 mm (l=0,038) :", 11.5, True, GRIS_TXT)],
+      [("R = 0,20 / 0,038 = 5,26 m2.K/W", 12.5, False, BLEU)], [("",3,False,VERT)],
+      [("Combles - ouate 400 mm (l=0,039) :", 11.5, True, GRIS_TXT)],
+      [("R = 0,40 / 0,039 = 10,26 m2.K/W", 12.5, False, BLEU)]], line_spacing=1.05)
+box(s, Inches(6.8), Inches(1.7), Inches(5.6), Inches(2.3), fill=BLANC, line=GRIS_CLR, line_w=Pt(1), shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(7.0), Inches(1.8), Inches(5.2), Inches(2.2),
+     [[("Puissance de chauffage", 13, True, VERT)], [("",4,False,VERT)],
+      [("Reduction des besoins : -55 % (isolation + VMC)", 11.5, True, GRIS_TXT)],
+      [("P = 21,3 x (1 - 0,55) = 9,6 kW", 12.5, False, BLEU)], [("",3,False,VERT)],
+      [("Avec marge de securite :", 11.5, True, GRIS_TXT)],
+      [("-> chaudiere a granules de 12 kW", 13, True, VERT)]], line_spacing=1.05)
+make_table(s, Inches(0.9), Inches(4.25), [
+    ["Granules / VMC","Valeur"],
+    ["Conso granules estimee","~1,5 t/an"],
+    ["Stockage","Tremie integree (sans silo)"],
+    ["VMC hygro B - debit max","180 m3/h"],
+], [Inches(3.0), Inches(2.7)], row_h=Inches(0.44), header_size=12, body_size=11)
+box(s, Inches(6.8), Inches(4.25), Inches(5.6), Inches(2.05), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(7.0), Inches(4.35), Inches(5.2), Inches(0.4), [[("Materiaux biosources", 13, True, VERT)]])
+bullets(s, Inches(7.0), Inches(4.8), Inches(5.2), Inches(1.4), [
+    ("Laine de bois (murs) & ouate de cellulose (combles)", ""),
+    ("Faible impact carbone, excellent dephasage (confort d'ete)", ""),
+    ("Murs perspirants -> gestion de l'humidite du bati ancien", ""),
+], size=11.5, gap=Pt(5))
+notes(s, "Le dimensionnement. Pour l'isolation : R = epaisseur / lambda donne R = 5,26 pour les murs et 10,26 pour les combles, "
+         "conformes a une renovation performante. Pour le chauffage : 21,3 kW initiaux, reduits de 55 % par l'isolation et la VMC -> environ 10 kW, "
+         "donc une chaudiere de 12 kW avec marge. La conso est d'environ 1,5 tonne de granules par an ; j'ai SUPPRIME le silo au profit d'une tremie integree. "
+         "La VMC hygro B est dimensionnee a 180 m3/h. Cote materiaux, j'ai choisi des biosources - laine de bois et ouate - pour le faible carbone, "
+         "le dephasage qui apporte le confort d'ete, et la perspirance indispensable sur des murs en pierre.")
+
+# ===========================================================================
+# 18 - CHIFFRAGE
+# ===========================================================================
+s = add_slide(); header(s, "6", "Chiffrage des travaux", "Prix fourni-pose TTC (marques reelles, main d'oeuvre comprise)")
+text(s, Inches(0.9), Inches(1.7), Inches(5.6), Inches(0.4), [[("Scenario 1 - 42 500 €", 15, True, BLEU)]])
+make_table(s, Inches(0.9), Inches(2.15), [
+    ["Poste / marque","TTC"],
+    ["ITE laine de bois 200 mm (Steico + enduit)","30 000 €"],
+    ["Combles ouate 400 mm (Ouateco)","3 500 €"],
+    ["Etancheite a l'air + ponts thermiques","2 000 €"],
+    ["VMC hygro B (Aldes / Atlantic)","3 500 €"],
+    ["ECS thermodynamique (Atlantic Calypso)","3 500 €"],
+    ["Total","42 500 €"],
+], [Inches(4.4), Inches(1.5)], row_h=Inches(0.5), header_size=12, body_size=11, highlight_rows=[6], highlight_fill=RGBColor(0xDC,0xE9,0xF7))
+text(s, Inches(6.9), Inches(1.7), Inches(5.6), Inches(0.4), [[("Scenario 2 - 63 000 €", 15, True, VERT)]])
+make_table(s, Inches(6.9), Inches(2.15), [
+    ["Poste / marque","TTC"],
+    ["Travaux du scenario 1 (enveloppe + VMC + ECS)","42 500 €"],
+    ["Chaudiere granules 12 kW (OkoFEN / Hargassner)","15 000 €"],
+    ["Ballon tampon + hydraulique + tubage fumees","4 000 €"],
+    ["Depose chaudiere fioul + cuve","1 500 €"],
+    ["Total","63 000 €"],
+], [Inches(4.4), Inches(1.5)], row_h=Inches(0.5), header_size=12, body_size=11, highlight_rows=[5], highlight_fill=RGBColor(0xD7,0xE9,0xD0))
+box(s, Inches(0.9), Inches(6.0), Inches(11.5), Inches(0.85), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(6.08), Inches(11.0), Inches(0.7),
+     [[("Prix fourni-pose TTC (TVA 5,5 %), main d'oeuvre et echafaudage compris. La pose represente ~40 % du cout de l'ITE.", 12.5, False, GRIS_TXT)]],
+     anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Le chiffrage, sur la base de prix de marche par type de travaux et de marques reelles, en fourni-pose TTC main d'oeuvre comprise. "
+         "Scenario 1, 42 500 euros : le gros poste est l'ITE laine de bois - type Steico avec enduit - a 30 000 euros, dont environ 40 % de main d'oeuvre "
+         "et l'echafaudage ; puis les combles en ouate Ouateco, l'etancheite a l'air, la VMC Aldes ou Atlantic, et le chauffe-eau thermodynamique Atlantic Calypso. "
+         "Scenario 2 : on ajoute la chaudiere granules ÖkoFEN ou Hargassner a 15 000 euros, le ballon tampon et le tubage, et la depose de la cuve fioul - "
+         "soit 63 000 euros au total. Plus de silo. L'ecart de 20 500 euros correspond au changement de chauffage.")
+
+# ===========================================================================
+# 19 - FINANCEMENT
+# ===========================================================================
+s = add_slide(); header(s, "6", "Plan de financement", "Foyer modeste : aides, apport et reste a charge")
+make_table(s, Inches(0.9), Inches(1.85), [
+    ["Element financier","Scenario 1","Scenario 2"],
+    ["Cout total des travaux TTC","42 500 €","63 000 €"],
+    ["MaPrimeRenov' (parcours accompagne)","- 26 000 €","- 42 000 €"],
+    ["Certificats d'economies d'energie (CEE)","- 2 500 €","- 3 500 €"],
+    ["Reste a charge","14 000 €","17 500 €"],
+    ["- Apport personnel","- 10 000 €","- 10 000 €"],
+    ["A financer (eco-PTZ a 0 %)","4 000 €","7 500 €"],
+], [Inches(5.3), Inches(3.1), Inches(3.1)], row_h=Inches(0.52), header_size=13, body_size=12,
+   first_col_bold=True, highlight_rows=[4,6], highlight_fill=RGBColor(0xD7,0xE9,0xD0))
+box(s, Inches(0.9), Inches(5.85), Inches(11.5), Inches(1.0), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(5.93), Inches(11.0), Inches(0.85),
+     [[("Famille modeste (4 pers., ~40 000 €/an) : taux MaPrimeRenov' eleves (65 % a 70 %) pour un gain de 3 a 5 classes. "
+        "Avec l'apport, le solde (4 000 a 7 500 €) est couvert par un eco-PTZ a 0 % -> projet dans le budget.", 12.5, False, GRIS_TXT)]],
+     anchor=MSO_ANCHOR.MIDDLE)
+notes(s, "Le financement, calcule pour ce foyer modeste de 4 personnes a 40 000 euros par an. Les travaux sont une renovation d'ampleur, "
+         "eligible a MaPrimeRenov' parcours accompagne, avec des taux eleves pour les revenus modestes : 65 % pour un gain de 3 classes au scenario 1, "
+         "70 % pour 5 classes au scenario 2. Avec les CEE, le reste a charge tombe a 14 000 euros pour le scenario 1 et 17 500 pour le scenario 2. "
+         "On deduit l'apport de 10 000 euros : il ne reste que 4 000 a 7 500 euros, finances par un eco-PTZ a taux zero. "
+         "Le projet reste donc tout a fait dans le budget de la famille - et l'eco-PTZ se rembourse pour environ 40 euros par mois, "
+         "tres inferieurs aux economies d'energie.")
+
+# ===========================================================================
+# 20 - COUT GLOBAL & ROI
+# ===========================================================================
+s = add_slide(); header(s, "6", "Analyse en cout global & rentabilite")
 cd = CategoryChartData()
-cd.categories = ["État initial","Scénario 1","Scénario 2"]
-cd.add_series("Coût global sur 30 ans (€)", (250650, 159000, 130000))
+cd.categories = ["Etat initial","Scenario 1","Scenario 2"]
+cd.add_series("Cout global sur 30 ans (€)", (250650, 177500, 153000))
 gf = s.shapes.add_chart(XL_CHART_TYPE.COLUMN_CLUSTERED, Inches(0.9), Inches(1.75), Inches(6.6), Inches(3.4), cd)
-ch = gf.chart; ch.has_title = True; ch.chart_title.text_frame.text = "Coût global sur 30 ans"
+ch = gf.chart; ch.has_title = True; ch.chart_title.text_frame.text = "Cout global sur 30 ans (travaux + energie)"
 ch.chart_title.text_frame.paragraphs[0].font.size = Pt(12); ch.has_legend = False
 pl = ch.plots[0]; pl.has_data_labels = True
 pl.data_labels.number_format = '# ##0 "€"'; pl.data_labels.number_format_is_linked = False
 pl.data_labels.font.size = Pt(10); pl.data_labels.font.bold = True
 for i, c in enumerate([ROUGE, BLEU, VERT]):
     pl.series[0].points[i].format.fill.solid(); pl.series[0].points[i].format.fill.fore_color.rgb = c
-text(s, Inches(7.9), Inches(1.7), Inches(4.5), Inches(0.4), [[("Coûts mensuels & ROI", 13, True, VERT)]])
-make_table(s, Inches(7.9), Inches(2.2), Inches(4.5), [
+text(s, Inches(7.9), Inches(1.7), Inches(4.5), Inches(0.4), [[("Couts mensuels & ROI", 13, True, VERT)]])
+make_table(s, Inches(7.9), Inches(2.2), [
     ["Situation","€/an","€/mois"],
     ["Avant travaux","8 355","696"],
-    ["Scénario 1","4 500","375"],
-    ["Scénario 2","3 000","250"],
+    ["Scenario 1","4 500","375"],
+    ["Scenario 2","3 000","250"],
 ], [Inches(1.9), Inches(1.3), Inches(1.3)], row_h=Inches(0.47), header_size=11.5, body_size=11)
-make_table(s, Inches(7.9), Inches(4.55), Inches(4.5), [
-    ["ROI","Sc. 1","Sc. 2"],
-    ["Reste à charge","17 000 €","27 000 €"],
-    ["Économies/an","3 000 €","5 000 €"],
-    ["Amortissement","5,7 ans","5,4 ans"],
-], [Inches(1.9), Inches(1.3), Inches(1.3)], row_h=Inches(0.47), header_size=11.5, body_size=11)
-notes(s, "C'est l'analyse en coût global qui tranche entre les scénarios. Sans rien faire, on dépense 250 000 € sur 30 ans ; "
-         "le scénario 1 ramène à 159 000 €, le scénario 2 à 130 000 €. Donc malgré un investissement initial plus élevé, "
-         "le scénario 2 coûte MOINS cher au final. Les coûts mensuels passent de 696 € à 250 €. "
-         "Et le ROI est rapide : 5,7 ans pour le scénario 1, 5,4 ans pour le scénario 2. "
-         "Question possible du jury : j'ai retenu 30 ans ; en intégrant une hausse du prix de l'énergie, l'écart se creuserait encore en faveur du scénario 2.")
+make_table(s, Inches(7.9), Inches(4.55), [
+    ["ROI (sur reste a charge)","Sc. 1","Sc. 2"],
+    ["Reste a charge","14 000 €","17 500 €"],
+    ["Economies/an","3 855 €","5 355 €"],
+    ["Amortissement","~3,6 ans","~3,3 ans"],
+], [Inches(2.3), Inches(1.1), Inches(1.1)], row_h=Inches(0.47), header_size=11, body_size=11)
+notes(s, "L'analyse en cout global tranche. Sur 30 ans, sans rien faire on depense 250 000 euros ; le scenario 1 ramene a 177 500, "
+         "le scenario 2 a 153 000 - travaux compris. Malgre un investissement initial plus eleve, le scenario 2 reste le moins cher au final. "
+         "Les couts mensuels d'energie passent de 696 a 250 euros. Et grace aux aides elevees, l'amortissement sur le reste a charge est tres rapide : "
+         "environ 3,6 ans pour le scenario 1 et 3,3 ans pour le scenario 2. Si le jury m'interroge : j'ai retenu 30 ans ; en integrant la hausse du prix de "
+         "l'energie, l'ecart se creuserait encore en faveur du scenario 2.")
 
 # ===========================================================================
-# 24 — PLAN DE SOBRIÉTÉ
+# 21 - SYNTHESE
 # ===========================================================================
-s = add_slide(); header(s, "7", "Plan de sobriété", "Conseils aux occupants")
-bullets(s, Inches(0.9), Inches(1.85), Inches(5.7), Inches(4.5), [
-    "Chauffer entre 19 °C et 20 °C dans les pièces de vie",
-    "Réduire la température durant les absences",
-    "Entretien régulier de la chaudière et de la VMC",
-    "Limiter les consommations d’eau chaude sanitaire",
-], size=15, gap=Pt(12))
-bullets(s, Inches(6.9), Inches(1.85), Inches(5.5), Inches(4.5), [
-    "Fermer les volets la nuit en hiver",
-    "Privilégier l’électroménager performant",
-    "Éteindre les appareils en veille",
-    "Suivre régulièrement ses consommations",
-], size=15, gap=Pt(12))
-box(s, Inches(0.9), Inches(5.85), Inches(11.5), Inches(0.85), fill=VERT_LIGHT, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(1.15), Inches(5.95), Inches(11), Inches(0.65),
-     [[("Des conseils simples, accessibles à des non-spécialistes, qui amplifient les économies des travaux.", 14, True, VERT)]],
-     anchor=MSO_ANCHOR.MIDDLE)
-notes(s, "En complément des travaux, un mode opératoire de sobriété destiné aux occupants — un attendu de la grille. "
-         "Des gestes simples et gratuits, formulés pour des non-spécialistes : maintenir 19-20 °C, baisser en cas d'absence, "
-         "entretenir les équipements, fermer les volets la nuit, traquer les veilles, suivre ses consommations. "
-         "Ces gestes amplifient les économies obtenues par la rénovation.")
+s = add_slide(); header(s, "7", "Synthese comparative des scenarios")
+make_table(s, Inches(0.9), Inches(1.8), [
+    ["Critere","Etat initial","Scenario 1 (par etapes)","Scenario 2 (global)"],
+    ["Classe DPE","G","D","B"],
+    ["Energie / Climat","G / G","C / D","B / A"],
+    ["Chauffage","Fioul (1991)","Fioul conserve","Granules (sans silo)"],
+    ["Travaux TTC","-","42 500 €","63 000 €"],
+    ["Aides estimees","-","~28 500 €","~45 500 €"],
+    ["Reste a charge","-","14 000 €","17 500 €"],
+    ["Cout energie / an","8 355 €","4 500 €","3 000 €"],
+    ["Cout global 30 ans","250 650 €","177 500 €","153 000 €"],
+    ["Amortissement","-","~3,6 ans","~3,3 ans"],
+], [Inches(2.9), Inches(2.4), Inches(3.1), Inches(3.1)], row_h=Inches(0.44), header_size=12.5, body_size=11.5,
+   first_col_bold=True, highlight_rows=[1], highlight_fill=RGBColor(0xD7,0xE9,0xD0))
+notes(s, "Cette synthese recapitule tout. On lit la progression du DPE : de G a D avec le scenario par etapes, jusqu'a B avec le scenario global. "
+         "Le scenario 2 coute plus cher a l'achat mais affiche le cout annuel le plus bas, le cout global le plus faible et l'amortissement le plus court. "
+         "C'est la base de ma recommandation.")
 
 # ===========================================================================
-# 25 — SYNTHÈSE COMPARATIVE
-# ===========================================================================
-s = add_slide(); header(s, "7", "Synthèse comparative des scénarios")
-make_table(s, Inches(0.9), Inches(1.85), Inches(11.5), [
-    ["Critère","État initial","Scénario 1 (par étapes)","Scénario 2 (global)"],
-    ["Étiquette DPE","G / G","B / B","A / B"],
-    ["Chauffage","Fioul (1991)","Fioul conservé (étape 1)","Granulés 12 kW"],
-    ["Coût des travaux","—","24 000 €","40 000 €"],
-    ["Reste à charge","—","17 000 €","27 000 €"],
-    ["Coût annuel","8 355 €","4 500 €","3 000 €"],
-    ["Coût global 30 ans","250 650 €","159 000 €","130 000 €"],
-    ["Retour sur investissement","—","5,7 ans","5,4 ans"],
-], [Inches(3.0), Inches(2.4), Inches(3.05), Inches(3.05)], row_h=Inches(0.52), header_size=12.5, body_size=12, first_col_bold=True)
-notes(s, "Cette synthèse récapitule tout. On lit la progression : de G/G à B/B avec le scénario par étapes, "
-         "jusqu'à A/B avec le scénario global. Le scénario 2 coûte plus cher à l'achat mais affiche le coût annuel le plus bas, "
-         "le coût global le plus faible et même le ROI le plus court. C'est la base de ma recommandation.")
-
-# ===========================================================================
-# 26 — CONCLUSION
+# 22 - CONCLUSION + SOBRIETE
 # ===========================================================================
 s = add_slide(); set_bg(s, VERT)
-box(s, 0, 0, SW, Inches(1.5), fill=VERT_CLR)
-text(s, Inches(0.9), Inches(0.4), Inches(11.5), Inches(0.9), [[("Conclusion & recommandation", 32, True, BLANC)]], anchor=MSO_ANCHOR.MIDDLE)
-box(s, Inches(0.9), Inches(1.9), Inches(11.5), Inches(2.5), fill=BLANC, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, Inches(1.2), Inches(2.05), Inches(11), Inches(0.5), [[("→ Je recommande le Scénario 2 (rénovation globale)", 22, True, VERT)]])
-bullets(s, Inches(1.2), Inches(2.7), Inches(11), Inches(1.6), [
-    ("Performance maximale : ","de G à A / B (énergie / climat)"),
-    ("Sortie du fioul : ","énergie renouvelable et locale (granulés savoyards)"),
-    ("Meilleure rentabilité long terme : ","coût global le plus bas, ROI 5,4 ans"),
-    ("Compatible avec le bâti : ","ITE biosourcée + radiateurs fonte conservés"),
-], size=14, gap=Pt(7))
-box(s, 0, Inches(4.7), SW, Inches(2.8), fill=VERT)
-text(s, Inches(0.9), Inches(5.0), Inches(11.5), Inches(0.6),
-     [[("Budget contraint ? Le Scénario 1 reste une excellente 1ʳᵉ étape (G → B/B), complétée plus tard par le chauffage.", 15, False, RGBColor(0xC8,0xE6,0xC9), True)]])
-text(s, Inches(0.9), Inches(5.9), Inches(11.5), Inches(1.4),
-     [[("Merci de votre attention.", 30, True, BLANC)],
-      [("Je suis à votre disposition pour vos questions.", 16, False, RGBColor(0xC8,0xE6,0xC9))]], line_spacing=1.1)
-notes(s, "Pour conclure : au regard de la performance, du confort, de la sortie du fioul et de la rentabilité long terme, "
-         "je recommande le scénario 2, la rénovation globale, qui fait passer le logement de G à A/B et qui coûte le moins cher sur 30 ans. "
-         "Si le budget initial est un frein, le scénario 1 par étapes est une excellente première étape, "
-         "qu'on complétera plus tard par le changement de chauffage — les deux scénarios sont d'ailleurs cohérents entre eux. "
-         "Je vous remercie de votre attention et je suis prêt à répondre à vos questions.")
+box(s, 0, 0, SW, Inches(1.3), fill=VERT_CLR)
+text(s, Inches(0.9), Inches(0.3), Inches(11.5), Inches(0.8), [[("Conclusion & recommandation", 30, True, BLANC)]], anchor=MSO_ANCHOR.MIDDLE)
+# reco
+box(s, Inches(0.9), Inches(1.6), Inches(7.4), Inches(4.0), fill=BLANC, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(1.15), Inches(1.75), Inches(7.0), Inches(0.5), [[("-> Je recommande le Scenario 2 (global)", 19, True, VERT)]])
+bullets(s, Inches(1.15), Inches(2.45), Inches(7.0), Inches(3.0), [
+    ("Performance maximale : ","DPE de G a B (energie B / climat A)"),
+    ("Sortie du fioul : ","energie renouvelable et locale (granules)"),
+    ("Meilleure rentabilite : ","cout global le plus bas, ROI ~3,3 ans"),
+    ("Compatible avec le bati : ","ITE biosourcee + radiateurs fonte conserves"),
+    ("Dans le budget : ","reste a charge 17 500 €, soutenu par aides + apport"),
+], size=13, gap=Pt(8))
+# sobriete
+box(s, Inches(8.5), Inches(1.6), Inches(3.9), Inches(4.0), fill=ANTHRA, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, Inches(8.7), Inches(1.72), Inches(3.5), Inches(0.4), [[("Conseils de sobriete", 14, True, BLANC)]])
+bullets(s, Inches(8.7), Inches(2.2), Inches(3.5), Inches(3.3), [
+    "Chauffer 19-20 °C, reduire en absence",
+    "Fermer les volets la nuit en hiver",
+    "Entretien chaudiere & VMC",
+    "Eteindre les veilles, suivi des consos",
+], size=11.5, gap=Pt(7), marker_color=RGBColor(0xA5,0xD6,0xA7))
+text(s, Inches(0.9), Inches(5.85), Inches(11.5), Inches(0.5),
+     [[("Budget contraint ? Le Scenario 1 reste une excellente 1re etape (G -> D), completee plus tard par le chauffage.", 13, False, RGBColor(0xC8,0xE6,0xC9), True)]])
+text(s, Inches(0.9), Inches(6.5), Inches(11.5), Inches(0.7),
+     [[("Merci de votre attention - je suis a votre disposition pour vos questions.", 18, True, BLANC)]])
+notes(s, "Pour conclure : au regard de la performance, de la sortie du fioul, de la rentabilite et du respect du bati, je recommande le scenario 2, "
+         "qui fait passer le logement de G a B et reste le moins cher sur 30 ans, tout en restant dans le budget grace aux aides et a l'apport. "
+         "Si le budget initial est un frein, le scenario 1 par etapes est une excellente premiere etape, completee plus tard par le chauffage. "
+         "J'ai aussi remis au maitre d'ouvrage des conseils de sobriete simples qui amplifient les economies. Je vous remercie et je suis pret pour vos questions.")
 
 out = "/home/user/licence/Soutenance_Renovation_Saint-Jean-de-Chevelu.pptx"
 prs.save(out)
