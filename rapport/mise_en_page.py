@@ -282,7 +282,7 @@ class Rapport:
         return p
 
     # ---- titres ----------------------------------------------------------
-    def titre1(self, texte, saut_page=True, numerote=True):
+    def titre1(self, texte, saut_page=False, numerote=True):
         if saut_page:
             self.doc.add_page_break()
         self._n1 += 1
@@ -290,7 +290,7 @@ class Rapport:
         self._n3 = 0
         p = self._p(style="Heading 1")
         pf = p.paragraph_format
-        pf.space_before = Pt(0 if saut_page else 13)
+        pf.space_before = Pt(0 if saut_page else 20)
         pf.space_after = Pt(7)
         pf.alignment = WD_ALIGN_PARAGRAPH.LEFT
         pf.keep_with_next = True
@@ -731,8 +731,9 @@ class Rapport:
         for i, (niveau, texte) in enumerate(self.titres):
             p = self.doc.add_paragraph()
             pf = p.paragraph_format
-            pf.space_after = Pt(2 if niveau == 1 else 1)
-            pf.space_before = Pt(6 if niveau == 1 and i else 0)
+            pf.space_after = Pt(1)
+            pf.space_before = Pt(4 if niveau == 1 and i else 0)
+            pf.line_spacing = 1.0
             pf.left_indent = Cm(0 if niveau == 1 else 0.7)
             pf.alignment = WD_ALIGN_PARAGRAPH.LEFT
             if i == 0:
@@ -751,7 +752,7 @@ class Rapport:
                 r3._r.append(fc)
             r = p.add_run(texte)
             r.font.name = POLICE
-            r.font.size = Pt(11 if niveau == 1 else 9.5)
+            r.font.size = Pt(10 if niveau == 1 else 8.5)
             r.font.bold = (niveau == 1)
             r.font.color.rgb = VERT if niveau == 1 else GRIS
             if i == len(self.titres) - 1:

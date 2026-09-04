@@ -95,16 +95,15 @@ def sommaire():
     R.espace(10)
     R.encadre(
         "Organisation du document",
-        [("Corps du rapport (résumé et chapitres 1 à 7) — ", "l'analyse, les "
-          "scénarios, les dimensionnements et les résultats économiques."),
-         ("Annexes (chapitre 8) — ", "le détail : relevés, calculs complets, "
-          "variantes étudiées et écartées, chiffrage poste par poste, points de "
-          "vigilance, plan d'action, plan de sobriété, hypothèses et sources. "
-          "Chaque renvoi du corps du rapport pointe vers l'annexe "
-          "correspondante."),
-         "La table des matières ci-dessus est un champ Word : sélectionnez-la et "
-         "appuyez sur F9 pour y faire apparaître les numéros de page."],
-        couleur=VERT, fond=H_VERT_PALE, size=9.5)
+        [("Chapitres 1 à 7 — ", "l'analyse, les scénarios, les dimensionnements "
+          "et les résultats économiques. "),
+         ("Chapitre 8, annexes — ", "le détail : relevés, calculs complets, "
+          "variantes écartées, chiffrage poste par poste, points de vigilance, "
+          "plan d'action, plan de sobriété, hypothèses et sources. Chaque renvoi "
+          "du corps du rapport pointe vers l'annexe correspondante."),
+         "Table des matières : champ Word, à actualiser par F9 pour y faire "
+         "apparaître les numéros de page."],
+        couleur=VERT, fond=H_VERT_PALE, size=9)
     R.saut_page()
 
 
@@ -1701,6 +1700,7 @@ def chapitre_6():
               "annexe 8.6)")
 
     R.para(
+        "Les montants sont arrondis à la centaine d'euros la plus proche. "
         "L'isolation par l'extérieur représente 31 % du montant, ce qui est "
         "cohérent puisqu'elle traite 46 % des déperditions ; sa part de "
         "main-d'œuvre et d'échafaudage avoisine 40 %, ce qui explique qu'il ne "
