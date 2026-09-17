@@ -13,7 +13,7 @@ La grille d'évaluation de la soutenance pondère les critères de la façon sui
 | 2. L'entreprise et le contexte | 3 min | VINCI Energies → Santerne Surfaces Commerciales → cellule CVC ; mon poste ; enjeux et parties prenantes | **2** |
 | 3. La problématique et le diagnostic | 3 min | Constat, DPE, décret tertiaire, risques encourus | **2 / 3** |
 | 4. La solution et sa justification | 4 min | Comparaison des solutions, VRV gainable, architecture, performance | **3** |
-| 5. Budget, financement, planning | 2 min | Structure du budget, CEE, calendrier | **3** |
+| 5. Budget, financement, planning | 2 min | Devis 90 000 € HT, CEE 11 000 €, calendrier, **bilan d'affaire** | **3** |
 | 6. Le chantier : nuit, ERP, hauteur | 3 min | Les contraintes, les mesures de sécurité et **l'aléa du temps de nuit doublé** — point fort du projet | **3** |
 | 7. Résultats et indicateurs d'impact | 2 min | Énergie, CO₂, euros, délai, sécurité | **3** |
 | 8. Analyse critique et perspectives | 2 min | Ce que je referais autrement, feuille de route du site | **3** |
@@ -45,6 +45,7 @@ La grille d'évaluation de la soutenance pondère les critères de la façon sui
 | Quel a été votre rôle exact ? | **Chargé de maintenance** : entretiens, dépannages, devis. Sur ce projet : **participation à l'audit** (visite, relevés, historique d'exploitation) et **réalisation d'une partie du chantier**, puis reprise de l'installation en maintenance. Ne pas surjouer : c'est plus crédible |
 | Quelle a été la charge de fluide, et qu'est-ce que cela implique ? | **38 kg de R-410A = 79,3 t CO₂e**, soit **4,8 années du gain annuel** (16,7 t/an). Au-dessus de **50 t CO₂e** → **contrôle d'étanchéité semestriel** au lieu d'annuel. Au R-32 : 25,7 t, contrôle annuel |
 | Quel aléa avez-vous rencontré ? | **Le temps de nuit a doublé** par rapport au chiffrage. Délai calendaire tenu (mi-avril → mi-juin 2026), mais écart absorbé par l'entreprise. Causes : fenêtre utile de 8 h, montage/repli quotidien, 70 % en nacelle, 59 ml de gaine, fatigue. Correction : distinguer au devis temps de production et temps de mise en place, et appliquer un coefficient de productivité nocturne |
+| Quel a été le bilan financier de l'affaire ? | **Très légèrement bénéficiaire.** Le doublement du temps de nuit a absorbé la marge prévue, mais les **économies sur les achats et la négociation fournisseurs** l'ont compensé. À dire tel quel : un bon résultat obtenu par un levier ponctuel ne valide pas une estimation fausse |
 | Qu'auriez-vous fait différemment ? | R-32 plutôt que R-410A ; **chiffrage du travail de nuit** avec coefficient de productivité ; **sous-comptage du poste chauffage avant travaux** ; recalcul du TRA après l'écart budget/devis (− 27 %) ; renfort d'équipe sur les phases lourdes |
 | Comment prouverez-vous le gain réel ? | Correction climatique par **DJU**, raisonnement en kWh avant euros, exploitation d'**ENERGISME** et de la déclaration **OPERAT**, comparaison sur une année pleine minimum |
 | Prise en compte d'un collaborateur en situation de handicap ? | Aménagement de poste avec le médecin du travail et le référent handicap : affectation aux tâches de préfabrication au sol plutôt qu'en nacelle, adaptation des horaires, accessibilité des zones |

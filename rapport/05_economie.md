@@ -25,7 +25,7 @@
 
 1. **Le poste « travail en horaire décalé » représente 9 715,85 € HT**, soit **10,5 % du montant du devis**. C'est le prix chiffré de la contrainte « magasin ouvert » : ce n'est pas une ligne de confort, c'est la condition même de faisabilité du chantier. Un chiffrage bâti sur des ratios de chantier de jour aurait conduit à une marge négative.
 2. **Les liaisons frigorifiques (21,9 %) coûtent presque autant que les groupes eux-mêmes hors mise en service**. C'est la conséquence directe de l'implantation en cour arrière imposée par le manque de place, avec de longs cheminements dans les locaux existants — une contrainte identifiée dès l'audit.
-3. **Le matériel ne fait pas le prix** : unités intérieures et extérieures cumulées représentent 44 % du devis. Le reste — réseaux, diffusion, électricité, condensats, horaires décalés, mise en service — c'est du travail, de la méthode et de la contrainte de site.
+3. **Le matériel ne fait pas le prix** : unités intérieures et extérieures cumulées représentent 44 % du devis ; le reste, c'est du travail, de la méthode et de la contrainte de site.
 
 ### 3.6.2 L'écart entre le budget de l'audit et le devis réel
 
@@ -44,8 +44,7 @@ L'audit annonçait explicitement que ses chiffrages étaient des **budgets étab
 | Obligé | **TotalEnergies Marketing France** (TEMF), RCS Nanterre 531 680 445 |
 | Mandataire | **GreenFlex**, agissant pour le compte de l'obligé |
 | **Montant estimé de la prime** | **11 000 €** |
-| Mécanisme | La signature du devis emporte **mandat au profit de Santerne** pour percevoir la prime au nom et pour le compte du bénéficiaire |
-| Conditions | Fourniture exclusive à TEMF des pièces justificatives, validation de l'éligibilité par TEMF **puis par l'Autorité compétente** ; montant susceptible de varier selon les travaux réalisés et le volume de CEE attribué |
+| Mécanisme et conditions | La signature du devis emporte **mandat au profit de Santerne** pour percevoir la prime au nom du bénéficiaire ; fourniture exclusive des justificatifs à TEMF, validation de l'éligibilité par TEMF **puis par l'Autorité compétente** ; montant variable selon les travaux réalisés et le volume de CEE attribué |
 
 **La règle d'antériorité est déterminante** : le dossier CEE doit être **engagé avant la signature du devis**. Une signature anticipée rend l'opération inéligible et fait perdre les 11 000 € — soit **12 % du montant HT des travaux**. C'est le point de procédure que j'ai le mieux retenu de ce projet, et il est désormais systématique dans mes chiffrages.
 
@@ -83,14 +82,23 @@ La fiche d'opération standardisée applicable aux systèmes **DRV réversibles 
 
 **Pour le bouquet complet**, l'économie de ces raisonnements individuels disparaît : **572 940 € HT pour 58 590 €/an et 26 700 € de subventions, soit 9,3 ans de retour**, avec **− 70 % d'émissions** et la conformité 2030 atteinte. C'est la démonstration que **l'action la moins rentable isolément peut être indispensable à l'ensemble** : sans PAC réversible, pas de sortie du gaz, pas de confort d'été, et une trajectoire décret tertiaire hors d'atteinte.
 
-### 3.6.5 Le coût global sur 15 ans
+### 3.6.5 Le bilan financier réel de l'affaire
 
-| Poste sur 15 ans | Scénario « ne rien faire » | Scénario « projet PAC » |
-|---|---|---|
-| Investissement | 0 € | 90 000 € HT |
-| Aides (CEE) | 0 € | − 11 000 € |
-| Énergie du poste chauffage | Facture gaz maintenue, prix croissants | Réduite d'un facteur 4 à 5 en énergie finale |
-| Maintenance et exploitation | Chaufferie de 1987 : contrats, ramonage, réparations croissantes | Contrat préventif sur matériel neuf sous garantie |
-| Remplacement d'urgence de la chaudière | **Probable** — non planifié, au prix fort, en pleine saison | Aucun |
-| Climatisation | Inexistante hors zone frais | Incluse, sans investissement supplémentaire |
-| Risque réglementaire | Mise en demeure, publication, amende jusqu'à 7 500 € | Trajectoire engagée |
+Un rapport de projet qui s'arrête au devis est un rapport incomplet : ce qui compte pour l'entreprise, c'est le **résultat d'affaire** une fois le chantier terminé. Sur cette opération, il se résume ainsi :
+
+| Élément | Effet sur le résultat |
+|---|---|
+| **Temps de nuit réalisé ≈ × 2 par rapport au chiffrage** | **Fortement défavorable** — la main-d'œuvre est le premier poste réel d'un chantier de ce type (voir 3.9.2) |
+| **Économies réalisées sur les achats** | Favorable — matériel et fournitures obtenus en dessous du déboursé prévu |
+| **Négociation fournisseurs** | Favorable — conditions obtenues sur les postes principaux (groupes, unités intérieures, gaine de diffusion) |
+| **Résultat final de l'affaire** | **Très légèrement bénéficiaire** |
+
+**Comment lire ce résultat.** L'affaire **n'a pas été perdue**, ce qui est déjà une performance au vu du dépassement horaire : un doublement du temps de nuit suffit normalement à faire basculer une affaire dans le rouge. Mais il faut être lucide sur la façon dont l'équilibre a été retrouvé.
+
+1. **La marge prévue a été consommée.** Passer d'une marge cible à un résultat « très légèrement bénéficiaire », cela signifie que **la quasi-totalité du bénéfice attendu est partie dans les heures de nuit supplémentaires**. L'affaire est à l'équilibre, elle n'est pas rentable.
+2. **La compensation est venue d'un levier différent de celui qui a dérapé.** C'est un point important : ce n'est pas la production qui a rattrapé la production, ce sont **les achats et la négociation**. Le travail fait en amont sur le déboursé matériel — consultation, mise en concurrence, conditions obtenues auprès des fournisseurs — a absorbé une dérive née sur le chantier.
+3. **Ce levier n'est pas reproductible à l'infini.** Une économie d'achat se joue une fois, sur un marché donné, avec un fournisseur donné. Elle ne corrige pas une **méthode de chiffrage** erronée : la prochaine affaire de nuit chiffrée de la même façon dérapera de nouveau, et rien ne garantit qu'un gain d'achat équivalent sera disponible pour la sauver.
+
+> Sur la durée de vie de l'ouvrage, le raisonnement en **coût global** reste celui présenté au client en 3.2.7 et 3.6.4 : investissement net de 79 000 € HT face à quinze années de facture gaz évitée, de maintenance d'une chaufferie de 1987 supprimée, d'un remplacement d'urgence écarté et d'un risque réglementaire levé — auxquelles s'ajoute une climatisation obtenue sans investissement supplémentaire.
+
+**L'enseignement est donc double**, et c'est celui que je retiens du volet économique de ce projet : d'une part, **la maîtrise du déboursé achat est un levier de marge aussi puissant que la productivité du chantier** — ce que je ne mesurais pas avant, en tant que technicien ; d'autre part, **un bon résultat ne valide pas une mauvaise estimation**. Confondre les deux, c'est reconduire l'erreur sur l'affaire suivante en croyant que la méthode fonctionne.

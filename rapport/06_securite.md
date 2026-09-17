@@ -32,8 +32,7 @@ Le recours au travail de nuit est **encadré et limitatif**. Il est justifié ic
 2. **Organisation du temps** : postes calés sur la **fermeture à 19 h 45 et la réouverture à 4 h 45**, durée maîtrisée, pauses respectées, repos compensateur et majorations appliqués conformément à la convention collective applicable 〈à préciser : convention collective du bâtiment ou accord d'entreprise VINCI Energies〉. La contrainte horaire est chiffrée au devis : **9 715,85 € HT de prestation en horaire décalé**.
 3. **Vigilance et fatigue** : la nuit, la vigilance baisse et le risque d'erreur augmente. Les tâches les plus à risque (brasage, travail en nacelle en extrémité de réseau, manipulations électriques) ont été planifiées **en début de poste**, les tâches de rangement et de nettoyage en fin de poste.
 4. **Travail isolé** : le binôme a été **maintenu en permanence**. Le travail isolé de nuit en hauteur aurait été inacceptable. En complément 〈à confirmer〉, moyens d'alerte : téléphone, numéro d'astreinte, procédure d'alerte des secours définie avec le magasin.
-5. **Trajets** : le risque routier nocturne est un risque professionnel majeur et souvent sous-estimé. Organisation des trajets et respect des temps de repos entre deux postes.
-6. **Restauration et conditions de vie** : local mis à disposition, possibilité de se restaurer et de se réchauffer, accès aux sanitaires, éclairage des zones de circulation.
+5. **Trajets et conditions de vie** : le risque routier nocturne est un risque professionnel majeur et souvent sous-estimé — organisation des trajets et respect des temps de repos entre deux postes ; local mis à disposition pour se restaurer, accès aux sanitaires, éclairage des zones de circulation.
 
 ### 3.7.3 Travailler dans un établissement recevant du public
 

@@ -116,7 +116,7 @@ Cette discipline de fin de poste — **une demi-heure « perdue » chaque nuit**
 
 **Les conséquences.**
 
-1. **Économiques.** Le devis prévoyait **9 715,85 € HT** de « prestation en horaire décalé », soit 10,5 % du montant. Un doublement des heures de nuit dégrade directement la marge de l'affaire — et dans un chantier où la main-d'œuvre est le premier poste réel, l'impact est significatif.
+1. **Économiques.** Le devis prévoyait **9 715,85 € HT** de « prestation en horaire décalé », soit 10,5 % du montant. Le doublement des heures a **absorbé la quasi-totalité de la marge prévue**. L'affaire s'est néanmoins terminée **très légèrement bénéficiaire**, grâce aux **économies réalisées sur les achats et à la négociation fournisseurs** — un levier qui a compensé la dérive sans pour autant corriger la méthode de chiffrage qui l'avait causée (analyse détaillée en 3.6.5).
 2. **Humaines.** Deux compagnons sur deux mois de nuit, sans marge d'effectif : le doublement de la charge s'est traduit par de la fatigue, avec le risque de sécurité que cela implique.
 3. **Contractuelles.** L'objectif « zéro heure de fermeture du magasin » a néanmoins été tenu : **c'est l'entreprise qui a absorbé l'écart, pas le client**.
 
@@ -211,20 +211,13 @@ Ce sont les indicateurs explicitement attendus par le référentiel du bloc 4. J
 |---|---|
 | Respect du délai calendaire | **Tenu** (mi-avril → mi-juin 2026) |
 | Respect du volume d'heures prévu | **Non : environ × 2** — principal enseignement du projet |
+| Résultat financier de l'affaire | **Très légèrement bénéficiaire** : dérive horaire compensée par les économies d'achat et la négociation (voir 3.6.5) |
 | Respect du budget | Devis à **90 000 € HT**, soit **− 27 %** par rapport au budget de l'audit (122 800 €) |
 | Nombre d'accidents / presqu'accidents | 〈〉 |
 | Heures de fermeture du magasin imputables au chantier | **0** |
 | Nombre de réserves à la réception / délai de levée | 〈à compléter〉 |
 | Satisfaction client | 〈à recueillir formellement — proposition : courte enquête écrite auprès du directeur〉 |
 
-### 3.11.3 Méthode de vérification des gains : une précaution indispensable
+### 3.11.3 Méthode de vérification des gains
 
-Comparer brutalement la facture de l'année N-1 à celle de l'année N serait méthodologiquement faux : les hivers ne se ressemblent pas, les prix de l'énergie varient, l'activité du magasin évolue. Pour une évaluation honnête, je propose :
-
-1. **La correction climatique** des consommations par les **degrés-jours unifiés (DJU)** de la station météorologique de référence, afin de comparer des hivers comparables ;
-2. **Le raisonnement en énergie (kWh) avant de raisonner en euros**, pour neutraliser l'effet prix ;
-3. **L'isolement du poste CVC** par sous-comptage ou, à défaut, par analyse du talon et de la courbe de charge ;
-4. **La comparaison sur une année pleine** minimum, deux de préférence ;
-5. **La déclaration OPERAT**, qui constitue la preuve officielle de la trajectoire.
-
-> **⚠ Pièce restant à obtenir** : les **relevés de consommation après travaux** sur une période représentative (une saison de chauffe complète au minimum). C'est l'élément qui transformera l'estimation de l'audit en **résultat démontré**. La plateforme **ENERGISME**, déjà utilisée pour l'audit, et la déclaration **OPERAT** du site constituent les deux sources à exploiter.
+Comparer la facture de l'année N-1 à celle de l'année N serait méthodologiquement faux : les hivers ne se ressemblent pas, les prix varient, l'activité évolue. Une évaluation honnête suppose de **corriger les consommations du climat** par les degrés-jours unifiés (DJU), de **raisonner en kWh avant de raisonner en euros**, d'**isoler le poste CVC** par sous-comptage ou par analyse de la courbe de charge, et de comparer **sur une année pleine au minimum**. La déclaration **OPERAT** constitue la preuve officielle de la trajectoire, et la plateforme **ENERGISME** fournit les données de suivi. Les **relevés après travaux sur une saison de chauffe complète** restent à obtenir : ils transformeront l'estimation de l'audit en résultat démontré.

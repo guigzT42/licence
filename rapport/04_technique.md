@@ -132,7 +132,7 @@ Sur le plan du rendement, l'écart est décisif : la chaudière de 1987 travaill
 | UI 1 | **Caisson gainable** | DAIKIN **FXMQ-250 A** | **28,0 kW chaud / 31,5 kW froid — 4 440 m³/h** | **Ligne de caisses et fond de magasin**, par gaine diffusante |
 | UI 2 à 5 | **Cassettes 900 × 900** | DAIKIN **Roundflow taille 125** | **16 kW chaud / 14 kW froid** (monophasé) | Reste de la surface de vente |
 
-**Distribution d'air** : le gainable souffle dans un **plénum sur mesure en acier galvanisé isolé 25 mm**, puis dans une **gaine acier galvanisé perforée diffusante de type GMD (marque SIONAIR), Ø 550 mm, sur 59 mètres linéaires**, thermolaquée, à diamètre constant, supportage compris. C'est cette gaine qui **traverse le magasin sur toute sa longueur** et assure une diffusion homogène au-dessus de la ligne de caisses — la zone historiquement la plus inconfortable, été comme hiver.
+**Distribution d'air** : le gainable souffle dans un **plénum sur mesure en acier galvanisé isolé 25 mm**, puis dans une **gaine acier perforée diffusante de type GMD (SIONAIR), Ø 550 mm, sur 59 mètres linéaires**, thermolaquée, à diamètre constant. C'est cette gaine qui **traverse le magasin sur toute sa longueur** et assure une diffusion homogène au-dessus de la ligne de caisses — la zone historiquement la plus inconfortable, été comme hiver.
 
 **Réseaux et équipements associés :**
 
@@ -201,10 +201,9 @@ Le réseau de diffusion est le point technique le plus sensible : **59 mètres d
 | Vérification | Valeur de référence | Enjeu sur ce chantier |
 |---|---|---|
 | Vitesse en gaine principale | 5 à 8 m/s | À Ø 550 mm et 4 440 m³/h, la vitesse d'entrée est de l'ordre de **5,2 m/s** — dans la plage acceptable |
-| Vitesse de soufflage en zone d'occupation | < 0,25 m/s | Pas de courant d'air ressenti par les clients ni par le personnel de caisse |
-| Perte de charge | Compatible avec la pression statique disponible du gainable | Facteur critique sur 59 ml : un sous-dimensionnement se traduirait par un débit insuffisant en extrémité |
-| Diffusion à diamètre constant | Répartition homogène sur la longueur | C'est l'intérêt de la gaine perforée de type GMD : la perforation est calculée pour un débit réparti |
-| Acoustique | Niveau compatible avec une surface de vente | Gaine textile ou acier perforée : diffusion basse vitesse, peu bruyante |
+| Vitesse en zone d'occupation | < 0,25 m/s | Pas de courant d'air ressenti par les clients ni par le personnel de caisse |
+| Perte de charge | Compatible avec la pression statique disponible du gainable | Facteur critique sur 59 ml : un sous-dimensionnement donnerait un débit insuffisant en extrémité |
+| Diffusion à diamètre constant et acoustique | Répartition homogène, niveau compatible avec une surface de vente | Intérêt de la gaine perforée GMD : perforation calculée pour un débit réparti, diffusion basse vitesse donc peu bruyante |
 | Réaction au feu et traversées | Matériaux conformes, clapets coupe-feu aux parois | Exigences ERP — voir 3.7.3 |
 
 ### 3.5.4 Points de vigilance techniques du chantier

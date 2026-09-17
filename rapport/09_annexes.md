@@ -13,7 +13,7 @@ Ce tableau permet au lecteur — et au jury — de retrouver directement dans le
 | Éléments techniques, économiques et environnementaux étayant la pertinence | **3.2** ; **3.4.2** ; **3.5** ; **3.6** |
 | Argumentaire construit pour convaincre | **3.2.7** (« ne rien faire / agir ») ; **3.6.4** et **3.6.5** (coût global) |
 | Objectifs du projet définis | **3.1.5** (objectifs SMART) |
-| Budget établi et cohérent | **3.6.1** (devis poste par poste) ; **3.6.2** (écart au budget de l'audit) |
+| Budget établi et cohérent | **3.6.1** (devis poste par poste) ; **3.6.2** (écart au budget de l'audit) ; **3.6.5** (bilan financier réel de l'affaire) |
 | Calendrier cohérent avec les objectifs, le délai et les acteurs | **3.8.1 à 3.8.3** |
 | Actions et résultats attendus favorisant la transition énergétique | **3.1.5** ; **3.3.4** ; **3.10.3** ; **3.11.2** |
 | Sources de financement et contraintes du projet | **3.6.3** (CEE, TotalEnergies/GreenFlex) ; **3.2** (assujettissements, autorisation de travaux) |
