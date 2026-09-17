@@ -108,7 +108,7 @@ Même de nuit, le magasin n'est pas vide : personnel de réassort, agents d'entr
 | **Ambiance et fatigue** | Travail nocturne prolongé | Pauses, éclairage d'appoint, rotation des tâches, limitation de la durée des postes |
 | **Coactivité** | Personnel du magasin, livreurs, prestataires de nettoyage | **Plan de prévention** écrit, balisage, information quotidienne |
 | **Risque routier** | Trajets nocturnes | Organisation des trajets, respect des repos |
-| **Dégât des eaux / marchandises** | Condensats, étanchéité de toiture | Protections, essais, reprise d'étanchéité par un professionnel |
+| **Dégât des eaux / marchandises** | Réseau de condensats situé au-dessus des rayons, percements | Protections des rayons, pentes et siphons contrôlés, essais à l'eau avant remise en service |
 
 ### 3.7.6 Le plan de prévention : une obligation, pas une formalité
 

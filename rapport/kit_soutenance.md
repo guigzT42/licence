@@ -11,7 +11,7 @@ La grille d'évaluation de la soutenance pondère les critères de la façon sui
 |---|---|---|---|
 | 1. Introduction et présentation personnelle | 1 min | Qui je suis, mon poste, le cadre | — |
 | 2. L'entreprise et le contexte | 3 min | VINCI Energies → Santerne Surfaces Commerciales → cellule CVC ; mon poste ; enjeux et parties prenantes | **2** |
-| 3. La problématique et le diagnostic | 3 min | Constat, DPE, décret tertiaire, risques encourus | **2 / 3** |
+| 3. La problématique et le diagnostic | 3 min | Constat, audit énergétique, décret tertiaire, risques encourus | **2 / 3** |
 | 4. La solution et sa justification | 4 min | Comparaison des solutions, VRV gainable, architecture, performance | **3** |
 | 5. Budget, financement, planning | 2 min | Devis 90 000 € HT, CEE 11 000 €, calendrier, **bilan d'affaire** | **3** |
 | 6. Le chantier : nuit, ERP, hauteur | 3 min | Les contraintes, les mesures de sécurité et **l'aléa du temps de nuit doublé** — point fort du projet | **3** |
@@ -72,20 +72,19 @@ PAGEBREAK
 
 | N° | Pièce | Statut |
 |---|---|---|
-| B1 | Rapport de DPE du site | **Manquant** |
-| B2 | Extrait du relevé OPERAT / année de référence | À demander au client |
-| B3 | Bilan thermique détaillé | À produire |
-| B4 | Plans d'implantation et schéma de principe | À récupérer |
-| B5 | Fiches techniques du matériel installé (UE, UI, régulation) | **Manquant** |
-| B6 | Devis / décomposition du prix global et forfaitaire | À anonymiser si nécessaire |
-| B7 | Attestation CEE / dossier de financement | À récupérer |
-| B8 | Planning de chantier réel | À reconstituer |
-| B9 | Plan de prévention et analyse de risques | À récupérer (QSE) |
-| B10 | Permis de feu | À récupérer |
-| B11 | Attestations CACES R486, habilitations électriques, attestation d'aptitude fluides | Disponibles |
-| B12 | PV de mise en service et relevés d'équilibrage | À récupérer |
-| B13 | PV de réception et levée de réserves | À récupérer |
-| B14 | Photos du chantier (avant / pendant / après, de nuit) | **Fortement recommandé pour la soutenance** |
-| B15 | Relevés de consommation après travaux | **Manquant** |
-| B16 | Organigramme de l'entreprise 2025 | Disponible |
+| B1 | Rapport d'audit énergétique du site (visite 17/04/2025, rapport 30/07/2025) | **Disponible** |
+| B2 | Devis Santerne — décomposition du prix par poste (90 000 € HT) | **Disponible** — à anonymiser si l'école l'exige |
+| B3 | Organigramme de l'entreprise 2025 | **Disponible** |
+| B4 | Attestations CACES® R486, habilitations électriques, attestation d'aptitude fluides | **Disponibles** |
+| B5 | Fiches techniques DAIKIN (RXYQ36U, FXMQ-250A, Roundflow 125, MADOKA) | À télécharger sur le site constructeur |
+| B6 | Plans d'implantation et schéma de principe | À récupérer (DOE) |
+| B7 | Attestation CEE / dossier TotalEnergies – GreenFlex | À récupérer |
+| B8 | Plan de prévention et analyse de risques du chantier | À récupérer (QSE — J. FAYARD) |
+| B9 | Permis de feu | À récupérer |
+| B10 | PV de mise en service DAIKIN, dossier DESP et relevés d'équilibrage | À récupérer |
+| B11 | PV de réception et levée de réserves | À récupérer |
+| B12 | Planning de chantier réel (mi-avril → mi-juin 2026) | À reconstituer |
+| B13 | Extrait du relevé OPERAT / année de référence | À demander au client |
+| B14 | Relevés de consommation après travaux (ENERGISME) | Non disponible à ce jour |
+| B15 | Photos du chantier | Non disponibles — le support s'appuie sur les figures de l'audit |
 

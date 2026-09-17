@@ -23,7 +23,7 @@ Le chantier a été découpé en phases, dans un ordre dicté par deux logiques 
 
 | Phase | Contenu | Durée indicative | Points de vigilance |
 |---|---|---|---|
-| **P0 — Préparation** (avant chantier) | Études d'exécution, plans d'implantation, commandes matériel, réservation nacelle et grue, plan de prévention, inspection commune, permis de feu, autorisations de conduite | 〈à compléter〉 | Délais fournisseurs : c'est le chemin critique |
+| **P0 — Préparation** (avant chantier) | Études d'exécution, plans d'implantation, commandes matériel, location de la nacelle, plan de prévention, inspection commune préalable, permis de feu, autorisations de conduite | 〈à compléter〉 | Délais fournisseurs : c'est le chemin critique |
 | **P1 — Installation de chantier** | Accès, zone de stockage, balisage, protections, repérage des réseaux existants, point zéro avec l'exploitant | 1 à 2 nuits | Zone de stockage sans gêne pour l'exploitation |
 | **P2 — Mise en place des groupes extérieurs** | Manutention des RXYQ20U et RXYQ16U en **cour arrière sur dalle béton**, supports Grand Rubber Foot, plots antivibratiles, sectionneurs de proximité | 〈à compléter〉 | Masse des groupes, cheminement dégagé et éclairé, nuisances sonores nocturnes |
 | **P3 — Supportage et pose des unités intérieures** | Fixation sur rails type Mupro en raccord avec la structure, pose du **gainable FXMQ-250A** et des **4 cassettes Roundflow 125** | 〈à compléter〉 | Travail en nacelle, charges suspendues, coactivité |
@@ -59,7 +59,7 @@ C'est ce qui a permis de tenir l'objectif « zéro heure de fermeture ». Chaque
 |---|---|
 | **Arrivée (fermeture du magasin)** | Point avec le responsable présent, vérification des consignes, relevé des éventuelles anomalies signalées la veille |
 | **Avant démarrage** | Analyse de risques du jour (« minute sécurité »), vérification de la nacelle, mise en place du balisage et des protections des rayons |
-| **Début de poste** | Tâches à risque et tâches bruyantes : levage, carottage, brasage — vigilance maximale |
+| **Début de poste** | Tâches à risque et tâches bruyantes : manutention, carottage, brasage — vigilance maximale |
 | **Milieu de poste** | Pose et raccordements, avancement du linéaire de gaines |
 | **Fin de poste (− 1 h)** | Arrêt des travaux à risque, surveillance post-brasage, contrôle des points chauds |
 | **Fin de poste (− 30 min)** | Repli du matériel, retrait des protections, **nettoyage de la zone**, remise en service de la détection incendie, contrôle visuel de la surface de vente |
@@ -128,7 +128,7 @@ Cette discipline de fin de poste — **une demi-heure « perdue » chaque nuit**
 
 ### 3.9.3 La coordination des acteurs
 
-Les échanges ont été organisés selon une cadence adaptée à chaque interlocuteur : **quotidienne** avec le directeur du magasin (point en début et en fin de poste, plus un point hebdomadaire formel) et avec le responsable chantier ; **hebdomadaire** avec le responsable d'affaires, complétée d'un appel à chaque aléa significatif ; **ponctuelle** avec le fournisseur et le constructeur (commande, livraisons, mise en service), le loueur de nacelle (livraison, pannes), les éventuels sous-traitants (étanchéité, levage) et le service QSE (préparation, événement de sécurité).
+Les échanges ont été organisés selon une cadence adaptée à chaque interlocuteur : **quotidienne** avec le directeur du magasin (point en début et en fin de poste, plus un point hebdomadaire formel) et avec le responsable chantier ; **hebdomadaire** avec le responsable d'affaires, complétée d'un appel à chaque aléa significatif ; **ponctuelle** avec le fournisseur et le constructeur (commande, livraisons, mise en service), le loueur de nacelle (livraison, pannes), les éventuels sous-traitants (étanchéité, électricité) et le service QSE (préparation, événement de sécurité).
 
 ## 3.10 Réception, mise en service et suite donnée au projet
 

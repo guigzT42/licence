@@ -14,7 +14,7 @@ Cette partie répond aux critères d'évaluation portant sur l'analyse critique,
 
 **4. Le dimensionnement a été repris à la source.** Remplacer à l'identique aurait conduit à réinstaller **452 kW** là où **70,4 kW** suffisent : la puissance installée a été divisée par **6,4**.
 
-**5. La sécurité a été traitée en amont.** Deux mois de travail de nuit, dans une fenêtre de huit heures entre 19 h 45 et 4 h 45, en hauteur, dans un ERP, sans fermeture du magasin et sans accident : ce résultat tient à l'inspection commune préalable, au plan de prévention, au maintien systématique du binôme et à la discipline de fin de poste.
+**5. La sécurité a été traitée en amont.** Deux mois de travail de nuit, dans une fenêtre de huit heures entre 19 h 45 et 4 h 45, en hauteur, dans un ERP, sans fermeture du magasin et sans accident déclaré 〈à confirmer auprès du service QSE〉 : ce résultat tient à l'inspection commune préalable, au plan de prévention, au maintien systématique du binôme et à la discipline de fin de poste.
 
 **6. L'objectif « zéro heure de fermeture » a été tenu**, condition d'acceptation du projet par le client.
 

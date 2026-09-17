@@ -4,7 +4,7 @@ PAGEBREAK
 
 ## 1.1 Du groupe VINCI à mon entreprise : une organisation en « poupées russes »
 
-Pour comprendre le contexte dans lequel s'inscrit mon projet, il faut d'abord comprendre une particularité du groupe VINCI Energies : **l'entreprise dans laquelle je travaille est une PME de 82 personnes, et pourtant elle appartient à un groupe de plus de 270 000 collaborateurs**. Cette double nature — l'agilité d'une PME locale, l'adossement d'un grand groupe — explique une grande partie de notre façon de travailler, de notre accès aux compétences (l'ingénieur énergéticien qui a réalisé le DPE avec moi en est l'illustration directe) et de nos contraintes (procédures sécurité, achats, reporting).
+Pour comprendre le contexte dans lequel s'inscrit mon projet, il faut d'abord comprendre une particularité du groupe VINCI Energies : **l'entreprise dans laquelle je travaille est une PME de 82 personnes, et pourtant elle appartient à un groupe de plus de 219 000 collaborateurs**. Cette double nature — l'agilité d'une PME locale, l'adossement d'un grand groupe — explique une grande partie de notre façon de travailler, de notre accès aux compétences (l'**ingénieur énergéticien** qui a réalisé l'audit énergétique du magasin en est l'illustration directe) et de nos contraintes (procédures sécurité, achats, reporting).
 
 La chaîne d'appartenance est la suivante :
 
@@ -32,7 +32,7 @@ VINCI est un groupe français de concessions, d'énergie, de construction et d'i
 VINCI Energies fonctionne non comme une grande entreprise centralisée mais comme un **réseau de 1 800 entreprises autonomes** ancrées dans leur territoire, selon trois principes que l'on retrouve au quotidien :
 
 1. **La subsidiarité** : les décisions se prennent au plus près du terrain ; le chef d'entreprise dispose d'une réelle autonomie de gestion, dans un cadre fixé par le pôle.
-2. **Le maillage** : les entreprises partagent ressources et savoir-faire. C'est ce mécanisme qui a permis de **mobiliser un ingénieur énergéticien du groupe** pour réaliser l'audit énergétique de l'Intermarché — une compétence qu'une PME isolée n'aurait pas mobilisée aussi facilement.
+2. **Le maillage** : les entreprises partagent ressources et savoir-faire. C'est ce mécanisme qui a permis de faire intervenir un **ingénieur énergéticien du groupe** pour réaliser l'audit énergétique de l'Intermarché — une compétence hors de portée d'une PME isolée.
 3. **La responsabilité de l'affaire** : chaque affaire a un responsable identifié, qui en porte la marge, le planning et la satisfaction client.
 
 Le modèle s'appuie sur **cinq valeurs** — confiance, autonomie, responsabilité, esprit d'entreprendre, solidarité — et sur deux dispositifs qui concernent mon parcours : **l'Académie VINCI Energies** (formations, portail Up!) et le **parcours « pépinière »**, ouvert aux profils de niveau licence, qui accompagne sur deux ans la prise de poste. La politique de prévention est formalisée par la démarche **SAFETY Excellence**, dont le principe est qu'aucun accident n'est une fatalité : cette culture a structuré toute la préparation du chantier de nuit décrit en partie 3.
@@ -47,11 +47,11 @@ Le pôle **VEF TCES**, basé à **Dardilly (69)** et dirigé par **Xavier LOISEL
 
 | Élément | Donnée |
 |---|---|
-| Raisons sociales | **Santerne Surfaces Commerciales** et **Santerne (Centre-Est) Energies** |
+| Raisons sociales | **Santerne Surfaces Commerciales** et **Santerne Energies** |
 | Adresse | 231 allée de l'Industrie — BP 70412 — 42350 **La Talaudière** (zone industrielle, périphérie nord-est de Saint-Étienne) |
 | Chef d'entreprise | **Jean-Pierre RASCLE** (les deux entités) |
 | Directeur de périmètre | **Nicolas HOFFER** |
-| Effectif | **82 collaborateurs** (25 chez Energies, 57 chez Surfaces Commerciales), dont **13 alternants** (3 + 10) |
+| Effectif | **82 collaborateurs** — 57 chez Surfaces Commerciales et 25 chez Energies — dont **13 alternants** (10 et 3) |
 | Chiffre d'affaires 2024 | **≈ 20 M€** (cumul des deux entités) |
 | Rattachement | Pôle VEF Tertiaire Centre-Est Sud — VINCI Energies |
 | Métiers | Courants forts, courants faibles, **génie climatique (CVC)**, maintenance multitechnique |
@@ -62,7 +62,7 @@ Le pôle **VEF TCES**, basé à **Dardilly (69)** et dirigé par **Xavier LOISEL
 L'entreprise ne dispose pas d'un historique formalisé, mais quelques jalons sont établis :
 
 - **1998 — Intégration au groupe VINCI Energies.** Santerne rejoint le groupe et bénéficie dès lors du modèle décentralisé décrit plus haut : autonomie de gestion, appartenance à un réseau national.
-- **2008 — Création de l'activité Climatisation.** L'activité génie climatique est intégrée à la suite du rapprochement avec la société **« CG Clim »**, qui exerçait auparavant sous ce nom. C'est l'acte de naissance de la cellule dans laquelle je travaille aujourd'hui : elle a donc près de **vingt ans d'antériorité** sur le marché stéphanois du froid et de la climatisation.
+- **2008 — Création de l'activité Climatisation.** L'activité génie climatique rejoint l'entreprise en 2008 ; elle exerçait auparavant sous le nom de **« CG Clim »**. C'est l'acte de naissance de la cellule dans laquelle je travaille aujourd'hui : elle a donc près de **vingt ans d'antériorité** sur le marché stéphanois du froid et de la climatisation.
 - **Aujourd'hui — Deux entités complémentaires** sous une direction commune, l'une orientée **surfaces commerciales** (grande distribution, centres commerciaux, enseignes), l'autre orientée **énergies / tertiaire et industrie**, avec une politique d'alternance très marquée (13 alternants pour 82 collaborateurs, soit près de **16 % de l'effectif**).
 
 > 〈**À compléter si l'entreprise dispose d'éléments** : date de création initiale de Santerne, historique du site de La Talaudière, évolution du CA sur 3 ans, certifications détenues (MASE, QUALIBAT, QualiPAC, ISO 9001/14001/45001), attestation de capacité fluides frigorigènes (catégorie I).〉
@@ -101,7 +101,7 @@ Cette structure — **un responsable d'affaires, des responsables chantiers, des
         Client (adhérent Intermarché)
                     │
         Responsable d'Affaires CVC  ──── Bureau d'études / Ingénieur énergéticien VINCI
-        (Jean-Michel BERJAUD)             (DPE, bilan thermique)
+        (Jean-Michel BERJAUD)             (audit énergétique, bilan thermique)
                     │
         Responsable Chantier CVC   ──── Achats / Logistique / QSE
         (A. BESSARD / S. HAMDOUCHE)      (matériel, nacelle, plan de prévention)

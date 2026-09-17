@@ -556,7 +556,7 @@ bullets(s, Cm(18.2), Cm(4.6), Cm(13.4),
          "**Le chiffrage du travail de nuit**, sous-évalué d'un facteur 2",
          "**Un sous-comptage** du poste chauffage avant travaux",
          "**Exploiter l'écart** budget audit / devis réel (− 27 %) auprès du client"], size=12.5, gap=2.3)
-notes(s, "17:30 — Critère à coefficient 3. Être franc : le R-410A est la vraie faiblesse, et je sais la chiffrer. C'est ce qui fera la différence.")
+notes(s, "17:30 — Critère à coefficient 3. Être franc : le R-410A est la vraie faiblesse, et je sais la chiffrer. C'est ce qui fera la différence. ATTENTION : vérifier auprès du QSE qu'aucun accident ni presqu'accident n'a été déclaré sur le chantier avant d'affirmer le zéro accident.")
 
 s = new("PARTIE 4 — L'ÉQUIPE", "Organisation, limites et axes d'amélioration", "1 min")
 rows = [["**Mon rôle**", "Participation à l'audit · réalisation d'une partie du chantier · exploitation en maintenance"],

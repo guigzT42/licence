@@ -9,10 +9,10 @@
 ---
 
 **Candidat :** Guillaume TARDY
-**Fonction :** Technicien CVC – Chargé de maintenance
+**Fonction :** Technicien CVC — chargé de maintenance
 **Entreprise d'accueil :** SANTERNE SURFACES COMMERCIALES — 231 allée de l'Industrie, 42350 La Talaudière
 **Groupe :** VINCI ▸ VINCI Energies ▸ VINCI Energies France Building Solutions ▸ Pôle VEF Tertiaire Centre-Est Sud
-**Tuteur entreprise :** Jean-Michel BERJAUD, Responsable d'Affaires CVC
+**Encadrement entreprise :** Jean-Michel BERJAUD, responsable d'affaires CVC
 **Chef d'entreprise :** Jean-Pierre RASCLE — **Directeur de périmètre :** Nicolas HOFFER
 **Année :** 2025 – 2026
 **Formation :** Licence professionnelle *Chargé de Projet Énergie et Bâtiment Durables* (CPEBD)
@@ -25,11 +25,11 @@
 
 Je tiens à remercier en premier lieu **Jean-Pierre RASCLE**, chef d'entreprise de Santerne Surfaces Commerciales et Santerne Energies, ainsi que **Nicolas HOFFER**, directeur de périmètre, pour la confiance qu'ils m'ont accordée en me permettant de suivre cette certification tout en occupant un poste opérationnel.
 
-Mes remerciements vont ensuite à **Jean-Michel BERJAUD**, responsable d'affaires de la cellule Climatisation, qui m'a confié la conduite de ce projet et m'a accompagné sur les volets chiffrage, relation client et arbitrages techniques.
+Mes remerciements vont ensuite à **Jean-Michel BERJAUD**, responsable d'affaires de la cellule Climatisation, qui m'a mis en relation avec l'ingénieur énergéticien du groupe et m'a permis de suivre ce projet depuis l'audit jusqu'à sa réalisation sur le chantier.
 
 Je remercie également **Alexis BESSARD** et **Sofiane HAMDOUCHE**, responsables chantiers, ainsi que les techniciens de la cellule CVC — **Mounir NEGGAZ, Rémi PAUWELS, Gaëtan VACHER** — avec qui je travaille au quotidien. Un remerciement particulier à **Julien FAYARD**, animateur sécurité, pour son accompagnement sur l'analyse de risques d'un chantier de nuit en ERP, ainsi qu'à **Akim FERROUDJ** (Méthodes / SI) et **Sandrine FLOTTE** (gestion des dépannages).
 
-Enfin, je remercie **〈nom de l'ingénieur énergéticien VINCI〉**, qui a réalisé avec moi le diagnostic de performance énergétique à l'origine de ce projet, ainsi que le **directeur du magasin Intermarché de Rive-de-Gier** et ses équipes, pour leur disponibilité tout au long des travaux.
+Enfin, je remercie **〈nom de l'ingénieur énergéticien VINCI Energies〉**, auteur de l'audit énergétique à l'origine de ce projet, qui m'a associé à ses relevés et à ses réflexions, ainsi que la **direction du magasin Intermarché de Rive-de-Gier** et ses équipes, pour leur disponibilité tout au long des travaux.
 
 PAGEBREAK
 
