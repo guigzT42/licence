@@ -30,7 +30,9 @@ Ce tableau permet au lecteur — et au jury — de retrouver directement dans le
 
 ## Annexe B — Sources et références
 
-**Documents internes** : *Livret d'accueil / Présentation générale du pôle VEF Tertiaire Centre-Est Sud* (janvier 2024) ; *Note d'organisation du pôle VEF TCES au 01/01/2024* (réf. 23-864) ; *Organigramme Santerne Surfaces Commerciales / Santerne Energies* (2025) ; données d'activité 2024 communiquées par l'entreprise.
+**Documents du projet** : *Rapport d'audit énergétique — INTERMARCHE Rive-de-Gier*, VINCI Energies Building Solutions, visite du 17/04/2025, rapport du 30/07/2025 (26 pages) ; *Devis Santerne Surfaces Commerciales — chauffage et rafraîchissement de la surface de vente*, 92 939,39 € HT ramenés à 90 000 € HT, CEE 11 000 €.
+
+**Documents internes entreprise** : *Livret d'accueil / Présentation générale du pôle VEF Tertiaire Centre-Est Sud* (janvier 2024) ; *Note d'organisation du pôle VEF TCES au 01/01/2024* (réf. 23-864) ; *Organigramme Santerne Surfaces Commerciales / Santerne Energies* (2025) ; données d'activité 2024 communiquées par l'entreprise.
 
 **Textes réglementaires cités**
 
@@ -51,8 +53,11 @@ Ce tableau permet au lecteur — et au jury — de retrouver directement dans le
 | Sécurité électrique | Norme NF C 18-510 |
 | ERP | Articles R. 143-1 et suivants du CCH ; arrêté du 25 juin 1980 (dispositions générales, dont l'article GN 13 et les articles CH) ; arrêté du 22 décembre 1981 (type M) |
 | Bruit de voisinage | Article R. 1334-31 du code de la santé publique |
-| CEE | Fiche d'opération standardisée **BAT-TH-140** (système de chauffage avec PAC de type DRV) — conditions et montants à vérifier à la date de dépôt |
+| CEE | Articles **L. 221-1 et suivants** du code de l'énergie ; fiche d'opération standardisée applicable aux **systèmes DRV réversibles en tertiaire** (exigences SCOP ≥ 4,2 et SEER ≥ 6,0 retenues par l'audit) ; obligé **TotalEnergies Marketing France**, mandataire **GreenFlex** |
+| Loi APER | **Loi n° 2023-175 du 10 mars 2023** relative à l'accélération de la production d'énergies renouvelables (ombrières photovoltaïques sur parkings) |
+| Loi LOM | **Loi n° 2019-1428 du 24 décembre 2019** d'orientation des mobilités (bornes de recharge) |
+| Classement des GTB | Norme **NF EN ISO 52120-1** (classes A à D) |
 
-**Ressources utilisées** : plateforme **OPERAT** (ADEME) pour la déclaration des consommations tertiaires ; **Base Empreinte** (ADEME) pour les facteurs d'émission de GES ; site du ministère de la Transition écologique (dispositif Éco-Énergie Tertiaire, décret BACS) ; documentations constructeurs (sélection DRV, pressions statiques, niveaux acoustiques).
+**Ressources et outils utilisés** : plateforme **OPERAT** (ADEME) ; plateforme de suivi énergétique **ENERGISME** ; données **ENEDIS** et **GRDF** ; outil de modélisation **FLASH ENERGY** (méthodologie IPMVP) ; **Base Empreinte** (ADEME) pour les facteurs d'émission ; documentations constructeurs **DAIKIN** (VRV IV, FXMQ, Roundflow, MADOKA) et **SIONAIR** (gaines de diffusion GMD).
 
 > Les trames de préparation de la soutenance orale (plan minuté, questions probables du jury) et la liste des pièces restant à collecter font l'objet d'un document de travail séparé : **« Kit soutenance et pièces manquantes »**.

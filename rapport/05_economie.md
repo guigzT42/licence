@@ -1,78 +1,96 @@
 ## 3.6 Volet économique : budget, financement et retour sur investissement
 
-### 3.6.1 La structure du budget
+### 3.6.1 Le devis réel, poste par poste
 
-Le budget d'une opération de ce type se décompose comme suit. Les montants sont à compléter avec les valeurs réelles du devis ; la structure, elle, est celle réellement utilisée pour le chiffrage.
-
-| Poste | Contenu | Montant HT |
-|---|---|---|
-| **Matériel CVC** | Groupes extérieurs, unités intérieures gainables, boîtiers de répartition, régulation centralisée | 〈à compléter〉 |
-| **Réseau frigorifique** | Cuivre frigorifique, isolation, supportage, fluide d'appoint, azote, consommables de brasage | 〈à compléter〉 |
-| **Réseau aéraulique** | Gaines, plénums, piquages, grilles et diffuseurs, registres, isolation, supportage | 〈à compléter〉 |
-| **Électricité** | Départs protégés, câblage, sectionneurs, mise à la terre, repérage | 〈à compléter〉 |
-| **Génie civil / étanchéité** | Traversées de toiture, reprise d'étanchéité, châssis, socles, carottages | 〈à compléter〉 |
-| **Levage** | Grue mobile pour la mise en place des groupes en toiture | 〈à compléter〉 |
-| **Moyens d'accès** | Location de nacelle(s) sur la durée du chantier — poste important : **70 % du chantier en nacelle** | 〈à compléter〉 |
-| **Main-d'œuvre** | 2 compagnons × 2 mois × horaires de nuit, **avec majorations et contreparties liées au travail de nuit** | 〈à compléter〉 |
-| **Encadrement et études** | Responsable d'affaires, responsable chantier, études d'exécution, plans, DOE | 〈à compléter〉 |
-| **Mise en service** | Tirage au vide, contrôle d'étanchéité, mise en service assistée constructeur, équilibrage, réglages, essais | 〈à compléter〉 |
-| **Sécurité / installation de chantier** | EPI spécifiques, balisage, éclairage de chantier, protections des rayons, nettoyage quotidien | 〈à compléter〉 |
-| **Aléas** | Provision 〈5 à 10 %〉 | 〈à compléter〉 |
-| **TOTAL HT** | | **〈à compléter〉** |
-
-> **Point d'attention méthodologique** : dans cette affaire, deux postes sont nettement supérieurs à ceux d'un chantier de jour comparable — la **main-d'œuvre** (majorations de nuit et productivité différente) et les **moyens d'accès** (nacelle mobilisée sur toute la durée). Un chiffrage bâti sur des ratios de chantier de jour aurait conduit à une marge négative. C'est un point que j'ai appris à intégrer.
-
-### 3.6.2 Les sources de financement
-
-| Dispositif | Principe | Applicabilité au projet |
-|---|---|---|
-| **Certificats d'Économies d'Énergie (CEE)** | Prime versée par un « obligé » en contrepartie d'une opération d'économie d'énergie normalisée. La fiche standardisée applicable aux systèmes **DRV réversibles en bâtiment tertiaire** est la fiche **BAT-TH-140**, qui impose des niveaux minimaux de performance (SCOP et SEER) à vérifier sur les fiches techniques du matériel retenu. | **Principal levier.** Nécessite impérativement que le dossier soit **engagé avant signature du devis** : la date de signature du devis doit être postérieure à celle de l'engagement de l'obligé. Montant 〈à compléter〉 |
-| **CEE « Coup de pouce » / bonifications** | Bonifications ponctuelles selon les périodes | À vérifier à la date de dépôt |
-| **Aides régionales / ADEME** | Aides à la performance énergétique dans le tertiaire privé | À instruire selon les dispositifs Auvergne-Rhône-Alpes en vigueur 〈à compléter〉 |
-| **Financement bancaire / crédit-bail** | Étalement de l'investissement | Solution fréquemment retenue par les adhérents |
-| **Autofinancement** | Fonds propres du point de vente | 〈à compléter selon le choix du client〉 |
-| **Amortissement comptable** | Étalement de la charge sur la durée de vie de l'équipement (généralement 10 à 15 ans) | Effet fiscal favorable |
-
-> **Enseignement personnel** : la contrainte de **chronologie des CEE** est un point que je ne maîtrisais pas et qui aurait pu coûter plusieurs milliers d'euros au client. Un devis signé trop tôt rend l'opération inéligible. C'est désormais un réflexe systématique dans mes chiffrages.
-
-### 3.6.3 Le calcul du retour sur investissement — méthode et trame
-
-**Méthode retenue**
-
-1. Calcul de la consommation annuelle du poste chauffage **avant travaux** :
-   $$ C_{avant} = \frac{Besoin_{chauffage}}{\eta_{avant}} $$
-2. Calcul de la consommation annuelle **après travaux** :
-   $$ C_{après} = \frac{Besoin_{chauffage}}{SCOP} $$
-3. Économie d'énergie finale : $ \Delta C = C_{avant} - C_{après} $
-4. Économie financière annuelle : $ \Delta € = \Delta C \times prix_{énergie} $ (en tenant compte, le cas échéant, de la substitution gaz → électricité, donc de **deux prix d'énergie différents**)
-5. Temps de retour brut : $ TRB = \dfrac{Investissement - Aides}{\Delta €} $
-
-**Trame de résultat — à compléter**
-
-| Élément | Avant travaux | Après travaux | Écart |
+| Poste | Contenu | Montant € HT | Part |
 |---|---|---|---|
-| Consommation du poste chauffage (kWh<sub>ef</sub>/an) | 〈〉 | 〈〉 | 〈〉 |
-| Consommation du poste climatisation (kWh<sub>ef</sub>/an) | 〈〉 | 〈〉 | 〈〉 |
-| Coût énergie annuel du poste CVC (€) | 〈〉 | 〈〉 | 〈〉 |
-| Coût de maintenance annuel (€) | 〈〉 | 〈〉 | 〈〉 |
-| Émissions (t CO₂e/an) | 〈〉 | 〈〉 | 〈〉 |
-| **Investissement net (après CEE)** | | | **〈〉 €** |
-| **Temps de retour brut** | | | **〈〉 ans** |
+| **A.1 — Unités intérieures** | 1 gainable FXMQ-250A (3 409,30 €) + 4 cassettes Roundflow 125 (4 × 1 911,50 €) | **11 055,30** | 11,9 % |
+| **A.2 — Plénums** | Plénum de soufflage/reprise sur mesure, acier galvanisé, isolation 25 mm | **552,63** | 0,6 % |
+| **A.3 — Diffusion par gaine perforée** | Gaine acier galvanisé perforée SIONAIR GMD Ø 550 — **59 ml**, supportages compris | **8 991,82** | 9,7 % |
+| **A.4 — Régulation** | 5 télécommandes filaires MADOKA BRC1H52 | **774,00** | 0,8 % |
+| **A.5 — Unités extérieures** | RXYQ20U (15 097,44 €) + RXYQ16U (12 527,29 €), manutention, supports antivibratiles, sectionneurs, **mise en service constructeur (1 394,37 €)** | **30 036,98** | 32,3 % |
+| **A.6 — Liaisons frigorifiques** | Cuivre frigo isolé 2 tubes (12 209,93 €), raccords Refnet, **charge R-410A (3 003,20 €)**, chemins de câbles et capotage | **20 307,90** | 21,9 % |
+| **A.7 — Évacuation des condensats** | 65 m de PVC M1 DN 40, 5 siphons, 2 raccordements EU | **1 471,59** | 1,6 % |
+| **A.8 — Alimentations électriques** | Liaisons bus LIYCY, câbles U1000 R2V, sondes déportées, coffret CVC, kit été/hiver, **liaisons Modbus/BACnet pour la GTB (531,70 €)** | **8 388,75** | 9,0 % |
+| **A.9 — Divers** | Percements et rebouchages (239,29 €), **prestation travail en horaire décalé (9 715,85 €)**, dossier DESP DAIKIN (1 405,28 €) | **11 360,42** | 12,2 % |
+| **Total devis** | | **92 939,39** | 100 % |
+| Remise commerciale | | **− 2 939,39** | |
+| **TOTAL FINAL HT** | | **90 000,00** | |
+| TVA 20 % | | 18 000,00 | |
+| **TOTAL TTC** | | **108 000,00** | |
+| **Valorisation des CEE** | | **− 11 000,00** | |
+| **TOTAL TTC après déduction des CEE** | | **97 000,00** | |
 
-**Ordres de grandeur attendus** (à confirmer impérativement par les chiffres réels) : pour une substitution d'un chauffage électrique direct ou d'une chaudière ancienne par un DRV performant en surface commerciale, un temps de retour compris entre **5 et 9 ans** est courant, ramené à **4 à 7 ans** après valorisation des CEE, pour une durée de vie d'équipement de **15 à 20 ans**. Le gain confort d'été, lui, n'est pas valorisé dans ce calcul alors qu'il porte une valeur commerciale réelle pour le magasin — c'est un argument que j'ai utilisé pour compenser un temps de retour perçu comme long.
+**Trois lectures de ce devis méritent d'être soulignées en soutenance :**
 
-### 3.6.4 Le coût global sur la durée de vie
+1. **Le poste « travail en horaire décalé » représente 9 715,85 € HT**, soit **10,5 % du montant du devis**. C'est le prix chiffré de la contrainte « magasin ouvert » : ce n'est pas une ligne de confort, c'est la condition même de faisabilité du chantier. Un chiffrage bâti sur des ratios de chantier de jour aurait conduit à une marge négative.
+2. **Les liaisons frigorifiques (21,9 %) coûtent presque autant que les groupes eux-mêmes hors mise en service**. C'est la conséquence directe de l'implantation en cour arrière imposée par le manque de place, avec de longs cheminements dans les locaux existants — une contrainte identifiée dès l'audit.
+3. **Le matériel ne fait pas le prix** : unités intérieures et extérieures cumulées représentent 44 % du devis. Le reste — réseaux, diffusion, électricité, condensats, horaires décalés, mise en service — c'est du travail, de la méthode et de la contrainte de site.
 
-Un argument efficace auprès du décideur a consisté à sortir de la seule logique du prix d'achat pour raisonner en **coût global de possession** sur 15 ans :
+### 3.6.2 L'écart entre le budget de l'audit et le devis réel
 
-| Poste sur 15 ans | Scénario « ne rien faire » | Scénario « projet VRV » |
+| Source | Montant | Écart |
 |---|---|---|
-| Investissement | 0 € | 〈à compléter〉 |
-| Aides (CEE) | 0 € | − 〈à compléter〉 |
-| Énergie | 15 × 〈coût actuel〉, avec dérive annuelle des prix | 15 × 〈coût réduit〉 |
-| Maintenance corrective | Croissante, matériel obsolète | Maîtrisée, contrat préventif |
-| Remplacements d'urgence | Probables, non planifiés, au prix fort | Aucun |
-| Risque réglementaire | Mise en demeure, publication, amende | Néant |
-| **Total** | **〈à compléter〉** | **〈à compléter〉** |
+| Budget de l'audit pour l'action « PAC réversible surface de vente » | **122 800 € HT** | référence |
+| **Devis réel Santerne** | **90 000 € HT** | **− 32 800 €, soit − 27 %** |
 
-C'est ce tableau, plus que tout autre, qui a emporté la décision : il montre que le scénario « ne rien faire » **n'est pas gratuit**.
+L'audit annonçait explicitement que ses chiffrages étaient des **budgets établis sur la tendance du marché, à conforter par un chiffrage réel**. L'écart de 27 % s'explique par des choix d'exécution plus économes que l'hypothèse de l'audit : **cassettes plutôt que réseau de gaines généralisé** sur la majeure partie du magasin, gaine diffusante limitée à la zone caisses et au fond de magasin, groupes en cour arrière sur dalle sans ouvrage de génie civil lourd. C'est une bonne illustration du rôle de l'entreprise après l'audit : **transformer un scénario en solution exécutable au juste prix**.
+
+### 3.6.3 Le financement : les certificats d'économies d'énergie
+
+| Élément | Donnée |
+|---|---|
+| Dispositif | **Certificats d'Économies d'Énergie (CEE)** — articles L. 221-1 et suivants du code de l'énergie |
+| Obligé | **TotalEnergies Marketing France** (TEMF), RCS Nanterre 531 680 445 |
+| Mandataire | **GreenFlex**, agissant pour le compte de l'obligé |
+| **Montant estimé de la prime** | **11 000 €** |
+| Mécanisme | La signature du devis emporte **mandat au profit de Santerne** pour percevoir la prime au nom et pour le compte du bénéficiaire |
+| Conditions | Fourniture exclusive à TEMF des pièces justificatives, validation de l'éligibilité par TEMF **puis par l'Autorité compétente** ; montant susceptible de varier selon les travaux réalisés et le volume de CEE attribué |
+
+**La règle d'antériorité est déterminante** : le dossier CEE doit être **engagé avant la signature du devis**. Une signature anticipée rend l'opération inéligible et fait perdre les 11 000 € — soit **12 % du montant HT des travaux**. C'est le point de procédure que j'ai le mieux retenu de ce projet, et il est désormais systématique dans mes chiffrages.
+
+La fiche d'opération standardisée applicable aux systèmes **DRV réversibles en bâtiment tertiaire** impose des niveaux minimaux de performance : c'est la raison pour laquelle l'audit exigeait un **SCOP ≥ 4,2 et un SEER ≥ 6,0**, valeurs à vérifier sur la fiche technique du matériel retenu avant dépôt du dossier.
+
+### 3.6.4 Le retour sur investissement
+
+**Pour l'action isolée** (données de l'audit et du devis) :
+
+| Élément | Valeur |
+|---|---|
+| Économie annuelle estimée par l'audit | **5 260 € HT/an** |
+| Investissement selon le budget audit | 122 800 € HT → **TRA 21,5 ans** |
+| **Investissement réel (devis)** | **90 000 € HT** → TRA ≈ **17 ans** |
+| **Investissement net après CEE** | **79 000 € HT** → **TRA ≈ 15 ans** |
+| Gain GES | **16 679 kgCO₂e/an**, soit ≈ **16,7 t CO₂e/an** (équivalent à 76 650 km en citadine essence) |
+| Rentabilité énergétique | 1 671 € investis par MWh économisé |
+| Rentabilité environnementale | 7 362 € investis par tonne de CO₂ évitée |
+
+**Il faut le dire clairement : prise isolément, cette action a le temps de retour le plus long du bouquet.** La raison est structurelle et mérite d'être expliquée :
+
+- l'opération **substitue du gaz par de l'électricité**. Le gain en énergie finale est très important (facteur 4 à 5 sur le poste), mais **l'électricité coûte environ trois fois plus cher que le gaz au kWh**, ce qui écrase le gain financier ;
+- l'opération **ajoute un usage** : la climatisation de toute la surface de vente, estimée à **+ 102 MWh, soit + 9 % de consommation électrique**. Ce surcoût est le prix du confort, qui n'a pas de contrepartie comptable directe.
+
+**Ce que le calcul de TRA ne valorise pas** — et qui a pourtant emporté la décision :
+
+| Élément non valorisé dans le TRA | Portée |
+|---|---|
+| Remplacement d'une chaudière de **1987** en fin de vie | Évite un remplacement en urgence, en pleine saison, au prix fort |
+| **Confort d'été** sur 2 596 m² de surface de vente | Fréquentation, conditions de travail des salariés, conservation des produits |
+| Trajectoire **décret tertiaire** | Évite mise en demeure, publication du manquement et amende |
+| Anticipation du **décret BACS** | Liaisons Modbus/BACnet posées : la GTC future se raccorde sans reprise |
+| Suppression de l'entretien d'une chaufferie gaz | Contrôles, ramonage, contrat d'exploitation |
+| Valeur de l'actif | Un bâtiment tertiaire non performant se décote |
+
+**Pour le bouquet complet**, l'économie de ces raisonnements individuels disparaît : **572 940 € HT pour 58 590 €/an et 26 700 € de subventions, soit 9,3 ans de retour**, avec **− 70 % d'émissions** et la conformité 2030 atteinte. C'est la démonstration que **l'action la moins rentable isolément peut être indispensable à l'ensemble** : sans PAC réversible, pas de sortie du gaz, pas de confort d'été, et une trajectoire décret tertiaire hors d'atteinte.
+
+### 3.6.5 Le coût global sur 15 ans
+
+| Poste sur 15 ans | Scénario « ne rien faire » | Scénario « projet PAC » |
+|---|---|---|
+| Investissement | 0 € | 90 000 € HT |
+| Aides (CEE) | 0 € | − 11 000 € |
+| Énergie du poste chauffage | Facture gaz maintenue, prix croissants | Réduite d'un facteur 4 à 5 en énergie finale |
+| Maintenance et exploitation | Chaufferie de 1987 : contrats, ramonage, réparations croissantes | Contrat préventif sur matériel neuf sous garantie |
+| Remplacement d'urgence de la chaudière | **Probable** — non planifié, au prix fort, en pleine saison | Aucun |
+| Climatisation | Inexistante hors zone frais | Incluse, sans investissement supplémentaire |
+| Risque réglementaire | Mise en demeure, publication, amende jusqu'à 7 500 € | Trajectoire engagée |

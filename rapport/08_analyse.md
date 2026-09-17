@@ -6,29 +6,33 @@ Cette partie répond aux critères d'évaluation portant sur l'analyse critique,
 
 ## 4.1 Ce que le projet a réussi
 
-**1. La démarche a été menée dans le bon ordre.** Le projet n'est pas parti d'une envie de vendre une machine, mais d'un **diagnostic**. Cette séquence — constat terrain → diagnostic objectivé → problématique → solution → argumentaire → décision — est exactement celle que la licence CPEBD cherche à faire acquérir. Elle donne une légitimité au discours commercial : on ne propose pas un équipement, on répond à un problème mesuré.
+**1. La démarche a été menée dans le bon ordre.** Le projet n'est pas parti d'une envie de vendre une machine, mais d'un **audit énergétique** conduit selon la méthodologie IPMVP, à partir des consommations réelles ENEDIS/GRDF. Cette séquence — constat terrain → audit objectivé → hiérarchisation des gisements → solution → argumentaire → décision — est celle que la licence CPEBD cherche à faire acquérir. Elle donne une légitimité au discours : on ne propose pas un équipement, on répond à un problème mesuré et à des obligations datées.
 
-**2. L'appui d'une expertise externe a changé la nature de la relation client.** Faire intervenir un ingénieur énergéticien du groupe a fait passer la proposition du statut de « devis d'entreprise » à celui d'**étude**. Le client n'a plus comparé un prix à un autre prix ; il a comparé un scénario d'action à un scénario d'inaction.
+**2. Le maillage VINCI Energies a changé la nature de la relation client.** Sans l'ingénieur énergéticien du groupe, l'entreprise aurait au mieux proposé un remplacement de chaudière. L'audit a produit autre chose : un **état réglementaire complet du site** (décret tertiaire, BACS, APER, LOM), une répartition des consommations par usage, et un **bouquet cohérent de cinq actions** à 9,3 ans de retour. Le client n'a plus comparé un prix à un autre prix : il a comparé un scénario d'action à un scénario d'inaction.
 
-**3. La sécurité a été traitée en amont, et cela s'est vu.** Deux mois de travail de nuit, en hauteur, dans un ERP, sans fermeture du magasin et sans accident : ce résultat ne doit rien au hasard. Il tient à l'inspection commune préalable, au plan de prévention, au maintien systématique du binôme, à la discipline de fin de poste.
+**3. Le séquencement a été intelligent.** L'audit recommandait explicitement de **ne pas installer la GTB avant d'avoir changé la production de chauffage**. Cette recommandation a été suivie, tout en posant dès maintenant les **liaisons Modbus/BACnet** : la GTC future se raccordera sans reprise de câblage. C'est de la conception qui pense à deux coups d'avance, et cela ne coûtait que 531,70 € au devis.
 
-**4. L'objectif « zéro heure de fermeture » a été tenu.** C'était la condition d'acceptation du projet par le client. Chaque nuit se terminait par un magasin propre et exploitable.
+**4. Le dimensionnement a été repris à la source.** Remplacer à l'identique aurait conduit à réinstaller **452 kW** là où **70,4 kW** suffisent. Le projet a divisé la puissance installée par **6,4**, avec les économies d'investissement et de rendement en charge partielle que cela implique.
 
-**5. La conformité réglementaire a été anticipée, pas subie.** Le choix du R-32 et l'intégration d'une régulation communicante anticipent respectivement la trajectoire F-Gas et l'échéance BACS de 2027.
+**5. La sécurité a été traitée en amont.** Deux mois de travail de nuit, dans une fenêtre de huit heures entre 19 h 45 et 4 h 45, en hauteur, dans un ERP, sans fermeture du magasin et sans accident : ce résultat tient à l'inspection commune préalable, au plan de prévention, au maintien systématique du binôme et à la discipline de fin de poste.
+
+**6. L'objectif « zéro heure de fermeture » a été tenu**, et il était la condition d'acceptation du projet par le client.
 
 ## 4.2 Ce qui aurait pu être mieux fait — analyse critique
 
-**1. Les mesures avant travaux ont été insuffisantes.** C'est ma principale critique. Nous n'avons pas mis en place de **sous-comptage dédié du poste CVC** avant le démarrage. Conséquence : la démonstration du gain réel repose sur des factures globales, sur lesquelles pèsent le froid alimentaire, l'éclairage et l'activité du magasin. **Sur un prochain projet, j'installerai un comptage dédié pendant la saison de chauffe précédant les travaux.** Un gain que l'on ne peut pas prouver est un gain que l'on ne peut pas vendre deux fois.
+**1. Le fluide frigorigène est la vraie faiblesse du projet.** L'installation fonctionne au **R-410A (GWP ≈ 2 088)**, alors que des matériels au **R-32 (GWP ≈ 675)** existent. À charge égale, l'impact climatique d'une fuite est **trois fois supérieur**. Dans un projet dont la finalité affichée est la réduction des émissions, c'est une contradiction qu'il faut assumer et expliquer : le choix relève de la gamme VRV IV retenue et de la continuité avec le parc existant du site. Les conséquences sont réelles : le règlement **(UE) 2024/573** organise la raréfaction des HFC à fort GWP, donc **le prix et la disponibilité du fluide pour les recharges se dégraderont** sur les quinze à vingt ans de vie de l'installation. Si le projet était refait aujourd'hui, je défendrais une **gamme au R-32**, et à défaut je rendrais la **qualité d'étanchéité et le suivi des contrôles** d'autant plus rigoureux — ce qui relève désormais de ma responsabilité de mainteneur.
 
-**2. La formalisation du projet a été plus faible que sa réalisation.** Le chantier a été bien conduit, mais la traçabilité écrite (planning formalisé, registre des risques tenu à jour, comptes rendus structurés) a souvent cédé le pas à l'urgence du terrain. La préparation de ce rapport m'a fait mesurer l'écart entre « avoir fait » et « pouvoir démontrer qu'on a fait ». Cette rigueur documentaire est précisément ce qui distingue un technicien d'un chargé de projet.
+**2. L'action isolée a un temps de retour long, et il ne faut pas le masquer.** **15 ans après CEE** pour la PAC seule, contre 4,3 ans pour la récupération de chaleur sur les groupes froids. La raison est structurelle : on remplace une énergie bon marché (le gaz) par une énergie chère (l'électricité), et on **ajoute** un usage — la climatisation, soit + 102 MWh et + 9 % d'électricité. Le projet se justifie par la vétusté de la chaudière, le confort et la contrainte réglementaire, pas par sa seule rentabilité énergétique. Le dire est plus solide que de le dissimuler.
 
-**3. Le dimensionnement de l'équipe a été juste.** Deux personnes sur deux mois de nuit, avec 70 % du temps en nacelle, c'est une charge physique et mentale importante, sans marge en cas d'absence. Un renfort ponctuel sur les phases lourdes (pose des unités, gaine principale) aurait sécurisé le planning et réduit la fatigue.
+**3. L'ordre des actions du bouquet aurait pu être discuté.** Économiquement, la **récupération de chaleur sur les groupes froids (4,3 ans)** et la **GTC (5,3 ans)** étaient plus rentables. On peut défendre l'ordre retenu — la chaudière de 1987 imposait le calendrier, et la récupération de chaleur perd son intérêt si elle alimente un réseau hydraulique voué à disparaître — mais l'arbitrage méritait d'être formalisé et présenté au client sous cette forme.
 
-**4. Le volet financement a été exploré tardivement.** La question des CEE aurait dû être instruite dès la première proposition, et non en cours de montage. La règle de chronologie — engagement de l'obligé **avant** signature du devis — ne souffre aucune approximation.
+**4. Les mesures avant travaux ont été insuffisantes.** Aucun **sous-comptage dédié du poste chauffage** n'a été installé avant le démarrage. La répartition par usage provient d'un modèle IPMVP avec des clés sectorielles, pas d'une mesure. Résultat : le gain réel sera difficile à démontrer autrement que par la facture globale, sur laquelle pèsent le froid, l'éclairage et l'activité du magasin. **Sur un prochain projet, j'installerai un comptage dédié pendant la saison de chauffe précédant les travaux.**
 
-**5. La mesure de la satisfaction client n'a pas été formalisée.** Le retour du client est bon, mais il est oral. Une enquête écrite simple, en fin d'opération, aurait produit un élément valorisable commercialement et un retour d'expérience exploitable.
+**5. L'écart entre le budget de l'audit et le devis réel (− 27 %) n'a pas été exploité.** Passer de 122 800 € à 90 000 € améliore le temps de retour de 21,5 à 15 ans après CEE. Ce recalcul aurait dû être présenté formellement au client : c'était un argument commercial gratuit, et il n'a pas été fait.
 
-**6. Le projet aurait pu être présenté d'emblée comme une feuille de route.** Le VRV a été vendu seul, alors que la logique décret tertiaire aurait justifié de présenter dès le départ le programme complet (froid alimentaire, éclairage, GTB, photovoltaïque) avec un phasage pluriannuel. Le client aurait vu une trajectoire plutôt qu'une dépense.
+**6. La formalisation du projet a été plus faible que sa réalisation.** Le chantier a été bien conduit, mais la traçabilité écrite — planning formalisé, registre des risques tenu à jour, comptes rendus structurés — a souvent cédé le pas à l'urgence du terrain. La préparation de ce rapport m'a fait mesurer l'écart entre « avoir fait » et « pouvoir démontrer qu'on a fait ».
+
+**7. La mesure de la satisfaction client n'a pas été formalisée.** Le retour est bon, mais oral. Une enquête écrite en fin d'opération aurait produit un élément valorisable commercialement et un retour d'expérience exploitable.
 
 ## 4.3 L'organisation de l'équipe : forces, faiblesses et axes d'amélioration
 
@@ -39,10 +43,10 @@ Le référentiel attend une analyse de l'organisation de l'équipe projet, de so
 | Acteur | Rôle dans le projet | Part de l'avancement |
 |---|---|---|
 | Responsable d'affaires (J.-M. BERJAUD) | Cadrage commercial, chiffrage final, relation contractuelle, arbitrages | Décision |
-| Moi (chargé de maintenance) | Diagnostic terrain, relevés, chiffrage technique, conception, coordination quotidienne, réalisation, mise en service, reprise en maintenance | Conduite opérationnelle |
+| **Moi (chargé de maintenance)** | **Participation à l'audit** (visite, relevé de l'existant, historique d'exploitation, échanges sur les scénarios CVC), **réalisation d'une partie du chantier** de nuit, puis reprise de l'installation en maintenance | Contribution technique et exécution |
 | Responsable chantier | Organisation, moyens, sécurité, encadrement | Encadrement |
 | Binôme de nuit (2 compagnons) | Réalisation | Exécution |
-| Ingénieur énergéticien VINCI | Diagnostic énergétique | Expertise |
+| Ingénieur énergéticien VINCI Energies | Audit énergétique complet : modélisation IPMVP, assujettissements réglementaires, chiffrage des neuf actions, bouquet de travaux | Expertise |
 | Fonctions support (achats, QSE, logistique) | Approvisionnement, prévention, moyens | Appui |
 
 ### 4.3.2 Les points forts de l'organisation
@@ -74,7 +78,7 @@ Le référentiel attend une analyse de l'organisation de l'équipe projet, de so
 
 **Sur le plan technique** : la maîtrise du **dimensionnement d'une installation DRV en site occupé** (bilan thermique, foisonnement, réseau de gaines, pression statique disponible) ; la compréhension fine des **spécificités thermiques d'un supermarché**, en particulier l'interaction entre le froid alimentaire et le confort d'ambiance, qui fausse les raisonnements de dimensionnement classiques ; l'approfondissement de la **réglementation fluides** et de ses conséquences sur les choix de conception.
 
-**Sur le plan réglementaire** : avant ce projet, le décret tertiaire était pour moi un sigle. Je sais aujourd'hui **identifier si un bâtiment est assujetti, expliquer les deux voies d'objectifs, situer les échéances, décrire les sanctions et articuler le tout avec le décret BACS et la réglementation F-Gas**. C'est, concrètement, ce qui me permet de parler à un chef d'entreprise et non seulement à un technicien.
+**Sur le plan réglementaire** : avant ce projet, le décret tertiaire était pour moi un sigle. Je sais aujourd'hui **identifier si un bâtiment est assujetti, calculer l'objectif 2030 en valeur relative (369,2 → 221,5 kWh/m² sur ce site), situer les échéances, décrire les sanctions, et articuler le tout avec les décrets BACS, la loi APER, la loi LOM et la réglementation F-Gas**. C'est, concrètement, ce qui me permet de parler à un chef d'entreprise et non seulement à un technicien.
 
 **Sur le plan de la gestion de projet** : le passage d'une logique de **tâche** à une logique de **projet** (objectifs, parties prenantes, planning, risques, indicateurs) ; l'apprentissage du **chiffrage réaliste** d'un chantier atypique (nuit, hauteur, site occupé) ; et l'apprentissage de la **conduite d'un client** — convaincre ne consiste pas à énoncer des arguments techniques, mais à traduire un enjeu technique dans le langage du décideur : euros, risques, image, continuité d'exploitation.
 
@@ -82,15 +86,15 @@ Le référentiel attend une analyse de l'organisation de l'équipe projet, de so
 
 ## 4.5 Prise de recul sur le secteur et le métier
 
-**1. La contrainte réglementaire est devenue le premier moteur du marché.** Pendant longtemps, l'efficacité énergétique se vendait sur le seul retour sur investissement — donc mal, car les temps de retour sont longs. Le décret tertiaire a changé la donne : il crée une **obligation datée**, ce qui transforme la conversation commerciale. Notre métier consiste de plus en plus à **accompagner une trajectoire réglementaire**.
+**1. La contrainte réglementaire est devenue le premier moteur du marché.** Pendant longtemps, l'efficacité énergétique se vendait sur le seul retour sur investissement — donc mal, puisque les temps de retour sont longs. Ce projet en est l'illustration : **15 ans de retour** pour l'action isolée, ce qui ne se vend pas. Ce qui l'a rendu possible, c'est la combinaison d'une **obligation datée** (− 40 % en 2030), d'un **équipement en fin de vie** et d'un **besoin de confort**. Notre métier consiste de plus en plus à **accompagner une trajectoire réglementaire**, et de moins en moins à vendre un équipement.
 
-**2. Le métier d'installateur se déplace vers le conseil et l'exploitation.** Poser une machine ne suffit plus : le client achète une performance mesurée dans la durée. Cela suppose des compétences en mesure, en régulation, en analyse de données — et cela rend le poste de mainteneur stratégique, puisqu'il est le seul à voir l'installation vivre.
+**2. Le métier d'installateur se déplace vers le conseil et l'exploitation.** Le client achète une performance mesurée dans la durée, ce qui suppose des compétences en mesure, en régulation et en analyse de données — et rend le poste de mainteneur stratégique, puisqu'il est le seul à voir l'installation vivre toute l'année.
 
-**3. Il existe un décalage entre l'ambition réglementaire et la réalité du terrain.** Beaucoup d'exploitants assujettis au décret tertiaire ignorent qu'ils le sont, ou déclarent sur OPERAT sans plan d'actions. Ce décalage est à la fois un risque collectif — l'objectif 2030 ne sera pas tenu partout — et une opportunité pour des entreprises capables de faire le lien entre réglementation et travaux.
+**3. Il existe un décalage réel entre l'ambition réglementaire et le terrain.** Sur ce site, le client ignorait être assujetti à la loi LOM depuis le 1<sup>er</sup> janvier 2025, à la loi APER pour 2028, et se trouvait déjà hors délai sur le décret BACS du fait de sa chaudière de 452 kW. Ce décalage est à la fois un risque collectif et une opportunité pour les entreprises capables de faire le lien entre réglementation et travaux.
 
-**4. La limite honnête de ce type de projet.** Remplacer un système de chauffage par une PAC est efficace, mais cela reste une action sur les **systèmes**, pas sur le **bâti**. Dans un bâtiment mal isolé, on chauffe plus efficacement un bâtiment qui perd toujours autant. Sur le long terme, la sobriété (fermeture des meubles froids, régulation, réduction des besoins) et l'isolation produiront des gains plus durables. Un projet honnête doit dire cela au client — c'est aussi ce qui construit la confiance.
+**4. La limite honnête de ce type de projet.** Sur ce site, le bâti est correctement isolé : agir sur les systèmes était le bon choix. Mais il faut regarder la répartition des consommations en face — **le froid alimentaire représente 37 % des consommations avant travaux et 58 % après**, l'éclairage 27 % puis 17 %, quand le chauffage pesait 13 %. Autrement dit, **le projet le plus visible n'était pas le plus lourd énergétiquement**. La suite du travail sur ce magasin est dans la fermeture des meubles frigorifiques, la gestion de l'éclairage et les ombrières photovoltaïques — et un projet honnête dit cela au client dès le départ.
 
-**5. La question des fluides frigorigènes restera un point de vigilance.** On substitue un impact carbone lié à la combustion par un impact potentiel lié à la fuite de fluide. Le choix du R-32 réduit fortement ce risque par rapport au R-410A, mais il ne l'annule pas : la qualité de la pose, l'étanchéité du circuit et le sérieux de la maintenance restent déterminants. C'est un argument de plus en faveur d'un contrat de maintenance — et une responsabilité directe de mon métier.
+**5. La question des fluides frigorigènes restera un point de vigilance.** On substitue un impact carbone lié à la combustion par un impact **potentiel** lié à la fuite de fluide. Avec du **R-410A à GWP 2 088**, quelques kilogrammes échappés annulent une partie du bénéfice climatique de plusieurs années de fonctionnement. L'étanchéité du circuit et le sérieux des contrôles périodiques deviennent donc une **condition de la performance environnementale annoncée**, et pas seulement une obligation administrative. C'est une responsabilité directe de mon métier, et le meilleur argument en faveur d'un contrat de maintenance sérieux.
 
 ## 4.6 Mon projet professionnel
 
@@ -98,17 +102,14 @@ Ce projet confirme l'orientation que je souhaite donner à ma carrière : évolu
 
 # Conclusion
 
-Le projet décrit dans ce rapport est parti d'un constat banal de mainteneur — une installation vieillissante, des pannes répétées, un client qui subit sa facture — pour aboutir à une opération structurante de transition énergétique : le remplacement complet du système de chauffage d'un supermarché par une installation de **climatisation réversible VRV en gainable**, réalisée **de nuit, en site occupé, sans un seul jour de fermeture**.
+Le projet décrit dans ce rapport est parti d'une situation banale pour un chargé de maintenance — une **chaudière gaz de 1987**, des pannes, un magasin sans climatisation et un client qui subissait sa facture — pour aboutir à une opération structurante : le remplacement du chauffage de la surface de vente par une **pompe à chaleur réversible DRV DAIKIN de 70,4 kW**, avec **59 mètres de gaine diffusante** au-dessus de la ligne de caisses, réalisée **de nuit, en huit heures par poste, pendant deux mois, sans un seul jour de fermeture**, pour **90 000 € HT dont 11 000 € financés par les CEE**.
 
-Ce parcours illustre, je crois, ce que le bloc 4 cherche à évaluer :
+Ce parcours illustre ce que le bloc 4 cherche à évaluer :
 
-- **Une problématique réelle**, née du terrain et objectivée par un **diagnostic de performance énergétique** mené avec un ingénieur énergéticien du groupe ;
-- **Un argumentaire construit**, croisant les dimensions technique, économique, environnementale et réglementaire — décret tertiaire, décret BACS, réglementation F-Gas — pour amener un décideur à passer à l'action en lui montrant que **l'inaction a un coût** ;
-- **Des objectifs formalisés**, un **budget structuré**, un **calendrier** de deux mois et des **moyens** dimensionnés ;
-- **Une planification intégrant des contraintes fortes** : travail de nuit encadré par le code du travail, établissement recevant du public, travail en hauteur pour 70 % des tâches, coactivité permanente ;
-- **Une conduite de projet** faite d'adaptations, de coordination quotidienne et d'arbitrages ;
-- **Une évaluation finale** assortie d'indicateurs d'impact et, surtout, d'une **analyse critique** de ce qui devra être fait autrement.
+- **une problématique réelle**, objectivée par un **audit IPMVP** qui a chiffré l'écart à combler : **330,6 kWh/m²/an contre 221,5 exigés en 2030** ;
+- **un argumentaire construit**, croisant technique, économie, environnement et réglementation — décret tertiaire, décret BACS, lois APER et LOM, règlement F-Gas — pour amener un décideur à agir en lui montrant que **l'inaction a un coût** ;
+- **des objectifs formalisés**, un **budget détaillé**, un **financement CEE** et un **calendrier** de deux mois ;
+- **une planification sous contraintes fortes** : fenêtre de huit heures entre 19 h 45 et 4 h 45, ERP en exploitation, 70 % des tâches en nacelle ;
+- **une évaluation finale** assortie d'indicateurs d'impact et d'une **analyse critique** assumée : le fluide R-410A, un temps de retour de quinze ans, l'absence de sous-comptage préalable.
 
-Ce rapport comporte encore des zones à compléter — le rapport de DPE, les références du matériel, les relevés d'exploitation après travaux. Je préfère les signaler explicitement plutôt que de les combler par des approximations : la valeur d'un diagnostic énergétique tient à la fiabilité de ses données, et ce principe vaut aussi pour un rapport de projet.
-
-Ce que je retiens, au-delà de la technique, tient en une phrase : **le rôle d'un chargé de projet en transition énergétique n'est pas de proposer la meilleure solution technique, mais de rendre une solution possible** — économiquement acceptable pour le client, réalisable pour l'équipe, sûre pour les compagnons, et conforme pour le bâtiment. C'est cette compétence-là que ce projet m'a fait travailler, et c'est celle que je souhaite continuer à développer.
+Mon niveau d'intervention, je l'ai dit clairement : j'ai **participé** à l'audit sans en être l'auteur, et j'ai **réalisé une partie** du chantier sans en avoir été le chef. C'est précisément ce qui rend ce projet formateur : il m'a fait passer du poste de **chargé de maintenance** — entretiens, dépannages, devis de remplacement de petites installations — au rôle de contributeur d'un projet de transition énergétique à 90 000 €, en en comprenant chaque dimension. Car **le rôle d'un chargé de projet en transition énergétique n'est pas de proposer la meilleure solution technique, mais de rendre une solution possible** : économiquement acceptable pour le client, réalisable pour l'équipe, sûre pour les compagnons et conforme pour le bâtiment.

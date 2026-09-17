@@ -4,7 +4,7 @@
 
 ### Certification « Chargé de projet Énergie et Bâtiment Durables »
 
-**Remplacement du système de chauffage par une installation de climatisation réversible VRV gainable — Supermarché INTERMARCHÉ de Rive-de-Gier (42800)**
+**Remplacement d'une chaudière gaz de 1987 par une pompe à chaleur réversible DRV — chauffage et rafraîchissement de la surface de vente du supermarché INTERMARCHÉ de Rive-de-Gier (42800)**
 
 ---
 
@@ -20,8 +20,6 @@
 **Date de soutenance :** 〈à compléter〉
 
 ---
-
-PAGEBREAK
 
 ## Remerciements
 
@@ -42,7 +40,7 @@ PAGEBREAK
 1. Introduction et démarche du rapport
 2. **Partie 1 — Présentation de la structure d'accueil et du contexte de travail** : du groupe VINCI à mon entreprise (1.1) ; le modèle VINCI Energies (1.2) ; le pôle VEF Tertiaire Centre-Est Sud (1.3) ; Santerne Surfaces Commerciales (1.4) ; l'organisation interne (1.5) ; la cellule Climatisation de J.-M. BERJAUD (1.6) ; mon poste (1.7) ; le contexte de travail (1.8)
 3. **Partie 2 — Missions et résultats globaux** : maintenance préventive, dépannage, chiffrage et devis, conseil énergétique, travaux, sécurité, synthèse des résultats
-4. **Partie 3 — Mission approfondie : le projet VRV de l'Intermarché de Rive-de-Gier** : contexte et problématique (3.1) ; cadre réglementaire et risques encourus (3.2) ; DPE et analyse de l'existant (3.3) ; solution technique (3.4) ; étude et dimensionnement (3.5) ; budget, financement et ROI (3.6) ; travail de nuit, ERP et travail en hauteur (3.7) ; planification et phasage (3.8) ; conduite et aléas (3.9) ; réception et perspectives (3.10) ; résultats et indicateurs d'impact (3.11)
+4. **Partie 3 — Mission approfondie : le projet VRV de l'Intermarché de Rive-de-Gier** : contexte et problématique (3.1) ; cadre réglementaire et risques encourus (3.2) ; audit énergétique et analyse de l'existant (3.3) ; solution technique (3.4) ; étude et dimensionnement (3.5) ; budget, financement et ROI (3.6) ; travail de nuit, ERP et travail en hauteur (3.7) ; planification et phasage (3.8) ; conduite et aléas (3.9) ; réception et perspectives (3.10) ; résultats et indicateurs d'impact (3.11)
 5. **Partie 4 — Analyse personnelle et prise de recul**
 6. **Conclusion**
 7. **Annexes** — correspondance avec la grille d'évaluation, pièces à joindre, sources et références
@@ -57,6 +55,9 @@ PAGEBREAK
 | CVC | Chauffage, Ventilation, Climatisation |
 | DEET | Dispositif Éco-Énergie Tertiaire (« décret tertiaire ») |
 | DPE | Diagnostic de Performance Énergétique |
+| IPMVP | *International Performance Measurement and Verification Protocol* — protocole de mesure et de vérification de la performance |
+| APE | Action de Performance Énergétique |
+| ETAS | Efficacité énergétique saisonnière (η<sub>s</sub>) |
 | DRV / VRV / VRF | Débit de Réfrigérant Variable (*Variable Refrigerant Volume / Flow*) |
 | EER / SEER | Rendement d'une PAC en refroidissement (instantané / saisonnier) |
 | ERP | Établissement Recevant du Public |
@@ -77,14 +78,14 @@ Ce rapport est présenté dans le cadre du **Bloc 4 — « Initiation et coordin
 
 La logique du document suit volontairement l'ordre attendu par le référentiel : on part du **général** — le groupe, le pôle, l'entreprise, son organisation et son contexte de marché — pour aller vers le **particulier** — la cellule Climatisation dans laquelle j'exerce, puis mon poste, puis enfin le projet approfondi.
 
-Le projet retenu est le **remplacement du système de chauffage du supermarché Intermarché de Rive-de-Gier par une installation de climatisation réversible à débit de réfrigérant variable (VRV) en gainable**. Ce projet est né d'un **diagnostic de performance énergétique** réalisé en collaboration avec un ingénieur énergéticien du groupe VINCI, qui a mis en évidence une consommation d'énergie incompatible avec les objectifs réglementaires auxquels ce bâtiment est soumis (dispositif Éco-Énergie Tertiaire, dit « décret tertiaire »).
+Le projet retenu est le **remplacement d'une chaudière gaz de 1987 par une pompe à chaleur réversible à débit de réfrigérant variable (DRV/VRV) assurant le chauffage et le rafraîchissement de la surface de vente** du supermarché Intermarché de Rive-de-Gier. Il est né d'un **audit énergétique** réalisé par un ingénieur énergéticien du groupe VINCI Energies, auquel j'ai participé, et qui a mis en évidence une consommation de **330,6 kWh/m²/an** incompatible avec l'objectif de **221,5 kWh/m²/an** imposé pour 2030 par le dispositif Éco-Énergie Tertiaire.
 
 Trois raisons ont motivé le choix de ce projet comme mission approfondie :
 
 1. **Il est directement porteur d'un enjeu de transition énergétique** : substitution d'une énergie fossile ou d'un chauffage électrique à effet Joule par une solution thermodynamique, avec un rendement de 3 à 4 unités de chaleur produites pour une unité d'électricité consommée.
 2. **Il place l'entreprise dans un rôle de conseil et non de simple exécutant** : il a fallu convaincre un décideur — le directeur du magasin — de passer à l'action, en s'appuyant sur des arguments réglementaires, techniques, économiques et environnementaux.
-3. **Il présente une complexité organisationnelle forte** : travaux réalisés **de nuit**, en **établissement recevant du public en exploitation**, avec **70 % des tâches effectuées en nacelle**, sur **deux mois**, à **deux compagnons**. La sécurité et la planification y sont au moins aussi déterminantes que la technique.
+3. **Il présente une complexité organisationnelle forte** : travaux réalisés **de nuit**, dans la fenêtre de huit heures séparant la fermeture (19 h 45) de la réouverture (4 h 45), en **établissement recevant du public en exploitation**, avec **70 % des tâches effectuées en nacelle**, sur **deux mois**, à **deux compagnons**. La sécurité et la planification y sont au moins aussi déterminantes que la technique.
 
-> **Note méthodologique et transparence sur les données.**
-> Certaines pièces du dossier ne sont pas encore en ma possession au moment de la rédaction : le **rapport de DPE complet**, les **références exactes du matériel VRV installé** et une partie des **relevés de consommation après travaux**. Les emplacements correspondants sont signalés dans le texte par la mention **〈à compléter〉** et par des tableaux pré-formatés prêts à recevoir les valeurs. Les ordres de grandeur utilisés à titre d'illustration sont explicitement présentés comme des **hypothèses de travail** et devront être remplacés par les valeurs réelles avant remise définitive. Ce choix assumé de la transparence me paraît préférable à l'invention de chiffres qui ne résisteraient pas aux questions techniques du jury.
-
+> **Note méthodologique et sources.**
+> Ce rapport s'appuie sur deux pièces réelles du dossier : le **rapport d'audit énergétique du site**, réalisé par un ingénieur énergéticien de VINCI Energies (visite du 17/04/2025, rapport du 30/07/2025), et le **devis d'exécution de Santerne Surfaces Commerciales** (90 000 € HT). Tous les chiffres techniques, énergétiques et financiers cités proviennent de ces deux documents et sont référencés comme tels.
+> Restent à compléter, et signalés dans le texte par la mention **〈à compléter〉** : les **relevés de consommation après travaux**, les **dates exactes du chantier**, le détail des **aléas rencontrés** et les **photos** de réalisation. Les rares ordres de grandeur que je calcule moi-même sont explicitement présentés comme tels.

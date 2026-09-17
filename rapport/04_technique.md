@@ -1,198 +1,231 @@
-## 3.3 Le diagnostic de performance énergétique et l'analyse de l'existant
+## 3.3 L'audit énergétique : méthode, résultats et hiérarchisation
 
-> **⚠ Section à compléter — pièce manquante n° 1.** Le rapport de DPE réalisé avec l'ingénieur énergéticien VINCI n'est pas encore en ma possession. Les tableaux ci-dessous sont pré-formatés pour recevoir ses résultats. Ils constituent la trame de restitution attendue et devront être renseignés avant la remise définitive du rapport et la préparation de la soutenance — c'est la pièce qui justifie objectivement tout le projet.
+### 3.3.1 Cadre et méthode
 
-### 3.3.1 Méthodologie du diagnostic
+L'audit énergétique a été réalisé par l'**ingénieur énergéticien de VINCI Energies**, avec ma participation sur le volet relevé et connaissance des installations.
 
-La démarche a comporté cinq étapes : **collecte des consommations** (factures électricité et gaz sur trois années glissantes, courbes de charge, sous-comptages éventuels) ; **relevé du bâti** (surfaces, parois, isolation de toiture, vitrages, sas d'entrée, étanchéité à l'air) ; **inventaire des équipements consommateurs** (chauffage, froid alimentaire positif et négatif, éclairage, ventilation, laboratoires) ; **analyse des usages et des horaires** (amplitude d'ouverture, occupation, apports internes, programmation, talon nocturne) ; enfin **hiérarchisation des gisements** par gain, coût et temps de retour.
+| Élément | Donnée |
+|---|---|
+| Visite du site | **17/04/2025** — relevé de l'état existant et entretien avec les occupants |
+| Date du rapport | **30/07/2025** |
+| Documentation exploitée | Plan CVC 2022, DOE de l'extension 2023, factures gaz et électricité 2025 |
+| Données réseaux | Courbes de charge **ENEDIS / GRDF** et données fournisseurs |
+| Plateforme de suivi | **ENERGISME** |
+| Outil de modélisation | Outil interne **FLASH ENERGY**, méthodologie **IPMVP** |
 
-### 3.3.2 État des lieux énergétique — tableau à compléter
+La méthode **IPMVP** (*International Performance Measurement and Verification Protocol*) consiste à construire, à partir des consommations réelles et des données relevées, un **modèle mathématique du bâtiment** (« archétype »), validé statistiquement, puis à identifier les postes les plus critiques pour proposer des actions d'amélioration. L'outil répartit ensuite les consommations par usage à partir de clés propres au secteur d'activité. Les coûts annoncés sont des **budgets** établis sur la tendance du marché, explicitement destinés à être confortés par un chiffrage réel — ce que le devis a fait ensuite, avec un écart significatif analysé en partie 4.
 
-| Indicateur | Valeur | Source |
+### 3.3.2 État des lieux énergétique
+
+| Indicateur | Valeur |
+|---|---|
+| **Consommation totale (état existant)** | **1 219 000 kWh<sub>ef</sub>/an**, soit **330,6 kWh<sub>ef</sub>/m²/an** |
+| **Coût énergétique associé** | **165 340 € HT/an** |
+| Énergies | Gaz naturel (chauffage) + électricité (tous autres usages) |
+| Base de référence décret tertiaire (hypothèse 2023/2024) | 1 361 440 kWh<sub>ef</sub>, soit **369,2 kWh/m²** |
+
+**Répartition des consommations par usage — état existant**
+
+| Usage | Part |
+|---|---|
+| **Production de froid alimentaire** | **37 %** |
+| **Éclairage** | **27 %** |
+| Autres (serveurs, bureautique, équipements) | 18 % |
+| **Chauffage** | **13 %** |
+| Climatisation | 4 % |
+| ECS | 1 % |
+| Ventilation | 0 % |
+
+Ce tableau est essentiel pour la prise de recul : **le chauffage ne représente que 13 % des consommations du site**. Le premier poste est le froid alimentaire, le deuxième l'éclairage. Le projet traité ici n'est donc **pas** le plus gros gisement d'économies en valeur absolue : il a été retenu parce qu'il cumulait un **équipement en fin de vie**, un **besoin de confort d'été non satisfait** et une **contribution réelle à la trajectoire réglementaire**. Le dire clairement est plus honnête — et plus solide devant un jury — que de présenter le chauffage comme l'enjeu principal d'un supermarché.
+
+### 3.3.3 Caractéristiques thermiques du bâti
+
+Le relevé montre un bâti globalement correct. Les **murs principaux** (10 cm de béton cellulaire doublés d'environ 8 cm de laine de verre) et ceux de l'extension (bardage double peau, ≈ 20 cm de laine de verre) sont jugés **bons**, de même que le **plancher** sur vide sanitaire (flocage isolant de 12 cm) et la **toiture de l'extension** (18 cm de laine de roche d'après le DOE). Sont jugés **moyens** : la **toiture du bâtiment principal** (10 à 15 cm d'isolant supposés d'après les plans et l'ancienneté) et les **menuiseries** (aluminium double vitrage 4/12/4, le sas combinant un simple vitrage côté intérieur et un 4/6/4 côté extérieur) ; celles de l'extension, en 4/16/4, sont **bonnes**.
+
+Le bâti n'est donc **pas le point faible du site** : c'est un constat déterminant, car il justifie d'agir en priorité sur les **systèmes** plutôt que sur l'enveloppe.
+
+### 3.3.4 Les actions étudiées et la hiérarchisation
+
+L'audit a chiffré neuf actions de performance énergétique (APE). Le tableau ci-dessous les classe par temps de retour, et indique celles retenues au bouquet.
+
+| Action de performance énergétique | Coût (€ HT) | Économie (€ HT/an) | TRA (ans) | Gain GES (kgCO₂e/an) | Retenue |
+|---|---|---|---|---|---|
+| **Récupération de chaleur sur les groupes froids** (ballon échangeur 3 000 L) | 34 200 | 6 400 | **4,3** | 17 160 | ✔ |
+| **GTC — Gestion Technique Centralisée** (classe A surface de vente, C bureaux) | 39 000 | 5 400 | **5,3** | 7 323 | ✔ |
+| Calorifuge des réseaux de chaufferie (si chauffage gaz conservé) | 1 680 | 220 | 6,5 | 586 | ✘ (sans objet si dépose de la chaufferie) |
+| **Ballons thermodynamiques pour les labos** (2 × 200 L, COP 3,1 à 7 °C) | 8 840 | 1 410 | **6,3** | 647 | ✔ |
+| **Ombrières photovoltaïques** (271,9 kWc, modules 440 Wc, parking) | 368 000 | 43 830 | **8,4** | 19 094 | ✔ |
+| Solution « Air Booster » (capteurs solaires verticaux, façade sud, 255 m²) | 69 800 | 6 300 | 11,0 | 17 160 | ✘ (suppression d'arbres nécessaire) |
+| Remplacement de la chaudière gaz par un modèle à condensation | 47 800 | 2 250 | 21,4 | 5 960 | ✘ (ne permet ni la climatisation ni un gain significatif) |
+| Destratificateurs (29 unités Airius) | 44 100 | 1 600 | 21,4 | 4 170 | ✘ |
+| **Chauffage de la surface de vente par pompe à chaleur réversible (DRV)** | **122 800** | **5 260** | **21,5** | **16 679** | **✔ — objet de ce rapport** |
+
+**Le bouquet de travaux retenu** comprend donc cinq actions : **PAC réversible pour la surface de vente**, **ECS thermodynamique**, **ombrières photovoltaïques**, **GTC**, **récupération de chaleur sur les groupes froids**.
+
+| Indicateur du bouquet complet | Valeur |
+|---|---|
+| Enveloppe d'investissement | **572 940 € HT** |
+| Gain financier annuel | **58 590 € /an** |
+| Subventions (bonus) | 26 700 € |
+| **Retour sur investissement** | **9,3 ans** |
+| Gain GES | **64 830 kgCO₂e/an**, soit **− 70 %** |
+| Consommation après travaux | **779 000 kWh<sub>ef</sub>/an**, soit **211,2 kWh/m²/an** (contre 221,5 exigés en 2030) |
+| Coût énergétique après travaux | 108 880 € HT/an |
+
+**Gains énergétiques par usage** (bouquet complet) :
+
+| Usage | Gain (MWh<sub>ef</sub>/an) | Réduction |
 |---|---|---|
-| Consommation totale d'énergie finale | 〈à compléter〉 kWh<sub>ef</sub>/an | Factures |
-| dont électricité | 〈à compléter〉 kWh/an | |
-| dont gaz naturel / autre énergie | 〈à compléter〉 kWh/an | |
-| Surface de référence retenue | 〈à compléter〉 m² | Relevé |
-| Ratio de consommation | 〈à compléter〉 kWh<sub>ef</sub>/m²/an | Calcul |
-| Émissions de GES | 〈à compléter〉 t CO₂e/an | Facteurs d'émission Base Empreinte ADEME |
-| Étiquette énergie | 〈à compléter〉 | DPE |
-| Étiquette climat | 〈à compléter〉 | DPE |
-| Budget énergie annuel | 〈à compléter〉 € TTC | Factures |
-| Année de référence retenue pour le décret tertiaire | 〈à compléter〉 | OPERAT |
-| Objectif 2030 correspondant | 〈à compléter〉 kWh<sub>ef</sub>/an | Calcul (− 40 %) |
-| Écart à combler | 〈à compléter〉 kWh<sub>ef</sub>/an | Calcul |
+| Chauffage & ECS | 115,7 | 9 % |
+| Autres (électricité) | 321,1 | 26 % |
+| Climatisation | 3,0 | 0 % |
+| Production de froid | 0,0 | 0 % |
+| **Total** | **439,8** | **36 %** |
 
-### 3.3.3 Répartition prévisionnelle par usage — tableau à compléter
+**Répartition après travaux** : production de froid 58 %, éclairage 17 %, autres 11 %, chauffage 7 %, climatisation 6 %, ECS 1 %. Le froid alimentaire devient mécaniquement prépondérant — ce qui désigne le prochain chantier.
 
-La répartition typique observée dans un supermarché alimentaire est donnée ci-dessous à titre de **repère de lecture**, à remplacer par les valeurs réelles du site.
+> **Point de méthode important.** L'audit signale que la mise en place d'une climatisation sur l'ensemble de la surface de vente entraîne une **consommation électrique supplémentaire estimée à 102 MWh, soit + 9 %**. Autrement dit : **le projet améliore le confort et réduit le gaz, mais il augmente la consommation d'électricité**. C'est précisément pour cette raison que l'audit le couple aux **ombrières photovoltaïques** : le profil de consommation d'un supermarché, très diurne, permet d'autoconsommer plus de 90 % de la production. Le bouquet est cohérent ; l'action isolée l'est moins. J'y reviens en partie 4.
 
-| Poste | Part typique observée en supermarché | Valeur du site |
-|---|---|---|
-| Froid alimentaire (positif + négatif) | 35 – 50 % | 〈à compléter〉 |
-| Chauffage | 15 – 30 % | 〈à compléter〉 |
-| Éclairage | 10 – 20 % | 〈à compléter〉 |
-| Climatisation / ventilation | 5 – 15 % | 〈à compléter〉 |
-| Autres (bureautique, laboratoires, four, divers) | 5 – 15 % | 〈à compléter〉 |
+## 3.4 La solution technique retenue
 
-Ce cadrage est important pour la **prise de recul** attendue : le poste chauffage n'est pas le premier poste de consommation d'un supermarché — le froid alimentaire l'est presque toujours. Le projet traité ici ne prétend donc pas résoudre à lui seul la trajectoire décret tertiaire du magasin ; il traite le **poste sur lequel le gain unitaire est le plus élevé et la faisabilité la plus immédiate**, et il ouvre la voie à des actions complémentaires décrites en section 3.10.3.
+### 3.4.1 Le principe retenu par l'audit
 
-### 3.3.4 Analyse critique de l'existant
+La fiche APE « Chauffage de la surface de vente par pompe à chaleur réversible » préconisait :
 
-| Constat | Conséquence énergétique | Traitement dans le projet |
-|---|---|---|
-| Production de chaleur vétuste à rendement dégradé | Surconsommation structurelle | Remplacement complet |
-| Absence ou insuffisance de production de froid | Inconfort d'été, appoints mobiles énergivores | Solution réversible |
-| Régulation rudimentaire, pas de programmation | Fonctionnement en dehors des heures utiles | Régulation centralisée + programmation horaire |
-| Absence de comptage et de suivi | Impossibilité de détecter les dérives | Suivi des consommations, compatibilité BACS |
-| Diffusion d'air inadaptée, stratification en grande hauteur | Chaleur accumulée en partie haute, inconfort en zone occupée | Étude de diffusion, réseau de gaines dédié |
-| 〈à compléter : isolation, vitrages, sas, rideaux d'air〉 | | |
+| Paramètre | Préconisation de l'audit |
+|---|---|
+| Équipement | **DRV + module de régulation**, réseau de diffusion en gaine |
+| **SCOP** | **≥ 4,2** |
+| **SEER** | **≥ 6,0** |
+| Positionnement des groupes | **Cour arrière** |
+| Contraintes identifiées | Passage des liaisons frigorifiques dans les locaux existants, encombrement en extérieur |
+| Atouts | Redimensionnement selon les besoins réels, régulation avec programmation horaire, **confort au niveau des caisses**, dépose possible des aérothermes et de la chaudière gaz, amélioration du rendement au regard du décret tertiaire |
 
-## 3.4 La solution technique retenue : un système VRV réversible en gainable
+### 3.4.2 Pourquoi le DRV plutôt qu'une autre solution
 
-### 3.4.1 Les solutions envisagées et l'arbitrage
+| Solution | Pourquoi elle a été écartée ou retenue |
+|---|---|
+| Chaudière gaz à condensation | **Écartée** : 47 800 € pour 2 250 €/an d'économie (21,4 ans), et surtout **aucune réponse au besoin de climatisation**, ni sortie du gaz |
+| Rooftops | Écartés : rendement inférieur au DRV en charge partielle, emprise et charge en toiture, zonage grossier |
+| PAC air/eau sur réseau existant | Écartée : réseau hydraulique et aérothermes conservés donc rendement d'émission dégradé, pas de climatisation |
+| **DRV réversible à détente directe** | **Retenue** : rendement élevé à charge partielle, réversibilité (chauffage **et** rafraîchissement d'un seul investissement), zonage, pose compatible avec un magasin en exploitation, **pas d'eau en surface de vente** |
 
-Trois familles de solutions ont été comparées avant de retenir le VRV.
+Sur le plan du rendement, l'écart est décisif : la chaudière de 1987 travaillait avec un rendement utile de l'ordre de **0,7 à 0,8**, quand le groupe installé affiche une **efficacité énergétique saisonnière (ETAS) de 162,4 % en chaud et de 250,8 % en froid**. Pour un même besoin de chaleur, la consommation d'énergie finale est divisée par un facteur de l'ordre de **4 à 5** — l'énergie change simplement de vecteur, du gaz vers l'électricité.
 
-| Solution | Principe | Avantages | Limites | Décision |
+### 3.4.3 L'installation réellement mise en œuvre
+
+**Unités extérieures** — implantées en **cour arrière**, sur **dalle béton**, et non en toiture :
+
+| Élément | Caractéristique |
+|---|---|
+| Groupes | **DAIKIN RXYQ36U**, soit **RXYQ20U (20 CV) + RXYQ16U (16 CV)** — VRV IV réversible, gamme standard |
+| **Puissance chaud à − 10 °C** | **70,4 kW** |
+| **Puissance froid** | **89,5 kW** |
+| **ETAS chaud / froid** | **162,4 % / 250,8 %** |
+| Fluide frigorigène | **R-410A** |
+| Mise en place | Manutention sur dalle bétonnée, **2 supports type Grand Rubber Foot avec 4 plots antivibratiles**, sectionneurs de proximité |
+| Mise en service | **Mise en service constructeur DAIKIN** + dossier **DESP** |
+
+**Unités intérieures — 5 au total, toutes en surface de vente :**
+
+| Repère | Type | Référence | Puissance | Zone traitée |
 |---|---|---|---|---|
-| **Rooftops autonomes** | Unités de toiture assurant chauffage, froid et renouvellement d'air | Solution classique en grande distribution, traitement d'air neuf intégré, installation rapide | Rendement inférieur au DRV en charge partielle, zonage grossier, encombrement et charge en toiture importants, bruit | Écartée |
-| **PAC air/eau + ventilo-convecteurs ou aérothermes** | Production d'eau chaude/glacée centralisée | Bon rendement, fluide frigorigène confiné en local technique, réseau hydraulique durable | Coût et emprise du réseau hydraulique, inertie plus forte, travaux plus lourds dans un magasin en exploitation | Écartée |
-| **VRV / DRV réversible en gainable** | Un ou plusieurs groupes extérieurs alimentent plusieurs unités intérieures par un réseau frigorifique à débit de réfrigérant variable | Excellent rendement à charge partielle, zonage fin, encombrement réduit, pose compatible avec un magasin en exploitation, unités gainables invisibles depuis la surface de vente | Longueurs de liaisons frigorifiques, charge en fluide plus importante, contrôle d'étanchéité, nécessité d'un traitement d'air neuf distinct | **Retenue** |
+| UI 1 | **Caisson gainable** | DAIKIN **FXMQ-250 A** | **28,0 kW chaud / 31,5 kW froid — 4 440 m³/h** | **Ligne de caisses et fond de magasin**, par gaine diffusante |
+| UI 2 à 5 | **Cassettes 900 × 900** | DAIKIN **Roundflow taille 125** | **16 kW chaud / 14 kW froid** (monophasé) | Reste de la surface de vente |
 
-### 3.4.2 Pourquoi le VRV est pertinent ici
+**Distribution d'air** : le gainable souffle dans un **plénum sur mesure en acier galvanisé isolé 25 mm**, puis dans une **gaine acier galvanisé perforée diffusante de type GMD (marque SIONAIR), Ø 550 mm, sur 59 mètres linéaires**, thermolaquée, à diamètre constant, supportage compris. C'est cette gaine qui **traverse le magasin sur toute sa longueur** et assure une diffusion homogène au-dessus de la ligne de caisses — la zone historiquement la plus inconfortable, été comme hiver.
 
-1. **Le rendement.** Une pompe à chaleur air/air restitue 3 à 4 kWh de chaleur pour 1 kWh d'électricité consommée (SCOP de l'ordre de 3,5 à 4,5 selon les matériels et les conditions). Comparé à un chauffage électrique à effet Joule (rendement 1), c'est une **division de la consommation d'énergie finale par 3 à 4** sur le poste. Comparé à une chaudière gaz ancienne (rendement utile de l'ordre de 0,8 à 0,9), le gain en énergie finale est considérable et le gain en émissions dépend du contenu carbone de l'électricité — très favorable en France (≈ 0,06 kg CO₂e/kWh pour l'électricité contre ≈ 0,22 kg CO₂e/kWh pour le gaz naturel, facteurs Base Empreinte ADEME, à actualiser lors du calcul final).
-2. **Le fonctionnement en charge partielle.** Un magasin fonctionne rarement à pleine charge : la technologie à débit de réfrigérant variable, avec compresseurs Inverter, module sa puissance en continu et conserve un rendement élevé à charge réduite — ce qui correspond à la majorité des heures de fonctionnement annuelles.
-3. **La réversibilité.** Un seul investissement traite le chauffage **et** le confort d'été, ce qui améliore fortement le retour sur investissement par rapport à deux systèmes distincts.
-4. **Le zonage.** Plusieurs unités intérieures permettent d'adapter le traitement aux zones réelles du magasin : entrée soumise aux ouvertures de portes, allée centrale, zone caisses, rayon frais où les meubles froids abaissent déjà la température, réserve.
-5. **La compatibilité avec un chantier en site occupé.** Liaisons frigorifiques d'emprise réduite posées en plénum, unités gainables dissimulées en hauteur, et **pas d'eau dans le magasin** — point important en surface de vente. Enfin, les systèmes à **récupération d'énergie** (3 tubes) permettent de chauffer certaines zones avec la chaleur extraite d'autres zones 〈à confirmer selon le matériel installé〉.
+**Réseaux et équipements associés** :
 
-### 3.4.3 Architecture de l'installation réalisée
-
-**Description générale** (à consolider avec les plans d'exécution et les références matériel) :
-
-- **Groupes extérieurs** implantés **en toiture** 〈nombre et puissance à compléter〉, sur châssis et plots antivibratiles, raccordés au réseau frigorifique par des traversées de toiture étanchées.
-- **Unités intérieures de type gainable** : **6 unités en surface de vente** et **1 unité en réserve** 〈nombre à confirmer〉, suspendues en partie haute, avec plénums de soufflage et de reprise.
-- **Réseau de gaines** : une **gaine principale partant d'un gainable traverse le magasin sur toute sa longueur**, avec piquages et grilles de diffusion répartis ; les autres unités desservent leurs zones respectives par des réseaux plus courts.
-- **Diffusion** : grilles ou diffuseurs à jet réglable, adaptés à la hauteur sous plafond et calculés pour éviter les courants d'air en zone d'occupation et le soufflage direct sur les meubles frigorifiques ouverts.
-- **Réseau frigorifique** : cuivre frigorifique brasé sous azote, isolé sur toute sa longueur, avec boîtiers de répartition (*refnet*) et vannes d'isolement.
-- **Évacuation des condensats** : réseau gravitaire ou pompes de relevage, avec siphons, raccordé vers les évacuations existantes — point de vigilance majeur au-dessus des rayons.
-- **Alimentation électrique** : départs protégés depuis le TGBT ou un tableau divisionnaire dédié, sectionneurs de proximité, mise à la terre, repérage.
-- **Régulation** : télécommandes par zone et **régulation centralisée communicante** permettant programmation horaire, consignes, verrouillage des plages de réglage et suivi des consommations — anticipation du décret BACS.
+- **Liaisons frigorifiques** en cuivre frigo dégraissé **« 2 tubes »**, isolées, avec **raccords Refnet** et **charge R-410A** ; pose sur **chemins de câbles en acier galvanisé** avec capotage des liaisons extérieures ;
+- **Évacuation des condensats** : **65 m de PVC M1 rigide DN 40**, 5 siphons à culot démontable, 2 raccordements sur réseaux EU ;
+- **Alimentations électriques** : liaisons entre unités et coffret CVC, sondes déportées, télécommandes, **liaisons bus LIYCY blindé**, **kit connecteur été/hiver** ;
+- **Régulation** : **5 télécommandes filaires DAIKIN MADOKA BRC1H52** (une par unité intérieure) ;
+- **Interopérabilité** : **liaisons Modbus ou BACnet pour raccordement à la GTB du site** — c'est l'anticipation du décret BACS décrite en 3.2.2 ;
+- **Divers** : percements, fourreaux, ragréages et rebouchages après passage des canalisations.
 
 **Schéma de principe**
 
 ```
-                    TOITURE
-   [ Groupe extérieur VRV 1 ]      [ Groupe extérieur VRV 2 ]
-              │  liaisons frigorifiques (cuivre isolé)  │
-              └──────────────┬───────────────────────────┘
-                             │  traversées de toiture étanchées
-   ─────────────────────────────────────────────────────────── plafond
-        │        │        │        │        │        │        │
-      [UI1]    [UI2]    [UI3]    [UI4]    [UI5]    [UI6]    [UI7]
-      gainable gainable gainable gainable gainable gainable  réserve
-        │
-        └── GAINE PRINCIPALE : traverse le magasin sur toute sa longueur
-             ├── piquage → grille zone entrée / sas
-             ├── piquage → grille allée centrale
-             ├── piquage → grille zone caisses
-             └── piquage → grille fond de magasin
-   ─────────────────────────────────────────────────────────── 
-                 SURFACE DE VENTE (public)          |  RÉSERVE
+   COUR ARRIÈRE — sur dalle béton                    SURFACE DE VENTE (2 596 m²)
+   ┌───────────────┐  ┌───────────────┐
+   │ RXYQ20U 20 CV │  │ RXYQ16U 16 CV │              [Cassette]  [Cassette]
+   └───────┬───────┘  └───────┬───────┘                 900x900     900x900
+           └────────┬─────────┘                       [Cassette]  [Cassette]
+        liaisons frigorifiques 2 tubes R-410A            900x900     900x900
+        (cuivre isolé, Refnet, chemins de câbles)
+                    │
+             [ Gainable FXMQ-250A ] → plénum isolé 25 mm
+                    │
+        ══════ GAINE DIFFUSANTE PERFORÉE Ø550 — 59 ml ══════►
+              (ligne de caisses → fond de magasin)
+
+   Régulation : 5 × MADOKA BRC1H52  +  liaisons Modbus/BACnet → future GTB
 ```
 
-### 3.4.4 Références matériel
-
-> **⚠ Section à compléter — pièce manquante n° 2.** Les références exactes du matériel installé ne sont pas encore en ma possession. Tableau pré-formaté :
-
-| Repère | Désignation | Marque / Référence | Puissance chaud (kW) | Puissance froid (kW) | SCOP | SEER | Fluide | Charge (kg) | Charge (t CO₂e) |
-|---|---|---|---|---|---|---|---|---|---|
-| UE1 | Groupe extérieur VRV | 〈à compléter〉 | | | | | R-32 | | |
-| UE2 | Groupe extérieur VRV | 〈à compléter〉 | | | | | R-32 | | |
-| UI1 à UI6 | Unités intérieures gainables — surface de vente | 〈à compléter〉 | | | | | | | |
-| UI7 | Unité intérieure gainable — réserve | 〈à compléter〉 | | | | | | | |
-| REG | Régulation centralisée | 〈à compléter〉 | | | | | | | |
-
-**Critères de choix à justifier lors de la soutenance** : SCOP et SEER (et niveau d'exigence des fiches CEE), fluide et GWP, niveau de pression acoustique, plage de fonctionnement en chaud par température extérieure basse, pression statique disponible des gainables (déterminante compte tenu de la longueur du réseau de gaines), compatibilité de la régulation avec un protocole ouvert pour la future GTB, disponibilité des pièces et implantation du SAV.
+> **Point à vérifier avec l'entreprise** : le devis décrit **1 gainable + 4 cassettes, toutes en surface de vente**, sans unité en réserve. Si l'installation finalement posée diffère (unité supplémentaire en réserve, cassettes supplémentaires), il faudra reprendre ce paragraphe à partir du **DOE** et non du devis.
 
 ## 3.5 Étude technique et dimensionnement
 
-### 3.5.1 Le bilan thermique — méthode
+### 3.5.1 Ce que dit le dimensionnement retenu
 
-Le dimensionnement s'appuie sur un bilan thermique en deux volets.
-
-**a) Déperditions hivernales**
-
-$$ P_{chauffage} = \underbrace{\sum (U_i \times A_i) \times \Delta T}_{\text{transmission}} + \underbrace{0,34 \times q_v \times \Delta T}_{\text{renouvellement d'air}} + \text{ponts thermiques} - \text{apports internes} $$
-
-avec :
-- $U_i$ : coefficient de transmission thermique de chaque paroi (W/m²·K) ;
-- $A_i$ : surface de la paroi (m²) ;
-- $\Delta T$ : écart entre la température intérieure de consigne (19 °C) et la **température extérieure de base** — pour la Loire, zone climatique **H1c**, de l'ordre de **− 8 à − 10 °C** selon l'altitude 〈à confirmer selon la commune et l'altitude exacte de Rive-de-Gier〉 ;
-- $q_v$ : débit de renouvellement d'air (m³/h), incluant l'air neuf hygiénique et les infiltrations, majorées par les ouvertures de portes en zone d'entrée ;
-- 0,34 : capacité thermique volumique de l'air en Wh/m³·K.
-
-**b) Apports estivaux (charges de refroidissement)**
-
-$$ P_{froid} = \text{apports par transmission} + \text{apports solaires} + \text{apports internes (éclairage, occupants, équipements)} + \text{apports par air neuf} $$
-
-**Spécificités d'un supermarché** — et c'est ici que le dimensionnement diffère d'un bâtiment tertiaire classique :
-
-| Spécificité | Effet | Conséquence sur le dimensionnement |
+| Vérification | Valeur | Commentaire |
 |---|---|---|
-| Forte densité d'occupation variable | Apports internes importants et fluctuants | Puissance froid significative, régulation réactive |
-| Éclairage puissant (même en LED) | Apports internes permanents en zone de vente | Apports à intégrer heure par heure |
-| **Meubles frigorifiques ouverts** | **Refroidissent l'ambiance en permanence** (« allée froide ») | Attention à ne pas surdimensionner le froid ; besoin de chauffage parfois accru en hiver dans ces zones |
-| Groupes froid en local technique | Rejets de chaleur | Gisement de récupération (voir 3.10.3) |
-| Ouvertures de portes fréquentes en entrée | Infiltrations d'air extérieur importantes | Zone d'entrée traitée spécifiquement, sas et rideau d'air |
-| Grande hauteur sous plafond | Stratification de l'air chaud en partie haute | Diffusion à jet orienté, déstratification |
+| Puissance chaud installée | **70,4 kW à − 10 °C** | Contre **452 kW** de chaudière déposée |
+| Puissance froid installée | **89,5 kW** | Besoin estival dimensionnant en surface commerciale |
+| Somme des puissances des unités intérieures (chaud) | 28,0 + 4 × 16 = **92 kW** | Soit un **taux de foisonnement d'environ 130 %** par rapport aux 70,4 kW du groupe |
+| Ratio de puissance chaud rapporté à la surface de vente | 70,4 kW / 2 596 m² ≈ **27 W/m²** | Cohérent avec un bâti correctement isolé et fortement chargé en apports internes |
+| Débit d'air du gainable | **4 440 m³/h** | Diffusion sur 59 ml de gaine Ø 550 |
 
-### 3.5.2 Bilan thermique du site — tableau à compléter
+**Le facteur 6,4 entre l'ancienne chaudière (452 kW) et la nouvelle production (70,4 kW) est l'enseignement technique majeur du projet.** Il ne signifie pas que le bâtiment était sous-chauffé, mais que :
 
-| Zone | Surface (m²) | Volume (m³) | Déperditions (kW) | Charges de froid (kW) | Puissance UI retenue (kW) |
-|---|---|---|---|---|---|
-| Entrée / sas | 〈〉 | 〈〉 | 〈〉 | 〈〉 | 〈〉 |
-| Allée centrale | 〈〉 | 〈〉 | 〈〉 | 〈〉 | 〈〉 |
-| Zone épicerie | 〈〉 | 〈〉 | 〈〉 | 〈〉 | 〈〉 |
-| Zone frais / allée froide | 〈〉 | 〈〉 | 〈〉 | 〈〉 | 〈〉 |
-| Zone caisses | 〈〉 | 〈〉 | 〈〉 | 〈〉 | 〈〉 |
-| Fond de magasin | 〈〉 | 〈〉 | 〈〉 | 〈〉 | 〈〉 |
-| Réserve | 〈〉 | 〈〉 | 〈〉 | 〈〉 | 〈〉 |
-| **Total** | | | **〈〉** | **〈〉** | **〈〉** |
+1. la chaudière de 1987 était **très largement surdimensionnée**, comme la plupart des installations de cette époque, dimensionnées avec de fortes marges et sur un bâti alors moins isolé ;
+2. le bâtiment a été **isolé et modifié** depuis (extension, toiture, doublages) ;
+3. les **apports internes** d'un supermarché sont considérables : éclairage, occupants, équipements et surtout **rejets des groupes de froid alimentaire**, qui représentent 37 % de la consommation du site et dont une grande partie finit en chaleur dans le bâtiment ;
+4. le rendement d'émission d'un DRV à détente directe, avec régulation fine et soufflage maîtrisé, est sans commune mesure avec celui d'aérothermes à eau chaude pilotés en loi d'eau.
 
-Le **taux de foisonnement** appliqué entre la somme des puissances des unités intérieures et la puissance des groupes extérieurs devra être justifié 〈valeur à compléter, couramment 100 à 130 % en DRV〉 : toutes les zones n'appellent jamais leur puissance maximale simultanément.
+Ce constat est un argument fort en soutenance : **remplacer à l'identique aurait conduit à réinstaller une puissance six fois supérieure au besoin réel**, avec le surcoût d'investissement et les mauvais rendements en charge partielle que cela implique.
 
-### 3.5.3 Dimensionnement aéraulique du réseau de gaines
+### 3.5.2 Méthode de vérification du dimensionnement
 
-Le réseau de gaines est le point technique le plus délicat du projet, du fait de la longueur du réseau principal traversant tout le magasin.
+Le bilan thermique s'appuie sur les principes suivants :
 
-**Méthode** : dimensionnement à **perte de charge linéaire constante** (couramment 0,8 à 1,2 Pa/m en tertiaire), avec vérification des **vitesses d'air** :
+**Déperditions hivernales** : *P = Σ(U<sub>i</sub> × A<sub>i</sub>) × ΔT + 0,34 × q<sub>v</sub> × ΔT + ponts thermiques − apports internes*, avec une **température extérieure de base de l'ordre de − 8 à − 10 °C** pour la zone **H1c** (cohérente avec la puissance constructeur annoncée à − 10 °C), une consigne intérieure de **19 °C**, et un débit de renouvellement d'air majoré par les ouvertures fréquentes du sas d'entrée.
 
-| Tronçon | Vitesse recommandée | Justification |
+**Charges estivales** : apports par transmission et apports solaires, **apports internes** (éclairage LED, occupants, équipements), apports par air neuf.
+
+**Spécificités d'un supermarché, intégrées au dimensionnement :**
+
+| Spécificité | Effet | Conséquence |
 |---|---|---|
-| Gaine principale | 5 – 8 m/s | Compromis encombrement / bruit |
-| Antennes et piquages | 3 – 5 m/s | Limitation du bruit régénéré |
-| Bouches et grilles de soufflage | 2 – 3 m/s | Confort acoustique, absence de sifflement |
-| Zone d'occupation | < 0,25 m/s | Absence de sensation de courant d'air |
+| Meubles frigorifiques ouverts | Refroidissent l'ambiance en permanence (« allée froide ») | Ne pas surdimensionner le froid ; besoin de chauffage parfois accru localement |
+| Rejets des groupes de froid | Apport de chaleur gratuit non maîtrisé | **Gisement de récupération** — action retenue au bouquet (4,3 ans de retour) |
+| Éclairage et occupants | Apports internes importants et permanents aux heures d'ouverture | Réduction du besoin de chauffage, augmentation du besoin de froid |
+| Grande hauteur sous plafond | Stratification de l'air chaud | Diffusion par gaine perforée haute, action « destratificateurs » étudiée |
+| Ouvertures du sas | Infiltrations d'air extérieur | Traitement renforcé de la zone d'entrée et des caisses |
+| Amplitude 4 h 45 – 19 h 45 | Longue plage de fonctionnement | Programmation horaire et réduit de nuit indispensables |
 
-**Vérifications indispensables**
-- **Pression statique disponible** des unités gainables : elle doit couvrir la perte de charge totale du réseau (gaines, coudes, piquages, filtres encrassés, grilles) avec une marge. Un sous-dimensionnement se traduit par un débit insuffisant en extrémité de réseau — défaut classique et difficile à corriger après coup ;
-- **Équilibrage aéraulique** par registres, mesuré à la réception ;
-- **Isolation thermique** des gaines traversant des volumes non traités, pour éviter les pertes et les condensations en mode froid ;
-- **Réaction au feu** des gaines et de leur calorifuge, et **clapets coupe-feu** au franchissement des parois coupe-feu (voir 3.7.3) ;
-- **Acoustique** : niveau sonore en surface de vente compatible avec l'activité, pièges à son si nécessaire.
+### 3.5.3 Dimensionnement aéraulique
 
-### 3.5.4 Points de vigilance techniques propres à ce chantier
+Le réseau de diffusion est le point technique le plus sensible : **59 mètres de gaine perforée à diamètre constant Ø 550 mm alimentée par une seule unité de 4 440 m³/h**.
 
-| Point de vigilance | Risque | Mesure prise |
+| Vérification | Valeur de référence | Enjeu sur ce chantier |
 |---|---|---|
-| Longueur des liaisons frigorifiques | Perte de puissance, charge de fluide élevée | Respect des longueurs maximales constructeur, appoint de charge calculé et tracé |
-| Charge en fluide et volume du local | Seuil de concentration limite en cas de fuite | Vérification selon NF EN 378 |
-| Capacité portante de la toiture | Ruine locale sous le poids des groupes | Note de calcul structure 〈à compléter — bureau d'études〉, répartition des charges sur châssis |
-| Transmission de vibrations | Bruit dans le magasin et chez les riverains | Plots antivibratiles, manchettes souples |
-| Étanchéité des traversées de toiture | Infiltrations d'eau au-dessus de la surface de vente | Reprise d'étanchéité par 〈entreprise d'étanchéité / à compléter〉, contrôle |
-| Condensats | Dégât des eaux sur les marchandises | Pentes respectées, siphons amorcés, essais avant mise en service |
+| Vitesse en gaine principale | 5 à 8 m/s | À Ø 550 mm et 4 440 m³/h, la vitesse d'entrée est de l'ordre de **5,2 m/s** — dans la plage acceptable |
+| Vitesse de soufflage en zone d'occupation | < 0,25 m/s | Pas de courant d'air ressenti par les clients ni par le personnel de caisse |
+| Perte de charge | Compatible avec la pression statique disponible du gainable | Facteur critique sur 59 ml : un sous-dimensionnement se traduirait par un débit insuffisant en extrémité |
+| Diffusion à diamètre constant | Répartition homogène sur la longueur | C'est l'intérêt de la gaine perforée de type GMD : la perforation est calculée pour un débit réparti |
+| Acoustique | Niveau compatible avec une surface de vente | Gaine textile ou acier perforée : diffusion basse vitesse, peu bruyante |
+| Réaction au feu et traversées | Matériaux conformes, clapets coupe-feu aux parois | Exigences ERP — voir 3.7.3 |
+
+### 3.5.4 Points de vigilance techniques du chantier
+
+| Point de vigilance | Risque | Mesure |
+|---|---|---|
+| Longueur des liaisons frigorifiques (cour arrière → surface de vente) | Perte de puissance, charge de fluide élevée | Respect des longueurs maximales constructeur, appoint de charge calculé et tracé, chemins de câbles dédiés |
+| Passage des liaisons dans les locaux existants | Contrainte identifiée dès l'audit | Repérage préalable, tracé validé avec l'exploitant, capotage des parties extérieures |
+| Condensats au-dessus des rayons | Dégât des eaux sur marchandises | Pentes respectées, siphons à culot démontable, essais à l'eau avant remise en service |
+| Support et vibrations des groupes | Bruit transmis, nuisance pour les riverains | Dalle béton, supports Grand Rubber Foot, 4 plots antivibratiles |
+| Dépose de la chaudière et des aérothermes | Coupure du chauffage en cours de saison | Phasage : mise en service de la PAC **avant** dépose de l'ancien système |
 | Coactivité avec le froid alimentaire | Coupure accidentelle d'un groupe froid | Consignations tracées, repérage préalable, coordination avec le frigoriste du magasin |
-| Propreté à l'ouverture | Magasin non présentable à 8 h 30 | Nettoyage systématique en fin de poste (voir 3.8) |
+| Propreté à l'ouverture | Magasin non présentable à 4 h 45 | Nettoyage systématique en fin de poste (voir 3.8.4) |

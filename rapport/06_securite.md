@@ -1,6 +1,6 @@
 ## 3.7 Préparation et réglementation du chantier : travail de nuit, ERP et travail en hauteur
 
-Cette section est volontairement la plus développée du rapport. Sur ce chantier, **le risque principal n'était pas technique mais organisationnel et humain** : deux compagnons, la nuit, en hauteur, dans un établissement recevant du public, pendant deux mois. Conformément à la logique de la démarche SAFETY Excellence, la préparation a commencé par les **éléments de survie**, c'est-à-dire par tout ce qui conditionne le fait que chacun rentre chez lui en bon état.
+Cette section est volontairement la plus développée du rapport. Sur ce chantier, **le risque principal n'était pas technique mais organisationnel et humain** : deux compagnons, la nuit, en hauteur, dans un établissement recevant du public, pendant deux mois. La contrainte était d'autant plus forte que le magasin **ferme à 19 h 45 et rouvre à 4 h 45** : la fenêtre d'intervention réellement disponible est donc d'environ **huit heures**, dont il faut retirer l'installation et le repli quotidiens. Conformément à la logique de la démarche SAFETY Excellence, la préparation a commencé par les **éléments de survie**, c'est-à-dire par tout ce qui conditionne le fait que chacun rentre chez lui en bon état.
 
 ### 3.7.1 La hiérarchie des principes généraux de prévention
 
@@ -10,10 +10,10 @@ Toute l'analyse a été construite sur les **neuf principes généraux de préve
 |---|---|---|
 | 1 | Éviter les risques | Préfabrication au sol de tronçons de gaines et de supports pour réduire le temps passé en hauteur |
 | 2 | Évaluer les risques qui ne peuvent être évités | Analyse de risques écrite, plan de prévention avec le magasin |
-| 3 | Combattre les risques à la source | Levage des groupes par grue plutôt que manutention manuelle |
+| 3 | Combattre les risques à la source | Implantation des groupes en cour arrière **sur dalle béton de plain-pied**, évitant tout levage en toiture |
 | 4 | Adapter le travail à l'homme | Rythme de nuit aménagé, pauses, rotation des tâches physiques |
 | 5 | Tenir compte de l'état d'évolution de la technique | Nacelle adaptée à la hauteur et au sol, outillage sur batterie |
-| 6 | Remplacer ce qui est dangereux par ce qui l'est moins | Brasage à l'azote limité, raccords mécaniques quand possible ; fluide R-32 |
+| 6 | Remplacer ce qui est dangereux par ce qui l'est moins | Brasage sous azote, limitation des points chauds, préfabrication des tronçons au sol |
 | 7 | Planifier la prévention | Phasage du chantier, permis de feu, consignations programmées |
 | 8 | **Prendre des mesures de protection collective en leur donnant la priorité sur les mesures individuelles** | Balisage des zones, garde-corps de la nacelle, protection des rayons — avant le harnais |
 | 9 | Donner les instructions appropriées | Accueil sécurité, causeries, consignes propres au site |
@@ -41,7 +41,7 @@ Le recours au travail de nuit est **encadré et limitatif**. Il est justifié ic
 **Traduction concrète sur le chantier**
 
 1. **Composition de l'équipe** : le chantier a été réalisé **à deux**, avec des compagnons volontaires, majeurs et médicalement aptes au travail de nuit. Les apprentis mineurs de la cellule en ont été exclus de droit.
-2. **Organisation du temps** : postes calés sur la fermeture du magasin, durée maîtrisée, pauses respectées, repos compensateur et majorations appliqués conformément à la convention collective applicable 〈à préciser : convention collective des travaux publics / du bâtiment ou accord d'entreprise VINCI Energies〉.
+2. **Organisation du temps** : postes calés sur la **fermeture à 19 h 45 et la réouverture à 4 h 45**, durée maîtrisée, pauses respectées, repos compensateur et majorations appliqués conformément à la convention collective applicable 〈à préciser : convention collective du bâtiment ou accord d'entreprise VINCI Energies〉. La contrainte horaire est chiffrée au devis : **9 715,85 € HT de prestation en horaire décalé**.
 3. **Vigilance et fatigue** : la nuit, la vigilance baisse et le risque d'erreur augmente. Les tâches les plus à risque (brasage, travail en nacelle en extrémité de réseau, manipulations électriques) ont été planifiées **en début de poste**, les tâches de rangement et de nettoyage en fin de poste.
 4. **Travail isolé** : le binôme a été **maintenu en permanence**. Le travail isolé de nuit en hauteur aurait été inacceptable. En complément 〈à confirmer〉, moyens d'alerte : téléphone, numéro d'astreinte, procédure d'alerte des secours définie avec le magasin.
 5. **Trajets** : le risque routier nocturne est un risque professionnel majeur et souvent sous-estimé. Organisation des trajets et respect des temps de repos entre deux postes.
@@ -58,9 +58,9 @@ L'article **GN 13** de l'arrêté du 25 juin 1980 pose le principe fondamental :
 | Exigence | Mise en œuvre sur le chantier |
 |---|---|
 | Maintien permanent des **dégagements et des issues de secours** | Aucun stockage, aucune gaine, aucun matériel dans les circulations et devant les issues ; la nacelle ne bloque jamais un dégagement |
-| Maintien du **niveau de sécurité incendie** | Détection incendie, alarme, désenfumage, extincteurs et RIA restés opérationnels ; toute mise hors service temporaire d'une zone de détection tracée et remise en service en fin de poste |
+| Maintien du **niveau de sécurité incendie** | Détection incendie, alarme, désenfumage, extincteurs et RIA restés opérationnels ; toute mise hors service temporaire d'une zone de détection tracée et **remise en service impérative avant 4 h 45** |
 | **Travaux par points chauds** | **Permis de feu** obligatoire pour les opérations de brasage : extincteur à proximité, protection des matériaux combustibles, surveillance de la zone pendant et **après** l'intervention |
-| **Propreté et repli quotidien** | Le magasin devait être **restitué exploitable et propre pour l'ouverture** : évacuation des déchets, nettoyage des zones, retrait des protections, contrôle visuel de la surface de vente |
+| **Propreté et repli quotidien** | Le magasin devait être **restitué exploitable et propre pour 4 h 45** : évacuation des déchets, nettoyage des zones, retrait des protections, contrôle visuel de la surface de vente — en particulier sous la gaine et les unités posées dans la nuit |
 | **Information de l'exploitant** | Point quotidien avec le responsable du magasin, consignes de sécurité du site, registre de sécurité renseigné |
 | **Autorisation de travaux** | Les travaux modifiant les aménagements ou les installations techniques d'un ERP relèvent d'une **autorisation de travaux** délivrée par le maire, avec passage en commission de sécurité selon la nature des travaux. Il appartient à l'exploitant de la déposer ; notre rôle a été de fournir les éléments techniques nécessaires 〈à confirmer : démarche réalisée par le client〉 |
 
@@ -70,7 +70,7 @@ Les installations de chauffage, ventilation et climatisation en ERP sont régies
 
 - **Franchissement des parois coupe-feu** par les gaines : mise en place de **clapets coupe-feu** de degré équivalent à la paroi traversée, ou rebouchage coupe-feu certifié des traversées ;
 - **Réaction au feu des matériaux** : gaines, calorifuges et isolants conformes aux classements exigés ;
-- **Non-interférence avec le désenfumage** : les réseaux de gaines et les unités intérieures ne doivent pas gêner le fonctionnement des exutoires de désenfumage ni des amenées d'air — point vérifié lors de l'implantation ;
+- **Non-interférence avec le désenfumage** : les **59 mètres de gaine Ø 550** et les cinq unités intérieures ne doivent gêner ni les exutoires de désenfumage ni les amenées d'air — point vérifié lors de l'implantation, et d'autant plus sensible que la gaine traverse le magasin sur toute sa longueur ;
 - **Arrêt d'urgence** : possibilité d'arrêter les installations de ventilation en cas de sinistre ;
 - **Accessibilité pour l'entretien** : trappes de visite pour les filtres, les clapets et les organes de régulation ;
 - **Repérage** des organes de coupure, mise à jour des plans et du registre de sécurité.
@@ -101,7 +101,7 @@ Même de nuit, le magasin n'est pas vide : personnel de réassort, agents d'entr
 
 **b) Les mesures concrètes appliquées**
 
-1. **Choix de la nacelle** : type adapté à la hauteur de travail, à la nature du sol (dallage intérieur du magasin) et à l'encombrement des allées ; pneus non marquants pour l'intérieur.
+1. **Choix de la nacelle** : type adapté à la hauteur de travail sous plafond de la surface de vente, à la nature du sol (dallage intérieur) et à l'encombrement des allées ; pneus non marquants. Le linéaire à traiter est important : **59 mètres de gaine perforée Ø 550**, les liaisons frigorifiques, les chemins de câbles et les cinq unités intérieures, soit l'essentiel du chantier en hauteur.
 2. **Examen d'adéquation** à chaque phase : la nacelle doit être adaptée au travail à réaliser **et** au lieu ; cette vérification a été refaite à chaque changement de zone.
 3. **Contrôle quotidien** avant utilisation : état général, niveaux, dispositifs de sécurité, arrêt d'urgence, avertisseur, commandes de secours.
 4. **Vérification de la portance et de la planéité du sol**, repérage des trappes, caniveaux et regards ; interdiction de circuler sur des zones non vérifiées.
@@ -114,15 +114,15 @@ Même de nuit, le magasin n'est pas vide : personnel de réassort, agents d'entr
 
 | Risque | Situation concernée | Mesures de prévention |
 |---|---|---|
-| **Chute de hauteur** | Travaux en nacelle, accès toiture | PEMP, harnais + longe courte, autorisation de conduite, personne au sol formée au secours, garde-corps périphériques en toiture ou ligne de vie |
+| **Chute de hauteur** | Travaux en nacelle en surface de vente (pose des unités, gaine, liaisons, chemins de câbles) | PEMP, harnais + longe courte, autorisation de conduite, VGP à jour, **personne au sol formée aux manœuvres de secours** |
 | **Chute d'objets** | Travail en hauteur au-dessus des rayons | Zone au sol interdite et balisée, outillage attaché, casque |
-| **Risque électrique** | Raccordements, interventions au TGBT | **Habilitations électriques** conformes à la **NF C 18-510** (B1V, B2V, BR, BC selon les opérations), **consignation** avec vérification d'absence de tension, EPI électriques, outillage isolé, coordination avec le magasin pour les coupures |
+| **Risque électrique** | Raccordements des groupes et du coffret CVC, interventions au TGBT, dépose de la chaufferie | **Habilitations électriques** conformes à la **NF C 18-510** (B1V, B2V, BR, BC selon les opérations), **consignation** avec vérification d'absence de tension, EPI électriques, outillage isolé, coordination avec le magasin pour les coupures |
 | **Brûlure et incendie** | **Brasage** des liaisons frigorifiques | **Permis de feu**, écrans de protection, extincteur à portée immédiate, éloignement des matières combustibles, surveillance après travaux, brasage **sous azote** |
-| **Risque fluides frigorigènes** | Charge, transfert, tirage au vide | **Attestation d'aptitude** des intervenants, station de récupération, gants et lunettes, ventilation des locaux, prévention du risque d'anoxie et de gelure, respect de la NF EN 378 |
+| **Risque fluides frigorigènes** | Charge en **R-410A**, transfert, tirage au vide ; récupération du fluide des VRV existants le cas échéant | **Attestation d'aptitude** des intervenants, station de récupération, gants et lunettes, ventilation des locaux, prévention du risque d'anoxie et de gelure, respect de la **NF EN 378** (contrôle de la concentration limite au regard du volume des locaux) |
 | **Manutention manuelle** | Gaines, unités intérieures, cuivre | Moyens de levage, travail à deux, préfabrication au sol, limitation des ports de charge |
-| **Levage mécanique** | Mise en place des groupes en toiture | **Plan de levage**, grue vérifiée, élingueur formé, chef de manœuvre, zone d'exclusion au sol, conditions météo (vent), **levage réalisé de nuit avec éclairage renforcé** ou reporté en début de nuit |
-| **Amiante et plomb** | Percements, carottages, dépose de l'existant dans un bâtiment potentiellement antérieur à 1997 | **Repérage amiante avant travaux** (art. R. 4412-97 du code du travail, arrêté du 16 juillet 2019), consultation du **DTA** du bâtiment, arrêt immédiat en cas de doute |
-| **Bruit et nuisances nocturnes** | Carottages, perçages, levage | Planification des tâches bruyantes en début de nuit, information des riverains et du magasin, respect des dispositions relatives aux bruits de voisinage (art. **R. 1334-31 du code de la santé publique**) et des éventuels arrêtés municipaux ou préfectoraux |
+| **Manutention des groupes extérieurs** | Mise en place des deux groupes VRV IV (20 et 16 CV) en cour arrière, sur dalle béton | Manutention prévue au devis, moyens adaptés à la masse des groupes, cheminement dégagé et éclairé, zone d'exclusion, pose sur supports antivibratiles ; **aucune intervention en toiture, donc aucun risque de chute de hauteur sur cette phase** |
+| **Amiante et plomb** | Percements, carottages, **dépose de la chaufferie de 1987 et des aérothermes** — bâtiment largement antérieur à 1997 | **Repérage amiante avant travaux** (art. R. 4412-97 du code du travail, arrêté du 16 juillet 2019), consultation du **DTA** du bâtiment, arrêt immédiat en cas de doute |
+| **Bruit et nuisances nocturnes** | Carottages, perçages, manutention en cour arrière, essais des groupes | Planification des tâches bruyantes en début de nuit, information des riverains et du magasin, respect des dispositions relatives aux bruits de voisinage (art. **R. 1334-31 du code de la santé publique**) et des éventuels arrêtés municipaux ou préfectoraux |
 | **Ambiance et fatigue** | Travail nocturne prolongé | Pauses, éclairage d'appoint, rotation des tâches, limitation de la durée des postes |
 | **Coactivité** | Personnel du magasin, livreurs, prestataires de nettoyage | **Plan de prévention** écrit, balisage, information quotidienne |
 | **Risque routier** | Trajets nocturnes | Organisation des trajets, respect des repos |

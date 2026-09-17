@@ -26,49 +26,47 @@ La grille d'évaluation de la soutenance pondère les critères de la façon sui
 
 | Question | Éléments de réponse |
 |---|---|
-| Pourquoi un VRV plutôt qu'un rooftop ou une PAC air/eau ? | Voir 3.4.1 : rendement à charge partielle, zonage, compatibilité site occupé, absence d'eau en surface de vente |
-| Comment avez-vous dimensionné l'installation ? | Bilan thermique (3.5.1), spécificités supermarché, foisonnement, pression statique disponible |
-| Quel est le gain réel, et comment le prouvez-vous ? | 3.11.3 : correction climatique par DJU, raisonnement en kWh, sous-comptage — et reconnaissance honnête de la limite actuelle |
-| Le site est-il assujetti au décret tertiaire ? Pourquoi ? | Surface ≥ 1 000 m² affectée à une activité tertiaire (commerce) — voir 3.2.1 |
-| Votre projet suffit-il à atteindre − 40 % en 2030 ? | Non, et c'est assumé : le froid alimentaire est le premier poste. Voir 3.3.3 et la feuille de route 3.10.3 |
-| Pourquoi le R-32 et pas le R-410A ? | GWP 675 contre 2 088, trajectoire du règlement (UE) 2024/573, coût et disponibilité future du fluide |
-| Quelles sont vos obligations en tant qu'entreprise manipulant des fluides ? | Attestation de capacité, attestation d'aptitude, contrôles d'étanchéité, traçabilité |
-| Le décret BACS s'applique-t-il ? | Selon la puissance installée : seuil de 70 kW au 1<sup>er</sup> janvier 2027 — anticipé par la régulation communicante |
-| Quelles règles encadrent le travail de nuit ? | 3.7.2 : période 21 h – 6 h, statut de travailleur de nuit, durées maximales, contreparties, suivi médical, interdiction pour les mineurs |
-| Comment avez-vous sécurisé le travail en nacelle ? | 3.7.4 : PEMP, CACES R486, autorisation de conduite, VGP, harnais et longe courte, personne au sol formée aux manœuvres de secours |
-| Plan de prévention ou PPSPS ? | 3.7.6 : entreprise extérieure chez un utilisateur → plan de prévention ; SPS si plusieurs entreprises sur une opération de bâtiment |
-| Comment avez-vous maintenu la sécurité incendie de l'ERP ? | GN 13, maintien des dégagements, permis de feu, remise en service de la détection, clapets coupe-feu, désenfumage non entravé |
-| Quel a été votre rôle exact ? | Diagnostic, conception, chiffrage, coordination, réalisation, mise en service, reprise en maintenance — voir 4.3.1 |
-| Qu'auriez-vous fait différemment ? | 4.2 : sous-comptage avant travaux, formalisation, CEE plus tôt, renfort d'équipe, feuille de route présentée d'emblée |
-| Comment prendriez-vous en compte un collaborateur en situation de handicap ? | 4.3.4 : aménagement de poste avec le médecin du travail et le référent handicap, affectation aux tâches de préfabrication au sol, adaptation des horaires |
+| Le site est-il assujetti au décret tertiaire ? Pourquoi ? | Oui : **3 690 m²** de surface tertiaire, seuil de 1 000 m². Base 369,2 kWh/m², objectif 2030 à **221,5 kWh/m²** (− 40 %) |
+| Quel était l'existant ? | **Chaudière gaz FERROLI Frex N350, 452 kW, de 1987**, aérothermes à eau chaude, loi d'eau. Pas de climatisation hors zone frais (2 VRV Daikin de 2014) |
+| Pourquoi un DRV plutôt qu'une chaudière à condensation ? | La condensation coûtait 47 800 € pour 2 250 €/an (21,4 ans) **sans apporter la climatisation ni sortir du gaz**. Le DRV traite les deux besoins avec un seul investissement |
+| Comment expliquez-vous de passer de 452 kW à 70,4 kW ? | Surdimensionnement d'origine (1987), bâti isolé depuis, **apports internes considérables** (éclairage, occupants, rejets des groupes froids = 37 % des consos), et rendement d'émission d'un DRV sans commune mesure avec des aérothermes |
+| Quel est le matériel installé ? | **DAIKIN RXYQ36U** (RXYQ20U + RXYQ16U), 70,4 kW chaud à − 10 °C / 89,5 kW froid, ETAS 162,4 % / 250,8 %, **R-410A**, en cour arrière sur dalle. Côté intérieur : **1 gainable FXMQ-250A** (28 kW, 4 440 m³/h) + **59 ml de gaine perforée SIONAIR Ø 550** + **4 cassettes Roundflow 125** |
+| Pourquoi du R-410A et pas du R-32 ? | **C'est la limite du projet, à assumer** : GWP 2 088 contre 675, choix lié à la gamme VRV IV et à la continuité avec le parc du site. Conséquence : recharges plus coûteuses et plus rares à terme, d'où une exigence renforcée d'étanchéité et de contrôles |
+| Quel est le temps de retour ? | **5 260 €/an** pour **90 000 € HT**, soit **79 000 € après CEE → ≈ 15 ans**. Le bouquet complet : 572 940 € pour 58 590 €/an → **9,3 ans** |
+| Pourquoi un retour aussi long ? Pourquoi le faire alors ? | On substitue une énergie bon marché (gaz) par une énergie chère (électricité) **et** on ajoute un usage (+ 102 MWh, + 9 %). Ce qui justifie le projet : chaudière de 1987 en fin de vie, confort d'été sur 2 596 m², trajectoire décret tertiaire, décret BACS |
+| Ce projet suffit-il pour le décret tertiaire ? | Non, et c'est assumé : le chauffage ne pèse que **13 %** des consommations. C'est le **bouquet** (PAC + ECS thermo + PV + GTC + récupération de chaleur) qui mène à **211,2 kWh/m²**, donc à la conformité |
+| Comment le projet a-t-il été financé ? | **CEE de 11 000 €** via TotalEnergies Marketing France, mandataire GreenFlex, avec **mandat de perception au profit de Santerne**. Règle clé : engagement de l'obligé **avant** signature du devis |
+| Pourquoi la GTB n'a-t-elle pas été installée tout de suite ? | Recommandation explicite de l'audit : inutile de la poser avant de changer la production. Mais les **liaisons Modbus/BACnet ont été posées** (531,70 €), donc la GTC future se raccorde sans reprise |
+| Le site est-il concerné par d'autres obligations ? | Oui : **décret BACS** (chaudière de 452 kW, échéance 2025 dépassée), **loi APER** (parking 3 179 m² → ≈ 1 480 m² d'ombrières avant 2028), **loi LOM** (120 places → 6 bornes dont 1 PMR) |
+| Quelles règles encadrent le travail de nuit ? | Période 21 h – 6 h, recours exceptionnel justifié par la continuité de l'activité, 8 h max par jour, 40 h en moyenne sur 12 semaines, contreparties en repos, surveillance médicale renforcée, **interdiction totale pour les mineurs** |
+| Comment avez-vous sécurisé le travail en nacelle ? | PEMP, **CACES R486**, autorisation de conduite, VGP tous les 6 mois, harnais avec longe courte, **personne au sol formée aux manœuvres de secours**, zone au sol balisée |
+| Plan de prévention ou PPSPS ? | Entreprise extérieure chez un utilisateur → **plan de prévention écrit** obligatoire (> 400 h/an et travaux dangereux). SPS si plusieurs entreprises sur une opération de bâtiment |
+| Comment avez-vous maintenu la sécurité incendie de l'ERP ? | **GN 13** : dégagements libres, permis de feu pour les brasages, détection remise en service **avant 4 h 45**, clapets coupe-feu aux traversées, désenfumage non entravé |
+| Quel a été votre rôle exact ? | **Chargé de maintenance** : entretiens, dépannages, devis. Sur ce projet : **participation à l'audit** (visite, relevés, historique d'exploitation) et **réalisation d'une partie du chantier**, puis reprise de l'installation en maintenance. Ne pas surjouer : c'est plus crédible |
+| Qu'auriez-vous fait différemment ? | R-32 plutôt que R-410A ; **sous-comptage du poste chauffage avant travaux** ; recalcul du TRA après l'écart budget/devis (− 27 %) ; formalisation écrite du suivi ; ordre du bouquet discuté avec le client |
+| Comment prouverez-vous le gain réel ? | Correction climatique par **DJU**, raisonnement en kWh avant euros, exploitation d'**ENERGISME** et de la déclaration **OPERAT**, comparaison sur une année pleine minimum |
+| Prise en compte d'un collaborateur en situation de handicap ? | Aménagement de poste avec le médecin du travail et le référent handicap : affectation aux tâches de préfabrication au sol plutôt qu'en nacelle, adaptation des horaires, accessibilité des zones |
 
-## Annexe F — Liste des éléments manquants à me fournir
+## Annexe F — Ce qu'il reste à obtenir
 
-> Cette annexe est un outil de travail interne : elle recense tout ce qui reste à obtenir pour finaliser le rapport.
+**Priorité 1 — pour finaliser le rapport**
+1. **Dates réelles du chantier** : début, fin, nombre de nuits, durée des postes.
+2. **2 ou 3 aléas concrets** survenus pendant les travaux et les décisions prises — c'est ce que le jury interrogera, et c'est la seule chose qui ne peut pas être reconstituée.
+3. **Confirmation de la configuration posée** : le devis décrit 1 gainable + 4 cassettes, toutes en surface de vente. Si le DOE diffère (unité en réserve, cassettes supplémentaires), il faut corriger la section 3.4.3.
+4. **Photos du chantier**, en particulier de nuit et en nacelle — indispensables pour la soutenance.
 
-**Priorité 1 — indispensables**
-1. **Rapport de DPE** complet (étiquettes, consommations par usage, préconisations).
-2. **Références du matériel VRV** installé : groupes extérieurs, unités intérieures, régulation, avec SCOP, SEER, puissances, fluide et charge.
-3. **Montant du devis** et sa décomposition par poste.
-4. **Surface de vente et surface totale** du magasin, hauteur sous plafond.
-5. **Nature exacte du système de chauffage remplacé** (énergie, technologie, puissance, âge).
-6. **Consommations avant travaux** (électricité et gaz sur 3 ans) et **après travaux** si disponibles.
+**Priorité 2 — pour renforcer les résultats**
+5. **Consommations après travaux** (ENERGISME ou factures) sur une saison de chauffe complète.
+6. **Charge réelle de R-410A** figurant au DOE, pour calculer l'impact potentiel en t CO₂e.
+7. **Catégorie ERP** du magasin et effectif théorique (registre de sécurité ou dernier PV de commission).
+8. **Nom et fonction de l'ingénieur énergéticien** VINCI Energies auteur de l'audit.
+9. **Date de signature du devis** et confirmation du versement de la prime CEE.
 
-**Priorité 2 — importants**
-7. Dates réelles de début et de fin de chantier, nombre de nuits, durée des postes.
-8. Nom et fonction de l'**ingénieur énergéticien VINCI** qui a réalisé le DPE.
-9. Existence et montant de la **prime CEE** obtenue.
-10. **Catégorie ERP** et effectif théorique du magasin (registre de sécurité ou dernier PV de commission).
-11. **Aléas réellement rencontrés** pendant le chantier et décisions prises (2 ou 3 exemples concrets suffisent — c'est ce que le jury interrogera).
-12. Année de construction du bâtiment (pour le volet amiante) et présence d'un DTA.
-
-**Priorité 3 — utiles**
-13. **Photos du chantier**, en particulier de nuit et en nacelle.
-14. Plans d'implantation et schéma de principe.
-15. Nombre de sites et de dépannages de votre portefeuille de maintenance (pour la partie 2).
-16. Certifications détenues par l'entreprise (MASE, QUALIBAT, ISO, attestation de capacité).
-17. Convention collective applicable et modalités de majoration du travail de nuit.
-18. Retour écrit du client sur la satisfaction.
+**Priorité 3 — pour la partie 2**
+10. Nombre de sites suivis, de visites préventives et de dépannages par an, taux de transformation de vos devis.
+11. Certifications de l'entreprise (MASE, QUALIBAT, ISO, attestation de capacité fluides).
+12. Convention collective applicable et modalités de majoration du travail de nuit.
+13. Retour écrit du client sur sa satisfaction.
 
 PAGEBREAK
 

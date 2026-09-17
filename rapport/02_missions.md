@@ -2,7 +2,15 @@ PAGEBREAK
 
 # Partie 2 — Missions et résultats globaux
 
-Avant d'entrer dans le détail du projet approfondi, cette partie décrit l'ensemble des missions que j'assure au titre de mon poste de chargé de maintenance CVC, ainsi que les résultats globaux obtenus. Elle permet de situer le niveau d'intervention qui est le mien et d'expliquer comment un projet d'investissement de plusieurs dizaines de milliers d'euros peut naître d'une activité de maintenance.
+Avant d'entrer dans le détail du projet approfondi, cette partie décrit l'ensemble des missions que j'assure au titre de mon poste, ainsi que les résultats globaux obtenus.
+
+**Mon poste, précisément, c'est celui de chargé de maintenance CVC.** Concrètement, cela recouvre trois choses et trois seulement :
+
+1. **les entretiens** — les visites de maintenance préventive sur les installations de mon portefeuille ;
+2. **les dépannages** — la maintenance corrective, sur appel ou sur défaut ;
+3. **les devis** qui en découlent — devis de dépannage et devis de **remplacement de petites installations**.
+
+Il est important de le poser clairement avant d'aborder la partie 3 : un projet de 90 000 € comme celui de l'Intermarché de Rive-de-Gier **ne relève pas de mon périmètre habituel**. J'y suis venu par la recherche d'un projet support pour ma licence, et j'y ai tenu un rôle de contributeur — participation à l'audit, réalisation d'une partie du chantier, puis exploitation de l'installation. Cette partie 2 décrit donc mon métier réel ; la partie 3 décrit un projet qui l'a élargi.
 
 ## 2.1 Mission 1 — La maintenance préventive d'un portefeuille d'installations
 
@@ -67,8 +75,7 @@ Dans le cadre de la démarche **SAFETY Excellence**, je suis par ailleurs acteur
 | Axe | Résultat |
 |---|---|
 | Continuité de service | Maintien en condition opérationnelle d'un portefeuille d'installations sur des sites à exploitation continue |
-| Conformité réglementaire | Tenue des contrôles d'étanchéité et de la traçabilité fluides sur les installations suivies |
+| Conformité réglementaire | Tenue des contrôles d'étanchéité et de la traçabilité fluides |
 | Développement commercial | Détection, chiffrage et transformation d'opportunités de travaux à partir de la maintenance |
-| Performance énergétique | Identification de gisements d'économies et portage d'un projet majeur de substitution d'énergie |
+| Performance énergétique | Identification de gisements d'économies et contribution à un projet majeur de substitution d'énergie |
 | Sécurité | Aucun accident déclaré sur mon périmètre 〈à confirmer〉 |
-| Développement personnel | Passage d'un rôle purement exécutant à un rôle de gestion de portefeuille et de projet |

@@ -80,13 +80,9 @@ L'entreprise ne dispose pas d'un historique formalisé, mais quelques jalons son
 
 ### 1.4.3 Le positionnement « surfaces commerciales » : une spécificité forte
 
-La spécialisation sur les **surfaces commerciales** (hypermarchés, supermarchés, galeries marchandes, enseignes de périphérie) n'est pas un simple segment de clientèle : elle impose un mode de fonctionnement particulier qui explique la quasi-totalité des contraintes de mon projet.
+La spécialisation sur les **surfaces commerciales** n'est pas un simple segment de clientèle : elle impose un mode de fonctionnement qui explique la quasi-totalité des contraintes du projet décrit en partie 3.
 
-1. **Le client ne ferme pas.** Un supermarché ne peut pas suspendre son exploitation pendant deux mois. Les travaux se font donc **hors horaires d'ouverture**, c'est-à-dire de nuit, ou par phases très courtes.
-2. **Le bâtiment est un ERP.** Le public y est présent chaque jour : la réglementation incendie, les cheminements d'évacuation, le désenfumage et la propreté de l'ouvrage sont non négociables.
-3. **La chaîne du froid et l'ambiance sont critiques.** Une coupure mal maîtrisée, une gaine qui souffle au mauvais endroit, un condensat mal évacué au-dessus d'un rayon frais, et c'est le chiffre d'affaires du client qui est touché.
-4. **L'exigence de délai est très forte.** Les têtes de gondole, les opérations commerciales et les périodes de forte activité (fêtes, rentrée) figent le planning : un chantier repoussé n'est pas repoussé de trois jours, il est repoussé d'un trimestre.
-5. **Le décideur est un chef d'entreprise indépendant.** Dans le cas d'Intermarché — groupement de commerçants indépendants (Les Mousquetaires) — l'adhérent est propriétaire ou locataire-gérant de son point de vente. Il décide vite, mais il attend un argumentaire de **chef d'entreprise** : retour sur investissement, risque réglementaire, impact sur l'exploitation. C'est un point central de la partie 3.
+**Le client ne ferme pas** : un supermarché ne peut pas suspendre son exploitation pendant deux mois, les travaux se font donc de nuit ou par phases très courtes. **Le bâtiment est un ERP** : réglementation incendie, cheminements d'évacuation, désenfumage et propreté de l'ouvrage ne sont pas négociables. **La chaîne du froid et l'ambiance sont critiques** : une coupure mal maîtrisée, une gaine qui souffle au mauvais endroit, un condensat mal évacué au-dessus d'un rayon frais, et c'est le chiffre d'affaires du client qui est touché. **L'exigence de délai est très forte** : opérations commerciales et périodes de forte activité figent le planning — un chantier repoussé ne l'est pas de trois jours mais d'un trimestre. Enfin, **le décideur est un chef d'entreprise indépendant** : dans le cas d'Intermarché, groupement de commerçants indépendants, l'adhérent décide vite, mais il attend un argumentaire de chef d'entreprise — retour sur investissement, risque réglementaire, impact sur l'exploitation.
 
 ## 1.5 L'organisation interne : unités fonctionnelles et cellules opérationnelles
 
@@ -149,27 +145,13 @@ Soit une cellule d'une dizaine de personnes, dont une part importante en formati
 
 ### 1.6.2 Le périmètre d'activité de la cellule
 
-La cellule Climatisation couvre l'ensemble du cycle de vie des installations aérauliques et thermodynamiques :
+La cellule couvre l'ensemble du cycle de vie des installations aérauliques et thermodynamiques.
 
-**a) Les travaux neufs et de remplacement**
-- Installation de systèmes **DRV/VRV** réversibles (gainables, cassettes, muraux, consoles) ;
-- **Rooftops** (climatiseurs de toiture autonomes), très répandus en grande distribution ;
-- **Centrales de traitement d'air** (CTA), réseaux de gaines, diffusion et reprise d'air ;
-- **Ventilation** simple et double flux, désenfumage mécanique ;
-- **Pompes à chaleur** air/air et air/eau, plancher chauffant, ventilo-convecteurs ;
-- **Récupération de chaleur sur groupes froid alimentaires** — sujet très pertinent en supermarché ;
-- Régulation, GTB/GTC et télésurveillance.
+**Travaux neufs et de remplacement** : systèmes **DRV/VRV** réversibles (gainables, cassettes, muraux, consoles), **rooftops** très répandus en grande distribution, **centrales de traitement d'air** et réseaux de gaines, ventilation simple et double flux, désenfumage mécanique, **pompes à chaleur** air/air et air/eau, **récupération de chaleur sur groupes froid alimentaires**, régulation et GTB.
 
-**b) La maintenance — mon domaine**
-- Contrats de maintenance préventive (P2) : visites périodiques, nettoyage d'échangeurs, remplacement de filtres, contrôle d'étanchéité des circuits frigorifiques, relevés de performances ;
-- Maintenance corrective : dépannage sur alerte ou sur défaut, astreinte ;
-- Contrôles réglementaires liés aux fluides frigorigènes ;
-- Travaux induits : devis de remplacement de composants ou d'amélioration.
+**Maintenance — mon domaine** : contrats de maintenance préventive (visites périodiques, nettoyage d'échangeurs, filtres, **contrôle d'étanchéité des circuits frigorifiques**, relevés de performances), maintenance corrective et dépannage, contrôles réglementaires liés aux fluides frigorigènes, et travaux induits (devis de remplacement de composants ou d'amélioration).
 
-**c) Le conseil et l'amélioration énergétique**
-- Audits et diagnostics de performance ;
-- Propositions d'optimisation de régulation et de programmation horaire ;
-- Études de substitution d'énergie (fioul/gaz/électrique direct → thermodynamique).
+**Conseil et amélioration énergétique** : audits et diagnostics, optimisation de régulation et de programmation horaire, études de substitution d'énergie (fioul, gaz ou électrique direct vers une solution thermodynamique) — c'est exactement l'objet du projet décrit en partie 3.
 
 ### 1.6.3 La typologie de clientèle
 
@@ -223,13 +205,10 @@ C'est précisément par ce dernier canal que le projet de l'Intermarché de Rive
 |---|---|
 | **Jean-Michel BERJAUD** (RA) | Validation des devis, arbitrages techniques et commerciaux, priorités |
 | **A. BESSARD / S. HAMDOUCHE** (RC) | Coordination travaux / maintenance, moyens matériels, sécurité |
-| **Techniciens de la cellule** | Binômes d'intervention, transmission de savoir-faire, appui sur les gros dépannages |
-| **Sandrine FLOTTE** | Réception et affectation des demandes de dépannage, planning |
-| **Chloé THOUROT** (Achats) | Consultations et commandes fournisseurs |
-| **Julien FAYARD** (QSE) | Analyses de risques, causeries sécurité, plans de prévention |
+| **Techniciens de la cellule** | Binômes d'intervention, appui sur les gros dépannages |
+| **Fonctions support** — S. FLOTTE (dépannages), C. THOUROT (achats), J. FAYARD (QSE) | Affectation des demandes et planning, consultations et commandes fournisseurs, analyses de risques et plans de prévention |
 | **Clients (exploitants, directeurs de magasin)** | Interlocuteur direct au quotidien |
-| **Fournisseurs et fabricants** (Daikin, Mitsubishi, Toshiba, Atlantic, distributeurs) | Support technique, sélections, garanties |
-| **Ingénieur énergéticien VINCI** | Appui expert sur le diagnostic énergétique |
+| **Fournisseurs et fabricants** (Daikin, Mitsubishi, Toshiba…) et **ingénieur énergéticien VINCI** | Support technique, sélections, garanties, appui expert sur les diagnostics énergétiques |
 
 ### 1.7.4 Ce que le poste m'apporte au regard de la licence CPEBD
 
@@ -239,9 +218,9 @@ Mon poste prépare directement aux attendus de la licence CPEBD : il donne accè
 
 ### 1.8.1 Un marché tiré par la contrainte réglementaire et le prix de l'énergie
 
-Deux phénomènes ont profondément modifié notre activité depuis 2022. D'une part, **la flambée puis la volatilité des prix de l'énergie** : pour un supermarché, la facture énergétique est devenue un poste de charges majeur, qui pèse directement sur la rentabilité du point de vente — un projet d'efficacité énergétique « intéressant » en 2019 devient **prioritaire** en 2025. D'autre part, **la montée en puissance des obligations réglementaires** (dispositif Éco-Énergie Tertiaire, décret BACS, sortie des fluides à fort GWP) : le client n'a plus seulement intérêt à agir, il y est **obligé**, avec un calendrier et des sanctions.
+Deux phénomènes ont modifié notre activité depuis 2022. **La volatilité des prix de l'énergie** d'abord : pour un supermarché, la facture énergétique pèse directement sur la rentabilité du point de vente — un projet d'efficacité énergétique « intéressant » en 2019 devient **prioritaire** en 2025. **La montée en puissance des obligations réglementaires** ensuite (Éco-Énergie Tertiaire, décret BACS, lois APER et LOM, sortie des fluides à fort GWP) : le client n'a plus seulement intérêt à agir, il y est **obligé**, avec un calendrier et des sanctions.
 
-Ces deux facteurs expliquent le glissement du métier : nous vendons de moins en moins « une machine » et de plus en plus **une performance dans la durée** — étude, installation, régulation, maintenance et suivi des consommations.
+Ces deux facteurs expliquent le glissement du métier : nous vendons de moins en moins « une machine » et de plus en plus **une performance dans la durée**.
 
 ### 1.8.2 Les contraintes structurantes de notre activité
 
@@ -249,11 +228,10 @@ Ces deux facteurs expliquent le glissement du métier : nous vendons de moins en
 |---|---|
 | Sites en exploitation | Travaux de nuit, en horaires décalés ou par phases |
 | Statut ERP | Contraintes incendie, évacuation, propreté, coordination avec l'exploitant |
-| Délais d'approvisionnement | Anticipation des commandes de groupes et de gaines |
-| Tension sur les compétences | Politique d'alternance forte, formation interne |
+| Tension sur les compétences | Politique d'alternance forte, formation interne, anticipation des approvisionnements |
 | Sécurité (SAFETY Excellence) | Analyse de risques systématique, plan de prévention, causeries, habilitations |
 | Réglementation fluides | Attestations de capacité et d'aptitude, traçabilité, contrôles d'étanchéité |
 
 ### 1.8.3 Synthèse de la partie 1
 
-Mon entreprise est une **PME de 82 personnes spécialisée dans les surfaces commerciales**, adossée à un groupe international qui lui donne accès à des compétences d'ingénierie, à une politique de prévention structurée et à une culture de la performance énergétique. Je m'y situe au sein de la **cellule Climatisation** dirigée par Jean-Michel BERJAUD, où j'occupe un poste de **chargé de maintenance** à la fois technique et commercial. C'est ce positionnement — au contact quotidien des installations et de leurs exploitants — qui a rendu possible le projet décrit dans la suite de ce rapport.
+Mon entreprise est une **PME de 82 personnes spécialisée dans les surfaces commerciales**, adossée à un groupe international qui lui donne accès à des compétences d'ingénierie, à une politique de prévention structurée et à une culture de la performance énergétique. Je m'y situe au sein de la **cellule Climatisation** de Jean-Michel BERJAUD, comme **chargé de maintenance**. C'est ce positionnement — au contact quotidien des installations et de leurs exploitants — et l'accès à l'expertise du groupe qui ont rendu possible le projet décrit dans la suite de ce rapport.
