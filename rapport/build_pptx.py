@@ -56,7 +56,7 @@ def txbox(slide, x, y, w, h, text, size=14, bold=False, color=DARK,
     tf.vertical_anchor = anchor
     tf.margin_left = tf.margin_right = Cm(0)
     tf.margin_top = tf.margin_bottom = Cm(0)
-    lines = text.split('\n')
+    lines = fr(text).split('\n')
     for i, ln in enumerate(lines):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         p.alignment = align
@@ -102,6 +102,26 @@ def footer(slide, idx, timing=None):
         txbox(slide, W - Cm(9.4), H - Cm(1.15), Cm(6), Cm(0.6), timing, size=9, color=GREY, align=PP_ALIGN.RIGHT)
     txbox(slide, W - Cm(2.6), H - Cm(1.15), Cm(1.4), Cm(0.6), str(idx), size=9, bold=True, color=BLUE, align=PP_ALIGN.RIGHT)
 
+
+NBSP = "\u00A0"       # espace insécable
+NNBSP = "\u202F"      # espace fine insécable
+
+def fr(text):
+    """Applique la typographie française : espaces insécables avant la ponctuation
+    double, dans les nombres, avant les unités et à l'intérieur des guillemets."""
+    import re as _re
+    if not text:
+        return text
+    t = text
+    t = _re.sub(r"[ ]+:", NBSP + ":", t)
+    t = _re.sub(r"[ ]+([;!?])", NNBSP + r"\1", t)
+    t = t.replace("« ", "«" + NBSP).replace(" »", NBSP + "»")
+    # nombres : 90 000 -> insécable ; 330,6 kWh -> insécable avant l'unité
+    t = _re.sub(r"(\d)[ ](\d{3})\b", r"\1" + NBSP + r"\2", t)
+    t = _re.sub(r"(\d)[ ](\d{3})\b", r"\1" + NBSP + r"\2", t)
+    t = _re.sub(r"(\d)[ ](%|€|kW|kWh|MWh|m²|m³|t|kg|ml|h|min|CV|Md€|M€)\b", r"\1" + NBSP + r"\2", t)
+    return t
+
 COUNT = {'n': 0}
 def new(part=None, title=None, timing=None):
     s = prs.slides.add_slide(BLANK)
@@ -139,7 +159,7 @@ def table(slide, x, y, w, headers, rows, colw=None, fs=12, hfs=12, rh=Cm(0.95)):
         cell.fill.solid(); cell.fill.fore_color.rgb = BLUE
         cell.margin_left = cell.margin_right = Cm(0.2)
         p = cell.text_frame.paragraphs[0]
-        run = p.add_run(); run.text = htxt
+        run = p.add_run(); run.text = fr(htxt)
         run.font.size = Pt(hfs); run.font.bold = True; run.font.color.rgb = WHITE; run.font.name = 'Calibri'
     for ri, row in enumerate(rows, start=1):
         for ci, val in enumerate(row):
@@ -149,7 +169,7 @@ def table(slide, x, y, w, headers, rows, colw=None, fs=12, hfs=12, rh=Cm(0.95)):
             cell.fill.fore_color.rgb = WHITE if ri % 2 else BLUE_L
             cell.margin_left = cell.margin_right = Cm(0.2)
             p = cell.text_frame.paragraphs[0]
-            for j, seg in enumerate(str(val).split('**')):
+            for j, seg in enumerate(fr(str(val)).split('**')):
                 if not seg:
                     continue
                 run = p.add_run(); run.text = seg

@@ -147,7 +147,7 @@ Les échanges ont été organisés selon une cadence adaptée à chaque interloc
 
 **Livrables remis au client** : le **Dossier des Ouvrages Exécutés** (plans de récolement, schémas, fiches techniques, notices, PV d'essais, dossier DESP) ; une **notice d'utilisation simplifiée** de la régulation rédigée pour un utilisateur non technicien ; la **formation du personnel** du magasin (télécommandes, consignes réglementaires 19 °C / 26 °C, fermeture des portes, conduite à tenir en cas de défaut) ; les **fiches de traçabilité des fluides frigorigènes** ; une **proposition de contrat de maintenance préventive** intégrant les contrôles d'étanchéité réglementaires ; et les **éléments justificatifs pour la déclaration OPERAT** et pour le dossier **CEE** auprès de TotalEnergies / GreenFlex.
 
-### 3.10.3 Les perspectives : ce que ce projet ouvre
+### 3.10.2 Les perspectives : ce que ce projet ouvre
 
 Le projet VRV traite le poste chauffage-climatisation. Il ne règle pas à lui seul la trajectoire décret tertiaire du magasin. J'ai donc présenté au client une **feuille de route d'actions complémentaires**, hiérarchisée par rapport gain/coût :
 

@@ -60,10 +60,30 @@ def add_page_numbers(section):
     p.runs[0].font.size = Pt(9)
 add_page_numbers(doc.sections[0])
 
+
+NBSP = "\u00A0"       # espace insécable
+NNBSP = "\u202F"      # espace fine insécable
+
+def fr(text):
+    """Applique la typographie française : espaces insécables avant la ponctuation
+    double, dans les nombres, avant les unités et à l'intérieur des guillemets."""
+    import re as _re
+    if not text:
+        return text
+    t = text
+    t = _re.sub(r"[ ]+:", NBSP + ":", t)
+    t = _re.sub(r"[ ]+([;!?])", NNBSP + r"\1", t)
+    t = t.replace("« ", "«" + NBSP).replace(" »", NBSP + "»")
+    # nombres : 90 000 -> insécable ; 330,6 kWh -> insécable avant l'unité
+    t = _re.sub(r"(\d)[ ](\d{3})\b", r"\1" + NBSP + r"\2", t)
+    t = _re.sub(r"(\d)[ ](\d{3})\b", r"\1" + NBSP + r"\2", t)
+    t = _re.sub(r"(\d)[ ](%|€|kW|kWh|MWh|m²|m³|t|kg|ml|h|min|CV|Md€|M€)\b", r"\1" + NBSP + r"\2", t)
+    return t
+
 INLINE = re.compile(r'(\*\*.+?\*\*|\*[^*]+?\*|`[^`]+?`|<sub>.+?</sub>|<sup>.+?</sup>)')
 
 def add_runs(par, text):
-    text = text.replace('\\_', '_')
+    text = fr(text.replace('\\_', '_'))
     for part in INLINE.split(text):
         if not part:
             continue

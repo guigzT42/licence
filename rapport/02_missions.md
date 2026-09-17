@@ -55,9 +55,9 @@ Bien que mon poste soit orienté maintenance, je participe aux chantiers concern
 
 Dans le cadre de la démarche **SAFETY Excellence**, je suis par ailleurs acteur de la prévention au quotidien : rédaction ou application de l'**analyse de risques** avant intervention, participation aux **causeries sécurité**, remontée des situations dangereuses, respect et vérification des EPI et des habilitations (électrique, travail en hauteur, conduite de nacelle, manipulation des fluides), application des **plans de prévention** chez les clients. Cette culture est le préalable indispensable à un chantier comme celui décrit en partie 3.
 
-## 2.7 Synthèse des résultats globaux
+## 2.6 Synthèse des résultats globaux
 
-### 2.7.1 Indicateurs chiffrés de mon activité — à compléter
+### 2.6.1 Indicateurs chiffrés de mon activité — à compléter
 
 | Indicateur | Valeur |
 |---|---|
@@ -70,7 +70,7 @@ Dans le cadre de la démarche **SAFETY Excellence**, je suis par ailleurs acteur
 | Taux de transformation des devis | 〈à compléter〉 % |
 | Plus gros projet porté | Intermarché Rive-de-Gier (partie 3) |
 
-### 2.7.2 Synthèse qualitative
+### 2.6.2 Synthèse qualitative
 
 | Axe | Résultat |
 |---|---|

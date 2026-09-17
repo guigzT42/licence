@@ -144,7 +144,7 @@ L'audit a mis en évidence deux assujettissements supplémentaires, liés non pa
 
 Ces deux obligations ont un effet direct sur la cohérence du projet : les **ombrières photovoltaïques de 271,9 kWc** chiffrées par l'audit répondent simultanément à la loi APER et au besoin d'autoconsommation créé par la nouvelle climatisation. Une contrainte réglementaire devient ainsi la solution d'un problème énergétique.
 
-### 3.2.5 La réglementation sur les fluides frigorigènes (F-Gas)
+### 3.2.4 La réglementation sur les fluides frigorigènes (F-Gas)
 
 **Texte** : règlement **(UE) 2024/573** du 7 février 2024, qui a remplacé le règlement (UE) 517/2014 ; articles **R. 543-75 et suivants** du code de l'environnement ; norme **NF EN 378**.
 
@@ -170,7 +170,7 @@ Le règlement organise la **réduction progressive des quotas de HFC** mis sur l
 
 S'y ajoutent l'**attestation de capacité** de l'entreprise, l'**attestation d'aptitude** des intervenants, la traçabilité des quantités manipulées, et le **dossier DESP** (directive équipements sous pression) établi par DAIKIN et facturé au devis.
 
-### 3.2.6 Les autres obligations applicables au site
+### 3.2.5 Les autres obligations applicables au site
 
 | Obligation | Texte | Contenu |
 |---|---|---|
@@ -181,7 +181,7 @@ S'y ajoutent l'**attestation de capacité** de l'entreprise, l'**attestation d'a
 | Inspection périodique des systèmes de climatisation | Art. **R. 224-59-1 et s.** du code de l'environnement | Inspection tous les **5 ans** au-delà de 70 kW — la nouvelle installation (70,4 kW en chaud) y est soumise |
 | Affichage du DPE | CCH | ERP de plus de 250 m² : affichage à l'entrée |
 
-### 3.2.7 Ce que le client risquait en ne faisant rien
+### 3.2.6 Ce que le client risquait en ne faisant rien
 
 | | **Scénario « ne rien faire »** | **Scénario « projet PAC réversible »** |
 |---|---|---|
