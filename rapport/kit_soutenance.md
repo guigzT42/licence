@@ -14,7 +14,7 @@ La grille d'évaluation de la soutenance pondère les critères de la façon sui
 | 3. La problématique et le diagnostic | 3 min | Constat, DPE, décret tertiaire, risques encourus | **2 / 3** |
 | 4. La solution et sa justification | 4 min | Comparaison des solutions, VRV gainable, architecture, performance | **3** |
 | 5. Budget, financement, planning | 2 min | Structure du budget, CEE, calendrier | **3** |
-| 6. Le chantier : nuit, ERP, hauteur | 3 min | Les contraintes et les mesures de sécurité — point fort du projet | **3** |
+| 6. Le chantier : nuit, ERP, hauteur | 3 min | Les contraintes, les mesures de sécurité et **l'aléa du temps de nuit doublé** — point fort du projet | **3** |
 | 7. Résultats et indicateurs d'impact | 2 min | Énergie, CO₂, euros, délai, sécurité | **3** |
 | 8. Analyse critique et perspectives | 2 min | Ce que je referais autrement, feuille de route du site | **3** |
 | **Total présentation** | **20 min** | | |
@@ -43,30 +43,27 @@ La grille d'évaluation de la soutenance pondère les critères de la façon sui
 | Plan de prévention ou PPSPS ? | Entreprise extérieure chez un utilisateur → **plan de prévention écrit** obligatoire (> 400 h/an et travaux dangereux). SPS si plusieurs entreprises sur une opération de bâtiment |
 | Comment avez-vous maintenu la sécurité incendie de l'ERP ? | **GN 13** : dégagements libres, permis de feu pour les brasages, détection remise en service **avant 4 h 45**, clapets coupe-feu aux traversées, désenfumage non entravé |
 | Quel a été votre rôle exact ? | **Chargé de maintenance** : entretiens, dépannages, devis. Sur ce projet : **participation à l'audit** (visite, relevés, historique d'exploitation) et **réalisation d'une partie du chantier**, puis reprise de l'installation en maintenance. Ne pas surjouer : c'est plus crédible |
-| Qu'auriez-vous fait différemment ? | R-32 plutôt que R-410A ; **sous-comptage du poste chauffage avant travaux** ; recalcul du TRA après l'écart budget/devis (− 27 %) ; formalisation écrite du suivi ; ordre du bouquet discuté avec le client |
+| Quelle a été la charge de fluide, et qu'est-ce que cela implique ? | **38 kg de R-410A = 79,3 t CO₂e**, soit **4,8 années du gain annuel** (16,7 t/an). Au-dessus de **50 t CO₂e** → **contrôle d'étanchéité semestriel** au lieu d'annuel. Au R-32 : 25,7 t, contrôle annuel |
+| Quel aléa avez-vous rencontré ? | **Le temps de nuit a doublé** par rapport au chiffrage. Délai calendaire tenu (mi-avril → mi-juin 2026), mais écart absorbé par l'entreprise. Causes : fenêtre utile de 8 h, montage/repli quotidien, 70 % en nacelle, 59 ml de gaine, fatigue. Correction : distinguer au devis temps de production et temps de mise en place, et appliquer un coefficient de productivité nocturne |
+| Qu'auriez-vous fait différemment ? | R-32 plutôt que R-410A ; **chiffrage du travail de nuit** avec coefficient de productivité ; **sous-comptage du poste chauffage avant travaux** ; recalcul du TRA après l'écart budget/devis (− 27 %) ; renfort d'équipe sur les phases lourdes |
 | Comment prouverez-vous le gain réel ? | Correction climatique par **DJU**, raisonnement en kWh avant euros, exploitation d'**ENERGISME** et de la déclaration **OPERAT**, comparaison sur une année pleine minimum |
 | Prise en compte d'un collaborateur en situation de handicap ? | Aménagement de poste avec le médecin du travail et le référent handicap : affectation aux tâches de préfabrication au sol plutôt qu'en nacelle, adaptation des horaires, accessibilité des zones |
 
 ## Annexe F — Ce qu'il reste à obtenir
 
-**Priorité 1 — pour finaliser le rapport**
-1. **Dates réelles du chantier** : début, fin, nombre de nuits, durée des postes.
-2. **2 ou 3 aléas concrets** survenus pendant les travaux et les décisions prises — c'est ce que le jury interrogera, et c'est la seule chose qui ne peut pas être reconstituée.
-3. **Confirmation de la configuration posée** : le devis décrit 1 gainable + 4 cassettes, toutes en surface de vente. Si le DOE diffère (unité en réserve, cassettes supplémentaires), il faut corriger la section 3.4.3.
-4. **Photos du chantier**, en particulier de nuit et en nacelle — indispensables pour la soutenance.
+**Utile pour renforcer le rapport**
+1. **Nombre de nuits réellement effectuées** et répartition des heures par phase — cela permettrait de chiffrer en euros l'écart du temps de nuit et d'en faire un retour d'expérience exploitable par l'entreprise.
+2. **Consommations après travaux** (plateforme ENERGISME ou factures) sur une saison de chauffe complète : c'est ce qui transformera l'estimation de l'audit en résultat démontré.
+3. **Catégorie ERP** du magasin et effectif théorique (registre de sécurité ou dernier PV de commission de sécurité).
+4. **Nom et fonction de l'ingénieur énergéticien** VINCI Energies auteur de l'audit, pour les remerciements et la partie 3.1.3.
+5. **Date de signature du devis** et confirmation du versement effectif de la prime CEE de 11 000 €.
 
-**Priorité 2 — pour renforcer les résultats**
-5. **Consommations après travaux** (ENERGISME ou factures) sur une saison de chauffe complète.
-6. **Charge réelle de R-410A** figurant au DOE, pour calculer l'impact potentiel en t CO₂e.
-7. **Catégorie ERP** du magasin et effectif théorique (registre de sécurité ou dernier PV de commission).
-8. **Nom et fonction de l'ingénieur énergéticien** VINCI Energies auteur de l'audit.
-9. **Date de signature du devis** et confirmation du versement de la prime CEE.
+**Pour compléter la partie 2 (missions globales)**
+6. Nombre de sites suivis, de visites préventives et de dépannages par an, taux de transformation de vos devis.
+7. Certifications de l'entreprise (MASE, QUALIBAT, ISO, attestation de capacité fluides).
+8. Convention collective applicable et modalités de majoration du travail de nuit.
 
-**Priorité 3 — pour la partie 2**
-10. Nombre de sites suivis, de visites préventives et de dépannages par an, taux de transformation de vos devis.
-11. Certifications de l'entreprise (MASE, QUALIBAT, ISO, attestation de capacité fluides).
-12. Convention collective applicable et modalités de majoration du travail de nuit.
-13. Retour écrit du client sur sa satisfaction.
+**Note sur les visuels** : en l'absence de photos de chantier, le support de soutenance s'appuiera sur les **figures de l'audit** (répartition des consommations par usage, projection 2030), le **schéma de principe** du rapport, le **tableau des neuf actions** et la **décomposition du devis**. C'est suffisant : un jury retient mieux trois chiffres clés qu'une photo de nacelle.
 
 PAGEBREAK
 

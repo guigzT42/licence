@@ -27,9 +27,7 @@ Je tiens à remercier en premier lieu **Jean-Pierre RASCLE**, chef d'entreprise 
 
 Mes remerciements vont ensuite à **Jean-Michel BERJAUD**, responsable d'affaires de la cellule Climatisation, qui m'a confié la conduite de ce projet et m'a accompagné sur les volets chiffrage, relation client et arbitrages techniques.
 
-Je remercie également **Alexis BESSARD** et **Sofiane HAMDOUCHE**, responsables chantiers, pour leur appui quotidien sur la préparation et la sécurité du chantier, ainsi que l'ensemble des techniciens de la cellule CVC — **Mounir NEGGAZ, Rémi PAUWELS, Gaëtan VACHER** — avec qui je travaille au quotidien.
-
-Un remerciement particulier à **Julien FAYARD**, animateur sécurité, pour son accompagnement sur l'analyse de risques d'un chantier de nuit en établissement recevant du public, à **Akim FERROUDJ** (Méthodes / Systèmes d'information) et à **Sandrine FLOTTE** (gestion des dépannages) dont l'appui a été déterminant dans l'organisation de mes interventions de maintenance.
+Je remercie également **Alexis BESSARD** et **Sofiane HAMDOUCHE**, responsables chantiers, ainsi que les techniciens de la cellule CVC — **Mounir NEGGAZ, Rémi PAUWELS, Gaëtan VACHER** — avec qui je travaille au quotidien. Un remerciement particulier à **Julien FAYARD**, animateur sécurité, pour son accompagnement sur l'analyse de risques d'un chantier de nuit en ERP, ainsi qu'à **Akim FERROUDJ** (Méthodes / SI) et **Sandrine FLOTTE** (gestion des dépannages).
 
 Enfin, je remercie **〈nom de l'ingénieur énergéticien VINCI〉**, qui a réalisé avec moi le diagnostic de performance énergétique à l'origine de ce projet, ainsi que le **directeur du magasin Intermarché de Rive-de-Gier** et ses équipes, pour leur disponibilité tout au long des travaux.
 
@@ -63,9 +61,8 @@ PAGEBREAK
 | ERP | Établissement Recevant du Public |
 | GMAO | Gestion de la Maintenance Assistée par Ordinateur |
 | GTB / GTC | Gestion Technique du Bâtiment / Centralisée |
-| GWP / PRP | *Global Warming Potential* / Pouvoir de Réchauffement Planétaire |
-| PEMP | Plateforme Élévatrice Mobile de Personnel (« nacelle ») |
-| PAC | Pompe À Chaleur |
+| GWP / PRP | Pouvoir de réchauffement planétaire d'un fluide |
+| PEMP / PAC | Plateforme Élévatrice Mobile de Personnel (« nacelle ») / Pompe À Chaleur |
 | PPSPS | Plan Particulier de Sécurité et de Protection de la Santé |
 | SPS | Coordination Sécurité et Protection de la Santé |
 | UE / UI | Unité Extérieure / Unité Intérieure |

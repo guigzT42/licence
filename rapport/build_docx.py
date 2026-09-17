@@ -18,21 +18,21 @@ doc = Document()
 
 # --- Mise en page ---
 for s in doc.sections:
-    s.top_margin = Cm(1.6); s.bottom_margin = Cm(1.5)
+    s.top_margin = Cm(1.4); s.bottom_margin = Cm(1.3)
     s.left_margin = Cm(1.8); s.right_margin = Cm(1.6)
 
 st = doc.styles['Normal']
 st.font.name = 'Calibri'; st.font.size = Pt(10)
 st.element.rPr.rFonts.set(qn('w:eastAsia'), 'Calibri')
 pf = st.paragraph_format
-pf.space_after = Pt(3); pf.space_before = Pt(0); pf.line_spacing = 1.0
+pf.space_after = Pt(2.5); pf.space_before = Pt(0); pf.line_spacing = 0.98
 pf.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
 for name, size, color, before, after in (
-        ('Heading 1', 15, BLUE, 10, 5),
-        ('Heading 2', 12.5, BLUE, 9, 4),
-        ('Heading 3', 11, BLUE, 7, 3),
-        ('Heading 4', 10, GREY, 6, 2)):
+        ('Heading 1', 15, BLUE, 8, 4),
+        ('Heading 2', 12.5, BLUE, 7, 3),
+        ('Heading 3', 11, BLUE, 6, 2),
+        ('Heading 4', 10, GREY, 5, 2)):
     s = doc.styles[name]
     s.font.name = 'Calibri'; s.font.size = Pt(size); s.font.bold = True
     s.font.color.rgb = color

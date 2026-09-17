@@ -23,34 +23,23 @@ La chaîne d'appartenance est la suivante :
 
 ### 1.1.1 Le groupe VINCI et la division VINCI Energies
 
-VINCI est un groupe français de concessions, d'énergie, de construction et d'immobilier, dirigé par Xavier HUILLARD, organisé en quatre métiers : **Concessions** (≈ 9,2 Md€), **Energies** (≈ 16,7 Md€), **Construction** (≈ 29,3 Md€) et **Immobilier** (≈ 1,5 Md€). Son ambition environnementale — réduction des émissions de gaz à effet de serre, économie circulaire, préservation des milieux — se traduit à notre échelle par une orientation forte de l'offre vers l'efficacité énergétique des bâtiments : c'est le terrain exact de mon projet.
+VINCI est un groupe français de concessions, d'énergie, de construction et d'immobilier, dirigé par Xavier HUILLARD, organisé en quatre métiers : **Concessions** (≈ 9,2 Md€), **Energies** (≈ 16,7 Md€), **Construction** (≈ 29,3 Md€) et **Immobilier** (≈ 1,5 Md€). Son ambition environnementale se traduit à notre échelle par une orientation forte de l'offre vers l'efficacité énergétique des bâtiments — le terrain exact de mon projet.
 
-**VINCI Energies** (Président-Directeur Général : Arnaud GRISON) accompagne **deux mutations majeures : la transition énergétique et la transformation numérique**, à travers quatre domaines d'activité :
-
-| Domaine | Part du CA | Contenu |
-|---|---|---|
-| Infrastructures | 29 % | Réseaux d'énergie, éclairage public, tunnels, mobilité électrique |
-| Industrie | 25 % | Performance et sobriété des process industriels |
-| **Building Solutions** | 28 % | **Génie électrique, génie climatique, performance énergétique du bâtiment** |
-| ICT | 18 % | Infrastructures et services numériques |
-
-Mon entreprise relève de **Building Solutions**, qui regroupe en France **265 entreprises** intervenant de l'ingénierie aux travaux et à la maintenance : électricité, éclairage, climatisation, chauffage, centrales de traitement d'air, plomberie, désenfumage, sécurité incendie, contrôle d'accès, photovoltaïque, gestion technique du bâtiment. Ce point a une conséquence pratique : sur une opération comme celle de l'Intermarché, des compétences en électricité, en GTB ou en photovoltaïque sont mobilisables **en interne**.
+**VINCI Energies** (Président-Directeur Général : Arnaud GRISON) accompagne **deux mutations majeures : la transition énergétique et la transformation numérique**, à travers quatre domaines : **Infrastructures** (29 % du CA), **Industrie** (25 %), **Building Solutions** (28 %) et **ICT** (18 %). Mon entreprise relève de **Building Solutions**, qui regroupe en France **265 entreprises** intervenant de l'ingénierie aux travaux et à la maintenance : électricité, éclairage, climatisation, chauffage, traitement d'air, plomberie, désenfumage, sécurité incendie, photovoltaïque, gestion technique du bâtiment. Conséquence pratique : sur une opération comme celle de l'Intermarché, des compétences en électricité, en GTB ou en photovoltaïque sont mobilisables **en interne**.
 
 ## 1.2 VINCI Energies : un modèle d'entreprise décentralisé
 
-VINCI Energies ne fonctionne pas comme une grande entreprise centralisée mais comme un **réseau de 1 800 entreprises autonomes** de taille humaine, ancrées dans leur territoire. Trois principes structurent ce modèle et se retrouvent dans mon quotidien :
+VINCI Energies fonctionne non comme une grande entreprise centralisée mais comme un **réseau de 1 800 entreprises autonomes** ancrées dans leur territoire, selon trois principes que l'on retrouve au quotidien :
 
-1. **La subsidiarité** : les décisions sont prises au plus près du terrain ; le chef d'entreprise dispose d'une réelle autonomie de gestion, dans un cadre fixé par le pôle.
-2. **Le maillage** : les entreprises partagent ressources, savoir-faire et activité. C'est ce mécanisme qui m'a permis de **solliciter un ingénieur énergéticien du groupe** pour réaliser le diagnostic énergétique de l'Intermarché — une compétence qu'une PME isolée n'aurait pas mobilisée aussi facilement.
-3. **La responsabilité de l'affaire** : chaque affaire a un responsable identifié, qui porte la marge, le planning et la satisfaction client de bout en bout.
+1. **La subsidiarité** : les décisions se prennent au plus près du terrain ; le chef d'entreprise dispose d'une réelle autonomie de gestion, dans un cadre fixé par le pôle.
+2. **Le maillage** : les entreprises partagent ressources et savoir-faire. C'est ce mécanisme qui a permis de **mobiliser un ingénieur énergéticien du groupe** pour réaliser l'audit énergétique de l'Intermarché — une compétence qu'une PME isolée n'aurait pas mobilisée aussi facilement.
+3. **La responsabilité de l'affaire** : chaque affaire a un responsable identifié, qui en porte la marge, le planning et la satisfaction client.
 
-Le modèle s'appuie sur **cinq valeurs** — confiance, autonomie, responsabilité, esprit d'entreprendre, solidarité — et sur deux dispositifs qui concernent directement mon parcours : **l'Académie VINCI Energies** (formations et portail Up! / Click&Learn) et le **parcours « pépinière »**, destiné notamment aux profils de niveau licence, qui accompagne sur deux ans la prise de poste (immersions, visites d'entreprises du groupe, formations, rapport d'étonnement). Enfin, la politique de prévention est formalisée par la démarche **SAFETY Excellence**, dont le principe est qu'aucun accident n'est une fatalité : cette culture a structuré toute la préparation du chantier de nuit décrite en partie 3.
+Le modèle s'appuie sur **cinq valeurs** — confiance, autonomie, responsabilité, esprit d'entreprendre, solidarité — et sur deux dispositifs qui concernent mon parcours : **l'Académie VINCI Energies** (formations, portail Up!) et le **parcours « pépinière »**, ouvert aux profils de niveau licence, qui accompagne sur deux ans la prise de poste. La politique de prévention est formalisée par la démarche **SAFETY Excellence**, dont le principe est qu'aucun accident n'est une fatalité : cette culture a structuré toute la préparation du chantier de nuit décrit en partie 3.
 
 ## 1.3 Le pôle VINCI Energies France Tertiaire Centre-Est Sud
 
-Le pôle **VEF TCES**, basé à **Dardilly (69)** et dirigé par **Xavier LOISELET**, représente **277 M€** de chiffre d'affaires (2022), **1 690 collaborateurs**, **38 entreprises** et **8 directions opérationnelles** couvrant un large quart sud-est et sud-ouest de la France : Nouvelle-Aquitaine (C. LABORDE), Occitanie (M.-A. TIRAT et M. DEBARRE), région lyonnaise (M. RIBEIRO), **Auvergne/Centre (N. HOFFER — périmètre dont dépend mon entreprise)**, Arc alpin (L. BLANCHARD), PACA (R. BEGARIE), Bourgogne Franche-Comté (L. CHOLLETON).
-
-Le pôle met à disposition des entreprises des **forces d'appui** mutualisées : direction administrative et financière (E. GUILLEMINOT), richesses humaines (D. RABOTEAU), QSE (C. RODA), RSE et environnement (É. MAZUR), achats (J. SATURNIN), juridique, informatique, communication. Un chargé d'affaires ou un chargé de maintenance de La Talaudière peut ainsi s'appuyer sur ces experts pour un contrat, une négociation fournisseur ou une question de prévention. Le pôle a par ailleurs formalisé sa stratégie RSE sous le nom **« L'Ambition RSE »**, structurée en cinq piliers — Économie, Environnement, Social, Territoire, Gouvernance — que les projets d'efficacité énergétique comme le mien alimentent directement.
+Le pôle **VEF TCES**, basé à **Dardilly (69)** et dirigé par **Xavier LOISELET**, représente **277 M€** de chiffre d'affaires (2022), **1 690 collaborateurs**, **38 entreprises** et **8 directions opérationnelles** couvrant un large quart sud-est et sud-ouest de la France — dont le périmètre **Auvergne / Centre de Nicolas HOFFER**, auquel mon entreprise est rattachée. Il met à disposition des **forces d'appui** mutualisées (direction financière, richesses humaines, QSE, RSE, achats, juridique, informatique, communication) sur lesquelles un chargé d'affaires ou un chargé de maintenance peut s'appuyer, et a formalisé sa stratégie RSE sous le nom **« L'Ambition RSE »**, structurée en cinq piliers : Économie, Environnement, Social, Territoire, Gouvernance.
 
 ## 1.4 Santerne Surfaces Commerciales et Santerne Energies : qui, quoi, où, depuis quand
 
@@ -94,15 +83,11 @@ Placées auprès du chef d'entreprise **Jean-Pierre RASCLE**, elles constituent 
 
 | Fonction | Titulaire |
 |---|---|
-| Ressources humaines | Alexandre DHERBEY |
-| Responsable administratif et financier (RAF) | Frédéric SMECCA |
-| Comptabilité / gestion | Cindy BROSSIER, Amandine QUILLE, Pauline MOUNIER, Marine ROBERT (Le Puy), Camille PERRET (apprentie) |
-| Achats | Chloé THOUROT |
-| Méthodes / Systèmes d'information | Akim FERROUDJ |
-| QSE — Animateur sécurité | Julien FAYARD |
-| Logistique | Frédéric CHEVALIER |
-| Assistanat / gestion des dépannages | Sandrine FLOTTE |
-| Assistanat | Aurélie POBLE, Patricia THOLLOT |
+| Ressources humaines / RAF | Alexandre DHERBEY / Frédéric SMECCA |
+| Comptabilité et gestion | C. BROSSIER, A. QUILLE, P. MOUNIER, M. ROBERT (Le Puy), C. PERRET (apprentie) |
+| Achats / Méthodes et SI | Chloé THOUROT / Akim FERROUDJ |
+| QSE — animateur sécurité / Logistique | Julien FAYARD / Frédéric CHEVALIER |
+| Assistanat et gestion des dépannages | Sandrine FLOTTE, Aurélie POBLE, Patricia THOLLOT |
 
 Ces fonctions ne sont pas décoratives dans mon quotidien : **Sandrine FLOTTE** réceptionne et répartit les demandes de dépannage que je traite, **Chloé THOUROT** intervient sur les consultations fournisseurs quand je chiffre un remplacement de matériel, **Julien FAYARD** valide les analyses de risques de nos interventions, et **Akim FERROUDJ** gère les outils (GMAO, mobilité, saisie des rapports) qui structurent la maintenance.
 

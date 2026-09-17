@@ -4,19 +4,7 @@ Cette section est volontairement la plus développée du rapport. Sur ce chantie
 
 ### 3.7.1 La hiérarchie des principes généraux de prévention
 
-Toute l'analyse a été construite sur les **neuf principes généraux de prévention** de l'article **L. 4121-2 du code du travail**, appliqués dans l'ordre :
-
-| N° | Principe | Application sur ce chantier |
-|---|---|---|
-| 1 | Éviter les risques | Préfabrication au sol de tronçons de gaines et de supports pour réduire le temps passé en hauteur |
-| 2 | Évaluer les risques qui ne peuvent être évités | Analyse de risques écrite, plan de prévention avec le magasin |
-| 3 | Combattre les risques à la source | Implantation des groupes en cour arrière **sur dalle béton de plain-pied**, évitant tout levage en toiture |
-| 4 | Adapter le travail à l'homme | Rythme de nuit aménagé, pauses, rotation des tâches physiques |
-| 5 | Tenir compte de l'état d'évolution de la technique | Nacelle adaptée à la hauteur et au sol, outillage sur batterie |
-| 6 | Remplacer ce qui est dangereux par ce qui l'est moins | Brasage sous azote, limitation des points chauds, préfabrication des tronçons au sol |
-| 7 | Planifier la prévention | Phasage du chantier, permis de feu, consignations programmées |
-| 8 | **Prendre des mesures de protection collective en leur donnant la priorité sur les mesures individuelles** | Balisage des zones, garde-corps de la nacelle, protection des rayons — avant le harnais |
-| 9 | Donner les instructions appropriées | Accueil sécurité, causeries, consignes propres au site |
+Toute l'analyse a été construite sur les **neuf principes généraux de prévention** de l'article **L. 4121-2 du code du travail**, appliqués dans l'ordre : **éviter les risques** (préfabrication au sol de tronçons et de supports pour réduire le temps passé en hauteur), **évaluer ceux qui ne peuvent l'être** (analyse de risques écrite, plan de prévention avec le magasin), **combattre les risques à la source** (implantation des groupes en cour arrière **sur dalle de plain-pied**, ce qui supprime tout levage en toiture), **adapter le travail à l'homme** (rythme de nuit aménagé, pauses, rotation des tâches physiques), **tenir compte de l'évolution technique** (nacelle adaptée à la hauteur et au sol, outillage sur batterie), **remplacer ce qui est dangereux** (brasage sous azote, limitation des points chauds), **planifier la prévention** (phasage, permis de feu, consignations programmées), **donner la priorité à la protection collective sur la protection individuelle** (balisage des zones, garde-corps de la nacelle, protection des rayons — avant le harnais), et enfin **donner les instructions appropriées** (accueil sécurité, causeries, consignes propres au site).
 
 ### 3.7.2 Le travail de nuit : cadre réglementaire
 
@@ -75,14 +63,9 @@ Les installations de chauffage, ventilation et climatisation en ERP sont régies
 - **Accessibilité pour l'entretien** : trappes de visite pour les filtres, les clapets et les organes de régulation ;
 - **Repérage** des organes de coupure, mise à jour des plans et du registre de sécurité.
 
-**c) La coactivité avec le public et les salariés du magasin**
+**c) La coactivité avec les salariés du magasin**
 
-Même de nuit, le magasin n'est pas vide : personnel de réassort, agents d'entretien, livreurs, société de gardiennage. Les mesures suivantes ont été prises :
-
-- **Balisage physique** de la zone de travail, déplacé chaque nuit au fur et à mesure de l'avancement ;
-- **Protection des rayons et des marchandises** situés sous la zone d'intervention (bâches, films) ;
-- **Interdiction d'accès sous la nacelle**, périmètre matérialisé au sol ;
-- **Information systématique** du personnel présent en début de poste.
+Même de nuit, le magasin n'est pas vide : personnel de réassort, agents d'entretien, livreurs, gardiennage. D'où le **balisage physique** de la zone de travail, déplacé chaque nuit au fur et à mesure de l'avancement, la **protection des rayons et des marchandises** situés sous la zone d'intervention, l'**interdiction d'accès sous la nacelle** matérialisée au sol, et l'**information systématique** du personnel présent en début de poste.
 
 ### 3.7.4 Le travail en hauteur et l'utilisation de la nacelle
 
@@ -130,18 +113,11 @@ Même de nuit, le magasin n'est pas vide : personnel de réassort, agents d'entr
 
 ### 3.7.6 Le plan de prévention : une obligation, pas une formalité
 
-L'intervention d'une entreprise extérieure dans les locaux d'une entreprise utilisatrice est régie par les articles **R. 4511-1 à R. 4515-11 du code du travail** (issus du décret n° 92-158 du 20 février 1992).
+L'intervention d'une entreprise extérieure dans les locaux d'une entreprise utilisatrice est régie par les articles **R. 4511-1 à R. 4515-11 du code du travail** (décret n° 92-158 du 20 février 1992). Elle impose une **inspection commune préalable** des lieux, des installations et des matériels avec le responsable du magasin **avant tout démarrage**, puis un **plan de prévention écrit** dès lors que l'opération dépasse **400 heures sur 12 mois** ou comporte des **travaux dangereux** au sens de l'arrêté du 19 mars 1993.
 
-**Obligations applicables**
+**Les deux conditions étaient réunies** : deux compagnons pendant deux mois de nuit représentent largement plus de 400 heures — d'autant plus que le volume réel a doublé — et les travaux en hauteur comme les travaux par points chauds figurent parmi les travaux dangereux. Le plan définit les phases d'activité dangereuses, l'adaptation des matériels et des installations, les instructions aux salariés, l'organisation des premiers secours et les conditions de participation des salariés d'une entreprise aux travaux de l'autre ; il est communiqué aux salariés concernés et au CSE, tenu à disposition de l'inspection du travail, et **mis à jour à chaque évolution significative** du chantier.
 
-1. **Inspection commune préalable** des lieux de travail, des installations et des matériels, réalisée avec le responsable du magasin **avant le démarrage** ;
-2. **Plan de prévention écrit obligatoire** dès lors que l'opération représente **plus de 400 heures de travail sur 12 mois** ou qu'elle comporte des **travaux dangereux** figurant sur la liste de l'arrêté du 19 mars 1993. **Les deux conditions étaient réunies** : 2 compagnons × 2 mois de nuit représentent largement plus de 400 heures, et les travaux en hauteur ainsi que les travaux par points chauds figurent parmi les travaux dangereux ;
-3. **Contenu** : définition des phases d'activité dangereuses, adaptation des matériels et installations, instructions aux salariés, organisation des premiers secours, conditions de participation des salariés d'une entreprise aux travaux de l'autre ;
-4. **Communication** aux salariés concernés, au CSE et tenue à disposition de l'inspection du travail et des services de prévention ;
-5. **Mise à jour** à chaque évolution significative du chantier.
-
-**Nuance importante — plan de prévention ou coordination SPS ?**
-Lorsqu'une opération de bâtiment ou de génie civil fait intervenir **plusieurs entreprises**, c'est la **coordination SPS** (loi n° 93-1418, articles R. 4532-1 et suivants) qui s'applique, avec désignation d'un **coordonnateur SPS** et établissement d'un **PPSPS** par chaque entreprise. Sur cette opération, réalisée pour l'essentiel par notre seule entreprise dans un bâtiment existant en exploitation, c'est le **régime du plan de prévention** qui s'appliquait. La distinction entre les deux régimes est un point que j'ai dû clarifier et qui fait partie de mes acquis sur ce projet 〈à confirmer selon l'intervention effective de sous-traitants : étanchéité, levage, électricité〉.
+**Nuance importante — plan de prévention ou coordination SPS ?** Lorsqu'une opération de bâtiment fait intervenir **plusieurs entreprises**, c'est la **coordination SPS** (loi n° 93-1418, articles R. 4532-1 et suivants) qui s'applique, avec désignation d'un coordonnateur et établissement d'un **PPSPS** par chaque entreprise. Sur cette opération, réalisée pour l'essentiel par notre seule entreprise dans un bâtiment existant en exploitation, c'est le **régime du plan de prévention** qui s'appliquait. La distinction entre les deux régimes fait partie de mes acquis sur ce projet.
 
 ### 3.7.7 Les documents de sécurité constitués pour le chantier
 

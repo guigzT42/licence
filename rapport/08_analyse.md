@@ -20,7 +20,8 @@ Cette partie répond aux critères d'évaluation portant sur l'analyse critique,
 
 ## 4.2 Ce qui aurait pu être mieux fait — analyse critique
 
-**1. Le fluide frigorigène est la vraie faiblesse du projet.** L'installation fonctionne au **R-410A (GWP ≈ 2 088)**, alors que des matériels au **R-32 (GWP ≈ 675)** existent. À charge égale, l'impact climatique d'une fuite est **trois fois supérieur**. Dans un projet dont la finalité affichée est la réduction des émissions, c'est une contradiction qu'il faut assumer et expliquer : le choix relève de la gamme VRV IV retenue et de la continuité avec le parc existant du site. Les conséquences sont réelles : le règlement **(UE) 2024/573** organise la raréfaction des HFC à fort GWP, donc **le prix et la disponibilité du fluide pour les recharges se dégraderont** sur les quinze à vingt ans de vie de l'installation. Si le projet était refait aujourd'hui, je défendrais une **gamme au R-32**, et à défaut je rendrais la **qualité d'étanchéité et le suivi des contrôles** d'autant plus rigoureux — ce qui relève désormais de ma responsabilité de mainteneur.
+**1. Le fluide frigorigène est la vraie faiblesse du projet, et elle est chiffrable.** L'installation contient **38 kg de R-410A (GWP 2 088)**, soit un **potentiel de 79,3 t CO₂e**. Or le gain annuel du projet est de **16,7 t CO₂e/an** : la charge embarquée représente donc **4,8 années de bénéfice climatique**. Une fuite de 20 % du circuit annulerait à elle seule près d'une année entière de gain. La même installation au **R-32 (GWP 675)** n'aurait représenté que **25,7 t CO₂e**, et serait surtout **restée sous le seuil des 50 t CO₂e** : le contrôle d'étanchéité aurait été **annuel au lieu d'être semestriel**, avec l'économie d'exploitation correspondante sur quinze à vingt ans.
+> Dans un projet dont la finalité affichée est la réduction des émissions, c'est une contradiction qu'il faut assumer : le choix relève de la gamme VRV IV retenue et de la continuité avec le parc existant du site. Le règlement **(UE) 2024/573** organisant la raréfaction des HFC à fort GWP, **le prix et la disponibilité du fluide pour les recharges se dégraderont** sur la durée de vie de l'installation. Si le projet était refait aujourd'hui, je défendrais une **gamme au R-32** ; à défaut, la qualité d'étanchéité et la rigueur des contrôles semestriels deviennent une **condition de la performance annoncée** — et c'est désormais ma responsabilité de mainteneur.
 
 **2. L'action isolée a un temps de retour long, et il ne faut pas le masquer.** **15 ans après CEE** pour la PAC seule, contre 4,3 ans pour la récupération de chaleur sur les groupes froids. La raison est structurelle : on remplace une énergie bon marché (le gaz) par une énergie chère (l'électricité), et on **ajoute** un usage — la climatisation, soit + 102 MWh et + 9 % d'électricité. Le projet se justifie par la vétusté de la chaudière, le confort et la contrainte réglementaire, pas par sa seule rentabilité énergétique. Le dire est plus solide que de le dissimuler.
 
@@ -30,9 +31,11 @@ Cette partie répond aux critères d'évaluation portant sur l'analyse critique,
 
 **5. L'écart entre le budget de l'audit et le devis réel (− 27 %) n'a pas été exploité.** Passer de 122 800 € à 90 000 € améliore le temps de retour de 21,5 à 15 ans après CEE. Ce recalcul aurait dû être présenté formellement au client : c'était un argument commercial gratuit, et il n'a pas été fait.
 
-**6. La formalisation du projet a été plus faible que sa réalisation.** Le chantier a été bien conduit, mais la traçabilité écrite — planning formalisé, registre des risques tenu à jour, comptes rendus structurés — a souvent cédé le pas à l'urgence du terrain. La préparation de ce rapport m'a fait mesurer l'écart entre « avoir fait » et « pouvoir démontrer qu'on a fait ».
+**6. Le chiffrage du travail de nuit a été sous-évalué d'un facteur deux.** C'est l'erreur la plus coûteuse du projet, analysée en détail en 3.9.2 : le temps de nuit réellement consommé a été **environ le double du prévisionnel**, absorbé par l'entreprise et non par le client. La cause n'est pas un incident mais une **méthode de chiffrage inadaptée** : on a estimé des temps de pose de chantier de jour sur un chantier de nuit, sans budgéter le temps improductif quotidien d'installation et de repli, ni appliquer de coefficient de productivité nocturne. La correction est simple et je la porterai sur mes prochains devis : **distinguer au chiffrage le temps de production du temps de mise en place et de repli**, et appliquer un coefficient explicite au travail en nacelle en site occupé.
 
-**7. La mesure de la satisfaction client n'a pas été formalisée.** Le retour est bon, mais oral. Une enquête écrite en fin d'opération aurait produit un élément valorisable commercialement et un retour d'expérience exploitable.
+**7. La formalisation du projet a été plus faible que sa réalisation.** Le chantier a été bien conduit, mais la traçabilité écrite — planning formalisé, registre des risques tenu à jour, comptes rendus structurés — a souvent cédé le pas à l'urgence du terrain. La préparation de ce rapport m'a fait mesurer l'écart entre « avoir fait » et « pouvoir démontrer qu'on a fait ».
+
+**8. La mesure de la satisfaction client n'a pas été formalisée.** Le retour est bon, mais oral. Une enquête écrite en fin d'opération aurait produit un élément valorisable commercialement et un retour d'expérience exploitable.
 
 ## 4.3 L'organisation de l'équipe : forces, faiblesses et axes d'amélioration
 
@@ -59,9 +62,8 @@ Le référentiel attend une analyse de l'organisation de l'équipe projet, de so
 ### 4.3.3 Les points faibles
 
 - **La vulnérabilité d'un effectif de deux** : une absence, et le planning est compromis.
-- **La transmission d'informations entre l'équipe de nuit et l'organisation de jour** : les comptes rendus circulent mal quand les horaires ne se recouvrent pas. Les décisions se prenaient parfois avec un décalage de 24 heures.
-- **L'isolement relatif de l'équipe de nuit** : moins de contacts, moins de visites de l'encadrement, moins d'appui immédiat en cas de difficulté technique.
-- **La charge mentale du travail de nuit** : accumulation de fatigue, impact sur la vie personnelle, récupération plus difficile en fin de chantier.
+- **La transmission d'informations entre la nuit et le jour** : les comptes rendus circulent mal quand les horaires ne se recouvrent pas, et les décisions se prenaient parfois avec 24 heures de décalage. L'équipe de nuit est aussi plus isolée : moins de visites de l'encadrement, moins d'appui immédiat en cas de difficulté technique.
+- **La charge mentale du travail de nuit** : accumulation de fatigue, impact sur la vie personnelle, récupération plus difficile en fin de chantier — d'autant plus marquée que le volume d'heures a doublé par rapport au prévisionnel.
 
 ### 4.3.4 Les axes d'amélioration proposés
 
@@ -80,9 +82,9 @@ Le référentiel attend une analyse de l'organisation de l'équipe projet, de so
 
 **Sur le plan réglementaire** : avant ce projet, le décret tertiaire était pour moi un sigle. Je sais aujourd'hui **identifier si un bâtiment est assujetti, calculer l'objectif 2030 en valeur relative (369,2 → 221,5 kWh/m² sur ce site), situer les échéances, décrire les sanctions, et articuler le tout avec les décrets BACS, la loi APER, la loi LOM et la réglementation F-Gas**. C'est, concrètement, ce qui me permet de parler à un chef d'entreprise et non seulement à un technicien.
 
-**Sur le plan de la gestion de projet** : le passage d'une logique de **tâche** à une logique de **projet** (objectifs, parties prenantes, planning, risques, indicateurs) ; l'apprentissage du **chiffrage réaliste** d'un chantier atypique (nuit, hauteur, site occupé) ; et l'apprentissage de la **conduite d'un client** — convaincre ne consiste pas à énoncer des arguments techniques, mais à traduire un enjeu technique dans le langage du décideur : euros, risques, image, continuité d'exploitation.
+**Sur le plan de la gestion de projet** : le passage d'une logique de **tâche** à une logique de **projet** (objectifs, parties prenantes, planning, risques, indicateurs) ; l'apprentissage — **par l'erreur** — du chiffrage d'un chantier atypique (nuit, hauteur, site occupé) ; et l'apprentissage de la **conduite d'un client** — convaincre ne consiste pas à énoncer des arguments techniques, mais à traduire un enjeu technique dans le langage du décideur : euros, risques, image, continuité d'exploitation.
 
-**Sur le plan personnel**, ce projet a marqué mon passage d'un rôle d'exécutant technique à un rôle de **porteur de projet**. J'ai découvert que la partie la plus difficile n'est pas la technique — elle s'apprend — mais **l'anticipation** : voir un mois à l'avance le problème qui n'existe pas encore.
+**Sur le plan personnel**, ce projet a marqué mon passage d'un rôle d'exécution technique à celui de contributeur d'un projet. J'ai découvert que la partie la plus difficile n'est pas la technique — elle s'apprend — mais **l'anticipation** : voir un mois à l'avance le problème qui n'existe pas encore. Le doublement du temps de nuit en est l'illustration exacte.
 
 ## 4.5 Prise de recul sur le secteur et le métier
 
@@ -102,7 +104,7 @@ Ce projet confirme l'orientation que je souhaite donner à ma carrière : évolu
 
 # Conclusion
 
-Le projet décrit dans ce rapport est parti d'une situation banale pour un chargé de maintenance — une **chaudière gaz de 1987**, des pannes, un magasin sans climatisation et un client qui subissait sa facture — pour aboutir à une opération structurante : le remplacement du chauffage de la surface de vente par une **pompe à chaleur réversible DRV DAIKIN de 70,4 kW**, avec **59 mètres de gaine diffusante** au-dessus de la ligne de caisses, réalisée **de nuit, en huit heures par poste, pendant deux mois, sans un seul jour de fermeture**, pour **90 000 € HT dont 11 000 € financés par les CEE**.
+Le projet décrit dans ce rapport est parti d'une situation banale pour un chargé de maintenance — une **chaudière gaz de 1987**, des pannes, un magasin sans climatisation et un client qui subissait sa facture — pour aboutir à une opération structurante : le remplacement du chauffage de la surface de vente par une **pompe à chaleur réversible DRV DAIKIN de 70,4 kW**, avec **59 mètres de gaine diffusante** au-dessus de la ligne de caisses, réalisée **de nuit, de mi-avril à mi-juin 2026, sans un seul jour de fermeture**, pour **90 000 € HT dont 11 000 € financés par les CEE**.
 
 Ce parcours illustre ce que le bloc 4 cherche à évaluer :
 

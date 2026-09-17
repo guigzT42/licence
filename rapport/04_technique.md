@@ -98,8 +98,7 @@ La fiche APE « Chauffage de la surface de vente par pompe à chaleur réversibl
 | **SCOP** | **≥ 4,2** |
 | **SEER** | **≥ 6,0** |
 | Positionnement des groupes | **Cour arrière** |
-| Contraintes identifiées | Passage des liaisons frigorifiques dans les locaux existants, encombrement en extérieur |
-| Atouts | Redimensionnement selon les besoins réels, régulation avec programmation horaire, **confort au niveau des caisses**, dépose possible des aérothermes et de la chaudière gaz, amélioration du rendement au regard du décret tertiaire |
+| Contraintes / atouts | Passage des liaisons dans les locaux existants et encombrement extérieur ; en contrepartie : redimensionnement selon les besoins réels, régulation programmable, **confort au niveau des caisses**, dépose des aérothermes et de la chaudière gaz, gain au regard du décret tertiaire |
 
 ### 3.4.2 Pourquoi le DRV plutôt qu'une autre solution
 
@@ -122,7 +121,7 @@ Sur le plan du rendement, l'écart est décisif : la chaudière de 1987 travaill
 | **Puissance chaud à − 10 °C** | **70,4 kW** |
 | **Puissance froid** | **89,5 kW** |
 | **ETAS chaud / froid** | **162,4 % / 250,8 %** |
-| Fluide frigorigène | **R-410A** |
+| Fluide frigorigène | **R-410A — charge totale de l'installation : 38 kg**, soit **79,3 t CO₂e** |
 | Mise en place | Manutention sur dalle bétonnée, **2 supports type Grand Rubber Foot avec 4 plots antivibratiles**, sectionneurs de proximité |
 | Mise en service | **Mise en service constructeur DAIKIN** + dossier **DESP** |
 
@@ -135,14 +134,15 @@ Sur le plan du rendement, l'écart est décisif : la chaudière de 1987 travaill
 
 **Distribution d'air** : le gainable souffle dans un **plénum sur mesure en acier galvanisé isolé 25 mm**, puis dans une **gaine acier galvanisé perforée diffusante de type GMD (marque SIONAIR), Ø 550 mm, sur 59 mètres linéaires**, thermolaquée, à diamètre constant, supportage compris. C'est cette gaine qui **traverse le magasin sur toute sa longueur** et assure une diffusion homogène au-dessus de la ligne de caisses — la zone historiquement la plus inconfortable, été comme hiver.
 
-**Réseaux et équipements associés** :
+**Réseaux et équipements associés :**
 
-- **Liaisons frigorifiques** en cuivre frigo dégraissé **« 2 tubes »**, isolées, avec **raccords Refnet** et **charge R-410A** ; pose sur **chemins de câbles en acier galvanisé** avec capotage des liaisons extérieures ;
+- **Liaisons frigorifiques** en cuivre frigo dégraissé **« 2 tubes »**, isolées, avec **raccords Refnet** et une **charge totale de 38 kg de R-410A** ; pose sur **chemins de câbles en acier galvanisé** avec capotage des liaisons extérieures ;
 - **Évacuation des condensats** : **65 m de PVC M1 rigide DN 40**, 5 siphons à culot démontable, 2 raccordements sur réseaux EU ;
 - **Alimentations électriques** : liaisons entre unités et coffret CVC, sondes déportées, télécommandes, **liaisons bus LIYCY blindé**, **kit connecteur été/hiver** ;
 - **Régulation** : **5 télécommandes filaires DAIKIN MADOKA BRC1H52** (une par unité intérieure) ;
 - **Interopérabilité** : **liaisons Modbus ou BACnet pour raccordement à la GTB du site** — c'est l'anticipation du décret BACS décrite en 3.2.2 ;
 - **Divers** : percements, fourreaux, ragréages et rebouchages après passage des canalisations.
+
 
 **Schéma de principe**
 
@@ -163,8 +163,6 @@ Sur le plan du rendement, l'écart est décisif : la chaudière de 1987 travaill
    Régulation : 5 × MADOKA BRC1H52  +  liaisons Modbus/BACnet → future GTB
 ```
 
-> **Point à vérifier avec l'entreprise** : le devis décrit **1 gainable + 4 cassettes, toutes en surface de vente**, sans unité en réserve. Si l'installation finalement posée diffère (unité supplémentaire en réserve, cassettes supplémentaires), il faudra reprendre ce paragraphe à partir du **DOE** et non du devis.
-
 ## 3.5 Étude technique et dimensionnement
 
 ### 3.5.1 Ce que dit le dimensionnement retenu
@@ -177,22 +175,13 @@ Sur le plan du rendement, l'écart est décisif : la chaudière de 1987 travaill
 | Ratio de puissance chaud rapporté à la surface de vente | 70,4 kW / 2 596 m² ≈ **27 W/m²** | Cohérent avec un bâti correctement isolé et fortement chargé en apports internes |
 | Débit d'air du gainable | **4 440 m³/h** | Diffusion sur 59 ml de gaine Ø 550 |
 
-**Le facteur 6,4 entre l'ancienne chaudière (452 kW) et la nouvelle production (70,4 kW) est l'enseignement technique majeur du projet.** Il ne signifie pas que le bâtiment était sous-chauffé, mais que :
-
-1. la chaudière de 1987 était **très largement surdimensionnée**, comme la plupart des installations de cette époque, dimensionnées avec de fortes marges et sur un bâti alors moins isolé ;
-2. le bâtiment a été **isolé et modifié** depuis (extension, toiture, doublages) ;
-3. les **apports internes** d'un supermarché sont considérables : éclairage, occupants, équipements et surtout **rejets des groupes de froid alimentaire**, qui représentent 37 % de la consommation du site et dont une grande partie finit en chaleur dans le bâtiment ;
-4. le rendement d'émission d'un DRV à détente directe, avec régulation fine et soufflage maîtrisé, est sans commune mesure avec celui d'aérothermes à eau chaude pilotés en loi d'eau.
+**Le facteur 6,4 entre l'ancienne chaudière (452 kW) et la nouvelle production (70,4 kW) est l'enseignement technique majeur du projet.** Il ne signifie pas que le bâtiment était sous-chauffé, mais que la chaudière de 1987 était **très largement surdimensionnée** — comme la plupart des installations de cette époque, calculées avec de fortes marges sur un bâti alors moins isolé ; que le bâtiment a été **isolé et modifié** depuis ; que les **apports internes** d'un supermarché sont considérables (éclairage, occupants, et surtout **rejets des groupes de froid alimentaire**, 37 % de la consommation du site, dont une grande partie finit en chaleur dans le bâtiment) ; et que le rendement d'émission d'un DRV à détente directe est sans commune mesure avec celui d'aérothermes à eau chaude pilotés en loi d'eau.
 
 Ce constat est un argument fort en soutenance : **remplacer à l'identique aurait conduit à réinstaller une puissance six fois supérieure au besoin réel**, avec le surcoût d'investissement et les mauvais rendements en charge partielle que cela implique.
 
 ### 3.5.2 Méthode de vérification du dimensionnement
 
-Le bilan thermique s'appuie sur les principes suivants :
-
-**Déperditions hivernales** : *P = Σ(U<sub>i</sub> × A<sub>i</sub>) × ΔT + 0,34 × q<sub>v</sub> × ΔT + ponts thermiques − apports internes*, avec une **température extérieure de base de l'ordre de − 8 à − 10 °C** pour la zone **H1c** (cohérente avec la puissance constructeur annoncée à − 10 °C), une consigne intérieure de **19 °C**, et un débit de renouvellement d'air majoré par les ouvertures fréquentes du sas d'entrée.
-
-**Charges estivales** : apports par transmission et apports solaires, **apports internes** (éclairage LED, occupants, équipements), apports par air neuf.
+Le bilan thermique repose sur les **déperditions hivernales** — *P = Σ(U<sub>i</sub> × A<sub>i</sub>) × ΔT + 0,34 × q<sub>v</sub> × ΔT + ponts thermiques − apports internes* — avec une **température extérieure de base de − 8 à − 10 °C** pour la zone **H1c** (cohérente avec la puissance constructeur annoncée à − 10 °C), une consigne de **19 °C** et un débit de renouvellement d'air majoré par les ouvertures du sas ; et sur les **charges estivales** (transmission, apports solaires, apports internes d'éclairage, d'occupants et d'équipements, air neuf).
 
 **Spécificités d'un supermarché, intégrées au dimensionnement :**
 
@@ -222,10 +211,11 @@ Le réseau de diffusion est le point technique le plus sensible : **59 mètres d
 
 | Point de vigilance | Risque | Mesure |
 |---|---|---|
-| Longueur des liaisons frigorifiques (cour arrière → surface de vente) | Perte de puissance, charge de fluide élevée | Respect des longueurs maximales constructeur, appoint de charge calculé et tracé, chemins de câbles dédiés |
+| Longueur des liaisons frigorifiques (cour arrière → surface de vente) | Perte de puissance, **charge de fluide élevée : 38 kg** | Respect des longueurs maximales constructeur, appoint de charge calculé et tracé sur la fiche d'intervention, chemins de câbles dédiés |
 | Passage des liaisons dans les locaux existants | Contrainte identifiée dès l'audit | Repérage préalable, tracé validé avec l'exploitant, capotage des parties extérieures |
 | Condensats au-dessus des rayons | Dégât des eaux sur marchandises | Pentes respectées, siphons à culot démontable, essais à l'eau avant remise en service |
 | Support et vibrations des groupes | Bruit transmis, nuisance pour les riverains | Dalle béton, supports Grand Rubber Foot, 4 plots antivibratiles |
+| Concentration limite de fluide en cas de fuite | 38 kg de R-410A répartis sur la surface de vente | Vérification selon **NF EN 378** du rapport charge/volume des locaux — sans difficulté ici compte tenu du volume de 2 596 m² de surface de vente en grande hauteur |
 | Dépose de la chaudière et des aérothermes | Coupure du chauffage en cours de saison | Phasage : mise en service de la PAC **avant** dépose de l'ancien système |
 | Coactivité avec le froid alimentaire | Coupure accidentelle d'un groupe froid | Consignations tracées, repérage préalable, coordination avec le frigoriste du magasin |
 | Propreté à l'ouverture | Magasin non présentable à 4 h 45 | Nettoyage systématique en fin de poste (voir 3.8.4) |

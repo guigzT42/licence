@@ -4,6 +4,7 @@
 
 | Paramètre | Valeur |
 |---|---|
+| **Période de réalisation** | **de mi-avril à mi-juin 2026** |
 | Durée du chantier | **2 mois** |
 | Régime horaire | **Travail de nuit**, entre la fermeture (**19 h 45**) et la réouverture (**4 h 45**) |
 | Effectif | **2 compagnons** |
@@ -11,7 +12,10 @@
 | Contrainte absolue | Magasin **exploitable, propre et sécurisé à 4 h 45 chaque matin** |
 | Ouvrage à réaliser | 2 groupes VRV IV en cour arrière, 1 gainable + 4 cassettes, **59 ml de gaine perforée Ø 550**, liaisons frigorifiques 2 tubes, 65 m de condensats, électricité et régulation |
 | Coût chiffré de la contrainte horaire | **9 715,85 € HT** (poste A.9 du devis) |
-| Volume d'heures estimé | 2 personnes × 〈nb de nuits〉 × 〈durée du poste〉 = 〈à compléter〉 heures |
+| Volume d'heures **prévu** | 2 personnes × durée des postes sur 2 mois |
+| Volume d'heures **réalisé** | **environ le double du prévisionnel** (voir l'analyse de l'aléa en 3.9.2) |
+
+**Le choix de la période n'est pas anodin.** Réaliser les travaux **de mi-avril à mi-juin** signifie intervenir **en sortie de saison de chauffe** : la chaudière de 1987 pouvait être déposée sans risque de laisser le magasin sans chauffage, et la nouvelle installation disposait de plusieurs semaines pour être mise au point **avant les premières chaleurs de l'été**, qui constituaient précisément l'un des objectifs du projet. C'est une décision de planification simple, mais qui supprime à elle seule le risque le plus lourd de l'opération.
 
 ### 3.8.2 Le phasage retenu
 
@@ -67,15 +71,13 @@ Cette discipline de fin de poste — **une demi-heure « perdue » chaque nuit**
 
 | Outil / méthode | Usage sur le projet |
 |---|---|
-| **Note de cadrage et objectifs SMART** | Formalisation des objectifs avec le client (section 3.1.5) |
-| **Analyse des parties prenantes** | Identification des attentes et des contraintes de chacun (section 3.1.6) |
-| **Découpage en phases (WBS)** | Structuration du chantier en 10 phases (section 3.8.2) |
-| **Planning de type Gantt** | Séquencement, identification du chemin critique (délais matériel, disponibilité de la grue) |
-| **Analyse de risques projet** | Registre des risques avec criticité et mesures (section 3.9.1) |
-| **Réunions de chantier / points hebdomadaires** | Avec le responsable d'affaires et le client |
-| **Compte rendu quotidien** | Avancement, aléas, photos, points de sécurité |
+| **Note de cadrage et objectifs SMART** | Formalisation des objectifs avec le client (3.1.5) |
+| **Analyse des parties prenantes** | Attentes et contraintes de chacun (3.1.6) |
+| **Découpage en phases (WBS) et planning de type Gantt** | Structuration en 10 phases, séquencement, chemin critique (3.8.2 et 3.8.3) |
+| **Analyse de risques projet** | Registre des risques avec criticité et mesures (3.9.1) |
+| **Points d'avancement et comptes rendus** | Hebdomadaire avec le responsable d'affaires et le client, quotidien avec l'exploitant |
 | **Revue de réception** | Liste de réserves, procès-verbal, levée des réserves |
-| **Retour d'expérience** | Analyse finale et capitalisation (section 3.11 et partie 4) |
+| **Retour d'expérience** | Analyse finale et capitalisation (3.11 et partie 4) |
 
 ## 3.9 Conduite du projet, aléas et adaptations
 
@@ -94,17 +96,35 @@ Cette discipline de fin de poste — **une demi-heure « perdue » chaque nuit**
 | Gêne perçue par les clients du magasin | Faible | Moyen | Nettoyage quotidien, repli complet | Réaction immédiate à toute remarque |
 | Dépassement budgétaire | Moyenne | Moyen | Suivi des heures et des achats, provision pour aléas | Avenant justifié, arbitrage avec le RA |
 
-### 3.9.2 Les aléas rencontrés et les adaptations apportées
+### 3.9.2 L'aléa majeur : un temps de travail de nuit multiplié par deux
 
-> **⚠ Section à compléter — à enrichir avec les événements réellement survenus.** Trame de rédaction, à remplir pour chaque aléa :
+**Le fait.** Le chantier a demandé **environ deux fois plus d'heures de nuit que ce qui avait été prévu au chiffrage**. La période calendaire a été tenue — les travaux se sont bien déroulés de mi-avril à mi-juin 2026 — mais la **charge horaire réelle a doublé** par rapport au prévisionnel.
 
-| Aléa rencontré | Conséquence | Décision prise | Résultat |
-|---|---|---|---|
-| 〈Exemple : réseau existant non repéré en plénum obligeant à dévier la gaine principale〉 | 〈Perte de X nuits / modification du tracé〉 | 〈Nouvelle implantation validée avec le RA et le client〉 | 〈Objectif de délai tenu〉 |
-| 〈…〉 | | | |
-| 〈…〉 | | | |
+**Pourquoi c'est l'aléa le plus intéressant du projet.** Ce n'est pas un incident technique : c'est un **écart de productivité structurel**, c'est-à-dire exactement le type d'erreur qui ne se voit pas sur un plan et qui se paie en fin d'affaire.
 
-**Questions à se poser pour chaque aléa lors de la rédaction finale** (ce sont celles que le jury posera) : comment l'ai-je détecté ? qui ai-je alerté et dans quel délai ? quelles options ai-je comparées ? quel a été le critère de décision (sécurité, coût, délai, qualité) ? qu'est-ce que j'en ai retiré ?
+**Les facteurs qui expliquent cet écart :**
+
+| Facteur | Effet sur la productivité |
+|---|---|
+| **Fenêtre utile réduite** | Entre la fermeture (19 h 45) et la réouverture (4 h 45), il reste 8 heures, dont il faut retirer l'installation du chantier en début de poste et **le repli et le nettoyage complets en fin de poste**. Le temps réellement productif est nettement inférieur à la durée de présence |
+| **Remise en état quotidienne** | Chaque nuit, tout est monté puis redescendu : balisage, protections des rayons, nacelle, outillage. Sur un chantier de jour, on laisse en place |
+| **Travail en nacelle** | 70 % des tâches : chaque déplacement de la nacelle, chaque changement de zone impose une réinstallation, un contrôle de sol, un rebalisage |
+| **Linéaire et précision de la gaine** | 59 mètres de gaine perforée Ø 550 à aligner en hauteur, avec supportage et rectitude visibles depuis la surface de vente |
+| **Passage des liaisons dans les locaux existants** | Contrainte identifiée dès l'audit : les cheminements depuis la cour arrière traversent des locaux occupés, ce qui impose des reprises de tracé |
+| **Baisse de vigilance nocturne** | La nuit, on travaille plus lentement, et c'est souhaitable : la sécurité prime sur la cadence |
+| **Fatigue cumulée** | Sur deux mois de nuit à deux, le rythme se dégrade mécaniquement en fin de chantier |
+
+**Les conséquences.**
+
+1. **Économiques.** Le devis prévoyait **9 715,85 € HT** de « prestation en horaire décalé », soit 10,5 % du montant. Un doublement des heures de nuit dégrade directement la marge de l'affaire — et dans un chantier où la main-d'œuvre est le premier poste réel, l'impact est significatif.
+2. **Humaines.** Deux compagnons sur deux mois de nuit, sans marge d'effectif : le doublement de la charge s'est traduit par de la fatigue, avec le risque de sécurité que cela implique.
+3. **Contractuelles.** L'objectif « zéro heure de fermeture du magasin » a néanmoins été tenu : **c'est l'entreprise qui a absorbé l'écart, pas le client**.
+
+**Les adaptations mises en œuvre** : priorisation des tâches à risque et bruyantes en début de poste, préfabrication au sol de ce qui pouvait l'être pour réduire le temps en nacelle, regroupement des tâches par zone pour limiter les repositionnements, et maintien intégral du rituel de repli — la seule chose sur laquelle il ne fallait surtout pas rogner.
+
+**Ce que j'en retiens, et c'est l'enseignement principal du projet :** un chantier de nuit en site occupé ne se chiffre pas avec les ratios d'un chantier de jour. Il faut appliquer un **coefficient de productivité** au temps de pose, et **budgéter explicitement le temps improductif quotidien** — installation, repli, nettoyage — qui, sur une fenêtre de huit heures, peut représenter une à deux heures par nuit, soit 15 à 25 % du poste. Sur un prochain chiffrage, je proposerai de distinguer au devis le **temps de production** du **temps de mise en place et de repli**, afin que la contrainte soit visible et discutable avec le client plutôt que subie par l'entreprise.
+
+> 〈**À préciser si tu disposes des éléments** : le nombre de nuits réellement effectuées et la répartition des heures par phase. Cela permettrait de chiffrer l'écart en euros et de le présenter comme un retour d'expérience exploitable par l'entreprise pour ses prochains chiffrages de nuit.〉
 
 ### 3.9.3 La coordination des acteurs
 
@@ -137,10 +157,9 @@ Le projet VRV traite le poste chauffage-climatisation. Il ne règle pas à lui s
 | 2 | **GTC classe A/C** (surface de vente et bureaux) | 5 400 €/an — **TRA 5,3 ans** ; conformité **décret BACS** | 39 000 € HT | Retenue — **liaisons déjà posées** |
 | 3 | **Ballons thermodynamiques pour les labos** (2 × 200 L) | 1 410 €/an — **TRA 6,3 ans** | 8 840 € HT | Retenue au bouquet |
 | 4 | **Ombrières photovoltaïques** (271,9 kWc sur le parking) | 43 830 €/an — **TRA 8,4 ans** ; > 90 % d'autoconsommation | 368 000 € HT | Retenue — répond aussi à la **loi APER (2028)** |
-| 5 | **Bornes de recharge** | Conformité **loi LOM** | — | 6 bornes dont 1 PMR |
-| 6 | **Gestion de l'éclairage** (27 % des consommations, aujourd'hui en commande manuelle) | Gisement important | Modéré | À proposer — compétence interne Santerne |
-| 7 | **Fermeture des meubles frigorifiques** (froid = 37 %, et 58 % après travaux) | Premier gisement restant | Élevé | À proposer |
-| 8 | **Suivi annuel des consommations et déclaration OPERAT** | Pilotage de la trajectoire réglementaire | Faible | À contractualiser |
+| 5 | **Bornes de recharge** (loi LOM) et **gestion de l'éclairage** (27 % des consommations, aujourd'hui en commande manuelle) | Conformité et gisement important | Modéré | À proposer — compétences internes Santerne |
+| 6 | **Fermeture des meubles frigorifiques** (froid = 37 %, et 58 % après travaux) | Premier gisement restant | Élevé | À proposer |
+| 7 | **Suivi des consommations et déclaration OPERAT** | Pilotage de la trajectoire réglementaire | Faible | À contractualiser |
 
 Cette feuille de route transforme une opération ponctuelle en **démarche de progrès continu** — et, du point de vue de l'entreprise, en relation commerciale durable.
 
@@ -182,7 +201,7 @@ Ce sont les indicateurs explicitement attendus par le référentiel du bloc 4. J
 | Émissions évitées par l'action PAC | kgCO₂e/an | **16 679** (équivalent 76 650 km en citadine essence) |
 | Émissions évitées par le bouquet complet | kgCO₂e/an | **64 830**, soit **− 70 %** |
 | Émissions évitées cumulées sur 15 ans (action PAC) | t CO₂e | ≈ **250** |
-| Impact potentiel du fluide frigorigène (charge × GWP, R-410A) | t CO₂e | 〈charge réelle × 2 088 / 1 000 — à calculer d'après le DOE〉 |
+| **Impact potentiel du fluide frigorigène** (38 kg de R-410A × GWP 2 088) | t CO₂e | **79,3** — soit l'équivalent de **4,8 années** du gain annuel de l'installation |
 | Économie annuelle estimée sur la facture d'énergie | €/an | **5 260** (action seule) — **58 590** (bouquet) |
 | Investissement net après CEE / temps de retour | € / ans | **79 000 € HT** / ≈ **15 ans** (action seule) — 9,3 ans (bouquet) |
 
@@ -190,7 +209,8 @@ Ce sont les indicateurs explicitement attendus par le référentiel du bloc 4. J
 
 | Indicateur | Valeur |
 |---|---|
-| Respect du délai | 〈〉 |
+| Respect du délai calendaire | **Tenu** (mi-avril → mi-juin 2026) |
+| Respect du volume d'heures prévu | **Non : environ × 2** — principal enseignement du projet |
 | Respect du budget | Devis à **90 000 € HT**, soit **− 27 %** par rapport au budget de l'audit (122 800 €) |
 | Nombre d'accidents / presqu'accidents | 〈〉 |
 | Heures de fermeture du magasin imputables au chantier | **0** |

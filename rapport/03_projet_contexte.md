@@ -20,9 +20,7 @@ PAGEBREAK
 | Emprise foncière | Bâtiment sur parcelles Intermarché : 5 898 m² — parking Intermarché : 3 179 m² (+ 1 929 m² hors Intermarché) |
 | Ouverture | **6,5 jours / 7, de 4 h 45 à 19 h 45** (incluant la préparation avant ouverture) |
 | Consignes de température | **19 °C** en chauffage, **26 °C** en climatisation, avec réduit de nuit et de week-end |
-| Énergies | **Gaz naturel et électricité** |
-| Zone climatique | H1c — Loire |
-| Extension récente | Partie bureaux, DOE 2023 |
+| Énergies | **Gaz naturel et électricité** — zone climatique H1c |
 
 Le site combine donc deux réalités : un **bâtiment principal ancien** (la chaufferie date de 1987) et une **extension récente** bien isolée et équipée en split réversible. C'est le bâtiment principal — et en particulier la surface de vente de 2 596 m² — qui concentre les enjeux.
 
@@ -154,12 +152,20 @@ Le règlement organise la **réduction progressive des quotas de HFC** mis sur l
 
 **Conséquence directe sur le projet** : le matériel retenu fonctionne au **R-410A** (GWP ≈ 2 088), fluide de la gamme VRV IV, et non au R-32 (GWP ≈ 675). Ce point mérite d'être assumé et discuté — je le traite dans l'analyse critique en **partie 4.2**, car c'est à mon sens la principale limite du projet au regard des enjeux de transition.
 
-**Obligations d'exploitation** qui en découlent, et qui relèvent désormais de mon périmètre de maintenance :
+**Chiffrage de l'impact pour cette installation** — la charge réelle est de **38 kg de R-410A** :
+
+| Calcul | Valeur |
+|---|---|
+| Charge × GWP | 38 kg × 2 088 = **79 344 kg CO₂e**, soit **79,3 t CO₂e** |
+| La même installation au R-32 (GWP 675) | 38 × 675 = **25,7 t CO₂e**, soit **3 fois moins** |
+| Comparaison au gain annuel du projet | Le gain est de **16,7 t CO₂e/an** : la charge de fluide représente donc l'équivalent de **4,8 années de gain** si elle était intégralement relâchée |
+
+**Conséquence réglementaire directe** : avec **79,3 t CO₂e**, l'installation franchit le seuil des **50 t CO₂e** et impose donc un **contrôle d'étanchéité tous les 6 mois** (ramené à 12 mois en présence d'un système de détection de fuite permanent), au lieu d'un contrôle annuel si elle avait été sous la barre des 50 t. Un choix de fluide a donc un effet direct, chiffrable, sur le coût d'exploitation de l'ouvrage pendant toute sa durée de vie.
 
 | Charge de l'équipement | Périodicité du contrôle d'étanchéité | Avec détection de fuite permanente |
 |---|---|---|
 | ≥ 5 t CO₂e | 12 mois | 24 mois |
-| ≥ 50 t CO₂e | 6 mois | 12 mois |
+| **≥ 50 t CO₂e — cas de cette installation** | **6 mois** | 12 mois |
 | ≥ 500 t CO₂e | 3 mois (détection de fuite obligatoire) | 6 mois |
 
 S'y ajoutent l'**attestation de capacité** de l'entreprise, l'**attestation d'aptitude** des intervenants, la traçabilité des quantités manipulées, et le **dossier DESP** (directive équipements sous pression) établi par DAIKIN et facturé au devis.

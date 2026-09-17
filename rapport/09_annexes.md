@@ -6,27 +6,27 @@ PAGEBREAK
 
 Ce tableau permet au lecteur — et au jury — de retrouver directement dans le rapport chacun des critères d'évaluation.
 
-| Compétence évaluée | Critère | Traité en |
-|---|---|---|
-| Proposer un projet répondant à une problématique de transition énergétique | La situation a été analysée, une problématique en lien avec les enjeux environnementaux, économiques et sociétaux a été identifiée | **3.1.2 à 3.1.4** ; **3.3** |
-| | Le projet proposé répond à la problématique | **3.4** ; **3.11.1** |
-| Argumenter la pertinence du projet (retours d'expérience, études, analyses technique, économique, environnementale) | Éléments techniques, économiques et environnementaux apportés | **3.2** ; **3.4.2** ; **3.5** ; **3.6** |
-| | Argumentaire construit pour convaincre | **3.2.6** (tableau « ne rien faire / agir ») ; **3.6.4** (coût global) |
-| Définir objectifs, calendrier, moyens, budget, actions et résultats attendus | Les objectifs du projet ont été définis | **3.1.5** (objectifs SMART) |
-| | Un budget a été établi et est cohérent | **3.6.1** |
-| | Le calendrier est cohérent avec les objectifs, le délai et les acteurs | **3.8.2**, **3.8.3** |
-| | Actions et résultats attendus formulés, favorisant la transition énergétique | **3.1.5** ; **3.10.3** ; **3.11.2** |
-| Mener des démarches de financement et administratives | Sources de financement et contraintes | **3.6.2** ; **3.2** (autorisation de travaux, OPERAT) |
-| Planifier en intégrant les contraintes des acteurs | Planification tenant compte des contraintes | **3.7** (nuit, ERP, hauteur) ; **3.8** |
-| Coordonner le projet et l'adapter aux imprévus | Méthodologie de gestion de projet pertinente | **3.8.5** |
-| | Modifications proposées face aux aléas | **3.9.1**, **3.9.2** |
-| Réaliser l'évaluation finale, bilan, enseignements, indicateurs d'impact | Évaluation finale et analyse personnelle | **3.11.1** ; **Partie 4** |
-| | Indicateurs d'impact sur la transition énergétique | **3.11.2**, **3.11.3** |
-| Répartir et planifier les tâches au sein d'une équipe | Répartition des tâches et rôle du candidat explicités ; aménagements pour les personnes en situation de handicap pris en compte | **4.3.1** ; **4.3.4** |
-| Coordonner une équipe et suivre ses activités | Organisation de suivi décrite, points forts / points faibles analysés, axes d'amélioration proposés | **4.3.2**, **4.3.3**, **4.3.4** |
-| Description de la structure d'accueil et du contexte de travail | | **Partie 1** |
-| Description des missions et résultats globaux | | **Partie 2** |
-| Analyse personnelle et prise de recul | | **Partie 4** |
+| Critère de la grille | Traité en |
+|---|---|
+| Situation analysée, problématique liée aux enjeux environnementaux, économiques et sociétaux | **3.1.2 à 3.1.4** ; **3.3** |
+| Le projet proposé répond à la problématique | **3.4** ; **3.11.1** |
+| Éléments techniques, économiques et environnementaux étayant la pertinence | **3.2** ; **3.4.2** ; **3.5** ; **3.6** |
+| Argumentaire construit pour convaincre | **3.2.7** (« ne rien faire / agir ») ; **3.6.4** et **3.6.5** (coût global) |
+| Objectifs du projet définis | **3.1.5** (objectifs SMART) |
+| Budget établi et cohérent | **3.6.1** (devis poste par poste) ; **3.6.2** (écart au budget de l'audit) |
+| Calendrier cohérent avec les objectifs, le délai et les acteurs | **3.8.1 à 3.8.3** |
+| Actions et résultats attendus favorisant la transition énergétique | **3.1.5** ; **3.3.4** ; **3.10.3** ; **3.11.2** |
+| Sources de financement et contraintes du projet | **3.6.3** (CEE, TotalEnergies/GreenFlex) ; **3.2** (assujettissements, autorisation de travaux) |
+| Planification tenant compte des contraintes des acteurs | **3.7** (nuit, ERP, hauteur) ; **3.8** |
+| Méthodologie de gestion de projet pertinente | **3.8.5** |
+| Modifications proposées face aux imprévus et aléas | **3.9.1** (registre des risques) ; **3.9.2** (aléa du temps de nuit doublé) |
+| Évaluation finale et analyse personnelle | **3.11.1** ; **Partie 4** |
+| Indicateurs d'impact sur la transition énergétique | **3.11.2**, **3.11.3** |
+| Répartition des tâches, rôle du candidat, aménagements handicap | **3.1.3** (niveau d'intervention réel) ; **4.3.1** ; **4.3.4** |
+| Organisation du suivi d'équipe, points forts et faibles, axes d'amélioration | **4.3.2**, **4.3.3**, **4.3.4** |
+| Description de la structure d'accueil et du contexte de travail | **Partie 1** |
+| Description des missions et résultats globaux | **Partie 2** |
+| Analyse personnelle et prise de recul | **Partie 4** |
 
 ## Annexe B — Sources et références
 
@@ -50,9 +50,8 @@ Ce tableau permet au lecteur — et au jury — de retrouver directement dans le
 | Entreprises extérieures | Articles R. 4511-1 à R. 4515-11 du code du travail (décret n° 92-158 du 20 février 1992) ; arrêté du 19 mars 1993 (travaux dangereux) |
 | Coordination SPS | Loi n° 93-1418 du 31 décembre 1993 ; articles R. 4532-1 et suivants du code du travail |
 | Amiante | Article R. 4412-97 du code du travail ; arrêté du 16 juillet 2019 (repérage avant travaux) |
-| Sécurité électrique | Norme NF C 18-510 |
+| Sécurité électrique | Norme NF C 18-510 — Bruit de voisinage : art. R. 1334-31 du code de la santé publique |
 | ERP | Articles R. 143-1 et suivants du CCH ; arrêté du 25 juin 1980 (dispositions générales, dont l'article GN 13 et les articles CH) ; arrêté du 22 décembre 1981 (type M) |
-| Bruit de voisinage | Article R. 1334-31 du code de la santé publique |
 | CEE | Articles **L. 221-1 et suivants** du code de l'énergie ; fiche d'opération standardisée applicable aux **systèmes DRV réversibles en tertiaire** (exigences SCOP ≥ 4,2 et SEER ≥ 6,0 retenues par l'audit) ; obligé **TotalEnergies Marketing France**, mandataire **GreenFlex** |
 | Loi APER | **Loi n° 2023-175 du 10 mars 2023** relative à l'accélération de la production d'énergies renouvelables (ombrières photovoltaïques sur parkings) |
 | Loi LOM | **Loi n° 2019-1428 du 24 décembre 2019** d'orientation des mobilités (bornes de recharge) |
