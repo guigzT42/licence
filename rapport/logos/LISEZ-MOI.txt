@@ -1,0 +1,13 @@
+Déposer ici les logos, puis relancer :  python3 build_pptx.py
+
+Noms de fichiers reconnus (PNG ou JPG, fond transparent de préférence) :
+  santerne.png   (ou santerne_surfaces_commerciales.png / logo_santerne.png)
+  vinci.png      (ou vinci_energies.png / logo_vinci.png)
+  irup.png       (ou asder.png / ecole.png / logo_ecole.png)   -- optionnel
+
+Les logos sont alors placés automatiquement :
+  - page de titre  : sur un bandeau blanc en bas, alignés à droite
+  - diapositives   : petit logo Santerne en haut à droite du bandeau bleu
+  - conclusion     : logos VINCI et Santerne en bas à droite
+
+Le format SVG n'est pas géré par ce script : convertir en PNG au préalable.

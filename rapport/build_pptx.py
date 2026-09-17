@@ -5,6 +5,35 @@ from pptx.util import Cm, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
+import os
+
+# --- Logos : déposer les fichiers dans rapport/logos/ pour qu'ils soient insérés
+#     automatiquement au prochain lancement du script (PNG ou JPG, fond transparent
+#     de préférence ; le SVG n'est pas supporté par PowerPoint via ce script).
+LOGO_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logos')
+
+def logo_path(*names):
+    for n in names:
+        for ext in ('.png', '.PNG', '.jpg', '.jpeg', '.JPG'):
+            f = os.path.join(LOGO_DIR, n + ext)
+            if os.path.exists(f):
+                return f
+    return None
+
+LOGO_SANTERNE = logo_path('santerne', 'santerne_surfaces_commerciales', 'logo_santerne')
+LOGO_VINCI    = logo_path('vinci', 'vinci_energies', 'logo_vinci')
+LOGO_ECOLE    = logo_path('irup', 'asder', 'ecole', 'logo_ecole')
+
+def put_logo(slide, path, right, top, height_cm):
+    """Place un logo en respectant son rapport d'aspect, calé à droite."""
+    if not path:
+        return None
+    from PIL import Image
+    with Image.open(path) as im:
+        ratio = im.size[0] / float(im.size[1])
+    h = Cm(height_cm)
+    w = Emu(int(h * ratio))
+    return slide.shapes.add_picture(path, right - w, top, width=w, height=h)
 
 BLUE   = RGBColor(0x00, 0x3A, 0x70)
 BLUE_L = RGBColor(0xE8, 0xEF, 0xF7)
@@ -62,7 +91,9 @@ def rect(slide, x, y, w, h, fill, line=None, shape=MSO_SHAPE.ROUNDED_RECTANGLE, 
 def header(slide, part, title):
     rect(slide, Cm(0), Cm(0), W, Cm(2.35), BLUE, shape=MSO_SHAPE.RECTANGLE)
     txbox(slide, Cm(1.2), Cm(0.28), Cm(24), Cm(0.6), part, size=11, bold=True, color=RGBColor(0x9C,0xC2,0xE8))
-    txbox(slide, Cm(1.2), Cm(0.85), Cm(30), Cm(1.2), title, size=21, bold=True, color=WHITE)
+    txbox(slide, Cm(1.2), Cm(0.85), Cm(26), Cm(1.2), title, size=21, bold=True, color=WHITE)
+    if LOGO_SANTERNE:
+        put_logo(slide, LOGO_SANTERNE, W - Cm(1.2), Cm(0.55), 1.15)
 
 def footer(slide, idx, timing=None):
     txbox(slide, Cm(1.2), H - Cm(1.15), Cm(22), Cm(0.6),
@@ -132,19 +163,26 @@ def table(slide, x, y, w, headers, rows, colw=None, fs=12, hfs=12, rh=Cm(0.95)):
 # =====================================================================
 s = new()
 rect(s, Cm(0), Cm(0), W, Cm(19.05), BLUE, shape=MSO_SHAPE.RECTANGLE)
-rect(s, Cm(0), Cm(11.2), W, Cm(0.12), RED, shape=MSO_SHAPE.RECTANGLE)
+rect(s, Cm(0), Cm(11.4), W, Cm(0.12), RED, shape=MSO_SHAPE.RECTANGLE)
 txbox(s, Cm(2.5), Cm(3.2), Cm(29), Cm(1), "SOUTENANCE — BLOC 4", size=14, bold=True, color=RGBColor(0x9C,0xC2,0xE8))
 txbox(s, Cm(2.5), Cm(4.2), Cm(29), Cm(1), "Initiation et coordination de projets de transition énergétique", size=15, color=RGBColor(0xC9,0xDC,0xEF))
-txbox(s, Cm(2.5), Cm(6.0), Cm(28.5), Cm(4),
-      "Remplacement d'une chaudière gaz de 1987\npar une pompe à chaleur réversible DRV", size=34, bold=True, color=WHITE, line=1.1)
-txbox(s, Cm(2.5), Cm(9.6), Cm(28.5), Cm(1.2),
-      "Surface de vente de l'INTERMARCHÉ de Rive-de-Gier (42)", size=19, color=RGBColor(0xC9,0xDC,0xEF))
+txbox(s, Cm(2.5), Cm(5.7), Cm(29.2), Cm(4.2),
+      "Remplacement d'une chaudière gaz de 1987\npar une pompe à chaleur réversible DRV", size=30, bold=True, color=WHITE, line=1.15)
+txbox(s, Cm(2.5), Cm(9.7), Cm(29.2), Cm(1.2),
+      "Surface de vente de l'INTERMARCHÉ de Rive-de-Gier (42)", size=18, color=RGBColor(0xC9,0xDC,0xEF))
 txbox(s, Cm(2.5), Cm(12.2), Cm(20), Cm(3),
       "**Guillaume TARDY**\nTechnicien CVC — Chargé de maintenance\nSANTERNE SURFACES COMMERCIALES — VINCI Energies",
       size=14, color=WHITE, space_after=3)
 txbox(s, Cm(22), Cm(12.2), Cm(10), Cm(3),
       "Licence professionnelle CPEBD\nIRUP — Saint-Étienne\n2025 – 2026", size=14, color=RGBColor(0xC9,0xDC,0xEF),
       align=PP_ALIGN.RIGHT, space_after=3)
+if LOGO_SANTERNE or LOGO_VINCI or LOGO_ECOLE:
+    rect(s, Cm(2.5), Cm(15.6), Cm(28.9), Cm(2.4), WHITE)
+    xr = Cm(30.9)
+    for lg in (LOGO_ECOLE, LOGO_VINCI, LOGO_SANTERNE):
+        if lg:
+            pic = put_logo(s, lg, xr, Cm(16.0), 1.6)
+            xr = pic.left - Cm(1.2)
 notes(s, "0:00 — Bonjour, je suis Guillaume Tardy, technicien CVC et chargé de maintenance chez Santerne Surfaces Commerciales, entreprise de VINCI Energies. Je vais vous présenter le projet que j'ai suivi : le remplacement d'une chaudière gaz de 1987 par une pompe à chaleur réversible sur l'Intermarché de Rive-de-Gier.")
 
 # =====================================================================
@@ -541,8 +579,14 @@ txbox(s, Cm(2.5), Cm(7.4), Cm(28.5), Cm(5),
       "**la meilleure solution technique**, mais de **rendre une solution possible** :\n"
       "acceptable économiquement, réalisable pour l'équipe, sûre pour les compagnons\n"
       "et conforme pour le bâtiment.", size=17, color=WHITE, line=1.35)
-txbox(s, Cm(2.5), Cm(15.3), Cm(28.5), Cm(1.2), "Merci de votre attention — je suis à votre disposition pour vos questions.",
+txbox(s, Cm(2.5), Cm(15.3), Cm(20), Cm(1.2), "Merci de votre attention — je suis à votre disposition pour vos questions.",
       size=15, bold=True, color=RGBColor(0x9C,0xC2,0xE8))
+if LOGO_SANTERNE or LOGO_VINCI:
+    xr = Cm(31.4)
+    for lg in (LOGO_VINCI, LOGO_SANTERNE):
+        if lg:
+            pic = put_logo(s, lg, xr, Cm(15.1), 1.5)
+            xr = pic.left - Cm(1.0)
 notes(s, "20:00 — Conclure net, ne pas déborder. Enchaîner sur les questions.")
 
 # =====================================================================
